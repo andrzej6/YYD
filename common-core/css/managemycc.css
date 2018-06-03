@@ -1,0 +1,32 @@
+h5 {
+	text-transform:uppercase;
+	font-weight:600;
+}
+.captcha-text {
+	margin:10px auto;
+}
+
+#manageMyCc {}
+#manageMyCc .content-area {
+	position:relative;
+	margin-bottom:30px;
+}
+	
+#manageMyCc .updCcField{
+	margin-bottom:20px;
+}
+#manageMyCc .text {
+	padding: 8px 0px;
+}
+#manageMyCc #cmdSave {
+/*	display:none;*/
+}
+.error-img {
+	display:none;
+}
+.card-wrapper {
+	margin:25px auto 17px auto;
+}
+.jp-card-container {
+	margin:0;
+}

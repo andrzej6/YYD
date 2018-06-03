@@ -1,0 +1,152 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="myaccount.asp">My Account</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">StarTrack - Track Shipments</li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading"><img src="/admin/templates/images/startrack_logo_small.jpg" width="150" /> StarTrack - Track Shipments</h1>
+        <div class="button"><a href="[StarTrackURL]" class="btn btn-default" target="_blank">Track on startrack.com.au</a></div>
+    </div>
+</section>
+
+<section id="startrackTracking" class="page-content">
+    <div class="container">
+        <div class="content-area">
+            <div class="row tracking_titles titles2">
+                <div class="col-md-12 col-sm-12">
+                    <h4 class="page_heading">Detailed Results</h4>
+                </div>
+            </div>
+            <!--START: results-->
+            <div class="row tracking_details">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <!--START: trackno-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Tracking-Number">Tracking Number:</label></div>
+                        <div class="col-sm-8 col-xs-8">[trackno]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: trackno-->
+                    <!--START: ShipDate-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Ship-Date">Ship Date:</label></div>
+                        <div class="col-sm-8 col-xs-8">[ShipDate]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: ShipDate-->
+                    <!--START: EstimatedDeliveryDate-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Estimated-Delivery">Estimated Delivery:</label></div>
+                        <div class="col-sm-8 col-xs-8">[EstimatedDeliveryDate]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: EstimatedDeliveryDate-->
+                    <!--START: ShipStatus-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="ShipStatus">Status:</label></div>
+                        <div class="col-sm-8 col-xs-8">[ShipStatus]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: ShipStatus-->
+                    <!--START: service_description-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Service-type">Service type:</label></div>
+                        <div class="col-sm-8 col-xs-8">[service_description]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: service_description-->
+                    <!--START: package_count-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Pieces">Pieces:</label></div>
+                        <div class="col-sm-8 col-xs-8">[package_count]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: package_count-->
+                    <!--START: Weight-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Weight">Weight:</label></div>
+                        <div class="col-sm-8 col-xs-8">[Weight]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: Weight-->
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <!--START: shipto_address-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Destination">Destination:</label></div>
+                        <div class="col-sm-8 col-xs-8">[shipto_address]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: shipto_address-->
+                    <!--START: DispatchDepot-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="DispatchDepot">Dispatch Depot:</label></div>
+                        <div class="col-sm-8 col-xs-8">[DispatchDepot]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: DispatchDepot-->
+                    <!--START: DeliveryDepot-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="DeliveryDepot">Delivery Depot:</label></div>
+                        <div class="col-sm-8 col-xs-8">[DeliveryDepot]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: DeliveryDepot-->
+                </div>
+                <div class="tracking_activity col-md-12 col-sm-12 col-xs-12">
+                    <div class="row trackingStatus_titles titles3 hidden-xs">
+                        <div class="col-md-4 col-sm-4">
+                            <label for="date-time">Date / Time</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <label for="desc">Activity</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <label for="loc">Location</label>
+                        </div>
+                    </div>
+                    <!--START: activity-->
+                    <div class="row trackingStatus details_row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <div class="visible-xs col-sm-12 col-xs-4"><label for="date-time">Date / Time</label></div>
+                                <div class="col-sm-12 col-xs-8">[date_time]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <div class="visible-xs col-sm-12 col-xs-4"><label for="desc">Activity</label></div>
+                                <div class="col-sm-12 col-xs-8">[description]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <div class="visible-xs col-sm-12 col-xs-4"><label for="loc">Location</label></div>
+                                <div class="col-sm-12 col-xs-8">[location]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: activity-->
+                </div>
+            </div>
+            <!--END: results-->
+        </div>
+    </div>
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/tracking.css" type="text/css" media="screen" />
+<!--END: template_styles-->

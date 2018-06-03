@@ -1,0 +1,34 @@
+h5 {
+	text-transform:uppercase;
+	font-weight:600;
+}
+.captcha-text {
+	margin:10px auto;
+}
+
+#registration0, #updateAccount {}
+#registration0 h3, #updateAccount h3{
+	margin-top:0;
+	margin-bottom: 25px;
+}
+#registration0 .accountRegForm, #updateAccount .loginInfo, #updateAccount .billingInfo, #updateAccount .shippingInfo, #updateAccount .otherInfo {
+	margin-bottom:10px;
+}
+#updateAccount .loginField{
+	margin-bottom:10px;
+	min-height: 82px;
+}
+#registration0 .loginField {
+	margin-bottom:10px;
+}
+.error {
+	margin:10px 0;
+}
+.required.error {
+	margin-bottom: 15px;
+}
+@media(max-width: 767px) {
+	.loginField {
+		clear: both;
+	}
+}

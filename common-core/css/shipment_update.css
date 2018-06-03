@@ -1,0 +1,245 @@
+.form_data {
+    width: 100%;
+}
+    
+.text-info {
+    padding-top: 20px;
+    color: #000;
+}
+    
+.account_login {
+    padding-bottom: 25px;
+}
+    
+.loginmessage2 {
+    padding-top: 20px;
+}
+    
+.login1-button {
+    padding-top: 20px;
+}
+
+.checkbox-format label {
+    padding-left: 5px;
+}
+
+.cart-items {
+    margin: 20px 0px 35px;
+    padding: 0 10px;
+    list-style: none;
+}
+    
+.cart-items>li {
+    margin: 0 -10px;
+    border-bottom: 1px solid #ececec;
+    padding: 10px 0;
+}
+    
+.cart-items>li:before,
+.cart-items>li:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+    
+.cart-items>li.items-header {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+    
+.cart-items>li>span {
+    display: block;
+    line-height: 1;
+    padding: 0 10px;
+    float: left;
+}
+    
+.cart-items>li>span.item-name {
+    width: 60%
+}
+    
+.cart-items>li>span.item-price {
+    width: 20%
+}
+    
+.cart-items>li>span.item-qty {
+    width: 14%
+}
+    
+.cart-items>li>span.item-total {
+    width: 20%;
+    text-align: right;
+}
+    
+.cart-items>li.cart-item>span.item-price,
+.cart-items>li.cart-item>span.item-qty,
+.cart-items>li.cart-item>span.item-total {
+    padding-top: 15px;
+    line-height: 1.4em;
+    color: #818181;
+}
+    
+span.item-thumb {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: block;
+    float: left;
+}
+    
+span.item-name-right {
+    width: -webkit-calc(100% - 100px);
+    width: -moz-calc(100% - 100px);
+    width: calc(100% - 110px);
+    padding-left: 20px;
+    display: block;
+    float: left;
+    padding-top: 15px;
+}
+    
+span.item-fullname {
+    display: block;
+    font-size: 14px;
+    line-height: 1.4em;
+}
+    
+span.item-fullname a {
+    color: #000;
+}
+    
+span.item-actions {
+    margin: 15px 0 0;
+    display: block;
+    font-size: 12px;
+}
+    
+span.item-action {
+    display: inline-block;
+    margin-right: 6px;
+    padding-right: 8px;
+    border-right: 1px solid #ececec;
+}
+    
+span.item-action:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+    
+span.quant-input {
+    display: block;
+    position: relative;
+    width: 80px;
+    margin-bottom: 15px;
+}
+    
+span.quant-input input[type="text"] {
+    display: block;
+    border: 1px solid #ececec;
+    margin: 0;
+    padding: 0 28px 0 5px;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    color: #949494;
+    font-size: 15px;
+}
+    
+span.qty-nav {
+    display: block;
+    height: 38px;
+    width: 28px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+    
+span.itemoptions {
+    display: block;
+    font-size: 12px;
+    margin: 10px 0 0;
+    line-height: 1.4em;
+}
+    
+span.qty-nav>button {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    border-left: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    line-height: 18px;
+    outline: none !important;
+}
+    
+span.qty-nav>button:last-child {
+    border-bottom-color: transparent
+}
+    
+span.qty-nav>button:hover {
+    background-color: #ececec
+}
+    
+a.update-qty {
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+}
+    
+span.item-thumb {
+    width: 50px;
+    height: 50px;
+}
+    
+span.item-name-right {
+    padding-top: 0px;
+}
+.checkbox-format label {
+	margin-bottom: 0;
+}
+@media(max-width: 767px) {
+      .cart-items > li.items-header { display: none }
+      .cart-items > li > span.item-name {
+        float: none;
+        width: 100%;
+        clear: both;
+        padding-bottom: 10px;
+      }
+      .cart-items > li.cart-item > span.item-price, 
+      .cart-items > li.cart-item > span.item-qty, 
+      .cart-items > li.cart-item > span.item-total {
+        float: left;
+        width: 33.333333%;
+        text-align: left;
+      }
+      .cart-items > li.cart-item > span.item-price,
+      .cart-items > li.cart-item > span.item-total {
+        padding-top: 30px;
+      }
+      .cart-items > li.cart-item > span.item-qty {}
+      span.item-thumb { float: none }
+      span.item-name-right {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+      }
+      span.item-action {
+        margin-bottom: 10px;
+      }
+      .cart-right {
+        padding-top: 0;
+      }
+
+      .pull-right {
+          width: 100%;
+      }
+
+}
+
+    

@@ -1,0 +1,156 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+	  <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+	      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">Home</a></li>
+	      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="">[orderhistory_header]</a></li>
+	  </ol>
+	</div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header">
+	<div class="container">
+	  <h1 class="page_heading">
+	    [orderhistory_header]
+	  </h1>
+	  <!--START: myAccount-->
+	  <div class="button">
+	      <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> Back to My Account</a>
+	  </div>
+	  <!--END: myAccount-->
+	</div>
+</section>
+<section id="orderHistory" class="page-content">
+	<div class="container">
+      <div class="content-area clearfix">
+      	<div class="message">[orderhistory_message]</div>
+		<div class="hidden-xs titles-history">
+		    <div class="col-lg-1 col-md-1 col-sm1 no-padding">
+		        <label for="oid" class="oid">
+		           #
+		        </label>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <label for="odate" class="odate">
+		            [orderhistory_date]
+		        </label>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <label for="onum" class="onum">
+		            [orderhistory_ordernum]
+		        </label>
+		    </div> 
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <label for="oamount" class="oamount">
+		            [orderhistory_amount]
+		        </label>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <label for="ostatus" class="ostatus">
+		            [orderhistory_status]
+		        </label>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <label for="odetails" class="odetails">
+		            [orderhistory_details] / RMA
+		        </label>
+		    </div>
+            <div class="col-lg-1 col-md-2 col-sm2 no-padding">
+                <label for="oreorder" class="oreorder">
+                    [orderhistory_reorder]
+                </label>
+            </div>
+
+		</div>
+		<!--START: ordertemplate-->
+		<div class="total-summary">
+		    <div class="col-lg-1 col-md-1 col-sm1 no-padding">
+		        <div class="row">
+		            <label class="visible-xs gcTotal-default col-xs-4" >
+		            #
+		            </label>
+		            <div class="col-xs-8 oid">
+		                [num]
+		             </div>
+		            <div class="clearfix"></div>
+		        </div>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <div class="row">
+		            <label class="visible-xs gcTotal-default col-xs-4">
+		            [orderhistory_date]
+		            </label>
+		            <div class="col-xs-8 odate">
+		                [odate]
+		             </div>
+		            <div class="clearfix"></div>
+		        </div>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <div class="row">
+		            <label class="visible-xs gcTotal-default col-xs-4">
+		                [orderhistory_ordernum]
+		            </label>
+		            <div class="col-xs-8 onum">
+		                [invoicenum_prefix][invoicenum]
+		             </div>
+		            <div class="clearfix"></div>
+		        </div>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <div class="row">
+		            <label class="visible-xs gcTotal-default col-xs-4">
+		                [orderhistory_amount]
+		            </label>
+		            <div class="col-xs-8 oamount">
+		                [orderamount]
+		             </div>
+		            <div class="clearfix"></div>
+		        </div>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <div class="row">
+		            <label class="visible-xs gcTotal-default col-xs-4">
+		                [orderhistory_status]
+		            </label>
+		            <div class="col-xs-8 ostatus">
+		                [orderstatus]
+		             </div>
+		            <div class="clearfix"></div>
+		        </div>
+		    </div>
+		    <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+		        <div class="row">
+		            <label class="visible-xs gcTotal-default col-xs-4">
+		                [orderhistory_status]
+		            </label>
+		            <div class="col-xs-8 odetails">
+		                <div class="button left">
+		                    <a href="ordertracking.asp?action=view&id=[orderid]" class="icon-btn icon-btn-search">[orderhistory_vieworderlink]</a>
+		                </div>
+		                <!--START: btnRMA-->
+		                <div class="button left">
+		                    <a href="javascript:location.href='my_rma.asp?oid=[orderid]&r=[idRma]';" class="icon-btn icon-btn-down">View RMA</a>
+		                </div>
+		                <!--END: btnRMA-->
+		             </div>
+		            <div class="clearfix"></div>
+		        </div>
+		    </div>
+            <div class="col-lg-1 col-md-1 col-sm1 no-padding">
+                <div class="row">
+                    <div class="col-xs-8 oid">
+                        <!--START: reorder--><a href="ordertracking.asp?action=repeat&id=[orderid]">reorder</a><!--END: reorder-->
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+		</div>   
+		<!--END: ordertemplate-->
+      </div>
+	</div>
+</section>
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout_step4.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/orderHistory.css" type="text/css" media="all" />
+<!--END: template_styles-->

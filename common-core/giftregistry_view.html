@@ -1,0 +1,220 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[giftregistry_create]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[giftregistry_create]</h1>
+        <!--START: myAccount-->
+        <div class="button"><a href="myaccount.asp" class="btn btn-link"><i class="icon-left"></i> [account_backtomyaccount-text]</a></div>
+        <!--END: myAccount-->
+    </div>
+</section>
+
+<section id="giftregistryView" class="giftregistryView-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <!--START: CATEGORY_HEADER-->
+                <div class="category-header" id="giftregistryViewHeader">[CONTENT]</div>
+                <!--END: CATEGORY_HEADER--> 
+
+                <div class="row">
+                    <div class="registryInfo col-lg-12">
+                        <div class="header clearfix">
+                            <h4 class="page_heading">[giftregistry_create-giftinfo]</h4>
+                            <div class="button pull-right"><a href="giftregistry_edit.asp"><i class="icon-pencil"></i>edit</a> -<a href="giftregistry_edit.asp?action=delete"><i class="icon-cancel"></i>delete</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="giftregistryGiftInfo col-lg-12">
+                    	<div class="row">
+                        	<div class="Registry_Name col-lg-3 col-md-4 col-sm-4">
+                                <label for="registry_name"><i class="icon-gift-1"></i> [giftregistry_create-name]</label>
+                                <div class="text">[regname]</div>
+                            </div>
+                        	<div class="Registry_PW col-lg-2_4 col-md-3 col-sm-4">
+                                <label for="registry_pw"><i class="icon-lock"></i>[giftregistry_create-password]</label>
+                                <div class="text">[regpassword]</div>
+                            </div>
+                        	<div class="Registry_Date col-lg-2_4 col-md-3 col-sm-4">
+                                <label for="registry_date"><i class="icon-calendar-check-o"></i> [giftregistry_create-eventdate]</label>
+                                <div class="text">[month]/[day]/[year]</div>
+                            </div>
+                        	<div class="Registry_Link col-lg-4 col-md-12 col-sm-12">
+                                <label for="registry_link"><i class="icon-link"></i> [giftregistry_url]</label>
+                                <div class="text"><a href="[regurl]" target="_blank">[regurl]</a></div>
+                            </div>
+                        	<div class="Registry_Msg col-md-12 col-sm-12">
+                                <label for="registry_msg"><i class="icon-doc-text"></i>[giftregistry_create-message]</label>
+                                <div class="textarea">[regmessage]</div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="row">
+                    <div class="giftregistryOwnerInfo col-lg-12">
+                    	<div class="row">
+                            <div class="Registry_Owner col-lg-3 col-md-4 col-sm-6">
+                                <label for="">[giftregistry_create-yourinfo]</label>
+                                <div class="row">
+                                	<div class="col-xs-12">
+                                        <label class="label">[giftregistry_create-firstname]</label>
+                                        <span class="text">[firstname]</span>
+                                    </div>
+                                	<div class="col-xs-12">
+                                        <label class="label">[giftregistry_create-lastname]</label>
+                                        <span class="text">[lastname]</span>
+                                    </div>
+                                	<div class="col-xs-12">
+                                        <label class="label">[giftregistry_create-email]</label>
+                                        <span class="text">[email]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="Registry_Products col-lg-2 col-md-3 col-sm-6">
+                                <label for="">[giftregistry_header-products]</label>
+                                <div class="row">
+                                	<div class="col-xs-12">
+                                        <label class="label">[giftregistry_header-productsdesired]</label>
+                                        <span class="text">[regDesired]</span>
+                                    </div>
+                                	<div class="col-xs-12">
+                                        <label class="label">[giftregistry_header-productspurchased]</label>
+                                        <span class="text">[regPurchased]</span>
+                                	</div>
+                                    <div class="col-xs-12">
+                                        <div class="view-productlist-button">
+                                            <button type="button" name="cmdViewList" onclick="javascript:location.href='view_giftregistry.asp?id=[custid]';" class="btn btn-default">[giftregistry_view-productlist]</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="Registry_Notifications col-lg-4 col-md-5 col-sm-12">
+                                <label for="">New Purchase Notifications</label>
+                                <div class="row">
+                                	<div class="col-xs-12">
+                                        <div class="giftreg-ship-address">
+                                        	<input type="checkbox" class="checkbox-inline" id="newPurchaseNotify" name="newPurchaseNotify" disabled="disabled" value="1" [regNewPurchaseNotifyChecked] />
+                                            <strong>[giftregistry_create-newpurchasenotify]</strong>
+                                            <div>[giftregistry_create-newpurchasenotifyinstructions]</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="Registry_Shipping col-lg-3 col-md-12 col-sm-12">
+                                <label for="">[giftregistry_create-shippingoptions]</label>
+                                <div class="row">
+                                	<div class="col-xs-12">
+                                        <div class="giftreg-ship-address">
+                                        	<input type="checkbox" class="checkbox-inline" id="regShipMyAddress" name="regShipMyAddress" disabled="disabled" onclick="javascript:controlAddressBtn(this);" value="1" [regShipMyAddressChecked] />
+                                        	<strong>[giftregistry_create-shiptomyaddress]</strong>
+                                            <div>[giftregistry_create-shiptomyaddressinstructions]</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div id="divSelectedAddress" class="giftreg-ship-address" name="divSelectedAddress" style="display:[divSelectedAddressStyle];">
+                                            <!--START: selectedAddress-->
+                                            <div><strong>[giftregistry_create-selected-address]</strong></div>
+                                            <div>[address_alias]</div>
+                                            <div>[shipping_firstname] [shipping_lastname]</div>
+                                            <!--START: shipping_address2-->
+                                            <div>[shipping_address2]</div>
+                                            <!--END: shipping_address2-->
+                                            <div>[shipping_city], [shipping_state] [shipping_zip] [shipping_country]</div>
+                                            <div>[shipping_phone]</div>
+                                            <div class="clearfix"></div>
+                                            <!--END: selectedAddress-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="giftregistrySendEmails col-lg-12">
+                        <div class="header clearfix">
+                            <h4 class="page_heading">[giftregistry_header-invitation-emails]</h4>
+                        </div>
+                        <p>[giftregistry_header-invitation-emailsinstructions]</p>
+
+                        <form action="giftregistry_edit.asp?action=view" name="frmForm" id="frmForm" class="form_data" method="post">
+                            <input type="hidden" id="action2" name="action2" value="sendemail" />
+                            
+                            <div class="row">
+                            	<div class="giftregField col-md-6 col-sm-6">
+                                    <label class="label" for="txtEmail1">[giftregistry_header-invitation-emailaddress]</label>
+                                    <input type="text" id="txtEmail1" name="txtEmail1" value="" class="txtBoxStyle form-control" />
+                                </div>
+                            	<div class="giftregField col-md-6 col-sm-6">
+                                    <label class="label" for="txtEmail2">[giftregistry_header-invitation-emailaddress]</label>
+                                    <input type="text" id="txtEmail2" name="txtEmail2" value="" class="txtBoxStyle form-control" />
+                                </div>
+
+                            	<div class="giftregField col-md-6 col-sm-6">
+                                    <label class="label" for="txtEmail3">[giftregistry_header-invitation-emailaddress]</label>
+                                    <input type="text" id="txtEmail3" name="txtEmail3" value="" class="txtBoxStyle form-control" />
+                                </div>
+                            	<div class="giftregField col-md-6 col-sm-6">
+                                    <label class="label" for="txtEmail4">[giftregistry_header-invitation-emailaddress]</label>
+                                    <input type="text" id="txtEmail4" name="txtEmail4" value="" class="txtBoxStyle form-control" />
+                                </div>
+
+                            	<div class="giftregField col-md-6 col-sm-6">
+                                    <label class="label" for="txtEmail5">[giftregistry_header-invitation-emailaddress]</label>
+                                    <input type="text" id="txtEmail5" name="txtEmail5" value="" class="txtBoxStyle form-control" />
+                                </div>
+                            	<div class="giftregField col-md-6 col-sm-6">
+                                    <label class="label" for="txtEmail6">[giftregistry_header-invitation-emailaddress]</label>
+                                    <input type="text" id="txtEmail6" name="txtEmail6" value="" class="txtBoxStyle form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                            	<div class="send-email-button text-right col-sm-12">
+                                	<a href="giftregistry_edit.asp?action=previewemail" data-toggle="modal" data-target="#theModal" class="btn btn-default">[giftregistry_header-invitation-previewmessage]</a>
+                                    <button type="button" name="cmdViewList" onclick="javascript:sendEmail();" class="btn btn-lg btn-default" id="Button3">[giftregistry_header-invitation-sendemail]</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <hr class="divider" />
+				<div class="button text-right"><a href="myaccount.asp" class="btn btn-link"><i class="icon-left"></i> [account_backtomyaccount-text]</a></div>
+
+                <!--START: CATEGORY_FOOTER-->
+                <div class="category-footer" id="giftregistryViewFooter">[CONTENT]</div>
+                <!--END: CATEGORY_FOOTER--> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<aside class="email_modal modal fade" id="theModal" tabindex="-1" role="dialog" aria-labelledby="giftregistryPreviewEmail" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</aside>
+
+<input type="hidden" id="variablesVals" value="" data-giftregistry_view-message-removeitem="[giftregistry_view-message-removeitem]" data-custid="[custid]" data-giftregistry_view-can-not-add-from-two-gr="[giftregistry_view-can-not-add-from-two-gr]" data-wishlist_viewwishlist-message-addtocart="[giftregistry_create-password]" data-giftregistry_header-invitation-emailaddress="[giftregistry_header-invitation-emailaddress]" />
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/js/giftregistry.js"></script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/giftregistry.css" type="text/css" media="screen" />
+<!--END: template_styles-->

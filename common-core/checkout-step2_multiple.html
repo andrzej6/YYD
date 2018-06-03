@@ -1,0 +1,446 @@
+<section id="checkoutStep2Multiple" class="checkoutStep2-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12 clearfix">
+                <form action="checkout3_multiple.asp?step=3" name="pickship" method="post">
+                    <div class="row ab-content">
+                        <div class="col-md-7 col-xs-12">
+                            <div class="logo">
+                                <!--START: global_header-->
+                                <h3 class="store-name">[storename]</h3>
+                                <h4 class="store-slogan">[storeslogan]</h4>
+                                <!--END: global_header-->
+                            </div>
+                        </div>
+
+						<!--START: CATEGORY_HEADER-->
+						<div class="category-header col-md-7 col-xs-12">
+							<div id="checkoutStep2MultipleHeader">[CONTENT]</div>
+						</div>
+						<!--END: CATEGORY_HEADER-->
+
+                        <div id="checkout-right" class="col-md-5 col-xs-12 bg-alternative showcart-md col-height pull-right rightCol">
+                            <section class="row-full cart-toggle bg-alternative hidden-md hidden-lg">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-right"><span class="pull-left"><h4 class="module-expand expanded" data-toggle="collapse" data-target="#chkShoppingCartCollapse"><i class="icon-basket"></i></h4></span> <h5 class="text-success cart-total">[CARTTOTAL]</h5></div>
+                                    </div>
+                                </div>
+                            </section>
+
+							<div id="chkShoppingCartCollapse" class="collapse in">
+								<div id="chkShoppingCart" class="chkShoppingCart scrollbox scrollbox_delayed">
+									<div class="scrollbox-content">
+										<!--START: SHOPPING_CART_ITEM-->
+										<div class="row cart-items">
+											<div class="main">
+												<div class="col-sm-2 col-xs-3 vcenter">
+													<div class="product-image">
+														<!--START: itemthumbnail--><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="[THUMBNAIL]" id="tl" /></a><!--END: itemthumbnail-->
+														<!--START: thumbnailnolink--><img src="[THUMBNAIL]" id="tnl" /><!--END: thumbnailnolink-->
+														<span>[ITEM_QUANTITY]</span>
+													</div>
+												</div>
+												<div class="col-sm-8 col-xs-6 vcenter">
+													<div class="product-name">
+														<!--START: itemnamelink--><span><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></span><!--END: itemnamelink-->
+														<!--START: itemnamenolink--><span id="spnItemName">[ITEM_NAME]</span><!--END: itemnamenolink-->
+														<div class="base-price">[ITEM_PRICE]</div>
+													</div>
+												</div>
+												<div class="col-sm-2 col-xs-3 vcenter">
+													<div class="product-info text-right">[ITEM_SUBTOTAL]</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+										<!--END: SHOPPING_CART_ITEM-->
+									</div>
+								</div>
+
+								<div class="row cart-tally">
+								
+									<!--START: DISCOUNTS-->
+									<div class="cart_subtotal col-xs-6">[shoppingcart_subtotal]</div>
+									<div class="cart_subtotal cart_text col-xs-6">[CARTSUBTOTAL]</div>
+									<div class="cart_discounts col-xs-6">[checkout1_discounts]:</div>
+									<div class="cart_discounts cart_text col-xs-6">[DISCOUNTS]</div>
+									<!--END: DISCOUNTS-->
+
+									<!--START: BUYSAFE-->
+									<div class="total_buysafe-logo col-xs-6"><img src="assets/templates/common/images/buysafe.gif" alt="" /></div>
+									<div class="total_buysafe  col-xs-6">[buysafe_totalbondcost]</div>
+									<!--END: BUYSAFE-->
+									<!--START: GIFTCERTS-->
+									<div class="total_cart-giftcerts col-xs-6">[shoppingcart_giftcertificate]</div>
+									<div class="total_giftcerts cart_text col-xs-6">[GIFTCERTS]</div>
+									<!--END: GIFTCERTS-->
+
+								</div>
+								<div class="row cart-grandtotal">
+									<div class="cart_total col-xs-6">[shoppingcart_total]</div>
+									<div class="cart_total cart_text col-xs-6">[CARTTOTAL]</div>
+								</div>
+
+							</div>
+                        </div>
+
+                        <div class="col-md-7 col-xs-12 col-height leftCol">
+                            <div class="leftCol">
+                                <!--START: required_fields-->
+                                <div class="row">
+                                    <div class="chkField col-sm-12">
+                                        <div class="required-fields"><span class="error-img required">*</span> <span class="error">ERROR: PLEASE CHECK THE REQUIRED FIELDS BELOW!</span></div>
+                                    </div>
+                                </div>
+                                <!--END: required_fields-->
+                                <!--START: account_login-->
+                                <div class="account_login">
+                                    <div class="loginmessage">[checkout1_loginmessage]</div>
+                                    <p class="loginmessage2">[checkout1_loginmessage2]</p>
+                                    <div class="row">
+                                        <div class="login1-button col-sm-6">
+                                            <button type="button" class="btn btn-default" onclick="document.location='checkout.asp?step=log-in';"><i class="icon-login"></i> [checkout1_login]</button>
+                                        </div>
+                                        <!--START: fbconnect-->
+                                        <div class="fbconnect col-sm-6">
+                                            <a onclick="popup('social_login.asp?p=fl&amp;return=myaccount',1000,550)" href="#" title="Sign in with Facebook" class="btn btn-facebook"><i class="icon-facebook"></i> Sign in with Facebook</a>
+                                        </div>
+                                        <!--END: fbconnect-->
+                                    </div>
+                                </div>
+
+                                <!--start create account block-->
+                                <div class="createNewAccount">
+                                    <div class="header">
+                                        <h3 class="page_heading">[checkout1_Header-createnewaccount]</h3>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="chkField col-sm-6">
+                                            <label for="createnewaccount_email">[CustomerInfo_email]</label>
+                                            <input type="email" size="25" name="email" id="email" maxlength="100" value="" placeholder="Email" tabindex="1" class="form-control txtBoxStyle" required />
+                                            <!--START: emailrequired-->
+                                            <!--START: req_email-->
+                                            <span class="error-img required">*</span>
+                                            <!--END: req_email-->
+                                            <!--END: emailrequired-->
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="chkField col-sm-6">
+                                            <label for="pass">[CustomerInfo_password]</label>
+                                            <input type="password" size="12" name="pass" id="pass" autocomplete="off" placeholder="Password" tabindex="3" class="form-control txtBoxStyle" [CallFunctionVerifyStrongPass] required />
+                                            <!--START: passwordrequired-->
+                                            <!--START: req_pass-->
+                                            <span class="error-img required">*</span>
+                                            <!--END: req_pass-->
+                                            <!--END: passwordrequired-->
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="chkField col-sm-6">
+                                            <div class="checkbox-format">
+                                                <input type="checkbox" id="maillist" value="1" name="maillist" [maillist] tabindex="13" />
+                                                <label for="maillist" class="maillist">[checkout1_joinmailinglist]</label>
+                                            </div>
+                                        </div>
+                                        <div class="chkField col-sm-6">
+                                            <!--START: StrongPasswordBar-->
+                                            <div class="strong-pass-bar" style="background-image: linear-gradient(to left, #86e01e 0%, #f63a0f 100%);">
+                                                <div id="divStrong"></div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <!--END: StrongPasswordBar-->
+                                            <!--START: PasswordMSG-->
+                                            <div class="PasswordMSG">
+                                                <p>[CustomerInfo_password_policy]</p>
+                                            </div>
+                                            <!--END: PasswordMSG-->
+                                        </div>
+                                    </div>
+                                    <!--end create account block-->
+                                </div>
+                                <!--END: account_login-->
+                                <div class="header">
+                                    <h2 class="page_heading">[checkout2_Header-shippinginfo]</h2>
+                                </div>
+                                <!--START: address_block-->
+                                <div class="shippingMethods">
+                                    <h3 class="page_heading">
+                                        [shipping_package] # [package_number]
+                                    </h3>
+                                    <div class="highlitted-content">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <p><strong>[checkout2_shippinginfomessage]</strong></p>
+                                                <p>[oshipfirstname] [oshiplastname]</p>
+                                                <p>[oshipcompany]</p>
+                                                <p>[oshipaddress]</p>
+                                                <p>[oshipaddress2]</p>
+                                                <p>[oshipcity], [oshipstate] [oshipzip] [oshipcountry]</p>
+                                            </div>
+                                            <div class="col-md-4 align-right">
+                                                <a href="edit_shipment.asp?shipmentid=[shipment_id]&action=editaddresses" class="icon-btn"> <i class="icon-pencil"></i>[checkout2_shippinginfochange]</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="pick-ship-method">[checkout2_shippingmethodsmessage]</div> -->
+                                    <h3 class="page_heading">
+                                        [checkout2_Header-shippingmethods]
+                                    </h3>
+                                    <div class="content-methods clearfix">
+                                        <!--START: CARRIER--> 
+										<!--START: displayblock-->
+										<div class="carrierDisplay clearfix">
+											<div class="option-shipper"><img src="/assets/templates/common/images/[OPTION-SHIPPER].gif" alt="" /></div>
+											<div class="display-rates button right"><a href="javascript:click_ship();" onclick="toggleoff();toggle('sh[OPTION-SHIPPER]');" class="icon-btn icon-btn-refresh">Display Rates</a></div>
+										</div>
+										<!--END: displayblock-->
+										<div name="sh[OPTION-SHIPPER]" id="sh[OPTION-SHIPPER]" class="ship all-ship-methods" style="display:none;">
+											<!--START: SHIPPING_OPTION-->
+											<div class="shippingOption">
+												<div class="row">
+													<div class="col-sm-8">
+														<div class="radio-inline"><input type="radio" name="shipping_[shipment_id]" value="[ID]" [SELECTED] /><span class="shipper-option-desc"><!--[OPTION-SHIPPER]-->[OPTION-DESCRIPTION]</span></div>
+													</div>
+													<div class="col-sm-4">
+														<div class="shipper-option-price2 text-right">[OPTION-PRICE2]</div>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+											</div>
+											<!--END: SHIPPING_OPTION-->
+
+										</div>
+										<!--END: CARRIER--> 
+
+                                        <!--START: BOXITEMS-->
+                                        <div class="boxitems">
+                                            <h4 class="page_heading">
+                                                Items in [shipping_package] # [package_number]
+                                            </h4>
+                                            <div class="data-box">[ITEMS_IN_BOX]</div>
+                                        </div>
+                                        <!--END: BOXITEMS-->
+
+     
+
+                                    </div>
+                                </div>
+                                <!--END: address_block-->
+                                <!--START: checkout_questions-->
+                                <div class="header">
+                                    <h3 class="checkout-headers">[checkout1_checkoutquestions]</h3>
+                                </div>
+                                <div class="chkQuestions">
+                                    <!--START: questions-->
+                                    [questions]
+                                    <!--END: questions-->
+                                </div>
+                                <!--END: checkout_questions-->
+                                <div id="divCheckoutButton">
+                                    <a href="view_cart.asp" class="btn btn-link"><i class="icon-left"></i> Return to Cart</a>
+                                    <button type="submit" class="btn btn-default btn-inverse"><i class="icon-basket"></i> [checkout2_submitbutton]</button>
+                                </div>
+                            </div>
+                            <!--START: checkout_questions_templates-->
+                            <div class="chkQuestionsTemplates">
+                                <!--START: textarea-format-->
+                                <div class="chk-questions-section">
+                                    <div class="textarea-format">
+                                        <!--START: req[id]-->
+                                        <div class="required">
+                                            <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                        </div>
+                                        <!--END: req[id]-->
+                                        <label for="cq[id]">[question]</label>
+                                        <textarea cols="30" rows="5" name="cq[id]" class="txtBoxStyle" autocomplete="off">[answer]</textarea>
+                                    </div>
+                                </div>
+                                <!--END: textarea-format-->
+                                <!--START: text-format-->
+                                <div class="chk-questions-section">
+                                    <!--START: req[id]-->
+                                    <div class="required">
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <!--END: req[id]-->
+                                    <label for="cq[id]">[question]</label>
+                                    <input type="text" size="30" name="cq[id]" value="[answer]" class="txtBoxStyle" autocomplete="off" />
+                                </div>
+                                <!--END: text-format-->
+                                <!--START: checkbox-format-->
+                                <div class="chk-questions-section">
+                                    <!--START: req[id]-->
+                                    <div class="required">
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <!--END: req[id]-->
+                                    <label class="checkbox">
+                                <input type="checkbox" name="cq[id]" class="txtBoxStyle" value="[answer]" [selected] />
+                                [question]
+                            </label>
+                                </div>
+                                <!--END: checkbox-format-->
+                                <!--START: radio-format-->
+                                <div class="chk-questions-section">
+                                    <!--START: req[id]-->
+                                    <div class="required">
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <!--END: req[id]-->
+                                    <label for="cq[id]">[question]</label>
+                                    <!--START: option-->
+                                    <label class="radio">
+                            <input type="radio" name="cq[id]" value="[option]" class="txtBoxStyle" [selected] />
+                            [option]</label>
+                                    <!--END: option-->
+                                </div>
+                                <!--END: radio-format-->
+                                <!--START: dropdown-format-->
+                                <div class="chk-questions-section">
+                                    <!--START: req[id]-->
+                                    <div class="required">
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <!--END: req[id]-->
+                                    <label for="cq[id]">[question]</label>
+                                    <label class="select">
+                                <select name="cq[id]">
+                                <!--START: option-->
+                                <option value="[option]" [selected]>[option]</option>
+                                <!--END: option-->
+                                </select>
+                            </label>
+                                </div>
+                                <!--END: dropdown-format-->
+
+								<!--START: calendar-format-->
+								<div class="chk-questions-section clearfix">
+									<div class="form-group">
+										<label for="cq[id]">[question] 
+											<!--START: req[id]--><span class="required">*</span><!--END: req[id]-->
+										</label>
+										<input type="text" size="30" name="cq[id]" value="[answer]" class="form-control calendar-format txtBoxStyle" readonly />
+									</div>
+								</div>
+								<!--END: calendar-format-->
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <!--END: checkout_questions_templates-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--START: CATEGORY_FOOTER-->
+<div class="category-footer" id="checkoutStep2MultipleFooter">
+	 <div class="container">[CONTENT]</div>
+</div>
+<!--END: CATEGORY_FOOTER-->
+
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout_multi.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout_multi_shipment.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="assets/templates/common-html5/js/utilities.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('.state-select select, .state-select input, .chk-questions-section select').addClass("form-control");
+
+        $('.cart_text ').each(function() {
+            $(this).html($(this).html().replace('[SHIPPING]', '<span class="dash">---</span>'));
+            $(this).html($(this).html().replace('[TAX]', '<span class="dash">---</span>'));
+            $(this).html($(this).html().replace('[BALANCE]', '<span class="dash">---</span>'));
+        });
+    });
+
+
+
+    //Show/Hide cart modules
+    jQuery('.module-expand').click(function(e) {
+        e.preventDefault();
+        var target = jQuery(this).data('target');
+        if (jQuery(this).hasClass('expanded')) {
+            jQuery(target).slideUp(500);
+            jQuery(this).removeClass('expanded');
+        } else {
+            jQuery(target).slideDown(500);
+            jQuery(this).addClass('expanded');
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    //You should create the validator only after the definition of the HTML form
+    var frmvalidator = new Validator("pickship");
+
+    frmvalidator.setAddnlValidationFunction("submitForm");
+
+    //<!--START: email_req_validator--> 
+    frmvalidator.addValidation("email", "maxlen=100", "Max length for Email is 100");
+    frmvalidator.addValidation("email", "req", "Email is required");
+    frmvalidator.addValidation("email", "email");
+    // <!--END: email_req_validator--> 
+
+    // <!--START: pass_req_validator--> 
+    frmvalidator.addValidation("pass", "maxlen=20", "Max length for Email is 20");
+    frmvalidator.addValidation("pass", "req", "Password is required");
+    frmvalidator.addValidation("pass", "pass");
+    // <!--END: pass_req_validator--> 
+
+    //frmvalidator.addValidation("shipping","req");
+
+    frmvalidator.setAddnlValidationFunction("checkreq_questions2");
+</script>
+<script type="text/javascript" src="assets/templates/common-core/js/checkout.js"></script>
+<!--START: delivery_calendar-->
+<link href="assets/templates/common-html5/css/jquery-ui.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/templates/common-html5/js/jquery-ui.min.js"></script>
+<script>
+
+    Date.prototype.yyyymmdd = function () {
+        var yyyy = this.getFullYear().toString();
+        var mm = (this.getMonth() + 1).toString(); // getMonth() is zero-based
+        var dd = this.getDate().toString();
+        return yyyy + "-" + (mm[1] ? mm : "0" + mm[0]) + "-" + (dd[1] ? dd : "0" + dd[0]); // padding
+    };
+
+    var maxDays = [maxDays];
+    var productionDays = [productionDays];
+    var disabledDates = "[disabledDates]";
+
+    var array = disabledDates.split(",");
+
+
+    var today = new Date();
+    today = new Date(today.getTime() + today.getTimezoneOffset() * 60000);
+    array.push(today.yyyymmdd());
+
+    for (i = 1; i <= productionDays; i++) {
+        var blockDate = new Date();
+        blockDate = new Date(blockDate.getTime() + blockDate.getTimezoneOffset() * 60000);
+        blockDate.setDate(blockDate.getDate() + i);
+
+        array.push(blockDate.yyyymmdd());
+    }
+
+    jQuery('input.calendar-format').datepicker({
+        beforeShowDay: function (date) {
+            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+            return [array.indexOf(string) == -1]
+        },
+        minDate: 0,
+        maxDate: "+[maxDays]D"
+    });
+</script>
+<!--END: delivery_calendar-->
+<!--END: template_scripts-->

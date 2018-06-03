@@ -1,0 +1,274 @@
+.titles2 {
+	font-size:16px;
+	border-bottom:1px solid #ececec;
+}
+
+#checkoutStep4 {}
+#checkoutStep4 h4 {
+	font-weight:700;
+	text-transform:uppercase;
+}
+
+#checkoutThankYou, #invoiceContainer {
+	margin: 0 0 40px 0;
+}
+
+#checkoutThankYou h1 {
+	margin: 0 0 15px;
+}
+#checkoutThankYou h3.checkout4_invoicemessage {
+	margin: 0 0 20px;
+	font-size: 18px;
+}
+.checkout-ty-icon {
+	font-size: 48px;
+	line-height: 1;
+}
+.thankyou_message {
+    max-width: 600px;
+    margin: 25px auto;
+}
+
+.thankyou_actions {
+	margin:15px auto;
+}
+#checkoutStep4 #checkoutThankYou > h1:before {
+	content: '\e807';
+	font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: block;
+    text-decoration: inherit;
+    width: 45px;
+	height: 45px;
+	border-radius:50%;
+    margin: auto auto 25px auto;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 45px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	background:#ececec;
+}
+
+#checkoutStep4 #invoiceContainer .billingBlock, #checkoutStep4 #invoiceContainer .shippingInfoBlock {
+	border: 1px solid #ececec;
+	padding:15px;
+	margin:30px auto auto auto;
+}
+#checkoutStep4 #invoiceContainer .billingBlock > div, #checkoutStep4 #invoiceContainer .shippingInfoBlock > div{
+	margin-bottom:15px;
+}
+#checkoutStep4 #invoiceContainer .billingBlock > div:last-child, #checkoutStep4 #invoiceContainer .shippingInfoBlock > div:last-child{
+	margin:0;
+}
+#checkoutStep4 #invoiceContainer .billingBlock .text, #checkoutStep4 #invoiceContainer .shippingInfoBlock .text {
+	display: inline-block;
+}
+
+.row.details_row {
+	padding: 15px 0;
+	margin: 0px auto;
+	border-bottom: 1px solid #ececec;
+}
+.row.details_row:nth-child(2n) {
+	background: #EAE9E9;
+	background: rgba(234, 233, 233, 0.3);
+	background-color: #EAE9E9;
+	background-color: rgba(234, 233, 233, 0.3);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9)";
+}
+.row.details_row > div{
+}
+@media only screen and (max-width: 767px) {
+	.row.details_row {
+		padding: 10px 0;
+		margin: 15px auto;
+		-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	}
+	.row.details_row:nth-child(2n) {
+		background: #EAE9E9;
+		background: rgba(234, 233, 233, 0.3);
+		background-color: #EAE9E9;
+		background-color: rgba(234, 233, 233, 0.3);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9)";
+	}
+}
+
+.invoiceTable {
+	margin:60px auto 0 auto;
+}
+.orderDetailsBlock {
+	margin-top:25px;
+}
+.OrderGrandTotal {
+	margin-top:10px;
+}
+.OrderGrandTotal *{
+	font-size:24px;
+	font-weight:700;
+}
+
+
+/* Invoice Print */
+.invoice-logo {
+    max-height: 80px;
+	margin: 0 0 15px;
+}
+.invoice-logo img {
+    max-height: 80px;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	display: block;
+}
+.invoiceTable {
+	margin:60px auto 0 auto;
+}
+.orderDetailsBlock {
+	margin-top:25px;
+}
+.OrderGrandTotal {
+	margin-top:10px;
+}
+.OrderGrandTotal *{
+	font-size:24px;
+	font-weight:700;
+}
+
+.invoiceData .header {
+    border-bottom: 1px solid #d2d2d2;
+    margin: 0 0 15px;
+}
+.invoiceData .header h3 {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.customerInfoBlock .left-col {
+    float: left;
+    width: 48%;
+    margin-bottom: 15px;
+}
+.customerInfoBlock .left-col p {
+    margin: 0;
+}
+.customerInfoBlock .right-col {
+    float: right;
+    width: 48%;
+    margin-bottom: 15px;
+}
+.billingBlock .left-col strong, 
+.billingBlock .right-col strong {
+    display: block;
+    margin-bottom: 5px;
+}
+.invoiceData .billingBlock p {
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+.billingBlock .left-col {
+    float: left;
+    width: 48%;
+    margin-bottom: 15px;
+}
+.billingBlock .right-col {
+    float: right;
+    width: 48%;
+    margin-bottom: 15px;
+}
+.invoiceTable {
+    margin-top: 15px;
+}
+.invoiceData .titles2 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    border: none;
+    font-size: 12px;
+    background-color: #eee;
+    padding: 4px;
+}
+.invoice-id {
+	float: left;
+	width: 20%;
+	word-wrap: break-word;
+}
+.invoice-items {
+	float: left;
+	width: 44%;
+}
+.invoice-price {
+	float: left;
+	width: 16%;
+}
+.invoice-qty {
+	float: left;
+	width: 10%;
+}
+.invoice-total {
+	float: left;
+	text-align: right;
+	width: 10%;
+}
+.items-row .invoice-total {
+	padding-right: 8px;
+}
+.items-row > div {
+	padding: 4px;
+}
+.orderDetailsBlock .left-col {
+    float: left;
+    width: 48%;
+    margin-top: 15px;
+}
+.orderDetailsBlock .right-col {
+    text-align: right;
+    line-height: 1.8em;
+    float: right;
+    width: 47%;
+    margin-top: 15px;
+}
+.orderDetailsBlock .right-col .text {
+    float: right;
+    padding-right: 10px;
+    width: 60%;
+}
+.orderDetailsBlock .right-col .label {
+    font-weight: bold;
+    float: right;
+    width: 40%;
+}
+.clear {
+    clear: both;
+}
+
+#invoiceData {
+    background: #FFF;
+    display: none;
+    padding: 10px;
+}
+	#invoiceData .label {
+		border: none !important;
+	}
+
+div#invoiceModal .modal-dialog {
+    width: 802px;
+}
+div#invoiceModal .modal-body {
+	padding: 0;
+}
+#invoiceModal button.close {
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	line-height: 1;
+	font-size: 35px;
+}

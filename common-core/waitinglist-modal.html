@@ -1,0 +1,95 @@
+<aside id="waitinglist-modal" class="createreview createreview-modal modal text-left" tabindex="-1" role="dialog">
+	<div class="modal-vcenter">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content ajax-modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">[notify_header]</h4>
+				</div>
+				<div class="modal-body">
+
+					<p>[notify_message]</p>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="waitinglist-name" class="small-label">Name: <span class="required">*</span></label>
+								<input type="text" class="form-control" id="waitinglist-name" value="[firstname]">
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="waitinglist-email" class="small-label">Email: <span class="required">*</span></label>
+								<input type="text" class="form-control" id="waitinglist-email" value="[email]">
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="waitinglist-phone" class="small-label">Location: <span class="required">*</span></label>
+								<input type="text" class="form-control" id="waitinglist-phone" value="[phone]">
+							</div>
+						</div>
+
+						<div  class="col-md-12">
+							<div class="form-group">
+								<!--START: captcha-->
+								<label class="small-label">Verification: <span class="required">*</span></label>
+								<div class="simple-captcha">
+									<div class="captcha" style="margin-bottom:10px;"><img src="admin/image_pw.asp" width="148"/></div>
+
+									<div class="captcha-text">Type the word above...</div>
+									<input type="text" class="form-control" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="6" />
+								</div>
+								<!--END: captcha-->
+
+								<!--START: recaptcha-->
+								<label class="small-label">Verification: <span class="required">*</span></label>
+								<div class="simple-captcha">
+									<script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+									<script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+								<noscript>
+									<iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+									<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+									<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+								</noscript>
+								</div>
+								<!--END: recaptcha-->
+
+								<!--START: recaptcharobot-->
+								<div id="waitinglist-recaptchaRobot" class="recaptchaRobot" 
+									data-sitekey="[recaptcha_key]"
+									data-size="[recaptcha_robot_size]"
+									data-type="[recaptcha_robot_type]",
+									data-theme="[recaptcha_robot_theme]"></div>
+								<!--END: recaptcharobot-->
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">[frame_modal-close]</button>
+					<button id="waitinglist_button" type="button" class="btn btn-default btn-inverse">[notify_button]</button>
+				</div>
+
+				<div class="loading-overlay">
+					<span class="modal-ajaxload icon-spin2 animate-spin"></span>
+				</div>
+
+				<div class="modal-response">
+					<div class="modal-resout">
+						<div class="modal-resin review-item">
+							<p id="waitinglist-response"></p>
+							<div class="modal-resacts">
+								<button type="button" class="btn btn-default" data-dismiss="modal">[frame_modal-close]</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</aside>

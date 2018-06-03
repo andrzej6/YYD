@@ -1,0 +1,666 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="blog.asp" itemprop="name"><span itemprop="name">[blog_home]</span></a></li>
+		</ol>
+	</div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+		<!--START: blog_index_heading-->
+        <h1 class="page_heading">[blog_home]</h1>
+		<!--END: blog_index_heading-->
+
+		<!--START: post_main_title-->
+        <h1 class="page_heading">[post_title]</h1>
+		<!--END: post_main_title-->
+
+	    <!--START: CATEGORY_HEADER-->
+		<div class="category-header" id="blogHeader">[CONTENT]</div>
+		<!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+
+<section id="blog" class="page-content">
+	<div class="container">
+        <div class="content-area clearfix">
+	        <div class="row">
+	            <div class="col-lg-12">
+	                <div class="row">
+	                    <div class="col-lg-9 col-sm-9">
+						    <!--START: blog_post-->
+						    <div class="blogPost [blog_class]">
+							    <!--START: post_image-->
+						    	<div class="post-image">
+								    <div class="post-image-container">
+							          <a href="[pagename]" title="[subject]">  
+							          	<img id="image" src="[post_image]" alt="[subject]" class="img-responsive" />
+							          </a>
+						            </div>
+						    	</div>			            
+						    	<!--END: post_image-->
+						    	<div class="post-content">
+									<!--START: post_title-->
+					       		    <h2><a href="[pagename]" title="[subject]">[subject]</a></h2>
+									<!--END: post_title-->
+
+						        	<div class="post-info">
+							        	[blog_posted-by-text] [post_author] on [post_date] to
+							            <!--START: POST_CATEGORY-->
+							             <a href="[post_category_link]">[post_category_name]</a>
+							            <!--END: POST_CATEGORY-->
+							        </div>
+							        <div class="post">
+								        [post]
+							        </div>
+						            <!--START: read-more-->
+							        <div class="post-readmore">
+							            <a href="[pagename]" title="[subject]" class="btn btn-default">[blog_read-more]</a>
+							        </div>
+						            <!--END: read-more-->
+						            <!--START: blog_comments-->
+							        <div class="post-comment-num">
+							            <a href="[pagename]#comments" class="btn">([numcomments]) [blog_total-comments]
+							            </a>
+							        </div>
+						            <!--END: blog_comments-->
+						    	</div>
+		                    	<div id="social-bookmarking" class="social-bookmarking" style="display: none;">
+						        	<div class="share-title">SHARE THIS POST</div> 
+						        	[product_social-bookmarking]
+						        </div>
+						        <!--START: prevnextblock-->
+						        <div class="prevnext">
+						          <div class="left">
+						            <!--START: prevLink-->
+						            <a href="[id_previous]">[blog_comment-prev]</a>
+						            <!--END: prevLink-->
+						           </div>
+						          <div class="right">
+						            <!--START: nextLink-->
+						            <a href="[id_next]">[blog_comment-next]</a>
+						            <!--END: nextLink-->
+						           </div>
+						        </div>
+						        <!--END: prevnextblock-->
+						        <!--START: blog_products_title-->
+								<section class="category-related">
+								    <div class="header">
+								        <h3>[blog_tagged_products]</h3>
+								        <div class="clear"></div>
+								    </div>					       
+									<!--START: blog_products_main-->
+	                                	<!--START: blog_products_items-->
+	                                    <div class="product-carousel flexslider">
+	                                        <!--START: CATEGORY_ITEMS-->
+											<div class="product-items product-items-[product-cols-number]">
+												<!--START: ITEM_TEMPLATE_0-->
+												[product_items]
+												<!--END: ITEM_TEMPLATE_0-->
+											</div>
+											<!--END: CATEGORY_ITEMS-->
+	                                    </div>
+									    <!--END: blog_products_items-->
+								    <!--END: blog_products_main-->
+								</section>
+						        <!--END: blog_products_title-->
+						        <section class="blog-comments" id="comments">
+							        <div class="header-comments">
+								        <!--START: blog_comments_list-->
+								        <!-- <h4>[blog_comments-header]<a name="comments" id="comments"></a></h4> -->
+								        <!--START: blog_comments-->
+								        <h4>
+								        [numcomments] [blog_total-comments]
+								        </h4>
+								        <!--END: blog_comments-->	
+							        </div>				     
+							        <!--START: comments-->
+							        <div class="blogComments">
+							           <div class="user-date">
+							            <div class="blog-user"><h4>[name]</h4></div>
+							            <div class="blog-comment-date">
+								            [blog_comments-date] 
+								            <span class="date">[datentime]</span>
+							            </div>
+							           </div>
+									   <!--START: replybutton-->
+							           <div class="reply-btn">
+								            <a id="reply" class="btn btn-default" data-reply="[commentid]" onclick="addReply('[commentid]')">[blog_comments-reply]</a>
+							           </div>
+							           	<!--END: replybutton-->
+							            <article class="blog-comment"><p>[comment]</p></article>
+							        </div>
+						           <!--START: replysection-->
+						            <div id="blogreply[commentid]">
+						                <!--START: commentreply-->
+						                <div class="blogreply">
+								           <div class="user-date">
+						                        <div class="blog-user"><h4>[replyname]</h4></div>
+						                        <div class="blog-comment-date"> 
+							                        [blog_comments-date]  
+							                        <span class="date">[replydatentime]</span>
+						                        </div>
+						                    </div>
+						                    <article class="blog-comment"><p>[replycomment]</p></article>
+						                </div>
+						                <!--END: commentreply-->
+						            </div>
+						            <!--END: replysection-->
+							        <!--END: comments-->
+							        <!--END: blog_comments_list-->
+							        <!--START: blog_add_comments-->
+							        <div class="blogAddComments">
+							            <form name="frmForm" id="frmForm" action="blog.asp?action=comment&articleid=[id]" method="post">
+							                <input type="hidden" name="info" value="[idenc]" />
+							                <input type="hidden" name="email" value="" />
+							                <h4 class="page_heading">[blog_comments-addcomment]</h4>
+							                <div class="blogField">
+							                    <label for="blog_comment_comment">[blog_comments-body] <span class="required">*</span></label>
+							                    <textarea cols="50" rows="8" name="blog_comment_comment" id="blog_comment_comment" class="txtAreaStyle"></textarea>
+							                </div>
+							                <div class="fields-content clearfix">
+							                    <div class="fields left">
+							                        <div class="blogField">
+							                            <label for="blog_comment_name">[blog_comments-name] <span class="required">*</span></label>
+							                            <input name="blog_comment_name" id="blog_comment_name" type="text" value="[name]" size="50" maxlength="255"  />
+							                        </div>
+							                    </div>
+							                    <div class="fields right">
+							                        <div class="blogField">
+							                            <label for="blog_comment_email">[blog_comments-email] <span class="required">*</span></label>
+							                            <input id="email" name="blog_comment_email" type="email" value="[email]" size="50" maxlength="255"  />
+							                        </div>  
+							                    </div>
+								                <div class="captcha-field">
+								                    <!--START: captcha-->
+													<div id="captchaField">
+														<div id="simpleCaptcha" class="left-fields">
+															<label for="ramdomWord">Verification Code</label>
+															<span class="tool-tip" data-tooltip="This verification code is for testing whether you are a human visitor and to prevent automated spam submissions.">?</span>
+															<div class="captcha">
+																<img src="admin/image_pw.asp" width="148" alt="" /> 
+																</div>
+														</div>
+														<div class="ramdomWord-field right-fields"> 
+															<label for="ramdomWord">Type the code shown <span class="required">*</span></label>
+															<input type="text" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30"  />
+														</div>
+													</div>
+								                    <!--END: captcha-->
+
+								                    <!--START: recaptcha-->
+								                    <div class="blogField" id="divReCaptcha">
+								                        <div class="recaptcha">
+								                            <script type="text/javascript">
+								                                var RecaptchaOptions = {
+								                                    theme: '[recaptcha_theme]'
+								                                };
+								                            </script>
+								                            <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+								                            <noscript>
+								                                <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+								                                <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+								                                <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+								                            </noscript>
+								                        </div>
+								                    </div>
+								                    <!--END: recaptcha-->
+
+                                                    <!--START: recaptcharobot-->
+													<div id="blog-recaptcharobot" class="blogField">
+                                                         <!--START: verificationlabel--><label for="recaptcha_challenge_field">Verification <span class="required">*</span></label><!--END: verificationlabel-->
+														<div id="divRobocop">
+															<div id="blog-g-recaptcha" class="g-recaptcha" 
+															data-sitekey="[recaptcha_key]"
+															data-size="[recaptcha_robot_size]"
+															data-type="[recaptcha_robot_type]"
+															data-theme="[recaptcha_robot_theme]"
+															data-callback="onSubmit"></div>
+														</div>
+                                                    </div>
+
+													<script type="text/javascript">
+														var CaptchaCallback = function () {
+															grecaptcha.render('blog-g-recaptcha');
+														};
+													</script>
+                                                    <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
+                                                    <!--END: recaptcharobot-->
+								                </div>					                    
+							                </div>
+							                <div class="action-blog" id="submit-com">
+							                    <input type="button" value="[blog_comments-submit]" class="btn btn-primary" onclick="validateComment()" />
+							                </div>
+							            </form>
+							        </div>
+							        <!--END: blog_add_comments-->
+						        </section>
+							    <!--START: blog_disquscomments-->
+						        <div id="disqus_thread"></div>
+						        <script type="text/javascript">
+						            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+						            var disqus_shortname = '[blog_disqusshortname]'; // required: replace example with your forum shortname
+						            var disqus_identifier = '[disqus_url]';
+						            var disqus_url = '[store_url]/[disqus_url]';
+
+						            /* * * DON'T EDIT BELOW THIS LINE * * */
+						            (function() {
+						                var dsq = document.createElement('script');
+						                dsq.type = 'text/javascript';
+						                dsq.async = true;
+						                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						            })();
+						        </script>
+						        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+						        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+							    <!--END: blog_disquscomments-->
+						    </div>
+						    <!--START: blog_add_comments_reply-->
+							<div id="divAddReply" class=" modal fade" tabindex="-1" role="dialog">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content blogAddComments">
+							       		<form name="frmCommentReply" id="frmCommentReply">
+											<input type="hidden" name="cAction" id="cAction" value="" />
+											<input type="hidden" name="commentid" id="commentid" value="" />
+											<input type="hidden" name="email" value="" />
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+									            <h4 class="modal-title" id="myModalLabel">[blog_comments-addreply]</h4>
+											</div>
+
+											<div class="modal-body clearfix">
+									            <div class="blogField">
+									                <label for="blog_comment_comment">[blog_comments-body] <span class="required">*</span></label>
+									                <textarea rows="8" name="blog_comment_reply_comment" id="blog_comment_reply_comment" class="txtAreaStyle"></textarea>
+									            </div>
+									            <div class="fields-content clearfix">
+									                <div class="fields left">
+									                    <div class="blogField">
+									                        <label for="blog_comment_reply_name">[blog_comments-name] <span class="required">*</span></label>
+									                        <input name="blog_comment_reply_name" id="blog_comment_reply_name" type="text" value="[name]" maxlength="255"  />
+									                    </div>
+									                </div>
+									                <div class="fields right">
+									                    <div class="blogField">
+									                        <label class="input" for="blog_comment_reply_email">[blog_comments-email] <span class="required">*</span></label>
+									                        <input name="blog_comment_reply_email" id="blog_comment_reply_email" type="text" value="[email]" maxlength="255"  />
+									                    </div>  
+									                </div>
+									                <div id="divReCaptchaReplyField" class="captcha-field clearfix">
+									                    <!--START: captchareply-->
+									                    <div class="left-fields pull-right">
+										                    <label for="ramdomWord">Verification Code</label>
+										                    <span class="tool-tip" data-tooltip="This verification code is for testing whether you are a human visitor and to prevent automated spam submissions.">?</span>
+										                    <div class="captcha">
+									                            <img src="/assets/images/spacer.gif" id="imgBlogReplyCaptcha" width="148" alt="" />
+									                            </div>
+									                    </div>
+									                    <div class="right-fields"> 
+										                    <label for="ramdomWord">Type the code shown <span class="required">*</span></label>
+									                        <input type="text" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30"  />
+									                    </div>
+									                    <!--END: captchareply-->
+
+									                    <!--START: recaptchareply-->
+														<div class="blogField" id="divReCaptchaReply"></div>
+														<!--END: recaptchareply-->
+									                </div>					                    
+									            </div>
+
+											</div>
+
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary" id="submitReply" data-submit="[id]" onclick="validateReply()">[blog_comments-submit]</button>
+											</div>
+
+										</form>
+									</div><!-- /.modal-content -->
+								</div><!-- /.modal-dialog -->
+							</div>
+						    <!--END: blog_add_comments_reply-->
+						    <!--END: blog_post-->
+	                    </div>
+	                    <div class="col-sm-3">
+
+							<!--START: blog_topnav-->
+							<div class="sidebar-widget">
+								<div class="blog_topnav">[blog_topnav]</div>
+							</div>
+							<!--END: blog_topnav-->
+
+							<!--START: categories_block-->
+							<div class="sidebar-widget">
+								<h4 class="widget-header">[blog_categories]</h4>
+								<div class="widget-body">
+									<ul class="sidebarUL">
+										<!--START: categories-->
+										<li><a href="[categorylink]">[categorylabel]</a></li>
+										<!--END: categories-->  
+									</ul>
+								</div>
+							</div>
+							<!--END: categories_block-->
+
+
+							<!--START: posts_block-->
+							<div class="sidebar-widget">
+								<h4 class="widget-header">[blog_recentposts]</h4>
+								<div class="widget-body">
+									<ul class="sidebarUL">
+										<!--START: posts-->
+						                <li><a href="[postlink]">[postlabel]</a></li>
+						                <!--END: posts-->
+									</ul>
+								</div>
+							</div>
+							<!--END: posts_block-->
+
+							<!--START: archives_block-->
+							<div class="sidebar-widget">
+								<h4 class="widget-header">[blog_archives]</h4>
+								<div class="widget-body">
+									<ul class="sidebarUL">
+										<!--START: archives-->
+						                <li><a href="[archivelink]">[archivelabel]</a></li>
+						                <!--END: archives-->
+									</ul>
+								</div>
+							</div>
+							<!--END: archives_block-->
+
+							<!--START: blog_bottomnav-->
+							<div class="sidebar-widget">
+								<div class="blog_topnav">[blog_bottomnav]</div>
+							</div>
+							<!--END: blog_bottomnav-->
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+			<div class="clear"></div>		
+			<!--START: CATEGORY_FOOTER-->
+			<div class="category-footer" id="blogFooter">[CONTENT]</div>
+			<!--END: CATEGORY_FOOTER-->
+        </div>
+	</div>
+</section>
+
+<input type="hidden" id="submitFormType" value="0" />
+
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+
+// Functions to show and hide content
+jQuery(function() {
+    if (jQuery('.addthis_toolbox').length > 0) {
+    	jQuery('#social-bookmarking').show();
+    } else {
+        jQuery('#blog').addClass('post-page');
+    }
+
+    jQuery('.blogarchive').each(function() {
+        if (jQuery('.post-image', this).html() != undefined) {
+            jQuery(this).addClass('normal');
+        }
+    });
+
+    jQuery("#divAddReply").on('hidden.bs.modal', function () {
+    	jQuery("#divRobocop").appendTo(jQuery('#blog-recaptcharobot'));
+    });
+});
+
+function onSubmit(token) {
+	if(jQuery('#blog-g-recaptcha').data('size') == 'invisible') {
+		if(jQuery('#submitFormType').val() == "0") {
+			jQuery('#frmForm').submit();
+		}
+		else if(jQuery('#submitFormType').val() == "1"){
+			var dataSubmit = jQuery('#submitReply').data("submit");
+			submitReply(dataSubmit);
+		}
+	}
+}
+
+//  Add Relpy
+
+var recaptchaContent = "";
+
+function validateComment() {
+
+	jQuery('#submitFormType').val(0);
+
+	var valMsg = '';
+
+	if (jQuery("#blog_comment_name").val() == '')
+		valMsg += '\nMissing Comment Name.';
+
+	if (jQuery("#email").val() == '')
+		valMsg += '\nMissing Comment Email.';
+
+	if (!validateEmail(jQuery("#email").val()))
+		valMsg += '\nInvalid Email Format.';
+
+	if (jQuery("#blog_comment_comment").val() == '')
+		valMsg += '\nMissing Comment Text.';
+
+	if (valMsg != '') {
+		alert('Please fix the following errors before submitting reply\n' + valMsg);
+		return false;
+	} else {
+		if(jQuery('#blog-recaptcharobot').length > 0) {
+			if(jQuery('#blog-g-recaptcha').data('size') == 'invisible')  
+				grecaptcha.execute();
+			else {
+				jQuery('#frmForm').submit();
+			}
+		}
+		else {
+			jQuery('#frmForm').submit();
+		}
+		return true;
+	}
+}
+
+function addReply(id) {
+
+	if (jQuery("#divRobocop")) {
+		jQuery("#divRobocop").appendTo(jQuery("#divReCaptchaReplyField"));
+	}
+
+	if (jQuery('#simpleCaptcha .captcha img').length > 0) {
+		var realCaptcha = jQuery('#simpleCaptcha .captcha img').clone();
+		jQuery('#frmCommentReply .captcha').html(realCaptcha);
+	}
+
+    jQuery("#commentid").val(id);
+    jQuery("#divAddReply").modal('show');
+}
+
+// Validate Reply Form
+
+function validateReply() {
+
+	jQuery('#submitFormType').val(1);
+
+    var valMsg = '';
+
+    if (jQuery("#blog_comment_reply_name").val() == '')
+        valMsg += '\nMissing Reply Name.';
+
+    if (jQuery("#blog_comment_reply_email").val() == '')
+        valMsg += '\nMissing Reply Email.';
+
+    if (!validateEmail(jQuery("#blog_comment_reply_email").val()))
+        valMsg += '\nInvalid Email Format.';
+
+    if (jQuery("#blog_comment_reply_comment").val() == '')
+    	valMsg += '\nMissing Reply Text.';
+
+    if (valMsg != '') {
+        alert('Please fix the following errors before submitting reply\n' + valMsg);
+        return (false);
+    } else {
+
+		if(jQuery('#blog-recaptcharobot').length > 0) {
+			if(jQuery('#blog-g-recaptcha').data('size') == 'invisible')  
+				grecaptcha.execute();
+			else {
+				var dataSubmit = jQuery('#submitReply').data("submit");
+				submitReply(dataSubmit);
+			}
+		}
+		else {
+			var dataSubmit = jQuery('#submitReply').data("submit");
+			submitReply(dataSubmit);
+		}
+        return (true);
+	}
+}
+// Validate Email Form
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+// Submit Reply 
+
+function submitReply(id) {
+    var result;
+    bolSubmitting = 1;
+    result = ajaxPostJson('savereply', 'frmCommentReply');
+}
+
+//Close reply modal
+function closeReplyModal() {
+	jQuery('#blog_comment_reply_comment').val('');
+	jQuery('#divAddReply').modal('hide');
+}
+
+// Ajax Callback
+function ajaxPostJson(caction, frmid) {
+
+    var bolResult;
+    var dataq;
+    var isAsync = true;
+    var d = new Date();
+    var n = d.getMilliseconds();
+    var reloadPage = false;
+    var errorMsg = "";
+
+    jQuery("#" + frmid + ' #cAction').val(caction);
+    dataq = jQuery('#' + frmid).serialize() + '&ajaxsubmit=1';
+    bolResult = true;
+
+    //if (caction == 'savereply')
+    isAsync = false;
+
+    jQuery.ajax({
+        url: 'blog.asp',
+        dataType: 'json',
+        type: 'post',
+        data: dataq,
+        cache: false,
+        async: isAsync,
+       // beforeSend: funcValidate,
+        statusCode: {
+            301: function() {
+                alert('301 - Reload the page.');
+            },
+            302: function() {
+                alert('302 - Reload the page.');
+            },
+            304: function() {
+                alert('304 - No new data returned.');
+            },
+            400: function() {
+                alert('400 - Invalid Data Request.');
+            },
+            401: function() {
+                alert('401 - Unauthorized request.');
+            },
+            403: function() {
+                alert('403 - Request forbidden.');
+            },
+            404: function() {
+                alert('404 - File Not Found.');
+            },
+            406: function() {
+                alert('406 - Invalid Data format submitted.');
+            },
+            429: function() {
+                alert('429 - Too many requests being processed at this time.');
+            },
+            500: function() {
+                alert('500 - A problem was detected.');
+            },
+            502: function() {
+                alert('502 - Server is down.');
+            },
+            503: function() {
+                alert('503 - Server unavailable.');
+            },
+            504: function() {
+                alert('504 - Gateway timeout.');
+            }
+        },
+        success: function(strResult) {
+            try {
+                switch (caction) {
+                    case 'savereply':
+                    	if (strResult.errorMsg != '') {
+                    		console.log(strResult);
+                            if (strResult.errorUrl != '')
+                                window.location = strResult.errorUrl;
+                            else
+                                alert(strResult.errorMsg);
+                            if (strResult.errorMsg != "Incorrect Verification Word")
+                                closeReplyModal();
+                        } else {
+                            if (strResult.commentReplies != '') {
+                                alert("Your reply has been auto-approved and will display immediately.");
+                                closeReplyModal();
+                                jQuery("#blogreply" + jQuery("#commentid").val()).html(strResult.commentReplies);
+                            } else {
+                                alert("Your reply to the comment will appear after it is approved by the Admin.");
+                                closeReplyModal();
+                            }
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            } catch (e) {}
+        },
+
+        error: function(jqXHR, textStatus) {
+            document.body.style.cursor = '';
+            if (jqXHR.statusCode > 0) {
+                alert("Error processing request " + jqXHR.statusCode + " - " + jqXHR);
+                alert(jqXHR.responseText);
+                document.write(jqXHR.responseText);
+                bolResult = false;
+            }
+        }
+    });
+    return (false);
+}
+</script>
+
+
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/blog.css" type="text/css" media="screen" />
+<!--END: template_styles-->

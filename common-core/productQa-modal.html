@@ -1,0 +1,120 @@
+<aside id="productQa-modal" class="productQa productQa-modal modal text-left" tabindex="-1" role="dialog">
+	<div class="modal-vcenter">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content ajax-modal-content">
+
+				<input type="hidden" id="productQa_action" value="saveqa" />
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">[productqa_titlenew]</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="productqa_name" class="small-label">[productqa_name]: <span class="required">*</span></label>
+								<input type="text" value="[firstname]" id="productqa_name" maxlength="50" class="form-control" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="productqa_email" class="small-label">[CustomerInfo_email]: <span class="required">*</span></label>
+								<!--START: q_user_emailBlock-->
+								<input type="text" value="[email]" id="productqa_email" maxlength="50" class="form-control" />
+								<em><small>([productqa_email-disclaimer])</small></em>
+								<!--END: q_user_emailBlock-->
+							</div>
+						</div>
+
+						<!--START: answerBlock-->
+						<div class="answer-item col-md-12">
+							<p class="answerBlock-q"><strong>[productqa_q]:</strong> <span id="answer-question"></span></p>
+							<div class="form-group">
+								<label for="productqa_answer" class="small-label">[productqa_enter-answer]: <span class="required">*</span></label>
+								<textarea id="productqa_answer" rows="3" class="form-control"></textarea>
+							</div>
+						</div>
+						<input type="hidden" id="answerBlock_q_id" value="" />
+						<!--END: answerBlock-->
+
+						<!--START: questionBlock-->
+						<div class="question-item col-md-12">
+							<div class="form-group">
+								<label for="productqa_question" class="small-label">[productqa_enter-question]: <span class="required">*</span></label>
+								<textarea id="productqa_question" rows="3" class="form-control"></textarea>
+							</div>
+						</div>
+						<!--END: questionBlock-->
+
+						<div  class="col-md-6">
+							<div class="form-group">
+								<!--START: captcha-->
+								<label class="small-label">Verification: <span class="required">*</span></label>
+								<div class="simple-captcha">
+									<div class="captcha" style="margin-bottom:10px;"><img src="admin/image_pw.asp" width="148"/></div>
+
+									<div class="captcha-text">Type the word above...</div>
+									<input type="text" class="form-control" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="6" />
+								</div>
+								<!--END: captcha-->
+
+								<!--START: recaptcha-->
+								<label class="small-label">Verification: <span class="required">*</span></label>
+								<div class="simple-captcha">
+									<script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+									<script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+								<noscript>
+									<iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+									<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+									<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+								</noscript>
+								</div>
+								<!--END: recaptcha-->
+
+								<!--START: recaptcharobot-->
+								<div id="productQa-recaptchaRobot" class="recaptchaRobot" 
+									data-sitekey="[recaptcha_key]"
+									data-size="[recaptcha_robot_size]"
+									data-type="[recaptcha_robot_type]",
+									data-theme="[recaptcha_robot_theme]"></div>
+								<!--END: recaptcharobot-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">[frame_modal-close]</button>
+					<button id="productQa_button" type="button" class="btn btn-default btn-inverse">
+						<span class="question-item">[productqa_titlenew]</span>
+						<span class="answer-item">[productqa_titlenew-answer]</span>
+					</button>
+				</div>
+
+				<div class="loading-overlay">
+					<span class="modal-ajaxload icon-spin2 animate-spin"></span>
+				</div>
+
+				<div class="modal-response">
+					<div class="modal-resout">
+						<div class="modal-resin question-item">
+							<p>[productqa_thankyou-question]</p>
+							<div class="modal-resacts">
+								<button type="button" class="btn btn-default" data-dismiss="modal">[frame_modal-close]</button>
+								<button type="button" class="btn btn-default modal-resclose">Ask another question?</button>
+							</div>
+						</div>
+
+						<div class="modal-resin answer-item">
+							<p>[productqa_thankyou-answer]</p>
+							<div class="modal-resacts">
+								<button type="button" class="btn btn-default" data-dismiss="modal">[frame_modal-close]</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</aside>

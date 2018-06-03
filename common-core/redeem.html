@@ -1,0 +1,50 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+  <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="">[rewards_details-detail]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+        [rewards_details-detail]
+        </h1>
+        <!--START: myAccount-->
+        <div class="button">
+            <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+        </div>
+        <!--END: myAccount-->
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="redeemHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+<section id="redeem" class="page-content">
+    <div class="container">
+      <div class="content-area">
+        <h2 class="page_heading">[rewards_redeem-redeemItem]</h2>
+        <p><strong>You are about to redeem:</strong></p>
+        <p>[name]</p>
+        <p><strong>for [points] points.</strong></p>
+        <p>Your current point balance is [user_points]</p>
+        <!--START: redeem_true-->
+        <p>Your balance  after this purchase will be [user_pointsafter].</p>
+        <div class="action">
+          <input type=button value="Click here to Redeem" onclick="location.href = 'redeem.asp?action=redeemitem&item_id=[catalogid]';" class="add-to-cart btn btn-default"  />
+        </div>
+        <!--END: redeem_true--> 
+        <!--START: redeem_false-->
+        <div class="redeem-false error">Currently you do not  have enough points to redeem this item.</div>
+        <!--END: redeem_false-->
+        <!--START: CATEGORY_FOOTER-->
+        <div class="category-footer" id="redeemFooter">[CONTENT]</div>
+        <!--END: CATEGORY_FOOTER--> 
+      </div>
+    </div>
+</section>

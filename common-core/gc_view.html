@@ -1,0 +1,199 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="gc_view.asp">[giftcertificate_details-detail]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section id="gcView" class="page-content">
+    <section class="page_header">
+	    <div class="container">
+            <h1 class="page_heading">
+              [giftcertificate_details-detail]
+            </h1>
+            <!--START: myAccount-->
+            <div class="button">
+                <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+            </div>
+            <!--END: myAccount-->
+		    <!--START: CATEGORY_HEADER-->
+			<div class="category-header" id="gc_viewHeader">[CONTENT]</div>
+		    <!--END: CATEGORY_HEADER-->
+    	</div>
+    </section>
+
+    <div class="container">
+		  <!--START: gc-->
+		  <div class="gcViewBlock">
+	            <div class="hidden-xs titles-gc">
+	                <div class="col-lg-2 col-sm-2">
+	                    <label for="odate" class="gc-date">
+	                    	[giftcertificate_details-header-date]
+	                    </label>
+	                </div>
+	                <div class="col-lg-2 col-sm-2">
+	                    <label for="onum" class="gc-code">
+	                    	[giftcertificate_details-header-code]
+	                    </label>
+	                </div>
+	                <div class="col-lg-2 col-sm-2">
+	                    <label for="oamount" class="gc-amount">
+	                    	[giftcertificate_details-header-amount]
+	                    </label>
+	                </div>
+	                <div class="col-lg-2 col-sm-2">
+	                    <label for="ostatus" class="gc-balance">
+	                    	[giftcertificate_details-header-balance]
+	                    </label>
+	                </div>
+	                <div class="col-lg-2 col-sm-2">
+	                    <label for="odetails" class="gc-to">
+	                    	[giftcertificate_details-header-to]
+	                    </label>
+	                </div>
+	                <div class="col-lg-2 col-sm-2">
+	                    <label for="odetails" class="gc-message">
+	                    	[giftcertificate_details-header-message]
+	                    </label>
+	                </div>
+	            </div>
+
+                <!--START: gcNoDetails-->
+				<div class="clearfix">
+                   <span class="no-details">
+                      [giftcertificate_details-nodetails]
+                    </span>
+				</div>
+                <!--END: gcNoDetails-->
+
+				<!--START: gcDetails-->
+				<div class="gcDetails row">
+				    <div class="col-lg-2 col-sm-2 gc-col">
+				    	<div class="row">
+				            <label class="visible-xs col-xs-4">
+		                    	[giftcertificate_details-header-date]
+				            </label>
+				            <div class="col-sm-12 col-xs-8 gc-code">
+						        [certificate_date]
+								<br />
+								<!--START: certificate_expiration_date_title-->
+								<strong>[giftcertificate_details-header-expiration-date]: </strong>
+								<!--END: certificate_expiration_date_title-->
+								<!--START: certificate_expiration_date-->
+								[cert_exp]
+								<!--END: certificate_expiration_date-->
+						     </div>
+				        </div>
+				    </div>
+				    <div class="col-lg-2 col-sm-2 gc-col">
+				    	<div class="row">
+				            <label class="visible-xs col-xs-4">
+		                    	[giftcertificate_details-header-code]
+				            </label>
+				            <div class="col-sm-12 col-xs-8 gc-code">
+						        [certificate_name]
+						      </div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				    <div class="col-lg-2 col-sm-2 gc-col">
+				    	<div class="row">
+				            <label class="visible-xs col-xs-4">
+		                    	[giftcertificate_details-header-amount]
+				            </label>
+				            <div class="col-xs-8">
+								[certificate_amount]
+				            </div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				    <div class="col-lg-2 col-sm-2 gc-col">
+				    	<div class="row">
+				            <label class="visible-xs col-xs-4">
+		                    	[giftcertificate_details-header-balance]
+				            </label>
+				            <div class="col-sm-12 col-xs-8 gc-amount">
+				 				[certificate_balance]
+				 			</div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				    <div class="col-lg-2 col-sm-2 gc-col">
+				    	<div class="row">
+				            <label class="visible-xs col-xs-4">
+		                    	[giftcertificate_details-header-to]
+				            </label>
+				            <div class="col-sm-12 col-xs-8 gc-balance">
+					    		 <div>[gc_toname]</div>
+		                		<div class="gc_toemail" title="[gc_toemail]">[gc_toemail]</div>
+					    	</div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				    <div class="col-lg-2 col-sm-2 gc-col">
+				    	<div class="row">
+				            <label class="visible-xs col-xs-4">
+		                    	[giftcertificate_details-header-message]
+				            </label>
+				            <div class="col-sm-12 col-xs-8 gc-message">
+						         [gc_tomessage]
+					    	</div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				</div>
+				<!--END: gcDetails-->
+				 <!--START: gcTotal-->
+				<div class="gc-total hidden-xs">
+				    <div class="col-lg-3 col-sm-3">
+				        <label for="odate" class="gc-date">
+				        	[account_gift-certificate-total-purchased]
+				        </label>
+				    </div>
+				    <div class="col-lg-3 col-sm-3">
+				        <label for="onum" class="gc-code">
+				        	[account_gift-certificate-total-amount]
+				        </label>
+				    </div>
+				</div>
+				<div class="gcTotal-values">
+				    <div class="col-lg-3 col-sm-3">
+				    	<div class="row">
+				            <label class="visible-xs gcTotal-default col-xs-4" >
+				              [account_gift-certificate-total-purchased]
+				            </label>
+				            <div class="col-sm-12 col-xs-8 gc-code">
+						      [total_gc]
+						     </div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				    <div class="col-lg-3 col-sm-3">
+				    	<div class="row">
+				            <label class="visible-xs gcTotal-default col-xs-4">
+				               [account_gift-certificate-total-amount]
+				            </label>
+				            <div class="col-sm-12 col-xs-8 gc-code">
+						       [total_gcamount]
+						     </div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				</div>    
+				<!--END: gcTotal--> 
+		  </div>
+		  <!--END: gc-->
+		  <div class="clear"></div>
+		  <!--START: CATEGORY_FOOTER-->
+		<div class="category-footer" id="gc_viewFooter">[CONTENT]</div>
+		  <!--END: CATEGORY_FOOTER--> 
+    </div>
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/gc_view.css" type="text/css" media="screen" />
+<!--END: template_styles-->

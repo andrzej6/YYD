@@ -1,0 +1,142 @@
+<section id="searchGroup">
+    <!--START: BODY_HEADER-->
+    <div class="breadcrumbs">[CATEGORY_FULLLINE]</div>
+    <!--END: BODY_HEADER-->
+    <h1 class="page_headers">[Search_header]</h1>
+    <!--START: MANUFACTURER_HEADER-->
+    <!--START: logo-->
+    <div class="manf-logo"><img src="[logo]" alt="[Search_header]" /></div>
+    <!--END: logo-->
+    <!--START: header-->
+    <div class="manf-header">[header]</div>
+    <!--END: header-->
+    <!--END: MANUFACTURER_HEADER-->
+    <!--START: ITEMS-->
+    <div id="itemsBlock">
+        <div class="row row-margin-bottom products-header">
+            <div class="col-xs-12 col-lg-12">
+                <div class="product-layout-toggle">
+                    <div class="product-layout-icon product-layout-grid active" data-view="grid"><i class="fontawesome-th-large"></i></div>
+                    <div class="product-layout-icon product-layout-list" data-view="list"><i class="fontawesome-th-list"></i></div>
+                    <div class="clearfix"></div>
+                </div>
+                <span class="total-items-number hidden-md-down">Total Items: [productnumber]</span>
+                <div class="sort-by">
+                    <!--START: sortbylist-->
+                    <form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
+                        <span class="hidden-md-down">Sort by:</span>
+                        <select name="sortby" onchange="frmsortby.submit();">
+                            [sortbylist]
+                        </select>
+                    </form>
+                    <!--END: sortbylist-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!--START: CATEGORY_ITEMS-->
+        <!--START: ITEM_TEMPLATE-->
+        <div class="product-wrapper item-template-0">
+
+            <div class="product-image">
+                <a href="product.asp?itemid=[catalogid]">
+                    <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                </a>
+
+                <!--
+                <div class="product-background-overlay"></div>
+
+                <div class="btn-container">
+                    <div class="btn-wrapper" style="display: none;">
+                        <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                            <i class="fontawesome-search"></i>
+                            <span class="tooltip">Quickview</span>
+                        </a>
+                    </div>
+                    <div class="btn-wrapper">
+                        <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                            <i class="fontawesome-link"></i>
+                            <span class="tooltip">Details</span>
+                        </a>
+                    </div>
+                    <div class="btn-wrapper">
+                        <a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+                            <i class="diamondicon-cart"></i>
+                            <span class="tooltip">[product_addtocart]</span>
+                        </a>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <div class="product-details">
+                <!--START: product_review-->
+                <!--START: product_review_average-->
+                <span class="product-review-icons-container" data-rating-value="[review_average]">
+                    <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                    <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                    <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                    <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                    <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                    <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                    <span href="#" class="product-review-count">([review_count])</span>
+                </span>
+                <!--END: product_review_average-->
+                <!--END: product_review-->
+
+                <div class="product-title">
+                    <a href="product.asp?itemid=[catalogid]">[name]</a>
+                </div>
+
+                <div class="product-price">
+                    <!--START: ITEMPRICE-->
+                    <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                    <!--END: ITEMPRICE-->
+                    <!--START: SALEPRICE-->
+                    <del class="price2">[ITEMPRICE]&nbsp;</del>
+                    <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                    <span class="badge badge-sale">
+                        <span class="badge-text">Sale</span>
+                    </span>
+                    <!--END: SALEPRICE-->
+                </div>
+
+                <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+                <div class="product-description">
+                    [description]
+                </div>
+            </div>
+
+        </div>
+        <!--END: ITEM_TEMPLATE-->
+        <!--END: CATEGORY_ITEMS-->
+        <ul class="paging">
+            <!--START: PAGING-->
+            <span class="hidden-md-down">[category_moreresults]</span>
+            <!--START: PREV-->
+            <li class="paginate-previous"><a class="btn btn-primary" href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=[prev]">[category_previouspage]</a></li>
+            <!--END: PREV-->
+            <!--START: PAGES-->
+            <!--START: FIRST_PAGE-->
+            <li class="paginate-page active"><a class="btn" href="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]&page=PAGE">PAGE</a>...</li>
+            <!--END: FIRST_PAGE-->
+            <!--START: PAGES_SELECTED-->
+            <li class="paginate-page active"><span class="btn">PAGE</span></li>
+            <!--END: PAGES_SELECTED-->
+            <!--START: PAGES_NOTSELECTED-->
+            <li class="paginate-page"><a class="btn" href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=PAGE">PAGE</a></li>
+            <!--END: PAGES_NOTSELECTED-->
+            <!--START: LAST_PAGE-->
+            <li class="paginate-page active">...<a class="btn" href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=PAGE"><strong>PAGE</strong></a></li>
+            <!--END: LAST_PAGE-->
+            <!--END: PAGES-->
+            <!--START: NEXT-->
+            <li class="paginate-next"><a class="btn btn-primary" href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=[next]">[category_nextpage]</a></li>
+            <!--END: NEXT-->
+            <!--END: PAGING-->
+        </ul>
+    </div>
+    <!--END: ITEMS-->
+</section>

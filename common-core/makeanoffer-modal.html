@@ -1,0 +1,142 @@
+<aside id="makeanoffer-modal" class="makeanoffer makeanoffer-modal modal text-left" tabindex="-1" role="dialog">
+	<div class="modal-vcenter">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content ajax-modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">[makeanoffer_new-offer-title]</h4>
+					<h3>[name]</h3>
+				</div>
+
+				<!--START: newOfferForm-->
+				<div class="modal-body product-item">					
+					<div class="row makeanoffer-product-details">
+						<div class="col-sm-3">
+							<div class="product-img"><img src="thumbnail.asp?file=[image1]&maxx=0&maxy=80" alt="[name]" class="img-responsive" /></div>
+						</div>
+						<div class="col-sm-9">
+							<div class="product-info">
+								<!--START: pricing-->
+								<div class="price">
+									<!--START: ITEMPRICE-->
+									<strong>[product_yourprice]</strong> 
+									<span class="price">[price]</span>
+									<!--END: ITEMPRICE--> 
+									<!--START: SALEPRICE--> 
+									<strong class="price">[product_onsale]: </strong>
+									<del class="original-price">[price]</del>
+									<span class="price sale-price">[saleprice]</span>
+									<!--END: SALEPRICE-->
+								</div> 
+								<!--END: pricing--> 
+								<!--START: newOfferAmount-->
+								<div class="form-group offerField">
+									<label for="makeanoffer-amount">[makeanoffer_your-offer]: <span class="required">*</span></label>
+									<label>
+										<input type="text" value="" name="offer_amount" id="makeanoffer-amount" class="offer_amount form-control" />
+									</label>
+								</div>
+								<!--START: newOfferAmount--> 
+							</div>
+						</div>
+					</div>		
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="makeanoffer-name">Name: <span class="required">*</span></label>
+								<input type="text" class="form-control" id="makeanoffer-name" value="[firstname]">
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="makeanoffer-email">Email: <span class="required">*</span></label>
+								<input type="text" class="form-control" id="makeanoffer-email" value="[email]">
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="makeanoffer-comment">[makeanoffer_comments]</label>
+								<textarea id="makeanoffer-comment" rows="3" class="form-control"></textarea>
+							</div>
+						</div>
+
+						<div  class="col-md-6">
+							<div class="form-group">
+
+								<!--START: captcha-->
+								<label class="small-label">Verification: <span class="required">*</span></label>
+								<div class="simple-captcha">
+									<div class="captcha" style="margin-bottom:10px;"><img src="admin/image_pw.asp" width="148"/></div>
+
+									<div class="captcha-text">Type the word above...</div>
+									<input type="text" class="form-control" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="6" />
+								</div>
+								<!--END: captcha-->
+
+								<!--START: recaptcha-->
+								<label class="small-label">Verification: <span class="required">*</span></label>
+								<div class="simple-captcha">
+									<script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+									<script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+								<noscript>
+									<iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+									<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+									<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+								</noscript>
+								</div>
+								<!--END: recaptcha-->
+
+								<!--START: recaptcharobot-->
+								<div id="makeanoffer-recaptchaRobot" class="recaptchaRobot" 
+									data-sitekey="[recaptcha_key]"
+									data-size="[recaptcha_robot_size]"
+									data-type="[recaptcha_robot_type]",
+									data-theme="[recaptcha_robot_theme]"></div>
+								<!--END: recaptcharobot-->
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="makeanoffer-submit" type="button" class="btn btn-default btn-inverse">[notify_button]</button>
+				</div>
+
+				<div class="loading-overlay">
+					<span class="modal-ajaxload icon-spin2 animate-spin"></span>
+				</div>
+
+				<div class="modal-response">
+					<div class="modal-resout">
+						<div class="modal-resin review-item">
+							<p id="makeanoffer-response"></p>
+							<div class="modal-resacts">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--END: newOfferForm-->
+
+				<!--START: makeanoffer_loginrequired-->
+				<div class="modal-response show">
+					<div class="modal-resout">
+						<div class="modal-resin review-item">
+							<p id="waitinglist-response">You need to login to make an offer.</p>
+							<div class="modal-resacts">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<a href="/myaccount.asp" class="btn  btn-default btn-inverse">Login</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--END: makeanoffer_loginrequired-->
+
+			</div>
+		</div>
+	</div>
+</aside>

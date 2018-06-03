@@ -1,0 +1,20 @@
+  .thankyou-content {
+    display: inline-block;
+    width: 100%;
+  }
+  .thankyou-content ul{
+      margin: 25px 0;
+      padding: 0px;
+      list-style: none;
+  }
+  .thankyou-content ul li {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+  }
+  .thankyou-content ul li p{
+    height:21px;
+  }
+  .thankyou-content h3{
+      margin-top: 0px;
+  }

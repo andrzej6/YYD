@@ -1,0 +1,85 @@
+<section id="ddWidget">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <div class="deal-image">
+                    <a id="url" href="product.asp?itemid=[catalogid]" target="_parent"><img data-media="[image1]" id="media" src="thumbnail.asp?file=[image1]&amp;maxx=350&amp;maxy=350" alt="[name]" /></a>
+                </div>
+                 <div class="share-buttons">
+                    <div class="addthis_toolbox addthis_default_style">
+                        <h4>Share:</h4>
+                        <a class="addthis_button_twitter at300b"></a>
+                        <a class="addthis_button_facebook at300b"></a>
+                        <a class="addthis_button_mailto at300b"></a>
+                        <a class="addthis_button_print at300b"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <!--START: dailydeal-->
+                <div class="deal-content">
+                    <div class="deal-titles">
+                        <h2>DEAL OF THE DAY</h2>
+                        <h1>a new offer every day!</h1>
+                    </div>
+                    <div class="product-name" id="name">[name]</div>
+                    <!--START: savings_percentage-->
+                    <div class="savings-percentage">[savings_percentage]% OFF</div>
+                    <!--END: savings_percentage-->
+                    <div class="product-price">
+                        <!--START: ITEMPRICE-->
+                        <span>Price:</span>[price]
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                        <span>Price:</span>[saleprice]
+                        <!--END: SALEPRICE-->
+                    </div>
+                    
+                    <div class="widgetCountdown">
+                        <h4 class="countdown-text">Hurry! deal ends in:</h4>
+                        <div class="dd-timer" id="dd-timer">
+                            <script type="text/javascript">
+                                TargetDate_dd = "[dd_expires]";
+                                targetsecs = "[dd_secs]";
+                                BackColor = "transparent";
+                                ForeColor = "#FFFFFF";
+                                CountActive = true;
+                                CountStepper = -1;
+                                LeadingZero = true;
+                                DisplayFormat = "%%D%% Days %%H%% Hours %%M%% Mints %%S%% Secs" ;
+                                FinishMessage = "The deal is over!";
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="buy-now-button">
+                        <a href="product.asp?itemid=[catalogid]" class="add-to-cart btn btn-default" target="_parent">Buy Now</a>
+                    </div>
+                </div>
+                <!--END: dailydeal-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e1b0cf42ddc7e71"></script>
+<script type="text/javascript" src="assets/templates/common-core/lib/countdown.js"></script>
+<script type="text/javascript">
+  pathname = window.location.href; 
+  getUrl =  jQuery('#url').attr('href');
+  getUrl =  pathname +  getUrl;
+  getName = jQuery('#name').html();
+  getMedia = jQuery('#media').prop('src');
+
+  var addthis_share = {
+     url: getUrl,
+     title: getName,
+     media: getMedia
+  }
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="assets/templates/common-core/css/dd_widget.css" type="text/css" media="all" />
+<!--END: template_styles-->

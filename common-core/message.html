@@ -1,0 +1,31 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="error.asp?error=[id]">[dberror_name]</a></li>
+		</ol>
+	</div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[dberror_name]</h1>
+    </div>
+</section>
+
+<section id="message" class="page-content">
+    <div class="container">
+		<div class="content-area">
+            <form method="post" action="[dberror_returnpage]">
+                <p class="notice"> <i class="icon-attention"></i>[dberror]</p>
+                <!--START: RETURNMESSAGE-->
+                <div class="button">
+                    <input type="button" value="[error_returnmessage]" class="btn btn-default" onclick="location.href='[dberror_returnpage]';" />
+                </div>
+                <!--END: RETURNMESSAGE-->
+            </form>
+        </div>
+    </div>
+</section>

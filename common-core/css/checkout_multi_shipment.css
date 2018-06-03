@@ -1,0 +1,119 @@
+  .highlitted-content {
+        background: #fafafa;
+        padding: 10px;
+        margin: 20px 0px;
+    }
+    
+    .shipment-method {
+        border: 1px solid #d8d8d8;
+        margin: 20px 0px;
+        display: none;
+        padding-top: 0px !important;
+    }
+    
+    .content-methods {
+        /*margin-bottom: 20px;*/
+    }
+    
+    .carrierDisplay {
+        padding: 15px 0px;
+    }
+    
+    .maillist {
+        display: inline-block !important;
+        font-size: 14px;
+    }
+    
+    .boxitems {
+        padding: 20px 0px;
+    }
+    
+    .createNewAccount .header {
+        margin-bottom: 20px;
+    }
+    
+    .data-box {
+        margin-top: 20px;
+    }
+    
+    .shippingOption label {
+        font-weight: 400;
+    }
+    
+    a.icon-btn-geopin {
+        text-transform: initial;
+        text-align: right;
+        float: right;
+        padding: 5px;
+    }
+    
+    .boxitems {
+        padding: 20px 0px;
+    }
+    
+    .insuranceMethods {
+        padding: 10px 0px;
+    }
+    
+    .align-right {
+        text-align: right;
+    }
+    
+   
+    .page_header {
+        position: relative;
+    }
+    
+    .fixed-cart-box {
+        padding-top: 234px;
+    }
+    
+    .fixed-cart-box {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        padding: 15px 0px;
+        float: left;
+        max-width: 470px;
+    }
+    
+    .shippingMethods {
+        padding-top: 20px;
+    }
+    
+    .shipment-extra .page_header {
+        position: relative;
+        margin: 25px 0 25px !important;
+    }
+    
+    .fixed-cart-box {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        padding: 15px 0px;
+        float: left;
+        max-width: 470px;
+    }
+
+    .account_login .btn{
+          font-size: 15px;
+    }
+    
+    @media(max-width: 1200px) {
+        .fixed-cart-box {
+            max-width: 100%;
+            position: static;
+        }
+    }
+    
+    @media(max-width: 767px) {
+        .fixed-cart-box {
+            position: static;
+            max-width: 100%;
+        }
+    }
+
+
+    #checkoutStep3Multiple .header {
+        margin-bottom: 20px;
+    }

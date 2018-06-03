@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+<head>
+    <title>Quick Cart</title>
+    <link rel="stylesheet" href="assets/templates/common-html5/css/layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/templates/common-html5/css/responsive.css" type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="assets/templates/[template]/css/bootstrap.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/templates/[template]/css/fontawesome.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/templates/[template]/css/entypo.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/templates/[template]/css/diamondicon.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/templates/[template]/css/owl.core.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" media="screen" />
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="assets/templates/common-html5/css/fontello.css" />
+
+    <link rel="stylesheet" href="assets/templates/[template]/css/custom.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="assets/templates/common-html5/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/templates/common-html5/js/utilities.js"></script>
+
+    <script type="text/javascript" src="assets/templates/[template]/js/iframeResizer.contentWindow.min.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/js/owl.navigation.js"></script>
+</head>
+<body id="viewCartQuick">
+    <section>
+        <div class="row row-margin-bottom">
+            <div class="col-xs-12">
+
+                <div class="cartItemsWrapper">
+                    <div class="cartItems">
+                        <div class="cartHeader">
+                            <div class="cartRow">
+                                <div class="item-image">[shoppingcart_items]</div>
+                                <div class="item-info">&nbsp;</div>
+                                <div class="item-qty">[shoppingcart_quantity]</div>
+                                <div class="item-price">[shoppingcart_price]</div>
+                                <div class="item-total">[shoppingcart_total]</div>
+                            </div>
+                        </div>
+                        <div class="cartBody">
+                            <!--START: SHOPPING_CART_ITEM-->
+                            <div class="cartRow">
+                                <div class="item-image">
+                                    <div class="product-image"><!--START: itemthumbnail--><a href="#" onclick="parent.location.href = 'product.asp?itemid=[ITEM_CATALOGID]';"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=0" width="100" /></a><!--END: itemthumbnail--><!--START: thumbnailnolink--><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=0" width="100" id="tnl" /><!--END: thumbnailnolink--></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="item-info">
+                                    <div class="product-name-options">
+                                        <!--START: itemnamelink--><a href="#" onclick="parent.location.href = 'product.asp?itemid=[ITEM_CATALOGID]';" class="h6">[ITEM_NAME]</a><!--END: itemnamelink-->
+                                        <!--START: itemnamenolink--><span id="spnItemName">[ITEM_NAME]</span><!--END: itemnamenolink-->
+                                        <!--START: itemoptions-->
+                                        <br />
+                                        <!--
+                                        <a href='#' onclick="toggle('opt[ITEM_ID]')">View/Hide options</a><br />
+                                        -->
+                                        <div id=opt[ITEM_ID] name=opt[ITEM_ID]>[OPTIONS]</div>
+                                        <!--END: itemoptions-->
+                                        <!--START: recurring_frequency-->
+                                        <div class="recurring_frequency">This item will Autoship every <strong>[recurring_frequency]</strong></div>
+                                        <!--END: recurring_frequency-->
+                                    </div>
+                                </div>
+                                <div class="item-qty">[ITEM_QUANTITY]</div>
+                                <div class="item-price">[ITEM_PRICE]</div>
+                                <div class="item-total">[ITEM_SUBTOTAL]</div>
+                            </div>
+                            <!--END: SHOPPING_CART_ITEM-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="header hidden">
+            <h3>[viewcart_quick-header]</h3>
+        </div>
+        <div class="quickCartCheckout">
+            <h1 class="page_headers" style="display: none;">[viewcart_quick-title]</h1>
+            <div class="header hidden">
+                <h3>[viewcart_quick-itemsincart]</h3>
+            </div>
+
+            <div class="item-subtotal"><span class="item-subtotal-title">[shoppingcart_subtotal]</span> <span class="item-subtotal-price h6">[CARTSUBTOTAL]</span></div>
+
+            <div class="quick-chkbuttons">
+                <input type="button" onclick="parent.location.href = '[continue_url]';" value="[viewcart_continue-shopping]" class="btn btn-secondary" />
+                <input type="button" onclick="parent.location.href = 'view_cart.asp';" value="[viewcart_checkout-button]" class="btn btn-primary" />
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <!--START: FEATURE_MENU-->
+        <div class="row row-fullwidth-background quickcart-related-products">
+            <div class="quickcart-related-products-container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <div class="row-title-wrapper">
+                            <h3 class="heading-1">[viewcart_feature-header]</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--START: CATEGORY_ITEMS-->
+                <!--START: ITEM_TEMPLATE_0-->
+                <div class="product-wrapper product-carousel-wrapper item-template-0">
+
+                    <a href="product.asp?itemid=[catalogid]">
+                    <div class="product-image">
+                        <a href="#" onclick="parent.location.href = 'product.asp?itemid=[catalogid]';">
+                            <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                        </a>
+
+                        <!--
+                        <div class="product-background-overlay"></div>
+                        -->
+
+                        <div class="btn-container">
+                            <!--
+                            <div class="btn-wrapper" style="display: none;">
+                                <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                                    <i class="fontawesome-search"></i>
+                                    <span class="tooltip">Quickview</span>
+                                </a>
+                            </div>
+                            <div class="btn-wrapper">
+                                <a class="btn btn-details" href="#" onclick="parent.location.href = 'product.asp?itemid=[catalogid]';">
+                                    <i class="fontawesome-link"></i>
+                                    <span class="tooltip">Details</span>
+                                </a>
+                            </div>
+                            <div class="btn-wrapper">
+                                <a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+                                    <i class="diamondicon-cart"></i>
+                                    <span class="tooltip">[product_addtocart]</span>
+                                </a>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    </a>
+
+                    <div class="product-details">
+                        <!--START: product_review-->
+                        <!--START: product_review_average-->
+                        <span class="product-review-icons-container" data-rating-value="[review_average]">
+                            <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                            <span href="#" class="product-review-count">([review_count])</span>
+                        </span>
+                        <!--END: product_review_average-->
+                        <!--END: product_review-->
+
+                        <div class="product-title">
+                            <a href="#" onclick="parent.location.href = 'product.asp?itemid=[catalogid]';">[name]</a>
+                        </div>
+
+                        <div class="product-price">
+                            <!--START: ITEMPRICE-->
+                            <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                            <!--END: ITEMPRICE-->
+                            <!--START: SALEPRICE-->
+                            <del class="price2">[ITEMPRICE]&nbsp;</del>
+                            <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                            <span class="badge badge-sale">
+                                <span class="badge-text">Sale</span>
+                            </span>
+                            <!--END: SALEPRICE-->
+                        </div>
+
+                        <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+                        <div class="product-description">
+                            [description]
+                        </div>
+                    </div>
+
+                </div>
+                <!--END: ITEM_TEMPLATE_0-->
+                <!--END: CATEGORY_ITEMS-->
+            </div>
+        </div>
+        <!--START: FEATURE_MENU-->
+        <div class="clear"></div>
+    </section>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // =============================================================================
+        // Product Block Container Fix
+        // =============================================================================
+
+        // Remove clearfix divs
+        $(document).find('.productBlockContainer > div:empty').each(function() {
+            $(this).remove();
+        });
+
+        // Remove empty product containers
+        $(document).find('.productBlockContainer .product-container').each(function() {
+            if ( !$(this).children().length > 0 ) {
+                $(this).remove();
+            }
+        });
+
+        // Move products to the 1st productBlockContainer
+        $(document).find('.productBlockContainer').each(function() {
+            var productBlockContainer = $(this);
+            var containerElement = $(this).parent();
+            $(containerElement).find('.productBlockContainer').each(function(index) {
+                if ( index >= 1 ) {
+                    $(this).find('.product-container').each(function() {
+                        var productContainer = $(this);
+                        $(containerElement).find('.productBlockContainer:eq(0)').append(productContainer);
+                    });
+                }
+            });
+        });
+
+        // Remove empty productBlockContainer
+        $(document).find('.productBlockContainer').each(function() {
+            if ( !$(this).children().length > 0 ) {
+                $(this).remove();
+            }
+        });
+
+        // =============================================================================
+        // Related Products Carousel
+        // =============================================================================
+
+        // Add .owl-carousel class to product container
+        $(document).find('.productBlockContainer > .product-container:eq(0) > .product-carousel-wrapper').each(function() {
+            $(this).parent().parent().addClass('owl-carousel');
+        });
+
+        $(window).load(function() {
+            $(document).find('.productBlockContainer.owl-carousel').each(function() {
+                var productCarousel = $(this);
+
+                var productcarouselslidebyData = 1;
+                if ( productcarouselslidebyData != 1 ) {
+                    var productcarouselslidebyData = 'page';
+                }
+
+                if ( $(productCarousel).hasClass('columns-1') ) {
+                    var productcarouselresponsiveData = 1;
+                } else if ( $(productCarousel).hasClass('columns-2') ) {
+                    var productcarouselresponsiveData = 2;
+                } else if ( $(productCarousel).hasClass('columns-3') ) {
+                    var productcarouselresponsiveData = 3;
+                } else if ( $(productCarousel).hasClass('columns-4') ) {
+                    var productcarouselresponsiveData = 4;
+                } else if ( $(productCarousel).hasClass('columns-5') ) {
+                    var productcarouselresponsiveData = 5;
+                } else if ( $(productCarousel).hasClass('columns-6') ) {
+                    var productcarouselresponsiveData = 6;
+                } else  {
+                    var productcarouselresponsiveData = 3;
+                }
+
+                if ( productcarouselresponsiveData == 1 ) {
+                    var productcarouselresponsiveData1 = 1;
+                    var productcarouselresponsiveData2 = 1;
+                    var productcarouselresponsiveData3 = 1;
+                    var productcarouselresponsiveData4 = 1;
+                    var productcarouselresponsiveData5 = 1;
+                } else if ( productcarouselresponsiveData == 2 ) {
+                    var productcarouselresponsiveData1 = 1;
+                    var productcarouselresponsiveData2 = 1;
+                    var productcarouselresponsiveData3 = 2;
+                    var productcarouselresponsiveData4 = 2;
+                    var productcarouselresponsiveData5 = 2;
+                } else if ( productcarouselresponsiveData == 3 ) {
+                    var productcarouselresponsiveData1 = 1;
+                    var productcarouselresponsiveData2 = 2;
+                    var productcarouselresponsiveData3 = 2;
+                    var productcarouselresponsiveData4 = 3;
+                    var productcarouselresponsiveData5 = 3;
+                } else if ( productcarouselresponsiveData == 4 ) {
+                    var productcarouselresponsiveData1 = 1;
+                    var productcarouselresponsiveData2 = 2;
+                    var productcarouselresponsiveData3 = 2;
+                    var productcarouselresponsiveData4 = 3;
+                    var productcarouselresponsiveData5 = 4;
+                } else if ( productcarouselresponsiveData == 5 ) {
+                    var productcarouselresponsiveData1 = 1;
+                    var productcarouselresponsiveData2 = 2;
+                    var productcarouselresponsiveData3 = 3;
+                    var productcarouselresponsiveData4 = 4;
+                    var productcarouselresponsiveData5 = 5;
+                } else {
+                    var productcarouselresponsiveData1 = 1;
+                    var productcarouselresponsiveData2 = 2;
+                    var productcarouselresponsiveData3 = 3;
+                    var productcarouselresponsiveData4 = 4;
+                    var productcarouselresponsiveData5 = 6;
+                }
+
+                $(productCarousel).on('initialized.owl.carousel resized.owl.carousel', function(e) {
+                    setTimeout(function() {
+                        $(productCarousel).find('.owl-nav').each(function() {
+                            var navigationWrapper = $(this);
+                            var navigationButton = $(navigationWrapper).find('.owl-btn').first();
+                            if ( $(navigationButton).is(':visible') ) {
+                                var productHeight = $(productCarousel).find('.product-wrapper').height();
+                                var productImageHeight = $(productCarousel).find('.product-image').height();
+                                var navigationButtonHeight = $(navigationButton).height();
+                                var navigationImageOffset = (productHeight - productImageHeight) / 2;
+                                var navigationButtonOffset = navigationButtonHeight / 2;
+                                var navigationWrapperOffset = (navigationImageOffset + navigationButtonOffset) * -1;
+                                $(navigationWrapper).css({'marginTop': navigationWrapperOffset + 'px'});
+                            }
+                        });
+                    }, 50);
+                });
+
+                $(productCarousel).owlCarousel({
+                    loop: false,
+                    margin: 30,
+                    mouseDrag: false,
+                    touchDrag: false,
+                    pullDrag: false,
+                    freeDrag: false,
+                    nav: true,
+                    navText: [ '<i class="fontawesome-chevron-left"></i>', '<i class="fontawesome-chevron-right"></i>' ],
+                    navClass: [ 'owl-prev owl-btn', 'owl-next owl-btn' ],
+                    dots: false,
+                    smartSpeed: 200,
+                    autoplay: false,
+                    autoplayHoverPause: false,
+                    autoplayTimeout: 7000,
+                    //responsiveBaseElement:productCarousel,
+                    responsiveBaseElement: $(productCarousel),
+                    responsive:{
+                        0:{ // Breakpoint Up (xs)
+                            items:productcarouselresponsiveData1,
+                            slideBy:productcarouselslidebyData,
+                        },
+                        497:{ // Breakpoint Up (sm)
+                            items:productcarouselresponsiveData2,
+                            slideBy:productcarouselslidebyData,
+                        },
+                        690:{ // Breakpoint Up (md)
+                            items:productcarouselresponsiveData3,
+                            slideBy:productcarouselslidebyData,
+                        },
+                        910:{ // Breakpoint Up (lg)
+                            items:productcarouselresponsiveData4,
+                            slideBy:productcarouselslidebyData,
+                        },
+                        1110:{ // Breakpoint Up (xl)
+                            items:productcarouselresponsiveData5,
+                            slideBy:productcarouselslidebyData,
+                        }
+                    }
+                });
+
+                $(productCarousel).data('owl.carousel').invalidate('all');
+                $(productCarousel).trigger('refresh.owl.carousel');
+                setTimeout(function() {
+                    $(productCarousel).data('owl.carousel').invalidate('all');
+                    $(productCarousel).trigger('refresh.owl.carousel');
+                }, 500);
+            });
+        });
+
+        // =============================================================================
+        // Product Grid - Quickview Buttons
+        // =============================================================================
+        $('.product-container .btn-quickview').click(function(e) {
+            e.preventDefault();
+
+            var quickviewUrl = $(this).data('quickview-url');
+
+            var message = {
+                name: 'toggle-quickview-modal',
+                value: quickviewUrl
+            };
+
+            window.parentIFrame.sendMessage(message);
+        });
+
+        $(document).find('.product-container .btn-quickview').each(function() {
+            var buttonWrapper = $(this).parent();
+
+            if ( $(buttonWrapper).hasClass('btn-wrapper') ) {
+                $(buttonWrapper).show();
+            }
+        });
+
+        // =============================================================================
+        // Product Grid - Add to Cart
+        // =============================================================================
+        $(document).find('.product-container .btn-addtocart').click(function(e) {
+            e.preventDefault();
+
+            var addtocartUrl = $(this).data('addtocart-url');
+
+            var message = {
+                name: 'add-to-cart',
+                value: addtocartUrl
+            };
+            window.parentIFrame.sendMessage(message);
+        });
+
+        // =============================================================================
+        // Product Grid - Badge
+        // =============================================================================
+        $(document).find('.badge').each(function() {
+            var productBadge = $(this);
+            var productWrapper = $(this).parent().parent().parent();
+            if ( $(productWrapper).find('.product-background-overlay').length ) {
+                $(productWrapper).find('.product-background-overlay').after(productBadge);
+            }
+        });
+
+        // =============================================================================
+        // Product Grid - Mobile Click
+        // =============================================================================
+        if ( $('html').hasClass('touch') ) {
+            $(document).find('.product-container .product-wrapper').click(function(e){
+                e.stopPropagation();
+                var elem = $(this);
+                toggleProductHoverState(elem);
+            });
+
+            $(document).click(function(e){
+                clearProductHoverState();
+            });
+        }
+
+        function toggleProductHoverState(elem) {
+            var productWrapper = elem;
+
+            if ( productWrapper.hasClass('product-wrapper') ) {
+                if ( productWrapper.hasClass('active') ) {
+                    productWrapper.removeClass('active');
+                } else {
+                    clearProductHoverState();
+                    productWrapper.addClass('active');
+                }
+            }
+        }
+
+        function clearProductHoverState() {
+            $(document).find('.product-container .product-wrapper').each(function() {
+                $(this).removeClass('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

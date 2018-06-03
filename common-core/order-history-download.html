@@ -1,0 +1,139 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+  <div class="container">
+    <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">Home</a></li>
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="">Download Page</a></li>
+    </ol>
+  </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header">
+  <div class="container">
+    <h1 class="page_heading">
+      Download Page <span>(Order  [invoicenum_prefix][invoicenum])</span>
+    </h1>
+    <div class="myAccount expire-date icon-btn-prev">
+    <!--START: expire-->
+    [expiration_date_txt]
+    <!--END: expire-->
+    </div>
+  </div>
+</section>
+<section id="orderHistoryDownload" class="page-content">
+  <div class="container">
+    <div class="content-area">
+      <div class="hidden-xs">
+          <div class="col-lg-1 col-md-1 col-sm1 no-padding">
+              <label for="oid" class="oid">
+                 Item ID:
+              </label>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+              <label for="odate" class="odate">
+                  Name
+              </label>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+              <label for="onum" class="onum">
+                 File  Name 
+              </label>
+          </div> 
+          <div class="col-lg-4 col-md-4 col-sm4 no-padding">
+              <label for="Instructions" class="Instructions">
+                  Instructions
+              </label>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm3 no-padding">
+              <label for="serial" class="Serial">
+                  Serial No.
+              </label>
+          </div>
+      </div>
+      <!--START: items-->
+      <div class="productDownload"> 
+        <div class="total-summary">
+			<!--START: itemid-->
+            <div class="col-lg-1 col-md-1 col-sm1 no-padding">
+                <div class="row">
+                    <label class="visible-xs gcTotal-default col-xs-4" >
+                     Item ID:
+                    </label>
+                    <div class="col-xs-8 oid">
+                        [itemid]
+                     </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+			<!--END: itemid-->
+
+            <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+                <div class="row">
+                    <label class="visible-xs gcTotal-default col-xs-4">
+                      Name
+                    </label>
+                    <div class="col-xs-8 odate">
+                        [itemname]
+                     </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm2 no-padding">
+                <div class="row">
+                    <label class="visible-xs gcTotal-default col-xs-4">
+                        Name File
+                    </label>
+                    <div class="col-xs-8 onum">
+                        [eproduct_file]
+                     </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm4 no-padding">
+                <div class="row">
+                    <label class="visible-xs gcTotal-default col-xs-4">
+                        Instructions
+                    </label>
+                    <div class="col-xs-8 eproduct_instructions">
+                      <!--START: eproduct_instructions-->
+                       [eproduct_instructions]
+                      <!--END: eproduct_instructions-->
+                     </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm3 no-padding">
+                <!--START: serial_comment-->
+                    <div class="row">
+                        <label class="visible-xs gcTotal-default col-xs-4">
+                            Serial
+                        </label>
+                        <div class="col-xs-8 oamount">
+                             No serial # required
+                         </div>
+                    </div>
+                <!--END: serial_comment-->
+                <!--START: serial-->
+                    <div class="row">
+                        <label class="visible-xs gcTotal-default col-xs-4">
+                            Serial
+                        </label>
+                        <div class="col-xs-8 oamount">
+                             [serial]
+                         </div>
+                    </div>
+                <!--END: serial-->
+
+          <div class="download-item">
+          <a href="edownload.asp?eid1=[catalogid]&eid2=[orderkey]&file=[file_count]" class="btn btn-default" target="_blank">Click here to download</a>
+          </div>  
+            </div>
+        </div>
+      </div>
+      <!--END: items-->
+    </div>
+  </div>
+</section>
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/orderHistoryDownload.css" type="text/css" media="screen" />
+<!--END: template_styles-->

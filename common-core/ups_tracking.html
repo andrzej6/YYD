@@ -1,0 +1,201 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="myaccount.asp">My Account</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">UPS Tracking Tool</li>
+		</ol>
+	</div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading"><img src="/admin/templates/images/ups_logo.gif" alt="UPS" /> UPS Tracking Tool</h1>
+    </div>
+</section>
+
+<section id="fedexTracking" class="page-content">
+    <div class="container">
+		<div class="content-area">
+            <!--START: results-->
+            <div class="row tracking_titles titles2">
+                <div class="col-md-12 col-sm-12">
+                    <h4 class="page_heading">Tracking Details: [trackno]</h4>
+                </div>
+            </div>
+            <div class="row tracking_details">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <!--START: shipper_number-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="Shipper-Number">Shipper Number:</label></div>
+                        <div class="col-sm-8 col-xs-8">[shipper_number]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: shipper_number--> 
+                    <!--START: service_description-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="service_description">Service Description:</label></div>
+                        <div class="col-sm-8 col-xs-8">[service_description]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: service_description--> 
+                    <!--START: delivery_date-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="delivery_date">Sched. Delivery Date:</label></div>
+                        <div class="col-sm-8 col-xs-8">[delivery_date]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: delivery_date--> 
+                    <!--START: redelivery_date-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="redelivery_date">Re-Sched. Delivery Date:</label></div>
+                        <div class="col-sm-8 col-xs-8">[redelivery_date]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: redelivery_date--> 
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <!--START: shipper_address-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="shipper_address">Shipper Address:</label></div>
+                        <div class="col-sm-8 col-xs-8">[shipper_address]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: shipper_address--> 
+                    <!--START: shipto_address-->
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4"><label for="shipto_address">Ship-To Address:</label></div>
+                        <div class="col-sm-8 col-xs-8">[shipto_address]</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: shipto_address--> 
+                </div>
+                <div class="tracking_activity col-md-12 col-sm-12 col-xs-12">
+                    <div class="row trackingStatus_titles titles3 hidden-xs">
+                        <div class="col-md-4 col-sm-4">
+                            <label for="date-time">Date / Time</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <label for="desc">Activity</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <label for="loc">Location</label>
+                        </div>
+                    </div>
+                    <!--START: activity-->
+                	<div class="row trackingStatus details_row">
+                    	<div class="col-md-4 col-sm-4 col-xs-12">
+		                    <div class="row">
+                                <div class="visible-xs col-sm-12 col-xs-4"><label for="date-time">Date / Time</label></div>
+                                <div class="col-sm-12 col-xs-8">[date_time]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    	<div class="col-md-4 col-sm-4 col-xs-12">
+		                    <div class="row">
+                                <div class="visible-xs col-sm-12 col-xs-4"><label for="desc">Activity</label></div>
+                                <div class="col-sm-12 col-xs-8">[description]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    	<div class="col-md-4 col-sm-4 col-xs-12">
+		                    <div class="row">
+                                <div class="visible-xs col-sm-12 col-xs-4"><label for="loc">Location</label></div>
+                                <div class="col-sm-12 col-xs-8">[location]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: activity-->
+                </div>
+            </div>
+            <!--END: results-->
+            <div class="clearfix"></div>
+            <div class="trackingModule">
+                <form method="post" action="shiptracking.asp" name="form1">
+                    <div class="trackingField">
+                        <div class="row">
+                            <div class="form-group">
+                            	<div class="formField">
+                                    <div class="col-sm-12"><label for="trackno">UPS Tracking Number:</label></div>
+                                    <div class="col-sm-4">
+                                        <input type="text" size="30" name="trackno" value="[trackno]" placeholder="##########" maxlength="30" class="txtBoxStyle form-control" />
+                                    </div>
+	                                <div class="clearfix"></div>
+                                </div>
+                            	<div class="formField">
+                                    <div class="col-sm-12">
+                                        <span class="view-lic-button">
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewlicense">View License</button>
+                                        </span>
+                                        <span class="track-pkg-button">
+                                            <input onclick="checkaccept()" type="button" value="Track Package" class="btn btn-default"/>
+                                        </span>
+                                    </div>
+	                                <div class="clearfix"></div>
+                                </div>
+                                <div class="formField ups-terms">
+                                    <div class="col-sm-12">
+                                        <span class="form-inline"><input type="checkbox" id="checkbox" class="checkbox" value="ON" name="agree" /></span>
+                                        <span><label class="terms-conditions" for="checkbox">By selecting this box and the &quot;Track Package&quot; button, I agree to these </label>
+                                        <a data-toggle="modal" data-target="#viewlicense"><strong>Terms and Conditions</strong></a>.</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="ups-disclaimer">
+                                    <div class="col-sm-12">UPS&reg;, UPS &amp; Shield Design&reg; and UNITED PARCEL SERVICE&reg; are registered trademarks of United Parcel Service of America, Inc.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="viewlicense" tabindex="-1" role="dialog" aria-labelledby="viewlicenseLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="resetPWLabel"><img src="/admin/templates/images/ups_logo.gif" alt="UPS" /> UPS Tracking Terms and Conditions</h4>
+      </div>
+      <div class="modal-body">
+        <p>The UPS package tracking systems accessed via this Web Site (the &quot;Tracking Systems&quot;) and tracking information obtained through this Web Site (the &quot;Information&quot;) are the private property of UPS. UPS authorizes you to use the Tracking Systems solely to track shipments tendered by or for you to UPS for delivery and for no other purpose. Without limitation, you are not authorized to make the Information available on any web site or otherwise reproduce, distribute, copy, store, use or sell the Information for commercial gain without the express written consent of UPS. This is a personal service, thus your right to use the Tracking Systems or Information is non-assignable.</p>
+        <p>Any access or use that is inconsistent with these terms is unauthorized and strictly prohibited.</p>
+        <p>Copyright&nbsp;&copy; 1994-2003 United Parcel Service of America, Inc. All rights reserved.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--START: template_scripts-->
+<script type="text/javascript">
+function checkaccept() {
+	if (document.form1.agree.checked == false) {
+		alert("You must accept the UPS Tracking Terms and conditions by selecting the checkbox below.");
+		return (false);
+	} else{
+		document.form1.submit();
+	}
+	return (true);
+}
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/tracking.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+

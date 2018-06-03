@@ -1,0 +1,60 @@
+<style type="text/css">
+@media only screen and (max-width: 767px) {
+	.storecreditsDetail td:nth-of-type(1):before { content: "[storecredits_details-header-date]"; }
+	.storecreditsDetail td:nth-of-type(2):before { content: "[storecredits_details-header-credit]"; }
+	.storecreditsDetail td:nth-of-type(3):before { content: "[storecredits_details-header-reference]"; }
+}
+</style>
+
+<section id="storecreditDetail">
+    <h1 class="page_headers">[storecredits_details-detail]</h1>
+    <!--START: myAccount-->
+    <div class="button right"><a href="myaccount.asp" class="icon-btn icon-btn-prev">Back to My Account</a></div>
+    <!--END: myAccount-->
+    <div class="clear"></div>
+    <!--START: CATEGORY_HEADER-->
+    <div class="category-header" id="storecredits_detailHeader">[CONTENT]</div>
+    <!--END: CATEGORY_HEADER-->
+
+    <!--START: StoreCredits-->
+    <div class="storecreditsDetail">
+        <table>
+		    <thead>
+		    <tr class="titles2">
+			    <th class="date">[storecredits_details-header-date]</th>
+			    <th class="credit">[storecredits_details-header-credit]</th>
+			    <th class="reference">[storecredits_details-header-reference]</th>
+		    </tr>
+		    </thead>
+		    <tbody>
+		        <!--START: StoreCreditsNoHistory-->
+		        <tr class="row">
+                    <td colspan="5" class="nohistory">[storecredits_details-nohistory]</td>
+                </tr>
+		        <!--END: StoreCreditsNoHistory-->
+		        <!--START: StoreCreditsDetails-->
+		        <tr class="row">
+			        <td class="date">[stcDate]</td>
+			        <td class="credit">[stcCredits]</td>
+			        <td class="reference"><!--START: orderLink--><a href="ordertracking.asp?action=view&id=[orderid]"><!--END: orderLink-->[stcReference]</a>&nbsp;</td>
+		        </tr>
+		        <!--END: StoreCreditsDetails-->
+		    </tbody>
+	    </table>
+        <div class="clear"></div>
+        <!--START: StoreCreditsTotal-->
+        <div class="titles2">
+    	    <div class="creditAvailable">[storecredits_details-header-creditAvailable]</div>
+            <div class="totalCredit">[stcTotalCredit]</div>
+            <div class="clear"></div>
+        </div>
+        <!--END: StoreCreditsTotal-->
+    </div>
+    <!--END: StoreCredits-->
+
+
+    <div class="clear"></div>
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="storecredits_detailFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+</section>

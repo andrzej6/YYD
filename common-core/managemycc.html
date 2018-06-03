@@ -1,0 +1,456 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[account_creditcard-details]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[account_creditcard-details]</h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="manageMyCcHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+<!-- billing_info, edit_card and save code blocks are removed  -->
+<section id="manageMyCc" class="manageMyCc-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <!--START: ERROR_MSG-->
+                <div class="error pad10 boxShadow">[strErrMsg]</div>
+                <!--END: ERROR_MSG-->
+                <form action="managemycc.asp" name="frmForm" id="frmForm" method="post">
+                    <input type="hidden" id="hdnAction" name="hdnAction" value="[hdnAction]" />
+                    <input type="hidden" id="pp" name="pp" value="[strCustomerPaymentProfileId]" />
+                    <input type="hidden" id="strSelectedGW" name="strSelectedGW" value="[strSelectedGW]">
+                    <input type="hidden" id="hdnEditCard" name="hdnEditCard" value="[hdnEditCardValue]" />
+
+                    <div class="row">
+                        <!--START: billing_info-->
+                        <div class="content-area col-lg-6">
+                            <div class="header">
+                                <h3>[account_billing-info]</h3>
+                            </div>
+                            <div class="ccBillingInfo pad10 boxShadow">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <!--START: authNet-->
+                                        <div class="updCcField">
+                                            <label for="billing_firstname">[CustomerInfo_firstname]</label>
+                                            <input size="40" name="billing_firstname" id="billing_first" value="[billing_firstname]" tabindex="1" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="updCcField">
+                                            <label for="billing_lastname">[CustomerInfo_lastname]</label>
+                                            <input size="40" name="billing_lastname" id="billing_last" value="[billing_lastname]" tabindex="2" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--START: company-->
+                                <div class="updCcField">
+                                    <label for="billing_company">[CustomerInfo_company]</label>
+                                    <input size="40" name="billing_company" value="[billing_company]" tabindex="3" class="form-control txtBoxStyle" />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: company-->
+                                <!--END: authNet-->
+                                <div class="updCcField">
+                                    <label for="billing_address">[CustomerInfo_address]</label>
+                                    <input size="40" name="billing_address" value="[billing_address]" tabindex="4" class="form-control txtBoxStyle" />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--START: address2-->
+                                <div class="updCcField">
+                                    <label for="billing_address2">[CustomerInfo_address2]</label>
+                                    <input size="40" name="billing_address2" value="[billing_address2]" tabindex="4" class="form-control txtBoxStyle" />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: address2-->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <!--START: city-->
+                                        <div class="updCcField">
+                                            <label for="billing_city">[CustomerInfo_city]</label>
+                                            <input size="40" name="billing_city" value="[billing_city]" tabindex="5" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <!--END: city-->
+                                    </div>
+                                </div>
+                              <!--START: country-->
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="updCcField">
+                                    <label for="billing_country">[CustomerInfo_country]</label>
+                                    <select name="billing_country" onchange="this.form.billing_zip.value = ''; populateState('billing_state', 'billing_country', '', undefined, ''); check_stateValidator('billing'); check_address('billing');" tabindex="6" class="form-control txtBoxStyle" id="billing_country">
+                                    </select>
+                                    <div class="clearfix"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--END: country--> 
+                              <div class="row">
+                                <div class="col-lg-6">
+                                  <!--START: state-->
+                                  <div class="updCcField">
+                                    <label for="billing_state">[CustomerInfo_state]</label>
+                                    <select id="billing_state" onChange="this.form.billing_zip.value='';check_address('billing');" name="billing_state" tabindex="7" class="form-control txtBoxStyle">
+                                    </select>
+                                    <div class="clearfix"></div>
+                                  </div>
+                                  <!--END: state-->
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="updCcField">
+                                    <label for="billing_zip">[CustomerInfo_zip]</label>
+                                    <input name="billing_zip" maxlength="20" type="text" id="billing_zip" value="[billing_zip]" size="10" class="form-control txtBoxStyle" onchange="clearContent(this);check_address('billing');" />
+                                    <div class="clearfix"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    	</div>
+                    	<!--END: billing_info-->
+
+                        <div class="content-area col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-12">
+									<div style="display:[ShowCard];">
+										<div class="header">
+											<h3>[account_creditcard-info]</h3>
+										</div>
+										<div class="clearfix"></div>
+
+									
+										<div class="card-wrapper"></div>
+									</div>
+
+									<!--START: CCEdit_Block-->
+                                    <div id="divCardEdit" class="pad10 boxShadow" name="divCardEdit" style="display:[ShowCardEdit];">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="updCcField hide">
+                                                    <label for="cardName">Name on Card</label>
+                                                    <input type="text" name="cardName" id="cardName" value="[billing_firstname] [billing_lastname]" class="form-control txtBoxStyle" />
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="updCcField">
+                                                    <label for="Text2">[CustomerInfo_creditcardnumber]</label>
+                                                    <!--START: cardinput-->
+                                                    <input class="form-control txtBoxStyle inspectletIgnore" type="text" name="card_number" id="Text2" value="[card_number]" [card_number_disabled] />
+                                                    <!--END: cardinput--><!--START: carddisplay-->*****[card_number]<!--END: carddisplay-->
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+
+											<!--START: carddate-->
+                                            <div class="col-lg-6">
+                                                <div class="updCcField">
+                                                    <label>[CustomerInfo_creditexpiration]</label>
+                                                    <input id="cardExp" type="text" name="cardExp" class="form-control txtBoxStyle" placeholder="MM / YYYY">
+                                                    <div class="clearfix"></div>
+                                                    <div id="divCC" name="divCC" style="display: none;"></div>
+                                                </div>
+                                            </div>
+											<!--END: carddate-->
+
+											<!--START: CVVFIELD-->
+                                            <div class="col-lg-6">
+                                                <div class="updCcField">
+                                                    <label for="Text3">CVV</label>
+                                                    <input class="form-control txtBoxStyle" type="text" name="card_cvv2" id="Text3" value="" size="4" maxlength="5" />
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+											<!--END: CVVFIELD-->
+
+                                            <!--START: editCard-->
+                                            <div class="col-lg-12">
+                                                <div class="updCcField">
+                                                    <button class="btn btn-default" type="button" onclick="javascript:editCard(false);">[account_button-cancel]</button>
+                                                    <button type="button" id="cmdSave2" name="cmdSave2" onclick="javascript:saveProfile();" class="btn btn-primary">[account_button-Save]</button>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <!--END: editCard-->
+                                        </div>
+                                    </div>
+									<!--END: CCEdit_Block-->
+
+                                    <div id="divCard" class="pad10 boxShadow" name="divCard" style="display:[ShowCard];">
+                                        <div class="row">
+                                            <!--START: ccmessage-->
+                                            <div class="col-lg-12">
+                                                <div class="updCcField">
+                                                    <div class="text">[CustomerInfo_creditcardnumber] saved on [datecreated] by order <a href="ordertracking.asp?action=view&id=[ord_num]" target="_blank">[ord_inv]</a></div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <!--END: ccmessage-->
+                                            <div class="col-lg-12">
+                                                <div class="updCcField hide">
+                                                    <label for="cardName">Name on Card</label>
+                                                    <input type="text" name="cardName" id="cardName" value="[billing_firstname] [billing_lastname]" class="form-control txtBoxStyle" />
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="updCcField">
+                                                    <label for="Text2">[CustomerInfo_creditcardnumber]</label>
+                                                    <div class="text"><span class="cc-last">[card_number]</span></div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+
+											<!--START: displayexp-->
+                                            <div class="col-lg-6">
+                                                <div class="updCcField">
+                                                    <label>[CustomerInfo_creditexpiration]</label>
+                                                    <input type="hidden" id="drpMonth_original" name="drpMonth_original" value="[month]" />
+                                                    <input type="hidden" id="drpYear_original" name="drpYear_original" value="[year]" />
+                                                    <div class="text" id="CCMonthYear">[month] - [year]</div>
+                                                    <div class="clearfix"></div>
+                                                    <div id="divCC" name="divCC" style="display: none;"></div>
+                                                </div>
+                                            </div>
+											<!--END: displayexp-->
+
+                                            <div class="col-lg-6">
+                                                <div class="updCcField">
+                                                    <label for="Text3">CVV</label>
+                                                    <div class="text">***</div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <!--edit_card-->
+                                            <div class="col-lg-12">
+                                                <div class="updCcField">
+                                                    <button class="btn btn-default" type="button" onclick="javascript:editCard(true);">[account_creditcard-edit]</button>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <!--edit_card-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-area col-lg-12">
+                            <div class="update-btn">
+                                <input type="button" id="cmdCancel" name="cmdCancel" onclick="javascript:location.href='myaccount.asp';" class="btn btn-default" value="[account_button-back]" />
+                                <input type="button" id="cmdDelete" name="cmdDelete" onclick="javascript:deleteProfile();" class="btn btn-default" value="[account_button-delete]" />
+                                <!--save-->
+                                <input type="button" id="cmdSave" name="cmdSave" onclick="javascript:saveProfile();" class="btn btn-primary" value="[account_button-Save]" style="display:[ShowCardEdit];"/>
+                                <!--save-->
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <!--START: CATEGORY_FOOTER-->
+        <div class="category-footer" id="manageMyCcFooter">[CONTENT]</div>
+        <!--END: CATEGORY_FOOTER-->
+    </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/Parsley/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/Parsley/bower_components/bootstrap/js/affix.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/lib/highlight/highlight.min.js"></script>
+<script type="text/javascript" src="state_countryjs.asp"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/managemyCC.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.card.js"></script>
+
+<script type="text/javascript">
+	initCountry('[billing_country]','[billing_state]','billing_state','billing_country','');
+
+	function deleteProfile()
+	{
+		var rep = confirm("[account_creditcard-delete-confirmation]");
+
+		if (rep)
+		{
+			document.frmForm.hdnAction.value = "delete";
+			document.frmForm.submit();
+		}
+	}
+
+	function saveProfile()
+	{
+		var strMsg = "";
+
+	    //<!--START: ccValidation-->
+		if (document.frmForm.card_number.value.trim() == "")
+		    strMsg += " - [CustomerInfo_creditcardnumber] cannot be blank.\n";
+	    //<!--END: ccValidation-->
+
+	    //<!--START: cvvValidation-->
+		if (jQuery('#card_cvv2').value == "") {
+			console.log('cvv fail');
+			strMsg += " - CVV cannot be blank.\n";
+		}
+		//<!--END: cvvValidation-->
+
+        try {
+
+
+
+		if (document.frmForm.drpMonth.value.trim() == "" || document.frmForm.drpYear.value.trim() == "")
+			strMsg += " - [CustomerInfo_creditexpiration] is invalid.\n";
+
+		//<!--START: authNetValidation-->
+		if (document.frmForm.billing_firstname.value.trim() == "")
+			strMsg += " - [CustomerInfo_firstname] cannot be blank.\n";
+		if (document.frmForm.billing_lastname.value.trim() == "")
+			strMsg += " - [CustomerInfo_lastname] cannot be blank.\n";
+		//<!--END: authNetValidation-->
+
+		if (document.frmForm.billing_address.value.trim() == "")
+			strMsg += " - [CustomerInfo_address] cannot be blank.\n";
+
+		//<!--START: CityValidation-->
+		if (document.frmForm.billing_city.value.trim() == "")
+			strMsg += " - [CustomerInfo_city] cannot be blank.\n";
+		//<!--END: CityValidation-->
+
+		//<!--START: CountryValidation-->
+		if (document.frmForm.billing_country.value.trim() == "")
+			strMsg += " - [CustomerInfo_country] cannot be blank.\n";
+		//<!--END: CountryValidation-->
+
+		//<!--START: StateValidation-->
+		if (document.frmForm.billing_state.value.trim() == "")
+			strMsg += " - [CustomerInfo_state] cannot be blank.\n";
+		//<!--END: StateValidation-->
+
+		if (document.frmForm.billing_zip.value.trim() == "")
+			strMsg += " - [CustomerInfo_zip] cannot be blank.\n";
+
+		}
+		catch (e) { }
+
+		if (strMsg != ""){
+			alert(strMsg);
+			return false;
+        }
+
+        //try if square method is present
+        if (jQuery("#sq_nonce").length > 0) {
+            if (bolSquareNonce == false) {
+                bolSquareNonce = true;
+                nsqPaymentForm.setPostalCode(jQuery('#billing_zip').val());
+                SquarerequestCardNonce(); //function in checkout-singlepage.html
+                return;
+            }
+        }
+
+        if (jQuery("#hdnAction").val() == "addnew")
+            document.frmForm.hdnAction.value = "savenew";
+        else
+            if (jQuery("#hdnAction").val() == "")
+            document.frmForm.hdnAction.value = "save";
+
+		document.frmForm.submit();
+	}
+
+</script>
+<script type="text/javascript">
+	jQuery(".order-accepted-cards").css({
+	   'margin' : '20px',
+	   'text-align' : 'center'
+	});
+
+	jQuery(".order-accepted-cards h3").css({
+	   'font-size' : '20px',
+	   'text-align' : 'center',
+	   'margin-bottom' : '10px'
+	});
+
+
+	var cardWidth = 350;
+
+	if(window.innerWidth < 767) {
+	    cardWidth = 200;
+	}
+
+	$('form#frmForm').card({
+	    // a selector or DOM element for the container
+	    // where you want the card to appear
+	    container: '.card-wrapper', // *required*
+
+	    // all of the other options from above
+	    formSelectors: {
+	        numberInput: 'input#Text2', // optional ? default input[name="number"]
+	        expiryInput: 'input#cardExp', // optional ? default input[name="expiry"]
+	        cvcInput: 'input#Text3', // optional ? default input[name="cvc"]
+	        nameInput: 'input#billing_first, input#billing_last' // optional - defaults input[name="name"]
+	    },
+
+	    width: cardWidth, // optional ? default 350px
+	    formatting: true, // optional - default true
+
+
+	    // Default placeholders for rendered fields - optional
+	    placeholders: {
+	        cardNumber: '???? ???? ???? ????',
+	        cardName: 'Full Name',
+	        cardExp: '??/????',
+	        cvvNumber: '???'
+	    },
+
+	});
+
+	$(function() {
+
+		$('#billing_first, #billing_last').keyup(function() {
+			var nameOnCard2 = $.trim($('#billing_first').val()) + " " + $.trim($('#billing_last').val());
+
+			$('#cardName').val(nameOnCard2);
+		});
+		$('#firstname, #lastname').change(function() {
+			var nameOnCard = $.trim($('#firstname').val()) + " " + $.trim($('#lastname').val());
+
+			$('#cardName').val(nameOnCard);
+
+		});
+		$('#cardExp').change(function() {
+			var data = $('#cardExp').val();
+			var arr = data.split('/');
+
+			$("#drpMonth_original").val($.trim(arr[0]));
+			$("#drpYear_original").val($.trim(arr[1]));
+
+			console.log($("#drpMonth_original").val() + '/' + $("#drpYear_original").val());
+		});
+		var str = $('.cc-last').html();
+
+		str = str.replace(/\d{4}(?= \d{4})/g, "****");
+
+		$('.cc-last').html(str);
+
+	});
+
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/Parsley/src/parsley.css" />
+<link rel="stylesheet" href="/assets/templates/common-core/lib/highlight/github.min.css" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/managemycc.css" type="text/css" media="screen" />
+<!--END: template_styles-->

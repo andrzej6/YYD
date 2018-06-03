@@ -1,0 +1,112 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span>[storecredits_details-detail]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+
+<section id="storecreditDetail" class="page-content">
+
+	<section class="page_header">
+	    <div class="container">
+            <h1 class="page_heading">
+              [storecredits_details-detail]
+            </h1>
+            <!--START: myAccount-->
+            <div class="button">
+                <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+            </div>
+            <!--END: myAccount-->
+		    <!--START: CATEGORY_HEADER-->
+			<div class="category-header" id="storecredits_detailHeader">[CONTENT]</div>
+		    <!--END: CATEGORY_HEADER-->
+    	</div>
+    </section>
+
+    <!--START: StoreCredits-->
+    <section class="storecreditsDetail">
+		
+		<div class="container">
+			<div class="row hidden-xs">
+				<div class="col-sm-4 sc-date">
+					<label>[storecredits_details-header-date]</label>
+				</div>
+				<div class="col-sm-4 sc-credit">
+					<label>[storecredits_details-header-credit]</label>
+				</div>
+				<div class="col-sm-4 sc-reference">
+					<label>[storecredits_details-header-reference]</label>
+				</div>
+			</div>
+
+			<!--START: StoreCreditsNoHistory-->
+			<div class="row">
+				<div class="col-xs-12">
+					<p class="nohistory">[storecredits_details-nohistory]</p>
+				</div>
+			</div>
+			<!--END: StoreCreditsNoHistory-->
+
+			<!--START: StoreCreditsDetails-->
+			<div class="StoreCreditsDetails row">
+				<div class="col-sm-4 sc-date">
+					[stcDate]
+				</div>
+				<div class="col-sm-4 sc-credit">
+					[stcCredits]
+				</div>
+				<div class="col-sm-4 sc-reference">
+					<!--START: orderLink--><a href="ordertracking.asp?action=view&id=[orderid]"><!--END: orderLink-->[stcReference]</a>
+				</div>
+			</div>
+			<!--END: StoreCreditsDetails-->
+
+			<!--START: StoreCreditsTotal-->
+			<div class="StoreCreditsTotal clearfix">
+				<div class="col-xs-6 creditAvailable">
+					<label>[storecredits_details-header-creditAvailable]</label>
+				</div>
+				<div class="col-xs-6 totalCredit">[stcTotalCredit]</div>
+			</div>
+			<!--END: StoreCreditsTotal-->
+		</div>
+    </section>
+    <!--END: StoreCredits-->
+
+
+    <div class="clear"></div>
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="storecredits_detailFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+</section>
+
+<!--START: template_styles-->
+<style>
+.StoreCreditsTotal {
+    margin-top: 15px;
+    border-top: 2px dashed #ececec;
+    border-bottom: 2px dashed #ececec;
+    line-height: 1;
+    padding: 15px 0;
+}
+
+
+@media(max-width: 767px) {
+	.StoreCreditsDetails {
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+	}
+	.StoreCreditsDetails > div:before {
+		font-weight: bold;
+	}
+	.sc-date:before { content: "[storecredits_details-header-date]: "; }
+	.sc-credit:before { content: "[storecredits_details-header-credit]: "; }
+	.sc-reference:before { content: "[storecredits_details-header-reference]: "; }
+}
+</style>
+<!--END: template_styles-->

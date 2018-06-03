@@ -1,0 +1,81 @@
+#divRegBonus {
+    padding:0;
+}
+.divRegBonus_title {
+    color: #fff;
+    background: #000;
+    height: 42px;
+    line-height: 42px;
+    vertical-align: middle;
+    margin: 10px auto;
+    max-width: 90%;
+    font-size: 26px;
+}
+.promo_welcome {
+    margin-top:145px;
+    text-align:center;
+    margin:2em;
+}
+
+.rewards-modal-container {
+    padding: 0 10px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+.rewards-modal-container h3 {
+    font-size: 18px;
+    margin: 25px 0;
+}
+
+.copiable-list-group-component .input-group {
+	width: 100%;
+}
+.copiable-list-group-component .btn {
+	height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.referlink-details-area {
+    margin: 25px 0;
+}
+ul.social-links {
+    margin:25px 0 0 0;
+    padding:0;
+    list-style:none;
+    text-align: center;
+    font-size: 
+}
+    ul.social-links li {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 0;
+    }
+    ul.social-links a {
+        font-size: 24px;
+    }
+
+ul.footer-nav {
+    margin:25px 0 0 0;
+    padding:0;
+    list-style:none;
+}
+ul.footer-nav li {
+    display: inline-block;
+    text-align: right;
+    margin:0;
+    padding:0 10px;
+}
+    ul.footer-nav li:first-child {
+        text-align: left;
+    }
+ul.footer-nav a {
+    display: inline-block;
+    min-width: 155px;
+    text-align: center;
+}
+
+#divRewardWidgetModal button.close {
+    margin-right: 20px;
+    font-size: 30px;
+}

@@ -1,0 +1,434 @@
+<section class="page_header">
+    <div class="container">
+        <!--START: myAccount-->
+        <div class="button right">
+            <a href="myaccount.asp"><img src="assets/templates/common/images/arrow_back.png" border="0" align="absmiddle"></a>&nbsp;<a href="myaccount.asp">back to my account</a>
+        </div>
+        <!--END: myAccount-->
+        <div class="clear"></div>
+        <h1 class="page_headers">[account_orderstacking-alias] [affiliate_summary-header-orders]</h1>
+        <div class="clear"></div>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+<section id="previouslyPurchased">
+    <form method="post" name="frmShipOrder" id="frmShipOrder">
+        <div class="container">
+            <!--START: order_none-->
+            <em>[product_no_orderstacking]</em>
+            <!--END: order_none-->
+            <!--START: order-->
+            <div class="preorder">
+                <div class="page_titles">
+                    <div class="titles2 width20 mob-width20" style="padding-bottom:1px;">&nbsp;
+                        <input type="checkbox" id="chkSelectAll" value="1" onclick="selectAll()"/>
+                        [productqa_with-selected]
+                    </div>
+                    <div class="titles2 width40 mob-width40 shoppingcart_items c">[shoppingcart_items]</div>
+                    <div class="titles2 width15 mob-width15">[orderhistory_date]&nbsp;</div>
+                    <div class="titles2 width10 mob-width10">[shoppingcart_price]&nbsp;</div>
+                    <div class="clear"></div>
+                </div>
+                <!--START: SHOPPING_CART_ITEM-->
+                <!--START: SHOPPING_CART_ITEM-->
+                <div class="shoppingcart_items_details">
+                    <div class="width20 mob-width20">
+
+                            <!--START: selectOrder-->
+                            <input type="checkbox" name="orderstacking_order" id="orderstacking_order[orderid]" value="[orderid]" class="chkmeout" />&nbsp;<a href="ordertracking.asp?action=view&id=[orderid]">[invoice-prefix][invoice-number]</a>
+                            <!--END: selectOrder-->
+                     </div>
+
+                    <div class="width40 mob-width40">
+                        <div class="width10 mob-width20 prod-thumb">&nbsp;
+                            <!--START: itemthumbnail--><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]" border="0" height="55" width="55" id="tl"></a><!--END: itemthumbnail-->
+                        </div>
+                        <div class="width80 mob-width80 prod-detail" style="text-align:left">
+                            <a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]&nbsp;</a>
+                            <!--START: date_created-->
+                            <br /><em>[account_preorder-available]&nbsp;[date_created]&nbsp;</em>
+                            <!--END: date_created-->
+                        </div>
+                    </div>
+                    <div class="width15 mob-width15">
+						[odate]
+                    </div>
+                    <div class="width10 mob-width10">
+                        <div class="item pad10"><span id="spnPrice[ORDERITEMID]">[ITEM_PRICE]</span></div>
+                    </div>
+                </div>
+                <!--END: SHOPPING_CART_ITEM-->
+                <input type="button" class="btn" onclick="createOrderStackingOrder()" value="Ship Orders" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'">
+            </div>
+            <!--END: order-->
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-footer">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+        </div>
+    </form>
+    <div id="divSubmitStack" style="display:none; padding: 2em;">
+        <h2>[account_orderstacking-confirm]</h2>
+        <em>[account_orderstacking-ordercombined]</em>
+        <!--START: makepayment-->
+        <div id="divMakePayment">
+            <div class="shipmentTable" style="padding: 2em;">
+                <div class="payment-ref"><b>[shoppingcart_payments-amount]</b></div>
+                <div class="payment-amount"><b>[shoppingcart_payments-select]</b></div>
+                <div class="payment-amount"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="shipmentTable" style="padding: 2em;">
+                <form name="frmPayment" id="frmPayment" method="post" action="paywithcard.asp">
+                    <input type="hidden" name="paymenttype" value="stacked" />
+                    <input type="hidden" name="orderid" id="orderid" value="[orderid]" />
+                    <div class="payment-ref"><input type="text" value="" maxlength="12" size="10" name="payment_amount" id="payment_amount" disabled="disabled" /></div>
+                    <div class="payment-amout">
+                        <select name="authCIMProfileID" id="authCIMProfileID">
+                            [cimtokens]
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div style="text-align:right">
+            <input type="button" class="btn" onclick="submitPayment()" value="Submit" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+        </div>
+        <div class="clear"></div>
+        <div class="shipmentTable" style="padding: 1em;">
+            <div class="header">
+                <h3>Shipping Information</h3>
+            </div>
+            <div style="width:450px; float:left; display:none" id="divEditShipping">
+                <span class="editFields"><input type="text" id="oshipfirstname" /> <input type="text" id="oshiplastname" /></span><br />
+                <span class="editFields"><input type="text" id="oshipcompany" /></span><br />
+                <span class="editFields"><input type="text" id="oshipaddress" />&nbsp;<input type="text" id="oshipaddress2" /></span><br />
+                <span class="editFields"></span><input type="text" id="oshipcity" />&nbsp;<input type="text" id="oshipstate" maxlength="2" size="3" />&nbsp;<input type="text" id="oshipzip" />&nbsp;<input type="button" class="btn" onclick="saveAddress()" value="Save" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /><br />
+
+            </div>
+            <div class="clear"></div>
+            <div style="width:200px; float:left; line-height: 16px;">
+                <span id="spnShipFirstName"></span> <span id="spnShipLastName"></span><br />
+                <span id="spnShipCompany"></span><br />
+                <span id="spnShipAddress"></span>&nbsp;&nbsp;<span id="spnShipAddress2"></span><span class="editFields"></span><br />
+                <span id="spnShipCity"></span>, <span id="spnShipState"></span>&nbsp;&nbsp;<span id="spnShipZip"></span><span class="editFields"></span><br />
+                <input type="button" class="btn" onclick="jQuery('#divEditShipping').toggle()" value="Edit" onmouseover=" this.className='btn_over' " onmouseout=" this.className='btn' " />
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--END: makepayment-->
+        <!--START: notokens-->
+        <a href="managemycc.asp?hdnaction=addnew">[shoppingcart_payments-notokens]</a>
+        <!--END: notokens-->
+    </div>
+</section>
+
+
+
+<style>
+    .updaccField {
+        width: 100px;
+        padding: 3px;
+    }
+
+    .submit-button {
+        text-align: right;
+        margin: 5px auto;
+    }
+
+    .page_titles {
+    }
+
+    .prod-thumb {
+        float: left;
+        width: 15%;
+    }
+
+    .prod-detail {
+        float: left;
+        width: 85%;
+        padding: 0 0 0 5px;
+    }
+
+    .width10 {
+        float: left;
+        width: 10%;
+    }
+
+    .width15 {
+        float: left;
+        width: 15%;
+    }
+
+    .width20 {
+        float: left;
+        width: 20%;
+    }
+
+    .width40 {
+        float: left;
+        width: 40%;
+    }
+
+    .width50 {
+        float: left;
+        width: 50%;
+    }
+
+    .width60 {
+        float: left;
+        width: 60%;
+    }
+
+    .width70 {
+        float: left;
+        width: 70%;
+    }
+
+    .width75 {
+        float: left;
+        width: 75%;
+    }
+
+    .width80 {
+        float: left;
+        width: 80%;
+    }
+
+    .shoppingcart_items_details {
+        text-align: left;
+    }
+
+        .shoppingcart_items_details:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .shoppingcart_items_details > div {
+            padding: 10px 0;
+        }
+
+            .shoppingcart_items_details > div:not(:first-child) {
+                padding: 10px;
+                text-align: center;
+            }
+
+    @media only screen and (max-width: 767px) {
+        .mob-width10 {
+            width: 10%;
+        }
+
+        .mob-width15 {
+            width: 15%;
+        }
+
+        .mob-width20 {
+            width: 20%;
+        }
+
+        .mob-width40 {
+            width: 40%;
+        }
+
+        .mob-width50 {
+            width: 50%;
+        }
+
+        .mob-width75 {
+            width: 75%;
+        }
+
+        .mob-width80 {
+            width: 80%;
+        }
+
+        .r {
+            text-align: right;
+        }
+    }
+</style>
+
+<script type="text/javascript">
+    function selectAll() {
+       jQuery('.chkmeout').prop('checked', jQuery("#chkSelectAll").prop('checked'));
+    }
+
+	function createOrderStackingOrder() {
+
+	    if (!confirm('Do you want to create a shipment from the orders selected?'))
+	        return (false);	    
+
+		var selectedOrders = '';
+		//SELECT ALL THE CHECKED ORDERS FOR PROCESSING
+		jQuery.each(jQuery("input[name=orderstacking_order]:checked"), function () {
+			if (selectedOrders == '')
+				selectedOrders = (jQuery(this).val());
+			else
+				selectedOrders += ',' + (jQuery(this).val());
+		});
+
+		if (selectedOrders == '') {
+			alert('[account_orderstacking-no-orders-selected]');
+			return (false);
+		}
+
+		jQuery('#divSubmitStack').modal(
+		{
+		    containerCss: {
+		        borderWidth: '1px',
+		        width: '1001px',
+		        height: '502px',
+		        backgroundColor: '#fff',
+		        padding: '12px'
+		    }
+		});
+
+		jQuery.ajax({
+			url: 'orderstacking_list.asp',
+			type: 'POST',
+			datatype: 'json',
+			data: 'hdnSecurityToken=[securityToken]&selectedorders=' + selectedOrders + '&ajaxsubmit=1&action=getshipaddress',
+			success: function (data) {
+				if (data.errorMsg == '') {
+					//LOAD DISPLAY SPANS
+					jQuery("#spnShipCompany").html(data.oshipcompany);
+					jQuery("#spnShipFirstName").html(data.oshipfirstname);
+					jQuery("#spnShipLastName").html(data.oshiplastname);
+					jQuery("#spnShipCity").html(data.oshipcity);
+					jQuery("#spnShipState").html(data.oshipstate);
+					jQuery("#spnShipZip").html(data.oshipzip);
+					jQuery("#spnShipAddress").html(data.oshipaddress);
+					jQuery("#spnShipAddress2").html(data.oshipaddress2);
+					//LOAD INPUT VARIABLES
+					jQuery("#oshipfirstname").val(data.oshipfirstname);
+					jQuery("#oshiplastname").val(data.oshiplastname);
+					jQuery("#oshipcity").val(data.oshipcity);
+					jQuery("#oshipstate").val(data.oshipstate);
+					jQuery("#oshipzip").val(data.oshipzip);
+					jQuery("#oshipcompany").val(data.oshipcompany);
+					jQuery("#oshipaddress").val(data.oshipaddress);
+					jQuery("#oshipaddress2").val(data.oshipaddress2);
+					if (data.shipcost == 0) {
+
+					}
+				}
+				else
+					alert(data.errorMsg);
+			}
+		});
+
+		jQuery.ajax({
+			url: 'orderstacking_list.asp',
+			type: 'POST',
+			datatype: 'json',
+			data: 'hdnSecurityToken=[securityToken]&selectedorders=' + selectedOrders + '&ajaxsubmit=1&action=createshipmentorder',
+			success: function (data) {
+				if (data.errorMsg == '') {
+					jQuery("#orderid").val(data.neworderid);
+					jQuery("#payment_amount").val(data.shipcost);
+					if (data.shipcost == 0) {
+						alert('[account_nopayment-shipping]');
+						jQuery.modal.close();
+						window.location = 'orderstacking_list.asp';
+					}
+				}
+				else
+					alert(data.errorMsg);
+			}
+		});
+
+		return;
+	}
+
+	function saveAddress() {
+
+		var selectedOrders = '';
+
+		//SELECT ALL THE CHECKED ORDERS FOR PROCESSING
+		jQuery.each(jQuery("input[name=orderstacking_order]:checked"), function () {
+			if (selectedOrders == '')
+				selectedOrders = (jQuery(this).val());
+			else
+				selectedOrders += ',' + (jQuery(this).val());
+		});
+
+		if (selectedOrders == '') {
+			alert('[account_orderstacking-no-orders-selected]');
+			return (false);
+		}
+
+		var dataq;
+
+		dataq = 'oshipfirstname=' + jQuery("#oshipfirstname").val()
+			+ '&oshiplastname=' + jQuery("#oshiplastname").val()
+			+ '&oshipcity=' + jQuery("#oshipcity").val()
+			+ '&oshipstate=' + jQuery("#oshipstate").val()
+			+ '&oshipzip=' + jQuery("#oshipzip").val()
+			+ '&oshipcompany=' + jQuery("#oshipcompany").val()
+			+ '&oshipaddress=' + jQuery("#oshipaddress").val()
+			+ '&oshipaddress2=' + jQuery("#oshipaddress2").val()
+			+ '&neworderid=' + jQuery("#orderid").val();
+			+ '&orderid=' + jQuery("#orderid").val();
+
+		jQuery.ajax({
+			url: 'orderstacking_list.asp',
+			type: 'POST',
+			datatype: 'json',
+			data: 'hdnSecurityToken=[securityToken]&selectedorders=' + selectedOrders + '&ajaxsubmit=1&action=updateshipaddress&' + dataq,
+			success: function (data) {
+				if (data.errorMsg != '')
+					alert(data.errorMsg);
+				else {
+					jQuery("#spnShipCompany").html(jQuery("#oshipcompany").val());
+					jQuery("#spnShipFirstName").html(jQuery("#oshipfirstname").val());
+					jQuery("#spnShipLastName").html(jQuery("#oshiplastname").val());
+					jQuery("#spnShipCity").html(jQuery("#oshipcity").val());
+					jQuery("#spnShipState").html(jQuery("#oshipstate").val());
+					jQuery("#spnShipZip").html(jQuery("#oshipzip").val());
+					jQuery("#spnShipAddress").html(jQuery("#oshipaddress").val());
+					jQuery("#spnShipAddress2").html(jQuery("#oshipaddress2").val());
+					jQuery('#divEditShipping').toggle();
+				}
+			}
+		});
+	}
+
+	function makePayment() {
+		var vis = (jQuery("#divMakePayment").css('display') == 'none');
+
+		if (vis) {
+			jQuery("#divMakePayment").slideDown();
+			jQuery("#payment_amount").focus();
+		}
+		else
+			jQuery("#divMakePayment").slideUp();
+	}
+	var intClicks = 0;
+
+	function submitPayment() {
+
+		if (jQuery("#payment_amount").val() == '') {
+		//THE TOTAL SHIPPING HAS NOT BEEN RETURNED FROM A PREVIOUS AJAX CALL YET.
+			intClicks += 1;
+			if (intClicks < 3)
+				alert('[account_wait-amount]');
+			return (false);
+		}
+
+		var payAmount = parseFloat('0' + jQuery("#payment_amount").val());
+
+		if (payAmount == 0) {
+			alert('[account_nopayment-shipping]');
+			window.location = 'orderstacking_list.asp';
+			return (false);
+		}
+
+		if (confirm('[shoppingcart_payments-amount]: ' + jQuery("#payment_amount").val() + '?'))
+			jQuery("#frmPayment").submit();
+	}
+
+</script>

@@ -1,0 +1,67 @@
+
+<table width="95%" cellpadding="0" cellspacing="0" align="center" border="0">
+	<tr>
+		<td class="page_headers" align="left">[storecredits_details-detail]</td>
+		<!--START: myAccount-->
+		<td valign="middle" align="right"><a href="myaccount.asp"><img src="assets/templates/common/images/arrow_back.png" border="0" align="absmiddle"></a>&nbsp;<a href="myaccount.asp">back to my account</a></td>
+		<!--END: myAccount-->
+	</tr>
+	</tr>
+	
+	<tr>
+		<td colspan="3"><!--START: CATEGORY_HEADER-->
+			<table width="95%" cellspacing="0" cellpadding="2" border="0">
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="data">[CONTENT]</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<!--END: CATEGORY_HEADER-->
+			<!--START: StoreCredits-->
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td colspan="2"><table width="100%" cellpadding="4" cellspacing="0" class="alternative" border="0">
+							<tr>
+								<td width="25%" class="titles2">[storecredits_details-header-date]</td>
+								<td width="15%" class="titles2">[storecredits_details-header-credit]</td>
+								<td width="60%" class="titles2">[storecredits_details-header-reference]</td>
+							</tr>
+							<!--START: StoreCreditsNoHistory-->
+							<tr class="alternative">
+								<td class="item" colspan="3" align="center">[storecredits_details-nohistory]</td>
+							</tr>
+							<!--END: StoreCreditsNoHistory-->
+							<!--START: StoreCreditsDetails-->
+							<tr class="alternative">
+								<td class="item">[stcDate]</td>
+								<td class="item">[stcCredits]</td>
+								<td class="item"><!--START: orderLink--><a href="ordertracking.asp?action=view&id=[orderid]"><!--END: orderLink-->[stcReference]</a>&nbsp;</td>
+							</tr>
+							<!--END: StoreCreditsDetails-->
+							<!--START: StoreCreditsTotal-->
+							<tr class="alternative">
+								<td class="titles2">[storecredits_details-header-creditAvailable]</td>
+								<td class="titles2" colspan="2">[stcTotalCredit]</td>
+							</tr>
+							<!--END: StoreCreditsTotal-->
+						</table>
+						<br>
+					</td>
+				</tr>
+			</table>
+			<!--END: StoreCredits-->
+			<!--START: CATEGORY_FOOTER-->
+			<table width="95%" cellspacing="0" cellpadding="2" border="0">
+				<tr>
+					<td class="data">[CONTENT]</td>
+				</tr>
+			</table>
+			<!--END: CATEGORY_FOOTER-->
+		</td>
+	</tr>
+</table>

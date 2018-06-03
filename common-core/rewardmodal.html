@@ -1,0 +1,161 @@
+<html>
+<head>
+    <title>Reward Points</title>
+    <script type="text/javascript" src="assets/templates/common-html5/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/templates/common-html5/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="assets/templates/common-core/lib/utilities.js"></script>
+    <script type="text/javascript" src="assets/templates/common-html5/js/jquery.responsive.tabs.min.js"></script>
+    
+	
+	
+	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/css/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/assets/templates/common-core/lib/fontello/css/fontello.css" type="text/css" />
+    <link rel="stylesheet" href="assets/templates/common-core/css/rewardsmodal.css" type="text/css" media="all" />
+    
+    <script type="text/javascript">
+
+        function loginHereLink() {
+		    top.window.location = "/myaccount.asp";
+	    }
+
+	    function continueShoppingLink() {
+	        window.parent.closeRewardWidgetModal();
+	    }
+
+	    function createAccount() {
+		    top.window.location = 'register.asp?cg=0&evh=r1'
+	    }
+
+	    function earnMoreLink() {
+	        window.location = "rewardmodal.asp?sec=referlink&produrl=[product_url]";
+	    }
+
+	    function copyToClipboard() {
+		    var bolCopied;
+		    document.getElementById("referlink").select();
+		    bolCopied = document.execCommand("copy", false, null);
+		    if (bolCopied)
+			    revUpdateBar.success('Link copied to clipboard');
+		    else
+			    window.prompt("Copy to clipboard: Ctrl+C, Enter", jQuery("#referlink").val());;
+	    }
+
+	    function promoCheck() {
+	        if (!validateEmail(jQuery("#referemail").val())) {
+	            alert("Invalid Email");
+	            return (false);
+	        }
+	        alert('[rewards_details-promo-text]');
+	        continueShoppingLink();
+	    }
+
+	    function validateEmail(email) {
+	        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	        return re.test(email);
+	    }
+
+    </script>
+
+</head>
+<body style="border: none;padding:0 0 0 0">
+    <div id="divRegBonus" style="text-align:center;">
+        <h2 class="divRegBonus_title">[storename]</h2>
+        <!--START: createaccount-->
+        <div class="rewards-modal-container">
+            <h3>Create an account and earn your first [regpointsbonus] [rewards_details-points-type] instantly!</h3>
+            <button type="button" onclick="createAccount()" class="btn btn-primary"><i class="icon-pencil"></i> Create Account</button>
+
+            <p style="margin:2em 0 0 0">
+                <a href="#" onclick="loginHereLink()">[rewards_details-have-account]</a>
+            </p>
+
+            <div>
+                <ul class="footer-nav">
+                    <!--<li><button type="button" class="btn" href="#" onclick="learnMoreLink()">[rewards_details-learn]</button></li>-->
+                    <li><button type="button" class="btn btn-default" onclick="continueShoppingLink()">[rewards_details-continue]</button></li>
+                </ul>
+            </div>
+        </div>
+        <!--END: createaccount-->
+        <!--START: spendpoints-->
+        <div class="rewards-modal-container">
+            <h3>Hi [username], you have [points_balance] Reward Points.</h3>
+            <button type="button" onclick="top.window.location='myaccount.asp?cg=0&evh=r2';" class="btn btn-primary"><i class="icon-pencil"></i> [rewards_details-view]</button>
+            <p style="margin-top:2em">
+                <a href="#" onclick="earnMoreLink()">[rewards_details-earn-more]</a>
+            </p>
+            <div>
+                <ul class="footer-nav">
+                    <!--<li><button type="button" class="btn" href="#" onclick="learnMoreLink()">[rewards_details-learn]</button></li>-->
+                    <li><button type="button" class="btn btn-default" onclick="continueShoppingLink()">[rewards_details-continue]</button></li>
+                </ul>
+            </div>
+        </div>
+        <!--END: spendpoints-->
+        <!--START: referlink-->
+        <div class="rewards-modal-container">
+            <h3>[rewards_details-referral-link] [rewardEventReferralPoints] [rewards_details-points-type]</h3>
+            <div class="customer-referral-offer-form">
+                <div id="ember1120" class="copiable-list-group-component ember-view">
+					<div class="input-group">
+					  <input type="text" class="form-control" name="referlink" id="referlink" value="[urlreferlink]" class="form-control" readonly="readonly" onclick="this.select()">
+					  <span class="input-group-btn">
+						<button class="btn btn-primary" type="button" onclick="copyToClipboard()"><i class="icon-floppy"></i></button>
+					  </span>
+					</div><!-- /input-group -->
+                </div>
+            </div>
+            <ul class="social-links">                    
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=[fullreferlink]&t=test" target="_blank"><i class="icon-facebook"></i></a></li>
+                <li><a href="https://twitter.com/share?text=[rewards_details-promote]&url=[urlreferlink]&hashtags=[rewards_details-hashtag1],[rewards_details-hastag2]" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li><a href="mailto:?subject=[rewards_details-promote]?&body=[rewards_details-promote]%20[fullreferlink]"><i class="icon-mail-alt"></i></a></li>
+            </ul>
+
+			<div class="referlink-details-area">
+				<h4>[rewards_details-earn-more]</h4>
+				<ul class="list-unstyled">
+					<li>[rewardEventNewsletterSignupPoints] Pnts: [mailinglist_text]</li>
+					<li>[rewardEventReviewPostPoints] Pnts: [reviews_new]</li>
+                </ul>
+			</div>
+
+            <ul class="footer-nav" style="margin-top:0px"  >
+                <li><button type="button" class="btn btn-default" href="#" onclick="window.history.back()"><i class="icon-angle-left"></i>Go Back</button></li>
+                <li><button type="button" class="btn btn-primary" onclick="continueShoppingLink()">[rewards_details-continue]</button></li>
+            </ul>
+        </div>
+        <!--END: referlink-->
+        <!--START: pointchoices-->
+        <h2></h2>
+        <!--END: pointchoices-->
+        <!--START: promo_welcome-->
+        <div class="rewards-modal-container">
+            <h3>[referusername] sent you [rewards_details-promo-text]</h3>
+            <form name="frmPromo" id="frmPromo" action="rewardmodal.asp?sec=promolink">
+                <div>
+                    <ul class="footer-nav">
+                        <li><button type="button" class="btn" onclick="continueShoppingLink()">[rewards_details-continue]</button></li>
+                    </ul>
+                </div>
+            </form>
+            <!--START: createaccountpromo-->
+                <h3>Create an account and earn your first [regpointsbonus] [rewards_details-points-type] instantly!</h3>
+                <button type="button" onclick="createAccount()" class="btn"><i class="icon-pencil"></i> Create Account</button>
+                <p style="margin:0 0 0 0">
+                    <a href="#" onclick="loginHereLink()">[rewards_details-have-account]</a>
+                </p>
+            <!--END: createaccountpromo-->
+        </div>
+        <!--END: promo_welcome-->
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+	var revUpdateBar = new MessageBar();
+	jQuery(document).ready(function () {
+	    revUpdateBar.initialize();
+	    jQuery("#referemail").focus();
+	});
+</script>

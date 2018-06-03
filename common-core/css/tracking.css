@@ -1,0 +1,58 @@
+/********** Order Tracking Global *********/
+.row.details_row {
+	padding: 10px 0;
+}
+
+.row.details_row:nth-child(2n) {
+	background: #EAE9E9;
+	background: rgba(234, 233, 233, 0.3);
+	background-color: #EAE9E9;
+	background-color: rgba(234, 233, 233, 0.3);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9)";
+}
+
+@media only screen and (max-width: 767px) {
+	.row.details_row {
+		padding: 10px 0;
+		margin: 15px auto;
+		-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	}
+	.row.details_row:nth-child(2n) {
+		background: #EAE9E9;
+		background: rgba(234, 233, 233, 0.3);
+		background-color: #EAE9E9;
+		background-color: rgba(234, 233, 233, 0.3);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9)";
+	}
+}
+
+
+/********** Order Tracking CSS *********/
+#upsTracking, #fedexTracking, #uspsTracking, #tntTracking, #startrackTracking {}
+
+#upsTracking .content-area .titles2, #fedexTracking .content-area .titles2, #uspsTracking .content-area .titles2, #tntTracking .content-area .titles2, #startrackTracking .content-area .titles2{
+	margin-bottom:25px;
+}
+.tracking_activity {
+	margin:15px auto;
+}
+.formField {
+	margin-bottom: 20px;
+}
+.formField label{
+}
+.form-inline .checkbox {
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+.terms-conditions{
+    margin: 0px;
+    font-weight: 500;	
+}

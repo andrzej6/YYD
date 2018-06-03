@@ -1,0 +1,456 @@
+<style type="text/css">
+@charset "UTF-8";
+/*
+* jQuery File Upload Plugin CSS
+* https://github.com/blueimp/jQuery-File-Upload
+*
+* Copyright 2013, Sebastian Tschan
+* https://blueimp.net
+*
+* Licensed under the MIT license:
+* http://www.opensource.org/licenses/MIT
+*/
+
+.fileinput-button {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.fileinput-button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	opacity: 0;
+	-ms-filter: 'alpha(opacity=0)';
+	font-size: 200px;
+	direction: ltr;
+	cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+	.fileinput-button input {
+		filter: alpha(opacity=0);
+		font-size: 100%;
+		height: 100%;
+	}
+}
+#progress {
+	background: #FFF;
+}
+.bar {
+    height: 18px;
+    background: green;
+}
+</style>
+
+<table width="95%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="100%" class="page_headers" align="left">
+			<!--START: RMANumber-->
+			[rma_header-rmanumber] [RmaNumber]
+			<!--END: RMANumber-->
+			<!--START: NewRMA-->
+			[rma_header-new]
+			<!--END: NewRMA-->
+		</td>
+		<td align="right"><a href="myaccount.asp"><img src="assets/templates/common/images/arrow_back.png" border="0" align="absmiddle"></a> </td>
+		<td valign="middle" nowrap><a href="myaccount.asp">back to my account</a> </td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;</td>
+	</tr>
+	<!--START: CATEGORY_HEADER-->
+	<tr>
+		<td class="data" colspan="3">[CONTENT]</td>
+	</tr>
+	<!--END: CATEGORY_HEADER-->
+</table>
+
+<!--START: NEW-->
+<form name="formu" id="formu" method="post" action="">
+	<input type="hidden" name="r" id="r" value="[RmaNumber]">
+	<!--START: form-->
+	<table width="95%" border="0" cellspacing="0" cellpadding="0" class="alternative">
+		<tr>
+			<td>
+				<table width="100%" cellpadding="4" cellspacing="0" border="0">
+					<tr>
+						<td class="titles">[rma_header-rmaorderitems]</td>
+					</tr>
+				</table>
+				<table width="100%" cellspacing="0" cellpadding="4" border="0">
+					<tr>
+						<td width="80" align="left" class="titles2">[rma_header-rmaorder-item-id]</td>
+						<td align="left" class="titles2">[rma_header-rmaorder-item-description]</td>
+						<td align="right" class="titles2">[rma_header-rmaorder-item-unitprice]</td>
+						<td align="center" class="titles2">[rma_header-rmaorder-item-qty]</td>
+						<td align="center" class="titles2">[rma_header-rmaorder-item-qtyrtn]</td>
+					</tr>
+					<!--START: items-->
+					<tr class="item" bgcolor="#ffffff">
+						<td width="80" valign="top">
+							[Id]
+							<input type="hidden" name="Item[idx]" id="Item[idx]" value="[IdItem]">
+						</td>
+						<td valign="top">[Description]</td>
+						<td width="80" align="right" valign="top">[uPrice]</td>
+						<td width="80" align="center" valign="top">[Qty]</td>
+						<td width="80" align="center" valign="top">
+							<select name="QR[idx]" id="QR[idx]" class="item">
+								[qr]
+							</select>
+							<input type="hidden" name="QRE[idx]" id="QRE[idx]" value="0" class="item">
+							<input type="hidden" name="QRS[idx]" id="QRS[idx]" value="0" class="item">
+						</td>
+					</tr>
+					<!--END: items-->
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table width="95%" border="0" cellspacing="0" cellpadding="0" class="alternative">
+		<tr>
+			<td>
+				<table width="100%" cellpadding="4" cellspacing="0" border="0">
+					<tr>
+						<td class="titles">[rma_header-rmaorder-rtn-option]</td>
+					</tr>
+				</table>
+				<table width="100%" cellspacing="0" cellpadding="4" border="0">
+					<tr>
+						<td width="33%" class="titles2">[rma_header-rmaorder-rtn-reason]</td>
+						<td width="33%" class="titles2">[rma_header-rmaorder-rtn-method]</td>
+						<td width="34%" class="titles2">[rma_header-rmaorder-rtn-status]</td>
+					</tr>
+					<!--START: options-->
+					<tr class="item" bgcolor="#ffffff">
+						<td width="140" valign="top">
+							<select name="Reason" id="Reason" class="item">
+								[Reason]
+							</select>
+						</td>
+						<td width="240" valign="top">
+							<select name="Method" id="Method" class="item">
+								[Method]
+							</select>
+						</td>
+						<td valign="top">
+							Open
+							<input type="hidden" name="Status" id="Status" value="1">
+						</td>
+					</tr>
+					<!--END: options-->
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table width="95%" border="0" cellspacing="0" cellpadding="0" class="alternative">
+		<tr>
+			<td class="titles"> [rma_header-rmacomments]</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="100%" cellspacing="0" cellpadding="4" border="0">
+					<!--START: comments-->
+					<tr class="item" bgcolor="#ffffff">
+						<td valign="top" align="center">
+							<textarea name="comments" id="comments" class="item" rows="4" style="width: 100%;">[comments]</textarea>
+						</td>
+					</tr>
+					<!--END: comments-->
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table width="95%" border="0" cellspacing="0" cellpadding="0" class="alternative">
+		<tr>
+			<td class="titles">Upload Files</td>
+		</tr>
+		<tr>
+			<td class="item">
+				<div style="margin: 15px 0;">
+					<span class="btn fileinput-button" onmouseover="this.className = 'btn_over fileinput-button'" onmouseout="	this.className = 'btn fileinput-button'">
+						<span>Select files...</span>
+						<!-- The file input field used as target for the file upload widget -->
+						<input id="fileupload" type="file" name="files[]" multiple="" data-url="/filesaction.asp?action=upload&folder=temp&hid=[filehash]">
+					</span>
+					<script src="js/vendor/jquery.ui.widget.js"></script>
+					<script src="js/jquery.iframe-transport.js"></script>
+					<script src="js/jquery.fileupload.js"></script>
+
+					<script type="text/javascript">
+                        var bUploading = false;
+
+						var list = [];
+						jQuery(function () {
+
+							if (jQuery("#fileattachment").val() != '') {
+								if (jQuery("#fileattachment").val().split(",").length >= 4) {
+									alert("[crm_filelimit]");
+									return false;
+								}
+							}
+
+							jQuery('#fileupload').fileupload({
+								dataType: 'json',
+								add: function (e, data) {
+
+									var extn = "", filename = "";
+									var intFilesUploaded = 0;
+
+									if (jQuery("#fileattachment").val() != "") {
+									    intFilesUploaded = jQuery("#fileattachment").val().split(",").length;
+									}
+
+									if (data.originalFiles.length > 4 || (data.originalFiles.length + intFilesUploaded) > 4) {
+											alert("[crm_filelimit]");
+											return false;
+										}
+									else {
+									    var filename = data.files[0].name;
+
+									    if (filename.lastIndexOf(".") > 0) {
+									        extn = filename.substring(filename.lastIndexOf(".") + 1, filename.length);
+									        if (extn.toLowerCase() == "gif" || extn.toLowerCase() == "jpg" || extn.toLowerCase() == "jpeg" || extn.toLowerCase() == "png" || extn.toLowerCase() == "bmp" || extn.toLowerCase() == "psd" || extn.toLowerCase() == "tif" || extn.toLowerCase() == "zip" || extn.toLowerCase() == "doc" || extn.toLowerCase() == "docx" || extn.toLowerCase() == "pdf" || extn.toLowerCase() == "rtf") {
+										data.context = jQuery('<p/>').text('Uploading...').appendTo(document.body);
+										data.submit();
+									}
+									else {
+										alert("File extention is not allowed");
+									}
+									    }
+									}
+
+								},
+								done: function (e, data) {
+									jQuery("#allelements").empty();
+									jQuery("#fileattachment").empty();
+
+									jQuery.each(data.result.files, function (index, file) {
+
+										var filenamewithoutextension = file.uniqueFileName.substr(0, file.uniqueFileName.lastIndexOf('.')) || file.uniqueFileName;
+
+										var strlink = "<a href='javascript:void(0);' onclick='deleteFile(\"" + file.uniqueFileName + "\");'>[x]</a>";
+										var strFileDownloadLink = "filesaction.asp?action=download&hid=[filehash]&folder=temp&file=" + file.uniqueFileName + "";
+										jQuery("#files").append('<p id="' + file.uniqueFileName + '"  class="' + filenamewithoutextension + '"  >' + strlink + '&nbsp;<a id=' + filenamewithoutextension + ' href=' + strFileDownloadLink + '>' + file.name + '</a><span class="item-remove" ></span></p>');
+
+										list.push(file.uniqueFileName);
+
+									});
+
+									jQuery("#fileattachment").val(list);
+
+
+								},
+								progressall: function (e, data) {
+									bUploading = true;
+									var progress = parseInt(data.loaded / data.total * 100, 10);
+									if (progress >= 100)
+										bUploading = false;
+
+									jQuery('#progress .bar').css(
+										'width',
+										progress + '%'
+									);
+								},
+							});
+						});
+
+						function deleteFile(fileName) {
+							var delyesno = (confirm("[crm_confirm-delete]"));
+							if (delyesno) {
+								jQuery.get('filesaction.asp',
+															 {
+															 	action: "delete",
+															 	file: fileName,
+																hid: '[filehash]',
+															 	folder: "temp",
+															 	confirm: true,
+															 	rmaid: 0
+															 },
+								function (result) {
+									//alert(result)
+								});
+
+								jQuery('#progress .bar').css(
+									'width',
+									0 + '%'
+								);
+
+								var filenamewithoutextension = fileName.substr(0, fileName.lastIndexOf('.')) || fileName;
+								var filenamewithoutextension = filenamewithoutextension.replace('(', '\\(');
+								var filenamewithoutextension = filenamewithoutextension.replace(')', '\\)');
+
+								jQuery('.' + filenamewithoutextension).remove();
+
+								list.splice(list.indexOf(fileName), 1);
+								jQuery("#fileattachment").val(list);
+
+							}
+							return false;
+						}
+					</script>
+					<p></p>
+				</div>
+
+				<div id="progress">
+					<div class="bar" style="width: 0%;"></div>
+				</div>
+				<!-- The container for the uploaded files -->
+				<div id="files" class="files"></div>
+				<input id="fileattachment" name="fileattachment" type="hidden" />
+				<p id="allelements">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+				<!--START: Add-->
+				<input type="button" class="btn" onclick="sendReturn(1);" value="[rma_header-rma-btn-saverma]" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" />
+				<!--END: Add-->
+				<!--START: Mody-->
+				<input type="button" class="btn" onclick="sendReturn([oid]);" value="[rma_header-rma-btn-returntoorder]" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" />
+				<!--END: Mody-->
+			</td>
+		</tr>
+	</table>
+	<!--END: form-->
+</form>
+
+<script type="text/javascript">
+	var length, sw, sw2;
+	sw = false;
+	sw2 = false;
+	
+	function evaluate(less){
+		
+		length = ((document.formu.length - less) / 4);
+		
+		for(i = 1; i <= length; i++){
+			if( parseFloat(eval("document.formu.QR" + i + ".value")) > 0 ){
+				sw = true;
+				break;
+			}
+			else{
+				sw = false;
+				j = i;
+			}
+			
+		}
+		
+		return sw;
+	}
+
+	function sendReturn(action){
+		
+		var less, i, j;
+		j = 0;
+		switch(action){
+			case 1:{less = 6;
+					sw = evaluate(less);
+					break;
+			}
+			case 2:{less = 7;
+					sw = evaluate(less);
+					break;
+			}
+			case 3:{
+				if(confirm("[rma_header-rma-alert-delete]")) sendRMA(length, action);
+				return void(0);
+			}
+			default:{
+				window.location.href = "ordertracking.asp?action=view&id=" + action;
+				return;
+			}
+		}
+
+		if (ExistsCreditCard(jQuery('#comments').val())) {
+		    alert("[ccNumerNotAllowedMessage]");
+		    return void (0);
+		}
+		
+		if(document.formu.Status.value == 1){
+			if(sw){
+				if(confirm("[rma_header-rma-alert-createnew]"))
+				{
+					sendRMA(length, action);
+					return void(0);
+				}
+				else
+				{
+					return void(0);
+				}
+			}		
+		}
+		
+		if(document.formu.Status.value == 3){
+			sw = evaluate(7);
+			if(sw){
+				if(confirm("[rma_header-rma-alert-close]"))
+				{
+					sendRMA(length, action);
+					return void(0);
+				}
+				else
+				{
+					return void(0);
+				}
+			}
+		}
+
+		if(sw)
+		{
+			sendRMA(length, action);
+			return void(0);
+		}
+		else{
+			if(j == 0) j = 1;
+			alert("[rma_header-rma-alert-qty]");
+			eval("document.formu.QR1.focus()");
+			return void(0);
+		}
+	}
+	
+	function sendRMA(length, action){
+		document.formu.action = "rma_new.asp?oid=[oid]&op=1&fl=" + length + "&action=" + action;
+		document.formu.submit();
+	}
+	
+</script>
+<!--END: NEW-->
+
+<!--START: NOTNEW-->
+<br>
+<table width="95%" border="0" class="alternative" cellpadding="4" cellspacing="0">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" id="Table5">
+				<tr>
+					<td class="item">
+						[rma_header-cant-create-new-rma] <br>
+						<br>
+						<input type="button" class="btn" onclick="javascript:history.back(1);" value="Go Back" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" />
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br>
+<!--END: NOTNEW-->
+
+<!--START: CATEGORY_FOOTER-->
+<table width="95%" border="0" cellspacing="0" cellpadding="0" id="Table3">
+	<tr>
+		<td class="data" colspan="3">[CONTENT]</td>
+	</tr>
+</table>
+<!--END: CATEGORY_FOOTER-->

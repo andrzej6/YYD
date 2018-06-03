@@ -1,0 +1,50 @@
+/*  Gift Certificate Detail
+    --------------------------- */
+.gcTotal-values{
+    color: #818181; 
+}
+
+.gcTotal-default{
+    color: #000;    
+}
+
+.titles-gc{
+    background: #ececec;
+    padding: 12px 0px;
+    width: 100%;
+    display: inline-block;
+}
+
+.gcDetails{
+	padding: 10px 0;
+	border-bottom: 1px dashed #ececec;
+}
+
+.gc-total {
+    border-bottom: 1px solid #ececec;
+    padding: 50px 0 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    width: 100%;
+    display: inline-block;
+}
+.gc-code {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gc_toemail {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+@media(max-width: 767px) {
+	.gcDetails > div {
+		border-bottom: 1px dashed #ececec;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.gcDetails {
+		padding: 10px;
+		border-bottom: 2px dashed #ccc;
+		margin-bottom: 30px;
+	}
+}

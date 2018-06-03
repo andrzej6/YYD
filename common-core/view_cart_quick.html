@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<title>Quick Cart</title>
+<script type="text/javascript" src="/assets/templates/common-html5/js/utilities.js"></script>
+<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
+<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+<link rel="StyleSheet" href="assets/templates/common-core/lib/fontello/css/fontello.min.css" type="text/css" />
+<link rel="stylesheet" href="/assets/templates/[template]/css/[stylesheet]" type="text/css" media="screen" />
+<script type="text/javascript" src="assets/templates/common-html5/js/jquery.min.js"></script>
+<script type="text/javascript">
+/* Equal heights on product dispays. */
+var currentTallest = 0,
+    currentRowStart = 0,
+    rowDivs = new Array(),
+    $el,
+    topPosition = 0;
+
+if (jQuery('.product-item .name').length > 0) {
+
+    jQuery('.product-item .name').each(function () {
+
+        $el = jQuery(this);
+        topPostion = $el.position().top;
+
+        if (currentRowStart != topPostion) {
+
+            for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+                rowDivs[currentDiv].height(currentTallest);
+            }
+
+            rowDivs.length = 0;
+            currentRowStart = topPostion;
+            currentTallest = $el.height();
+            rowDivs.push($el);
+
+        } else {
+
+            rowDivs.push($el);
+            currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+        }
+
+        for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+            rowDivs[currentDiv].height(currentTallest);
+        }
+
+    });
+}
+jQuery(function() {
+	jQuery('a').attr('target', '_parent');
+});
+
+</script>
+</head>
+<body id="viewCartQuick">
+
+	<section class="page_header">
+		<div class="container">
+			<h4 class="page_heading">[viewcart_quick-header]</h4>
+		</div>
+	</section>
+
+	<section class="qcart-items">
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="quickCartCheckout">
+						<h1>[viewcart_quick-title]</h1>
+						<p>[viewcart_quick-itemsincart]</p>
+						<div class="quick-subtotal">Subtotal: <strong class="price">[CARTSUBTOTAL]</strong></div>
+
+						<div class="quick-chkbuttons">
+						  <button type="button" class="btn btn-default"  onclick="parent.location.href = '[continue_url]';">[viewcart_continue-shopping]</button>
+						  <button type="button" class="btn btn-primary" onclick="parent.location.href = 'view_cart.asp';">[viewcart_checkout-button]</button>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-sm-8 hidden-xs">
+
+					<div class="quickCartItems">
+						<ul class="cart-items">
+							<li class="items-header">
+                                <span class="item-name">[shoppingcart_items]</span>
+                                <span class="item-price">[shoppingcart_price]</span>
+                                <span class="item-qty">[shoppingcart_quantity]</span>
+                                <span class="item-total">[shoppingcart_total]</span>
+                            </li>
+
+							<!--START: SHOPPING_CART_ITEM-->
+							<li class="cart-item">
+                                <span class="item-name clearfix">
+                                    <span class="item-thumb">
+                                        <!--START: itemthumbnail-->
+                                        <a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent"><img src="thumbnail.asp?file=[THUMBNAIL]" class="img-responsive" alt="" /></a>
+                                        <!--END: itemthumbnail-->
+                                        <!--START: thumbnailnolink-->
+                                        <img src="thumbnail.asp?file=[THUMBNAIL]" class="img-responsive" alt="" />
+                                        <!--END: thumbnailnolink-->
+                                    </span>
+    
+                                    <span class="item-name-right">
+                                        <!--START: itemnamelink-->
+                                        <span class="item-fullname"><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></span>
+                                        <!--END: itemnamelink--> 
+                                        <!--START: itemnamenolink-->
+                                        <span class="item-fullname">[ITEM_NAME]</span>
+                                        <!--END: itemnamenolink--> 
+    
+                                        <!--START: itemoptions--> 
+                                        <span id="opt[ITEM_ID]" name="opt[ITEM_ID]" class="itemoptions" style="display:none;">[OPTIONS]</span>
+                                        <!--END: itemoptions-->
+    
+                                        <!--START: recurring_frequency-->
+                                        <span class="recurring_frequency">This item will Autoship every <strong>[recurring_frequency]</strong></span>
+                                        <!--END: recurring_frequency--> 
+                                    </span>
+                                </span>
+                                <span class="item-price">[ITEM_PRICE]</span>
+                                <span class="quantity item-qty">[ITEM_QUANTITY]</span>
+                                <span class="item-total">[ITEM_SUBTOTAL]</span>
+                            </li>
+							<!--END: SHOPPING_CART_ITEM-->
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<!--START: FEATURE_MENU-->
+	<!--START: CATEGORY_ITEMS-->
+	<section class="qcart-youmayaslolike hidden-xs">
+		<div class="container">
+			<h4 class="page_heading">[viewcart_feature-header]</h4>
+
+            <div class="product-items product-items-[product-cols-number]">
+                <!--START: ITEM_TEMPLATE-->
+                [product_items]
+                <!--END: ITEM_TEMPLATE-->
+            </div>
+            
+		</div>
+	</section>
+	<!--END: CATEGORY_ITEMS-->
+	<!--END: FEATURE_MENU-->
+
+</body>
+</html>

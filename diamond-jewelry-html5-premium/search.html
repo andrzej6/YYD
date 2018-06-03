@@ -1,0 +1,135 @@
+<section id="search">
+
+
+    <h1 class="page_headers">[Search_Header]</h1>
+
+    <div style="clear:both;"></div>
+
+    <!--START: CATEGORY_HEADER-->
+    <div class="category-header" id="searchHeader">[CONTENT]</div>
+    <!--END: CATEGORY_HEADER-->
+    <div id="itemsBlock">
+        <!--START: SEARCH_PAGES-->
+        <div class="header">
+            <h3>[Search_Header-pages]</h3>
+        </div>
+        <div class="searchPagesFormat">
+            <!--START: SEARCH_PAGES_FORMAT-->
+            <div class="button left"><a href="[page_link]">[page_name]</a></div>
+            <div class="clear"></div>
+            <p>[page_content]</p>
+            <!--END: SEARCH_PAGES_FORMAT-->
+            <!--START: SEARCH_PAGES_MORERESULTS-->
+            <a href="search.asp?keyword=[keyword_search]&amp;stype=1">[Search_pages-moreresults]</a>
+            <!--END: SEARCH_PAGES_MORERESULTS-->
+            <div class="clear"></div>
+        </div>
+        <!--END: SEARCH_PAGES-->
+        <!--START: SEARCH_CATEGORIES-->
+        <div class="header">
+            <h3>[Search_Header-categories]</h3>
+        </div>
+        <!--START: SEARCH_CATEGORIES_FORMAT-->
+        <a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;catid=[thiscatid]">[cat_name] ([cat_items])</a>
+        <!--END: SEARCH_CATEGORIES_FORMAT-->
+        <!--END: SEARCH_CATEGORIES-->
+        <!--START: SEARCH_BAR-->
+        <div class="row row-margin-bottom products-header">
+            <div class="col-xs-12 col-lg-12">
+                <div class="product-layout-toggle">
+                    <div class="product-layout-icon product-layout-grid active" data-view="grid"><i class="fontawesome-th-large"></i></div>
+                    <div class="product-layout-icon product-layout-list" data-view="list"><i class="fontawesome-th-list"></i></div>
+                    <div class="clearfix"></div>
+                </div>
+                <span class="hidden-md-down">[Search_header]&nbsp;</span><span class="hidden-md-down">(</span><span class="hidden-md-down">[productnumber] Matches found [CATEGORY_FULLLINE]</span><span class="hidden-md-down">)</span>
+                <div class="sort-by">
+                    <!--START: sortbylist-->
+                    <form action="search.asp?keyword=[keyword_search]&amp;catid=[catid]" method="post" name="frmsortby">
+                        <span class="hidden-md-down">Sort by:</span>
+                        <select name="sortby" onchange="frmsortby.submit();">
+                            [sortbylist]
+                        </select>
+                    </form>
+                    <!--END: sortbylist-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <!--END: SEARCH_BAR-->
+        <!--START: NO_RESULTS-->
+        <div class="no-results">[Search_no-results]</div>
+        <!--END: NO_RESULTS-->
+        <!--START: CATEGORY_ITEMS-->
+        <!--START: ITEM_TEMPLATE-->
+        <div class="product-wrapper item-template-0">
+
+            <div class="product-image">
+                <a href="product.asp?itemid=[catalogid]">
+                    <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                </a>
+
+
+                </div>
+            </div>
+
+            <div class="product-details">
+
+
+                <div class="product-title">
+                    <a href="product.asp?itemid=[catalogid]">[name]</a>
+                </div>
+
+                <div class="product-price">
+                    <!--START: ITEMPRICE-->
+                    <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                    <!--END: ITEMPRICE-->
+                    <!--START: SALEPRICE-->
+                    <del class="price2">[ITEMPRICE]&nbsp;</del>
+                    <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                    <span class="badge badge-sale">
+                        <span class="badge-text">Sale</span>
+                    </span>
+                    <!--END: SALEPRICE-->
+                </div>
+
+                <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+                <div class="product-description">
+                    [description]
+                </div>
+            </div>
+
+        </div>
+        <!--END: ITEM_TEMPLATE-->
+        <!--END: CATEGORY_ITEMS-->
+        <ul class="paging">
+            <!--START: PAGING-->
+            <span class="hidden-md-down">[category_moreresults]</span>
+            <!--START: PREV-->
+            <li class="paginate-previous"><a class="btn btn-primary" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">[category_previouspage]</a></li>
+            <!--END: PREV-->
+            <!--START: PAGES-->
+            <!--START: FIRST_PAGE-->
+            <li class="paginate-page active"><a class="btn" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>...</li>
+            <!--END: FIRST_PAGE-->
+            <!--START: PAGES_SELECTED-->
+            <li class="paginate-page active"><span class="btn">PAGE</span></li>
+            <!--END: PAGES_SELECTED-->
+            <!--START: PAGES_NOTSELECTED-->
+            <li class="paginate-page"><a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a></li>
+            <!--END: PAGES_NOTSELECTED-->
+            <!--START: LAST_PAGE-->
+            <li class="paginate-page active">...<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a></li>
+            <!--END: LAST_PAGE-->
+            <!--END: PAGES-->
+            <!--START: NEXT-->
+            <li class="paginate-next"><a class="btn btn-primary" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">[category_nextpage]</a></li>
+            <!--END: NEXT-->
+            <!--END: PAGING-->
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="searchFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+</section>

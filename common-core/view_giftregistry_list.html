@@ -1,0 +1,403 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[giftregistry_view-title]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[giftregistry_view-title]</h1>
+        <div class="button"><a href="giftregistry_edit.asp?action=view" class="btn btn-link"><i class="icon-left"></i> Back to My Gift Registry</a></div>
+    </div>
+</section>
+
+<section id="viewGiftregistryList" class="viewGiftregistryList-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <!--START: GFT_REG_INFO-->
+                <div class="header"><h4 class="page_heading">[regName]</h4></div>
+                <div class="reg-message">[regMessage]</div>
+                <!--END: GFT_REG_INFO--> 
+
+                <!--START: CATEGORY_HEADER-->
+                <div class="category-header" id="viewGiftregistryListHeader">[CONTENT]</div>
+                <!--END: CATEGORY_HEADER--> 
+
+                <!--START: GFT_REG_ITEM_ADDED_TO_CART-->
+                <div class="giftreg-item-added">[giftregistry_view-item-added-to-the-cart]</div>
+                <!--END: GFT_REG_ITEM_ADDED_TO_CART-->
+
+                <form class="giftreg-productList" action="view_giftregistry.asp?id=[custid]" method="post" name="frmForm">
+                    <input type="hidden" name="action" id="action"	value="" />
+                    <input type="hidden" name="wsiId" id="wsiId" value="" />
+
+                    <div class="row smallrow giftreg-productList_titles titles2 hidden-xs">
+                        <div class="smallcol col-md-4 col-sm-4">
+                            <label for="gr-items">[giftregistry_view-header-items]</label>
+                        </div>
+                        <div class="smallcol col-md-2 col-sm-2 text-center">
+                            <label for="gr-desired">[giftregistry_view-header-desired]</label>
+                        </div>
+                        <div class="smallcol col-md-6 col-sm-6 text-center">
+                            <div class="row smallrow">
+                                <div class="smallcol col-md-4 col-sm-4 text-center">
+                                    <label for="gr-received">[giftregistry_view-header-received]</label>
+                                </div>
+                                <div class="smallcol col-md-4 col-sm-4 text-center">
+                                    <label for="gr-price">[giftregistry_view-header-price]</label>
+                                </div>
+                                <div class="smallcol col-md-4 col-sm-4">
+                                    <label for="gr-subtotal">[giftregistry_view-header-subtotal]</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3" style="display:none;">
+                            <label for="gr-actions">Actions</label>
+                        </div>
+                    </div>
+    
+                    <!--START: GFT_REG_NO_ITEM-->
+                    <div class="row giftreg-productList_details details_row">
+                        <div class="view-emptylist col-md-12">[giftregistry_view-emptylist]</div>
+                    </div>
+                    <!--END: GFT_REG_NO_ITEM--> 
+    
+                    <!--START: GFT_REG_ITEM-->
+                    <div class="row giftreg-productList_details details_row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <label class="hidden" for="gr-items">[giftregistry_view-header-items]</label>
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="gr-items clearfix">
+                                        <div class="item-thumb"><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=90&maxy=90" class="img-responsive" alt="" /></a></div>
+                                        <div class="item-name-right">
+                                            <div class="item-fullname"><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></div>
+                                            <!--START: itemoptions--> 
+                                            <div class="item-action"><a href='#' class="view-options" data-target="#opt[ITEM_ID]">View/Hide options</a></div>
+                                            <div id="opt[ITEM_ID]" name="opt[ITEM_ID]" class="itemoptions" style="display:none;">[OPTIONS]</div>
+                                            <!--END: itemoptions-->
+                                            <!--START: GFT_REG_REMOVE-->
+                                            <a href="#" onclick="javascript: removeItem([ITEM_ID]);"><i class="icon-cancel"></i>Delete</a>
+                                            <!--END: GFT_REG_REMOVE-->
+
+                                            <!--START: GFT_REG_ITEM_NOT_AVLB-->
+                                            <div class="text-danger">[giftregistry_view-prod-not-available]</div>
+                                            <!--END: GFT_REG_ITEM_NOT_AVLB--> 
+                                            <!--START: GFT_REG_ITEM_PURCHASED--> 
+                                            <div class="text-danger">[giftregistry_view-prod-purchased]</div>
+                                            <!--END: GFT_REG_ITEM_PURCHASED--> 
+                                            <!--START: GFT_REG_ITEM_ADDCART-->
+                                            <div>
+                                                Qty:
+                                                <label>
+                                                    <select id="drpItems[ITEM_ID]" name="drpItems[ITEM_ID]"  class="form-control">
+                                                        <!--START: GFT_REG_DRPITEMS-->
+                                                        <option value="[j]">[j]</option>
+                                                        <!--END: GFT_REG_DRPITEMS-->
+                                                    </select>
+                                                </label>
+                                                
+                                                <button type="button" class="btn btn-default btn-xs" onclick="javascript:addToCart([ITEM_ID]);">[product_addtocart]</button>
+                                            </div>
+                                            <!--END: GFT_REG_ITEM_ADDCART--> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 text-center">
+                            <div class="row">
+                                <label class="visible-xs col-xs-4" for="gr-desired">[giftregistry_view-header-desired]</label>
+                                <div class="col-md-12 col-xs-8">
+                                    <div class="quantity item-qty">
+                                        <!--START: GFT_REG_ITEM_QUANTITY_FIXED--> 
+                                        [ITEM_QUANTITY]
+                                        <!--END: GFT_REG_ITEM_QUANTITY_FIXED--> 
+                                        <!--START: GFT_REG_ITEM_QUANTITY_EDITABLE-->
+                                        <div class="quant-input">
+                                            <input type="text" id="txtQty[ITEM_ID]" name="txtQty[ITEM_ID]" value="[ITEM_QUANTITY]" placeholder="[ITEM_QUANTITY]" />
+                                            <input type="hidden" name="coliditemnum" value="[ITEM_ID]" />
+                                            <span class="qty-nav">
+                                                <button type="button" class="qty-up" data-target="#txtQty[ITEM_ID]">+</button>
+                                                <button type="button" class="qty-down" data-target="#txtQty[ITEM_ID]">-</button>
+                                            </span>
+                                        </div>
+                                        <a href="#" onclick="javascript:saveItem([ITEM_ID]);" class="update-qty">Update</a>
+                                        <!--END: GFT_REG_ITEM_QUANTITY_EDITABLE--> 
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 text-center">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-12 item-price text-center">
+                                    <div class="row">
+                                        <label class="visible-xs col-xs-4" for="gr-received">[giftregistry_view-header-received]</label>
+                                        <div class="col-sm-12 col-xs-8">[ITEM_RECEIVED]</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12 item-total text-center">
+                                    <div class="row">
+                                        <label class="visible-xs col-xs-4" for="gr-price">[giftregistry_view-header-price]</label>
+                                        <div class="col-sm-12 col-xs-8">[ITEM_PRICE]</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12 item-total text-center">
+                                    <div class="row">
+                                        <label class="visible-xs col-xs-4" for="gr-subtotal">[giftregistry_view-header-subtotal]</label>
+                                        <div class="col-sm-12 col-xs-8">[ITEM_SUBTOTAL]</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12" style="display:none;">
+                            <label class="hidden" for="gr-actions">Actions</label>
+							<div class="gr-details">
+                                <!--START: GFT_REG_SAVE-->
+                                <div><button type="button" class="btn btn-default btn-xs" onclick="javascript:saveItem([ITEM_ID]);">Save</button></div>
+                                <!--END: GFT_REG_SAVE-->
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: GFT_REG_ITEM--> 
+                    <div class="clearfix"></div>
+                </form>
+
+                <div class="clearfix"></div>
+
+                <!--START: GFT_REG_PURCHASED_ITEM-->
+                <div class="giftreg-purchasedList">
+                    <div class="header"><h4 class="page_heading">[giftregistry_view-header-purchaseditems]</h4></div>
+
+                    <div class="row smallrow giftreg-productList_titles titles2 hidden-xs">
+                        <div class="smallcol col-md-4 col-sm-4">
+                            <label for="gr-items">[giftregistry_view-header-items]</label>
+                        </div>
+                        <div class="smallcol col-md-2 col-sm-4 text-center">
+                            <label for="gr-desired">[giftregistry_view-header-desired]</label>
+                        </div>
+                        <div class="smallcol col-md-2 col-sm-4 text-center">
+                            <label for="gr-received">[giftregistry_view-header-received]</label>
+                        </div>
+                    </div>
+    
+                    <!--START: GFT_REG_NO_PURCHASED_ITEM-->
+                    <div class="row giftreg-productList_details details_row">
+                        <div class="view-emptypurchasedlist col-md-12">[giftregistry_view-emptypurchasedlist]</div>
+                    </div>
+                    <!--END: GFT_REG_NO_PURCHASED_ITEM-->
+
+                    <!--START: GFT_REG_PURCHASED_ITEM_DETAIL-->
+                    <div class="row giftreg-productList_details details_row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <label class="hidden" for="gr-items">[giftregistry_view-header-items]</label>
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="gr-items clearfix">
+                                        <div class="item-thumb"><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=90&maxy=90" class="img-responsive" alt="" /></a></div>
+                                        <div class="item-name-right">
+                                            <div class="item-fullname"><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-4 text-center">
+                            <div class="row">
+                                <label class="visible-xs" for="gr-desired">[giftregistry_view-header-desired]</label>
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="quantity item-qty">[ITEM_QUANTITY]</div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-4 text-center">
+                            <div class="row">
+                                <label class="visible-xs" for="gr-received">[giftregistry_view-header-received]</label>
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="quantity item-qty">[ITEM_RECEIVED]</div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+					</div>
+                    <!--END: GFT_REG_PURCHASED_ITEM_DETAIL-->
+                </div>
+                <!--END: GFT_REG_PURCHASED_ITEM-->
+                
+                <hr class="divider" />
+                
+                <!--START: GFT_REG_BACK-->
+                <div class="giftreg-back-button text-right">
+                  <button type="button" class="btn btn-link" onclick="javascript:location.href='giftregistry_edit.asp?action=view';"><i class="icon-left"></i> Back to My Gift Registry</button>
+                </div>
+                <!--END: GFT_REG_BACK-->
+
+                <!--START: CATEGORY_FOOTER-->
+                <div class="category-footer" id="viewGiftregistryListFooter">[CONTENT]</div>
+                <!--END: CATEGORY_FOOTER--> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript">
+	//GR Details Scripts
+	function submitForm(strAction) {
+		window.document.body.style.cursor = 'wait';
+		if (window.document.activeElement) { window.document.activeElement.style.cursor = 'wait'; }
+
+		document.frmForm.action.value = strAction;
+		document.frmForm.submit();
+	}
+
+	function removeItem(intWsiId) {
+		var rep;
+		rep = confirm("[giftregistry_view-message-removeitem]");
+		if (!rep)
+			return false;
+
+		document.frmForm.wsiId.value = intWsiId;
+		submitForm('removeItem');
+	}
+
+	function saveItem(intWsiId) {
+		var qty = document.getElementById("txtQty" + intWsiId).value;
+
+		document.frmForm.wsiId.value = intWsiId;
+		submitForm('saveItem');
+	}
+
+	function addToCart(intWsiId) {
+		jQuery.ajax({
+			url: 'view_giftregistry.asp',
+			dataType: 'html',
+			data: 'action=isCartAlreadyHaveItemFromOtherGiftRegistry&id=[custid]&wsiId=' + intWsiId,
+			type: 'POST',
+			async: false,
+			cache: false,
+			success: function (bolResult) {
+				if (bolResult === 'True') {
+					alert("[giftregistry_view-can-not-add-from-two-gr]");
+					return false;
+				}
+				else {
+					var rep;
+					rep = confirm("[wishlist_viewwishlist-message-addtocart]");
+					if (!rep)
+						return false;
+
+					document.frmForm.wsiId.value = intWsiId;
+					submitForm('addToCart');
+				}
+			},
+			error: function () {
+				alert("Error: [giftregistry_view-can-not-add-from-two-gr]");
+			}
+		});
+	}
+
+	jQuery(function () {
+		//Quantity box
+		jQuery('.quant-input .qty-up').click(function () {
+			var qtyInput = jQuery(this).data('target');
+			var incrementedVal = parseInt(jQuery(qtyInput).val()) + 1;
+			jQuery(qtyInput).val(incrementedVal);
+		});
+		jQuery('.quant-input .qty-down').click(function () {
+			var qtyInput = jQuery(this).data('target');
+			var incrementedVal = parseInt(jQuery(qtyInput).val()) - 1;
+
+			if (incrementedVal <= 0) incrementedVal = 0;
+			jQuery(qtyInput).val(incrementedVal);
+		});
+
+		// Toggle Options
+		jQuery('a.view-options').click(function (e) {
+			e.preventDefault();
+			var target = jQuery(this).data('target');
+			jQuery(target).slideToggle();
+		});
+
+	});
+
+	//GR List Scripts
+	var addReplyClick = 0;
+	function submitForm2(strAction) {
+		window.document.body.style.cursor = 'wait';
+		if (window.document.activeElement) { window.document.activeElement.style.cursor = 'wait'; }
+
+		document.frmForm.action2.value = strAction;
+		document.frmForm.submit();
+	}
+
+
+	function sendEmail() {
+		var strMsg = "";
+		var strEmail1 = document.frmForm.txtEmail1.value.trim();
+		var strEmail2 = document.frmForm.txtEmail2.value.trim();
+		var strEmail3 = document.frmForm.txtEmail3.value.trim();
+		var strEmail4 = document.frmForm.txtEmail4.value.trim();
+		var strEmail5 = document.frmForm.txtEmail5.value.trim();
+		var strEmail6 = document.frmForm.txtEmail6.value.trim();
+
+		//Empty
+		if (strEmail1 == "" && strEmail2 == "" && strEmail3 == "" && strEmail4 == "" && strEmail5 == "" && strEmail6 == "")
+			strMsg += " - You need to fill at least one [giftregistry_header-invitation-emailaddress].\n"
+
+		//Valid E-mail
+		if (strEmail1 != "" && !isValidEmail(strEmail1))
+			strMsg += " - The 1st [giftregistry_header-invitation-emailaddress] is invalid.\n"
+		if (strEmail2 != "" && !isValidEmail(strEmail2))
+			strMsg += " - The 2nd [giftregistry_header-invitation-emailaddress] is invalid.\n"
+		if (strEmail3 != "" && !isValidEmail(strEmail3))
+			strMsg += " - The 3rd [giftregistry_header-invitation-emailaddress] is invalid.\n"
+		if (strEmail4 != "" && !isValidEmail(strEmail4))
+			strMsg += " - The 4th [giftregistry_header-invitation-emailaddress] is invalid.\n"
+		if (strEmail5 != "" && !isValidEmail(strEmail5))
+			strMsg += " - The 5th [giftregistry_header-invitation-emailaddress] is invalid.\n"
+		if (strEmail6 != "" && !isValidEmail(strEmail5))
+			strMsg += " - The 6th [giftregistry_header-invitation-emailaddress] is invalid.\n"
+
+		if (strMsg != "") {
+			alert(strMsg);
+			return false;
+		}
+		if (addReplyClick == 0) {
+			addReplyClick = 1;
+			submitForm2('sendEmail');
+		}
+	}
+	String.prototype.trim = function () {
+		return this.replace(/^\s+|\s+$/g, "");
+	}
+	function isValidEmail(str) {
+		return (str.indexOf(".") > 2) && (str.indexOf("@") > 0);
+	}
+	function previewMessage() {
+		//	window.open('', 'PreviewMessage', 'width=730px, location=no, menubar=no, status=no, toolbar=no, scrollbars=yes, resizable=yes');
+		console.log('open modal');
+		jQuery('#myModal').modal('show').find('.modal-body').load('');
+	}
+
+	//JS script
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/giftregistry.css" type="text/css" media="screen" />
+<!--END: template_styles-->

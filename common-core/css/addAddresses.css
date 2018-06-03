@@ -1,0 +1,96 @@
+/*  Address Book
+    --------------------------- */
+.account_addressbook {
+    position:relative;
+}
+.account_addressbook .button{
+	margin:15px 0 0 0;
+}
+
+@media (min-width: 768px) {
+	.account_addressbook .button{
+		position:absolute;
+		z-index:1;
+		top:0;
+		right:0;
+		padding:0px;
+		margin:0;
+	}
+}
+
+.addUpdateAddress {
+    float: none;
+    width: 100%;
+    max-width: 600px;
+}
+
+.back-add-address-button {
+    text-align: right;
+}
+
+.viewAddress-content {
+    display: inline-block;
+    width: 100%;
+}
+
+.viewAddress-content ul{
+    margin: 0 0 25px 0;
+    padding: 0px;
+    list-style: none;
+}
+
+.viewAddress-content ul:last-child{
+    margin-bottom: 0px;
+}
+
+.viewAddress-content ul li {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+.viewAddress-content ul li p{
+	height:21px;
+}
+
+
+.viewAddress-content h3{
+    margin-top: 0px;
+}
+
+.AddrressValidator .close{
+    z-index: 2;
+    position: relative;    
+}
+.viewAddress-content .myGiftRegistry {
+    margin: 10px 0 20px;
+}
+
+#addresses .changeRemove {
+	margin: 0 0 10px;
+}
+
+@media (max-width: 1023px) {
+    .viewAddress-content ul li {
+        display: inline-block;
+        width: 50%;
+        padding-bottom: 25px;
+        margin-bottom: 20px;
+    }
+}
+
+.account_addressbook{
+    padding: 10px 0px;
+    margin-top: 25px;
+}
+@media (max-width: 767px) {
+    .viewAddress-content ul li {
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    #addAddresses .form_data {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,218 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+  <div class="container">
+      <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+          <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+          <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/affiliateinfo.asp">[affiliate_become-affiliate]</a></li>
+      </ol>
+  </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+  <div class="container">
+    <h1 class="page_heading">
+       [affiliate_become-affiliate]
+    </h1>
+	<!--START: CATEGORY_HEADER-->
+	<div class="category-header" id="affiliateInfoHeader">[CONTENT]</div>
+	<!--END: CATEGORY_HEADER-->
+  </div>
+</section>
+
+
+<section id="affiliateInfo" class="page-content">
+    <div class="container">
+        <div class="content-area">
+          <div class="row">
+			<div class="crmField login-content col-lg-6">
+				<h4>[affiliate_signup-intro]</h4>
+				<div class="createnewaccountForm">
+					<p>[affiliate_create-account]</p>
+					<div class="register-button">
+						<input type="button" value="[registration_button-createaccount]" class="btn btn-primary" onclick="window.location='affiliateInfo.asp?action=register';" />
+					</div>
+				</div>
+            </div>
+
+
+            <!--START: loginForm-->
+            <div class="crmField col-lg-6">
+                <div class="row">
+                  <div class="form_data">
+                      <div class="clearfix"></div>
+                      <form method="post" action="login.asp?ordertracking=[otrack]&returnurl=register_affiliate.asp" id="frmForm" name="frmForm" class="bt-flabels js-flabels">
+							<div class="crmField">
+                              <h4>[login_Header-login]</h4>
+                              <p>[login_Header-loginmessage]</p>
+                            </div>
+
+							<div class="crmField bt-flabels__wrapper">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <label for="email">[CustomerInfo_email]:</label> 
+                                        <input type="email" name="email" value="" placeholder="[CustomerInfo_email]" size="40" maxlength="50" tabindex="2" class="form-control txtBoxStyle" required />
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                          <div class="row">
+                            
+                            
+                            <div class="crmField bt-flabels__wrapper col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                          <label for="password">[CustomerInfo_password]:</label>
+                                          <input type="password" autocomplete="off" size="12" name="password" tabindex="2" value="" placeholder="[CustomerInfo_password]"  class="form-control txtBoxStyle" required />
+                                          <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <!--START: captcha-->
+                            <div class="crmField col-lg-12">
+                                <label for="ramdomWord">Verification:</label>
+                                <div class="clearfix"></div>
+                                <div class="captcha">
+                                    <img src="admin/image_pw.asp" width="148" alt="" />
+                                    <div class="captcha-text">Type the word above...</div>
+                                    <input type="text" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="7" class="txtBoxStyle" required="" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--END: captcha-->
+                            <!--START: recaptcha-->
+                            <div class="crmField col-lg-12">
+                                <label for="recaptcha_challenge_field">Verification:</label>
+                                <div class="clearfix"></div>
+                                <div class="recaptcha">
+                                    <script type="text/javascript">
+                                      var RecaptchaOptions = { theme: '[recaptcha_theme]' };
+                                    </script>
+                                    <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+                                    <noscript>
+                                        <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+                                        <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                                        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                                    </noscript>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--END: recaptcha-->
+                            <!--START: recaptcharobot-->
+                            <div class="crmField">
+                                <script type="text/javascript">
+				                    var onSubmit = function (token) {
+					                    if ('[recaptcha_robot_size]' == 'invisible')
+						                    jQuery("#frmForm").submit();
+				                    }
+				                    var onloadCallback = function () {
+					                    grecaptcha.render('[recaptcha_control]', {
+						                    'sitekey': '[recaptcha_key]',
+						                    'theme': '[recaptcha_robot_theme]',
+						                    'size': '[recaptcha_robot_size]',
+						                    'type': '[recaptcha_robot_type]',
+						                    'callback': onSubmit
+					                    });
+				                    }
+                                </script>
+                                <script src="//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                                <!--START: verificationlabel-->
+                                <label for="recaptcha_challenge_field">Verification:</label>
+                                <!--END: verificationlabel-->
+                                <div class="recaptcha">
+                                    <div id="divRobocop" class="g-recaptcha" data-sitekey="[recaptcha_key]" data-theme="[recaptcha_robot_theme]" data-type="[recaptcha_robot_type]" data-size="[recaptcha_robot_size]">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END: recaptcharobot-->
+                            <div class="clearfix"></div>
+                            <div id="login-button" class="crmField col-lg-8">
+								<div class="loginField">
+									<button type="submit" id='submitted' name="submitted" class="btn btn-primary"/>
+										<i class="icon-login"></i> [login_button]
+									</button>
+								</div>
+
+								<div class="loginField">
+									<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#resetPW"><i class="icon-cw"></i>[login_resetpasswordbutton]</button>
+								</div>
+                            </div>
+                          </div>
+                      </form>
+                      <div class="clearfix"></div>
+                  </div>  
+                </div>
+            </div>  
+            <!--END: loginForm--> 
+            
+          </div>
+        </div>    
+        <!--START: CATEGORY_FOOTER-->
+          <div class="category-footer" id="affiliateInfoFooter">[CONTENT]</div>
+        <!--END: CATEGORY_FOOTER-->
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="resetPW" tabindex="-1" role="dialog" aria-labelledby="resetPWLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="resetPWLabel">Reset My Password</h4>
+      </div>
+      <div class="modal-body">
+        <form id="forgotPass" name="forgotPass" action="login.asp?action=forgotpass&ordertracking=[otrack][redirecturl]" method="post" class="bt-flabels js-flabels">
+            <div class="loginField bt-flabels__wrapper">
+                <label for="email">[CustomerInfo_email]</label>
+                <input type="email" name="email" id="Email4Password" value="" placeholder="[CustomerInfo_email]" size="30" tabindex="1" class="form-control txtBoxStyle" required />
+                <div class="clearfix"></div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">[frame_modal-close]</button>
+		<button type="button" onclick="resetLoginPass();" class="btn btn-primary btn-lg"><i class="icon-cw"></i>[login_resetpasswordbutton]</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--START: template_scripts-->
+<script type="text/javascript">
+  // Form Validation
+  function HighlightAll(theField) {
+    var tempval=eval("document."+theField);
+    tempval.focus();
+    tempval.select();
+    
+    if (document.all&&copytoclip==1)
+    {
+      therange=tempval.createTextRange();
+      therange.execCommand("Copy");
+      window.status="Contents highlighted and copied to clipboard!";
+      setTimeout("window.status=''",1800);
+    }
+  }
+
+  function resetLoginPass() {
+  	if (jQuery('#Email4Password').val() != '') {
+  		document.forgotPass.submit();
+  	}
+  	else {
+  		alert('To Reset your password, Please enter your email address and then click "[login_resetpasswordbutton]".');
+  	}
+  }
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/contact_us.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/affiliateInfo.css" type="text/css" media="screen" />
+<!--END: template_styles-->

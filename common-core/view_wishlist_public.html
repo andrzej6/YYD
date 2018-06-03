@@ -1,0 +1,157 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[wishlist_my-wishlist]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[wishlist_my-wishlist]</h1>
+    </div>
+</section>
+
+<section id="viewWishlistPublic" class="viewWishlistPublic-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <!--START: WISHLIST_CREATOR_NAME-->
+                <div class="public-wishlist-creator"><strong>Created by:</strong> [wishlist-public-creator-FirstName] [wishlist-public-creator-LastName]</div>
+                <div class="social-bookmarking">[product_social-bookmarking]</div>
+                <!--END: WISHLIST_CREATOR_NAME-->
+
+                <div class="clearfix"></div>
+
+                <!--START: CATEGORY_HEADER-->
+                <div class="category-header" id="viewWishlistPublicHeader">[CONTENT]</div>
+                <!--END: CATEGORY_HEADER--> 
+
+                <div class="row wishlistView_titles titles2 hidden-xs">
+                    <div class="col-md-4 col-sm-4">
+                        <label for="wl-items">[wishlist_viewwishlist-header-items]</label>
+                    </div>
+                    <div class="col-md-2 col-sm-2 text-center">
+                        <label for="wl-quantity">[wishlist_viewwishlist-header-quantity]</label>
+                    </div>
+                    <div class="col-md-2 col-sm-2 text-center">
+                        <label for="wl-price">[wishlist_viewwishlist-header-price]</label>
+                    </div>
+                    <div class="col-md-2 col-sm-2 text-center">
+                        <label for="wl-total">[wishlist_viewwishlist-header-total]</label>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <label for="wl-details">Actions</label>
+                    </div>
+                </div>
+
+                <!--START: WSH_LIST_NO_ITEM-->
+                <div class="row wishlistView_details details_row">
+                    <div class="emptylist col-md-12">[wishlist_viewwishlist-emptylist]</div>
+                </div>
+                <!--END: WSH_LIST_NO_ITEM--> 
+
+                <!--START: WSH_LIST_ITEM-->
+				<div class="row wishlistView_details details_row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="row">
+                            <label class="hidden" for="wl-items">[wishlist_viewwishlist-header-items]</label>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="wl-items clearfix">
+                                    <div class="item-thumb"><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=90&maxy=90" class="img-responsive" alt="" /></a></div>
+                                    <div class="item-name-right">
+                                        <div class="item-fullname"><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></div>
+                                        <!--START: itemoptions--> 
+                                        <div class="item-action"><a href='#' class="view-options" data-target="#opt[ITEM_ID]">View/Hide options</a></div>
+                                        <div id="opt[ITEM_ID]" name="opt[ITEM_ID]" class="itemoptions" style="display:none;">[OPTIONS]</div>
+                                        <!--END: itemoptions-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-4 text-center">
+                        <div class="row">
+                            <label class="hidden" for="wl-quantity">[wishlist_viewwishlist-header-quantity]</label>
+                            <div class="col-md-12 col-xs-12">
+                                <div class="quantity item-qty">
+                                    <div class="quant-input">
+                                        <input type="text" id="txtQty[ITEM_ID]" name="txtQty[ITEM_ID]" value="[ITEM_QUANTITY]" placeholder="[ITEM_QUANTITY]" />
+                                        <input type="hidden" name="coliditemnum" value="[ITEM_ID]" />
+                                        <span class="qty-nav">
+                                            <button type="button" class="qty-up" data-target="#txtQty[ITEM_ID]">+</button>
+                                            <button type="button" class="qty-down" data-target="#txtQty[ITEM_ID]">-</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-4 item-price text-center">
+                        <div class="row">
+                            <label class="visible-xs" for="wl-price">[wishlist_viewwishlist-header-price]</label>
+                            <div class="col-md-12 col-xs-12">[ITEM_PRICE]</div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-4 item-total text-center">
+                        <div class="row">
+                            <label class="visible-xs" for="wl-total">[wishlist_viewwishlist-header-total]</label>
+                            <div class="col-md-12 col-xs-12">[ITEM_SUBTOTAL]</div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="row">
+                            <label class="hidden" for="wl-details">Actions</label>
+                            <div class="col-md-12 col-xs-12">
+								<div class="wl-details">
+                                    <!--START: WSH_LIST_ITEM_NOT_AVLB-->
+                                    <div class="">[wishlist_viewwishlist-prod-not-available]</div>
+                                    <!--END: WSH_LIST_ITEM_NOT_AVLB--> 
+                                    <!--START: WSH_LIST_ITEM_ADDCART-->
+                                    <button type="button" class="btn btn-default" onclick="javascript:addToCart([ITEM_ID], [LIST_ID]);">Add to Cart</button>
+                                    <!--END: WSH_LIST_ITEM_ADDCART-->
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--END: WSH_LIST_ITEM-->
+
+                <div class="clearfix"></div>
+
+                <!--START: CATEGORY_FOOTER-->
+                <div class="category-footer" id="viewWishlistPublicFooter">[CONTENT]</div>
+                <!--END: CATEGORY_FOOTER--> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<form action="view_wishlist.asp" method="post" name="frmForm" id="frmForm">
+    <input type="hidden" name="action"	id="action"	value="" />
+    <input type="hidden" name="wsiId"	id="wsiId"	value="" />
+    <input type="hidden" name="k"	id="intListId"	value="" />
+    <input type="hidden" name="qty"	id="qty"	value="" />
+    <input type="hidden" name="multiple_wishlist_name"	id="multiple_wishlist_name"	value="" />
+    <input type="hidden" name="optListVisibility"	id="Hidden1"	value="" />
+</form>
+
+<input type="hidden" id="Confirm_msg" value="[wishlist_viewwishlist-message-addtocart]" />
+<input type="hidden" id="Delete_msg" value="[wishlist_viewwishlist-message-removeitem]" />
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/js/wishlist_details.js"></script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/wishlist.css" type="text/css" media="screen" />
+<!--END: template_styles-->

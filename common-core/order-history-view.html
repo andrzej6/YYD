@@ -1,0 +1,612 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb no-print">
+  <div class="container">
+    <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">[orderhistory_vieworder-breadcrumb]</li>
+    </ol>
+  </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header no-print">
+  <div class="container">
+    <h1 class="page_heading">
+     Order 
+    <!--START: header-->
+      [invoicenum_prefix][invoicenum]
+    <!--END: header--> 
+    </h1>
+    <!--START: myAccount-->
+    <div class="button">
+        <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+    </div>
+    <!--END: myAccount-->
+  </div>
+</section>
+<section id="orderHistoryView" class="page-content">
+	<div class="container">
+	<div class="content-area clearfix">
+        
+		<!--START: RECURRINGORDER-->
+		<div class="header">
+			<h3>[recurringorders_recurringordersettings-header]</h3>
+		</div>
+		<div class="recurringOrderForm">
+			<form action="ordertracking.asp?action=view&id=[orderid]" method="post" name="frmRecurring" id="frmRecurring">
+				<input type="hidden" name="hdnAction2" id="hdnAction2" value="updaterecurring" />
+				<input type="hidden" name="hdnNextOrder" id="hdnNextOrder" value="[next_order_encrypted]" />
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="oviewField form-group">
+						<label for="recurring_frequency">[recurringorders_frequency]:</label>
+							<select name="recurring_frequency" class="form-control txtBoxStyle" id="recurring_frequency">
+							[recurring_frequency]
+						</select>
+						<div class="clear"></div>
+					</div>
+						<div class="oviewField form-group">
+						<label for="next_order">[recurringorders_next-order]:</label>
+							<input type="text" name="next_order" value="[next_order_date]" size="8" maxlength="10" class="txtBoxStyle form-control" id="next_order" />
+					</div>
+
+						<div class="oviewField form-group">
+						<label for="recurring_payment">[recurringorders_payment]:</label>
+							<select name="recurring_payment" class="form-control txtBoxStyle" id="recurring_payment">
+							[recurring_payment]
+						</select>
+						</div>
+
+						<div class="save-cancel-button text-right">
+							<input type="button" class="btn btn-default" onclick="cancelRecurring(this.form);" value="[recurringorders_cancel-button]" />
+							<input type="button" class="btn btn-primary" onclick="saveRecurring(this.form);" value="[recurringorders_save-button]" />
+							<!--START: editrecurringbutton-->
+							<input type="button" class="btn btn-default" onclick="editRecurring();" value="[recurringorders_edit-button]" />
+							<!--END: editrecurringbutton-->
+						</div>
+
+					</div>
+
+					<div class="col-md-6">
+					<!--START: recurringitemslist-->
+					<div id="divEditRecurringItems" style="display: none;">
+						<section class="oviewField">
+							<label style="width: 125px">[recurringorders_item]</label>
+							<label style="width: 220px">[recurringorders_name]</label>
+							<label>[recurringorders_qty]</label>
+							<label>[recurringorders_unitprice]</label>
+							<label>[recurringorders_total]</label>
+							<label></label>
+						</section>
+							<div class="clearfix"></div>
+						<!--START: recuritem-->
+						<section class="oviewField">
+							<label style="width: 125px">[id]</label>
+							<label style="width: 220px" id="lbl[orderitemid]">[itemname]</label>
+							<label>[numitems]</label>
+							<label>[unitprice]</label>
+							<label>[subtotal]</label>
+							<label>
+								<input type="button" class="btn btn-default" id="btn[orderitemid]" onclick="changeRecurring('[orderitemid]');" value="[recurringorders_change-button]" />
+							</label>
+						</section>
+						<div class="clear"></div>
+						<!--END: recuritem-->
+					</div>
+					<!--END: recurringitemslist-->
+					</div>
+				</div>
+			</form>
+		</div>
+		<!--END: RECURRINGORDER-->
+
+        <!------ START: Confirmation ------>
+		<!--START: order_details-->
+		<div class="customerInfoBlock">
+			<div class="row">
+				<!--start customer info block-->
+
+				<div class="col-xs-12">
+					<!--START: invoicelogo-->
+					<div class="invoice-logo">
+						<img src="../[invoicelogo]" alt="[company]" /></div>
+					<!--END: invoicelogo-->
+				</div>
+
+				<div class="col-sm-6">
+					<div>[company]</div>
+					<div>[address1]</div>
+					<!--START: address2-->
+					<div>[address2]</div>
+					<!--END: address2-->
+					<div>[city], [state] [zip]</div>
+				</div>
+				<!--end customer info block-->
+
+				<!--start invoice info block-->
+				<div class="col-sm-6">
+					<strong class="label">[invoice_dateordered]&nbsp;</strong>
+					<span class="text">[odate]</span>
+					<div class="clearfix"></div>
+					<strong class="label">[invoice_ordernum]&nbsp;</strong>
+					<span class="text">[invoicenum_prefix][invoicenum]</span>
+					<div class="clearfix"></div>
+					<!--START: salesperson-->
+					<strong class="label">Sales Person:&nbsp;</strong>
+					<span class="text">[salesperson]</span>
+					<div class="clearfix"></div>
+					<!--END: salesperson-->
+				</div>
+				<!--end invoice info block-->
+			</div>
+		</div>
+
+		<div class="billingBlock">
+			<div class="row clearfix">
+				<!--start billing block-->
+				<div class="col-sm-6 billinginfo-block">
+					<h4>[invoice_billingaddress]</h4>
+					<div>[ofirstname] [olastname]</div>
+					<!--START: ocompany-->
+					<div>[ocompany]</div>
+					<!--END: ocompany-->
+					<div>[oaddress]</div>
+					<!--START: oaddress2-->
+					<div>[oaddress2]</div>
+					<!--END: oaddress2-->
+					<div>[ocity], [ostate] [ozip] - [ocountry]</div>
+					<!--START: ophone-->
+					<div>[ophone]</div>
+					<!--END: ophone-->
+					<!--START: oemail-->
+					<div>[oemail]</div>
+					<!--END: oemail-->
+				</div>
+				<!--end billing block-->
+
+				<!--start shipping block-->
+				<div class="col-sm-6 shippinginfo-block">
+					<h4>[invoice_shippingaddress]</h4>
+					<!--START: shipping_address-->
+					<div>[oshipfirstname] [oshiplastname]</div>
+					<!--START: oshipcompany-->
+					<div>[oshipcompany]</div>
+					<!--END: oshipcompany-->
+					<div>[oshipaddress]</div>
+					<!--START: oshipaddress2-->
+					<div>[oshipaddress2]</div>
+					<!--END: oshipaddress2-->
+					<div>[oshipcity], [oshipstate] [oshipzip] - [oshipcountry]</div>
+					<!--END: shipping_address-->
+					<!--START: shipping_multiple-->
+					<!--START: shipment-->
+					<div>Shipment #[num] - [oshipfirstname] [oshiplastname]</div>
+					<!--END: shipment-->
+					<!--END: shipping_multiple-->
+				</div>
+				<!--end shipping block-->
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="shippingInfoBlock">
+			
+			<!--START: shipping_info-->
+			<strong class="label">[invoice_shipmethod]</strong>
+			<span class="text">[oshipmethod]</span>
+			<div class="clearfix"></div>
+			<!--START: trackingcode-->
+			<strong class="label">[invoice_trackingnum]:</strong>
+			<span class="text"><a href="shiptracking.asp?trackingnumber=[trackingcode]" target="new">[trackingcode]</a></span>
+			<div class="clear"></div>
+			<!--END: trackingcode-->
+			<!--START: oshippeddate-->
+			<strong class="label">[invoice_shippeddate]</strong>
+			<span class="text">[oshippeddate]</span>
+			<div class="clear"></div>
+			<!--END: oshippeddate-->
+			<!--END: shipping_info-->
+			<!--START: opaymethod-->
+			<strong class="label">[invoice_paymenttype]</strong>
+			<span class="text">[opaymethod]</span>
+			<div class="clear"></div>
+			<!--END: opaymethod-->
+			<!--START: coupon-->
+			<strong class="label">[invoice_discounts]</strong>
+			<span class="text">[invoice_coupon]: [coupon] - [coupondiscount]</span>
+			<div class="clear"></div>
+			<!--END: coupon-->
+		</div>
+
+		<div class="clear"></div>
+
+		<!--START: payments-->
+		<div id="divPayments">
+			<div class="titles2 row">
+				<div class="payment-ref col-md-4"><label>[shoppingcart_payments-ref]</label></div>
+				<div class="payment-datetime col-md-3"><label>[shoppingcart_payments-datetime]</label></div>
+				<div class="payment-cardno col-md-3"><label>[shoppingcart_payments-cardno]</label></div>
+				<div class="payment-amount col-md-2 text-right"><label>[shoppingcart_payments-amount]</label></div>
+			</div>
+
+			<!--START: transactionpayment-->
+			<div class="shipmentTable row">
+				<div class="payment-ref col-md-4">[transactionid]</div>
+				<div class="payment-datetime col-md-3">&nbsp;[datetime]</div>
+				<div class="payment-cardno col-md-3">&nbsp;[reference]</div>
+				<div class="payment-amount col-md-2 text-right">&nbsp;[amount]</div>
+			</div>
+			<!--END: transactionpayment-->
+
+			<!--START: notransactions-->
+			<div class="notransactions"><br /><em>[shoppingcart_payments-none]</em></div>
+			<!--END: notransactions-->
+
+			<!--START: makepayment-->
+			<div id="divMakePayment">
+				<div class="shipmentTable">
+					<div class="payment-ref"><b>[shoppingcart_payments-amount]</b></div>
+					<div class="payment-amount"><b>[shoppingcart_payments-select]</b></div>
+					<div class="payment-amount"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="shipmentTable">
+					<form name="frmPayment" id="frmPayment" method="post" action="paywithcard.asp">
+						<input type="hidden" name="orderid" id="orderid" value="[orderid]" />
+						<input type="hidden" name="fromForm" id="fromForm" value="[fromForm]" />
+						<input type="hidden" id="hdnBalanceDue" value="[BALANCEDUE]" />
+						<div class="payment-ref">
+						</div>
+						<div class="payment-amout">
+							<input type="text" maxlength="12" size="10" name="payment_amount" id="payment_amount" value="[BALANCEDUE]" />
+							<select name="authCIMProfileID" id="authCIMProfileID">
+								[cimtokens]
+							</select>
+						</div>
+					</form>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!--END: makepayment-->
+			<!--START: notokens-->
+			<a href="managemycc.asp?hdnaction=addnew">[shoppingcart_payments-notokens]</a>
+			<!--END: notokens-->
+		</div>
+        <!--END: payments-->
+
+		<div class="clear"></div>
+
+		<!--END: order_details-->
+
+        <div class="invoiceTable">
+			<div class="titles2">
+				<div class="invoice-id">[shoppingcart_itemid]</div>
+				<div class="invoice-items">[shoppingcart_items]</div>
+				<div class="invoice-price">[shoppingcart_price]</div>
+				<div class="invoice-qty">[shoppingcart_quantity]</div>
+				<div class="invoice-total">[shoppingcart_total]</div>
+				<div class="clear"></div>
+			</div>
+			<!--START: shipment_header-->
+			<div class="shipmentTable">
+				<div class="ship-num">Shipment #[num]</div>
+				<div class="ship-info"><span>[oshipfirstname] [oshiplastname]<!--START: oshipcompany-->[oshipcompany]<!--END: oshipcompany--></span> <span>[oshipaddress] [oshipaddress2] [oshipcity], [oshipstate] [oshipzip] [oshipcountry]</span></div>
+				<div class="ship-method"><span>
+					<!--START: oshipmethod-->
+					<strong>[invoice_shipmethod]</strong> [oshipmethod]<!--END: oshipmethod--></span> <span>
+						<!--START: trackingcode-->
+						<strong>[invoice_trackingnum]</strong> [trackingcode]<!--END: trackingcode--></span></div>
+				<div class="clear"></div>
+			</div>
+			<!--END: shipment_header-->
+			<!--START: items-->
+			<div class="clearfix items-row">
+				<div class="invoice-id">[id]</div>
+				<div class="invoice-items">[itemname]&nbsp;<!--START: edownload--><span><a href="[store_url]/order_eproduct.asp?action=edownload&eid=[orderkey]">Click Here to Download</a></span><!--END: edownload--></div>
+				<div class="invoice-price">[unitprice]</div>
+				<div class="invoice-qty">[numitems]</div>
+				<div class="invoice-total">[subtotal]</div>
+			</div>
+			<!--END: items-->
+
+			<div class="orderDetailsBlock clearfix">
+				<div class="left-col"> 
+					<!--START: ocomment-->
+					<div class="ocomment">
+						<strong>[invoice_ordercomments]</strong>
+						<p>[ocomment]</p>
+					</div>
+					<!--END: ocomment-->
+					<!--START: invoice_terms-->
+					<div class="invoice_terms">[invoice_terms]</div>
+					<!--END: invoice_terms--> 
+				</div>
+				<div class="right-col">
+					<div class="text" style="width:100px">[subtotal]</div>
+					<div class="label">[shoppingcart_subtotal]:</div>
+					<div class="clear"></div>
+					<div class="text" style="width:100px">[discounts]</div>
+					<div class="label">[shoppingcart_discount]:</div>
+					<div class="clear"></div>
+					<!--START: TAX-->
+					<div class="text" style="width:100px">[tax]</div>
+					<div class="label">[shoppingcart_taxes]:</div>
+					<div class="clear"></div>
+					<!--END: TAX--> 
+					<!--START: TAX2-->
+					<div class="text" style="width:100px">[tax2]</div>
+					<div class="label">[shoppingcart_taxes2]:</div>
+					<div class="clear"></div>
+					<!--END: TAX2--> 
+					<!--START: TAX3-->
+					<div class="text" style="width:100px">[tax3]</div>
+					<div class="label">[shoppingcart_taxes3]:</div>
+					<div class="clear"></div>
+					<!--END: TAX3-->
+					<div class="text" style="width:100px">[shipping]</div>
+					<div class="label">[shoppingcart_shipping]:</div>
+					<div class="clear"></div>
+					<div class="text" style="width:100px">[total]</div>
+					<div class="label">[shoppingcart_total]:</div>
+					<div class="clear"></div>
+
+					<div class="text" style="width:100px">[currency][PAID]</div>
+					<div class="label">[affiliate_details-payments]:</div>
+					<div class="clear"></div>
+
+					<!--START: BALANCE1-->
+					<div class="text" style="width:100px">[currency][BALANCEDUE]<input type="hidden" name="balance" id="balance" value="[BALANCEDUE]" /></div>
+					<!--END: BALANCE1-->
+					<!--START: BALANCE-->
+					<div class="label">[shoppingcart_balance]:</div>
+					<!--END: BALANCE-->
+					<div class="clear"></div>
+				</div>
+			</div>
+
+			<!--START: GIFTCERTS-->
+			<strong>[shoppingcart_giftcertificate]:</strong>
+			[GIFTCERTS]
+		<strong>[shoppingcart_balance]:</strong>
+			[BALANCE]
+		<!--END: GIFTCERTS-->
+			<div class="clear"></div>
+		</div>
+        <!------ END: Confirmation ------> 
+        <div class="col-md-12 border-bottom no-print">
+          <div class="row">
+            <div class="pull-right print-btn col-md-3">
+              <a href="#" class="btn btn-default" onclick="window.open('ordertracking.asp?action=view&id=[orderid]&printable=1', name , 'width=550,height=600,toolbar=yes,scrollbars=yes' );"><i class="icon-print"></i>[orderhistory_printableversion]</a>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+         <!--START: rewards-->
+        <div class="col-md-12 border-bottom no-print">
+          <div class="header">
+            <h3>Rewards</h3>
+          </div>
+          <div class="rewardsView"> 
+            <!--START: rwdPointsRewarded--> 
+            <strong>Points rewarded:</strong> [rwdPointsRewarded] &nbsp; <!--START: rwdPointsDetailsLink-->[<a href="reward_detail.asp">view points details</a>]<!--END: rwdPointsDetailsLink--> 
+            <!--END: rwdPointsRewarded--> 
+            <!--START: rwdPointsUsed--> 
+            <strong>Points used in this order:</strong> [rwdPointsUsed] &nbsp; <!--START: rwdPointsDetailsLink-->[<a href="reward_detail.asp">view points details</a>]<!--END: rwdPointsDetailsLink--> 
+            <!--END: rwdPointsUsed--> 
+          </div>
+        </div>
+        <!--END: rewards--> 
+
+        <!--START: RMA-->
+        <div class="col-md-12 viewRma no-print">
+          <div class="row">
+              <h3 class="page_heading">[account_rma-header]<a name="rma"></a></h3>
+              <div class="invoiceTable_titles titles2 hidden-sm">
+                  <div class="col-md-4">
+                      <label for="rma-id">[rma_header-rmanum]</label>
+                  </div>
+                  <div class="col-md-4 center">
+                      <label for="rma-date">[rma_header-rmadate]</label>
+                  </div>
+                  <div class="col-md-4 text">
+                      <label for="rma-status">[rma_header-rmastatus]</label>
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+              <!--START: RmaItems-->
+              <div class="row invoiceTable_details details_row ">
+                  <div class="col-md-4">
+                      <div class="row">
+                          <label class="visible-xs col-xs-4" for="rma-id">[rma_header-rmanum]</label>
+                          <div class="col-xs-8">[idRma]</div>
+                          <div class="clearfix"></div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 center">
+                      <div class="row">
+                          <label class="visible-xs col-xs-4" for="rma-date">[rma_header-rmadate]</label>
+                          <div class="col-xs-8 full-width">[Date]</div>
+                          <div class="clearfix"></div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 text">
+                      <div class="row">
+                          <label class="visible-xs col-xs-4" for="rma-status">[rma_header-rmastatus]</label>
+                          <div class="col-xs-8 full-width"><a class="btn btn-default" href="my_rma.asp?oid=[OrderId]&amp;r=[idRma]">[RMAStatus]</a></div>
+                          <div class="clearfix"></div>
+                      </div>
+                  </div>
+              </div>
+              <!--END: RmaItems-->           
+          </div>
+        </div>
+        <!--END: RMA-->
+
+        <!--START: RMAButton-->
+        <div class="col-md-12 rma-button no-print">
+          <div class="row">
+            <div class="button pull-right addnew-rma-button col-md-3">
+              <p>Need to return something?</p>  <input type="button" class="btn btn-default" onclick="window.location.href='rma_new.asp?oid=[orderid]'" value="[shoppingcart_rma-btn-addnew]" />
+            </div>
+          </div>
+        </div>
+        <!--END: RMAButton--> 
+    </div>  
+	</div>
+</section>
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.printelement.min.js"></script>
+<script type="text/javascript">
+	function saveRecurring(objForm) {
+		var strMsg = "";
+
+		if (objForm.next_order.value.trim() == '')
+			strMsg += " - [recurringorders_next-order] cannot be blank.\n";
+
+		if (strMsg != "") {
+			alert(strMsg);
+			return false;
+		}
+
+		objForm.submit();
+	}
+	function cancelRecurring(objForm) {
+		var rep = confirm("[recurringorders_cancel-confirm]");
+		if (rep) {
+			objForm.hdnAction2.value = "cancelrecurring";
+			objForm.submit();
+		}
+	}
+
+	function viewPayments() {
+		var vis = (jQuery("#divPayments").css('display') == 'none');
+
+		if (vis)
+			jQuery("#divPayments").slideDown();
+		else
+			jQuery("#divPayments").slideUp();
+	}
+
+	function submitPayment() {
+		var payAmount = parseFloat('0' + jQuery("#payment_amount").val());
+		if (payAmount == 0) {
+			alert('[shoppingcart_payments-amounterror]');
+			return (false);
+		}
+		if (parseFloat('0' + jQuery("#hdnBalanceDue").val()) < payAmount) {
+			alert('Please pay ' + jQuery("#hdnBalanceDue").val().toString() + ' or less.')
+			return (false);
+		}
+		if (confirm('[shoppingcart_payments-amount]: ' + jQuery("#payment_amount").val() + '?'))
+			jQuery("#frmPayment").submit();
+	}
+
+	//<!--START: recurEditScript-->
+	function editRecurring() {
+		jQuery("#divEditRecurringItems").toggle(500);
+	}
+
+	function changeRecurring(id) {
+		if (jQuery("#btn" + id).val() == '[recurringorders_change-button]') {
+			jQuery("#btn" + id).val('Cancel [recurringorders_change-button]');
+			setCookie(true, id);
+		}
+		else {
+			jQuery("#btn" + id).val('[recurringorders_change-button]');
+			setCookie(false, id)
+			jQuery("#divEditRecurringItems").toggle(500);
+		}
+	}
+
+	function setCookie(on, id) {
+
+		var dataq;
+		if (on)
+			dataq = 'action=changerecur&oid=' + id;
+		else
+			dataq = 'action=cancelrecurchange&oid=' + id;
+
+		jQuery.ajax({
+			url: 'ordertracking.asp',
+			dataType: 'html',
+			type: 'GET',
+			data: dataq,
+			cache: false,
+			statusCode: {
+				301: function () { alert('301 - Reload the page.'); },
+				302: function () { alert('302 - Reload the page.'); }
+			},
+			success: function (strResult) {
+				document.body.style.cursor = '';
+				if (on)
+					alert(jQuery("#lbl" + id).html() + '\n\n[recurringorders_change-message]')
+			},
+
+			error: function (jqXHR, textStatus) {
+				document.body.style.cursor = '';
+				if (jqXHR.statusCode > 0) {
+					alert("Error processing request " + jqXHR.statusCode + " - " + jqXHR);
+					alert(jqXHR.responseText);
+					document.write(jqXHR.responseText);
+					bolResult = false;
+				}
+			}
+		});
+
+	}
+
+	//If the user comes back before checking out but after selecting to change a line item in a recurring order,
+	//then show the items on ready, and change the appropriate button to cancel change
+	var recurCookieId = '[recurCookieId]';
+	jQuery(document).ready(function () {
+		if (parseInt(recurCookieId) > 0) {
+			jQuery("#divEditRecurringItems").show();
+			jQuery("#btn" + recurCookieId).val('Cancel [recurringorders_change-button]');
+		}
+	});
+	//<!--END: recurEditScript-->
+
+	jQuery(document).ready(function () {
+		if (jQuery("#fromForm").val() == "pre") {
+			jQuery("#divPayments").slideDown();
+			jQuery("#payment_amount").focus();
+			jQuery('html, body').animate({
+				scrollTop: jQuery("#divPayments").offset().top
+			}, 2000);
+		}
+	});
+
+	String.prototype.trim = function () {
+		return this.replace(/^\s+|\s+$/g, "");
+	}
+
+	$(function () {
+	  calcHeight();
+	});
+
+	/* On the window resize event. */
+	jQuery(window).resize(function () {
+	  calcHeight();
+	});
+
+	/* On the device orientation change event. */
+	jQuery(window).bind('orientationchange', function (event) {
+	  calcHeight();
+	});
+
+	function calcHeight() {
+	  jQuery('.height').css('min-height', 'auto');
+	  if(window.innerWidth < 2600 ) {
+		var highestCol = jQuery('.billingBlock.height').outerHeight();
+		jQuery('.height').css('min-height', highestCol);
+	  }
+	}
+
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout_step4.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/orderHistoryView.css" type="text/css" media="all" />
+<!--END: template_styles-->

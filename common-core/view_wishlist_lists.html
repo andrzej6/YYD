@@ -1,0 +1,137 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[wishlist_multiple-title]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <!--START: MULTIPLE_WISHLIST_TITLE-->
+        <h1 class="page_heading">[wishlist_multiple-title]</h1>
+        <!--END: MULTIPLE_WISHLIST_TITLE-->
+        <!--START: myAccount-->
+        <!--START: MULTIPLE_WISHLIST_BACK_ACCOUNT-->
+        <div class="button"><a href="myaccount.asp" class="btn btn-link"><i class="icon-left"></i> [wishlist_back-to-account]</a></div>
+        <!--END: MULTIPLE_WISHLIST_BACK_ACCOUNT-->
+        <!--END: myAccount-->
+    </div>
+</section>
+
+<section id="viewWishlistLists" class="viewWishlistLists-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+
+                <!--START: CATEGORY_HEADER-->
+                <div class="category-header" id="viewWishlistListsHeader">[CONTENT]</div>
+                <!--END: CATEGORY_HEADER--> 
+
+                <!--START: MULTIPLE_WISHLIST_NO_ITEM-->
+                <div class="emptylist">[wishlist_multiple-nolists]</div>
+                <!--END: MULTIPLE_WISHLIST_NO_ITEM-->
+                
+                <!--START: MULTIPLE_WISHLIST-->
+                <div class="row">
+                    <div class="wishListsView col-lg-12">
+                        <div class="wishListsView_titles titles2 hidden-xs">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5">
+                                    <label for="wl-name">[wishlist_multiple-name]</label>
+                                </div>
+                                <div class="col-md-1 col-sm-2 text-center">
+                                    <label for="wl-items">[wishlist_multiple-items]</label>
+                                </div>
+                                <div class="col-md-3 col-sm-2 text-center">
+                                    <!--START: MULTIPLE_WISHLIST_VISIBILTY_HEADER-->
+                                    <label for="wl-visibility">[wishlist_multiple-visibility]</label>
+                                    <!--END: MULTIPLE_WISHLIST_VISIBILTY_HEADER-->
+                                </div>
+                                <div class="col-lg-offset-1 col-md-offset-0 col-sm-offset-0 col-lg-2 col-md-2_4 col-sm-3 col-xs-12 pull-right">
+                                    <label for="wl-actions">[wishlist_multiple-actions]</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--START: MULTIPLE_WISHLIST_ITEMS-->
+                        <div class="row wishListsView_details details_row">
+                            <div class="col-md-5 col-sm-5">
+                                <div class="row">
+                                    <label class="visible-xs col-xs-4" for="wl-name">[wishlist_multiple-name]</label>
+                                    <div class="col-sm-12 col-xs-8">
+                                    	<span style="display: inline;" id="multiple_wishlist_label_[wishListId]"><a href="view_wishlist.asp?k=[wishListId]" class="myList-links">[wishListName]</a></span>
+                                        <span style="display: none;" id="multiple_wishlist_textbox_[wishListId]">
+                                            <input type="text" size="18" name="multiple_wishlist_[wishListId]" id="multiple_wishlist_[wishListId]" value="[wishListName]" maxlength="30" class="form-control txtBoxStyle" />
+                                            <button class="btn btn-danger" onclick="RenameMultipleList([wishListId],0);"><i class="icon-cancel"></i>[wishlist_multiple-cancel]</button>
+                                            <button class="btn btn-success" onclick="SaveMultipleList([wishListId]);"><i class="icon-ok"></i>[wishlist_multiple-save]</button>
+                						</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-sm-2 text-center">
+                                <div class="row">
+                                    <label class="visible-xs col-xs-4" for="wl-items">[wishlist_multiple-items]</label>
+                                    <div class="col-sm-12 col-xs-8">[wishListTotalItems]</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-2 text-center">
+                            	<!--START: MULTIPLE_WISHLIST_VISIBILTY_ROW-->
+                                <div class="row">
+                                    <label class="visible-xs col-xs-4" for="wl-visibility">[wishlist_multiple-visibility]</label>
+                                    <div class="col-sm-12 col-xs-8">
+                                    	<!--START: MULTIPLE_WISHLIST_VISIBILITY_PUBLIC-->[wishlist_multiple-visibility-public]<!--END: MULTIPLE_WISHLIST_VISIBILITY_PUBLIC-->
+                                        <!--START: MULTIPLE_WISHLIST_VISIBILITY_PRIVATE-->[wishlist_multiple-visibility-private]<!--END: MULTIPLE_WISHLIST_VISIBILITY_PRIVATE-->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: MULTIPLE_WISHLIST_VISIBILTY_ROW-->
+                            </div>
+                            <div class="col-lg-offset-1 col-md-offset-0 col-sm-offset-0 col-lg-2 col-md-2_4 col-sm-3 col-xs-12 pull-right">
+                                <div class="row">
+                                    <label class="visible-xs col-xs-4" for="wl-actions">[wishlist_multiple-actions]</label>
+                                    <div class="smallcol col-sm-12 col-xs-8">
+                                    	<button class="btn btn-link pull-left" onclick="RenameMultipleList([wishListId],1);"><i class="icon-pencil"></i>[wishlist_multiple-rename]</button>
+                                    	<button class="btn btn-link pull-right" onclick="DeleteMultipleList([wishListId]);"><i class="icon-cancel"></i>[wishlist_multiple-delete]</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END: MULTIPLE_WISHLIST_ITEMS-->
+                    </div>
+                </div>
+                <!--END: MULTIPLE_WISHLIST-->
+
+                <div class="clearfix"></div>
+
+                <!--START: CATEGORY_FOOTER-->
+                <div class="category-footer" id="viewWishlistListsFooter">[CONTENT]</div>
+                <!--END: CATEGORY_FOOTER--> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<form action="view_wishlist.asp" method="post" name="frmForm" id="frmForm">
+  <input type="hidden" name="action"	id="action"	value="" />
+  <input type="hidden" name="wsiId"	id="wsiId"	value="" />
+  <input type="hidden" name="k"	id="intListId"	value="" />
+  <input type="hidden" name="qty"	id="qty"	value="" />
+  <input type="hidden" name="multiple_wishlist_name"	id="multiple_wishlist_name"	value="" />
+  <input type="hidden" name="optListVisibility"	id="Hidden1"	value="" />
+</form>
+
+<input type="hidden" id="variablesVals" value="" data-wishlist_multiple-message-deletelist="[wishlist_multiple-message-deletelist]" data-wishlist_multiple-message-renamelist="[wishlist_multiple-message-renamelist]" data-wishlist_viewwishlist-message-removeitem="[wishlist_viewwishlist-message-removeitem]" data-wishlist_viewwishlist-message-addtocart="[wishlist_viewwishlist-message-addtocart]" />
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/js/wishlist.js"></script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/wishlist.css" type="text/css" media="screen" />
+<!--END: template_styles-->

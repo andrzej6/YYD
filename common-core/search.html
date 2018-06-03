@@ -1,0 +1,149 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">[frame_breadcrumb-home]</li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="search.asp?keyword=[keyword]" itemprop="name"><span itemprop="name">[keyword]</span></a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header searchPage">
+    <div class="container">
+            <h1 class="page_heading">
+                [keyword]
+            </h1>
+            <!--START: CATEGORY_HEADER-->
+            <div class="category-header" id="searchHeader">[CONTENT]</div>
+            <!--END: CATEGORY_HEADER-->
+        </div>
+</section>
+
+<section id="search" class="page-content searchPage">
+    <div class="container">
+        <div class="content-area">
+            <div id="itemsBlock">
+
+				<!--START: SEARCH_PAGES-->
+				<div class="searchPages">
+					<div class="header">
+						<h3>[Search_Header-pages]</h3>
+					</div>
+					<div class="searchPagesFormat">
+						<!--START: SEARCH_PAGES_FORMAT-->
+						<ul>
+							<li><a href="[page_link]">[page_name]</a></li>
+						</ul>
+						<p>[page_content]</p>
+						<!--END: SEARCH_PAGES_FORMAT-->
+						<!--START: SEARCH_PAGES_MORERESULTS-->
+						<ul>
+							<li>
+								<a href="search.asp?keyword=[keyword_search]&amp;stype=1">[Search_pages-moreresults]</a>
+							</li>                    
+						</ul>
+						<!--END: SEARCH_PAGES_MORERESULTS-->
+					</div>
+				</div>
+                <!--END: SEARCH_PAGES-->
+
+                <!--START: SEARCH_CATEGORIES-->
+                <div class="searchCatFormat">
+                    <div class="header">
+                        <h3>[Search_Header-categories]</h3>
+                    </div>
+                    <!--START: SEARCH_CATEGORIES_FORMAT-->
+                    <ul>
+                         [cat_name]  ([cat_items])
+                    </ul>
+                    <!--END: SEARCH_CATEGORIES_FORMAT-->
+                </div>
+                <!--END: SEARCH_CATEGORIES-->
+
+                <div class="search-actions clearfix">
+                    <!--START: SEARCH_BAR-->
+                    <form id="search-bar" action="search.asp?keyword=[keyword_search]&amp;catid=[catid]" method="post" name="frmsortby">
+                        <div class="products-header">
+							<h2 class="titles">[category_Header-products] [[productnumber]]</h2>
+                            <!--START: sortbylist-->
+                            <div class="sort-by">
+                                <span>Sort by:</span>
+                                <select id="sortby" name="sortby" onchange="frmsortby.submit();">
+                                    <option value="0">Use Default Sorting</option>
+                                    [sortbylist]
+                                </select>
+                            </div>
+                            <!--END: sortbylist-->
+                        </div>
+                    </form>
+                    <!--END: SEARCH_BAR-->
+                    <!--START: NO_RESULTS-->
+                    <div class="no-results"><h3>[Search_no-results]</h3></div>
+                    <!--END: NO_RESULTS-->
+                    <div class="paging">
+                        <!--START: PAGING-->
+                        <span class="hidden-mobile">[category_moreresults]</span>
+                        <!--START: PREV-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">[category_previouspage]</a>
+                        <!--END: PREV-->
+                        <!--START: PAGES-->
+                        <!--START: FIRST_PAGE-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>...
+                        <!--END: FIRST_PAGE-->
+                        <!--START: PAGES_SELECTED-->
+                        <strong>PAGE</strong>
+                        <!--END: PAGES_SELECTED-->
+                        <!--START: PAGES_NOTSELECTED-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+                        <!--END: PAGES_NOTSELECTED-->
+                        <!--START: LAST_PAGE-->
+                        ...<a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+                        <!--END: LAST_PAGE-->
+                        <!--END: PAGES-->
+                        <!--START: NEXT-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">[category_nextpage]</a>
+                        <!--END: NEXT-->
+                        <!--END: PAGING-->
+                    </div>
+                    <div class="product-items product-items-[product-cols-number]">
+                        <!--START: CATEGORY_ITEMS-->
+                        <!--START: ITEM_TEMPLATE-->
+                        [product_items]
+                        <!--END: ITEM_TEMPLATE-->
+                        <!--END: CATEGORY_ITEMS-->
+                    </div>
+                    <div class="paging">
+                        <!--START: PAGING-->
+                        <span class="hidden-mobile">[category_moreresults]</span>
+                        <!--START: PREV-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">[category_previouspage]</a>
+                        <!--END: PREV-->
+                        <!--START: PAGES-->
+                        <!--START: FIRST_PAGE-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>...
+                        <!--END: FIRST_PAGE-->
+                        <!--START: PAGES_SELECTED-->
+                        <strong>PAGE</strong>
+                        <!--END: PAGES_SELECTED-->
+                        <!--START: PAGES_NOTSELECTED-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+                        <!--END: PAGES_NOTSELECTED-->
+                        <!--START: LAST_PAGE-->
+                        ...<a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+                        <!--END: LAST_PAGE-->
+                        <!--END: PAGES-->
+                        <!--START: NEXT-->
+                        <a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">[category_nextpage]</a>
+                        <!--END: NEXT-->
+                        <!--END: PAGING-->
+                    </div>
+                </div>
+
+            </div>
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-footer" id="searchFooter">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+        </div>
+    </div>
+</section>

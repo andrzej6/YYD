@@ -1,0 +1,117 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/register_affiliate.asp">[affiliate_register]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+          [affiliate_register]
+        </h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="registerAffiliateHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+<section id="registerAffiliate" class="page-content">
+  <div class="container">
+    <div class="content-area">
+    <div class="form_data registerAffiliate-data">
+        <div class="clearfix"></div>
+        <div class="row">
+            <form action="register_affiliate.asp" method="post" name="frmForm" id="frmForm" data-parsley-validate>
+                <input type="hidden" name="action" id="action" value="" />
+
+                <div class="crmField affField col-lg-6">
+                    <label for="txtWebsite">Website Address:*</label>
+                    <input name="txtWebsite" type="text" id="txtWebsite" size="45" value="[strWebsite]" placeholder="[strWebsite]" maxlength="100" tabindex="1" class="form-control" required />
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="crmField col-lg-6">
+                    <label for="txtTaxId">Tax ID#:*</label> <span class="right-text">(SSN# or EIN#)</span>
+                    <input name="txtTaxId" type="text" id="txtTaxId" size="15" value="[strTaxId]" placeholder="[strTaxId]" maxlength="12" tabindex="2" class="form-control" required="" data-parsley-minlength="10" 
+                    data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" />
+                    
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="crmField col-lg-12">
+                    <label for="txtTerms">Terms and Conditions:</label>
+                    <textarea rows="12" cols="40" id="txtTerms" name="txtTerms" readonly="readonly" > [affiliate_register-terms-condition] </textarea>
+                    <label><input type="checkbox" id="chkAcceptTerms" name="chkAcceptTerms" value="1" [bolAccept]> I accept the terms and conditions *</label>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div id="divSubmitButton" class="crmField col-lg-12">
+                    <button type="submit" name="cmdProceed" value="Proceed" onclick="javascript:proceed();" class="btn btn-default" />Proceed</button>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>  
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="registerAffiliateFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+    </div>
+  </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript">
+
+    // Form Validation
+    jQuery(function() {
+        jQuery('#frmForm').parsley().on('field:validated', function() {
+            var ok = jQuery('.parsley-error').length === 0;
+            jQuery('.bs-callout-info').toggleClass('hidden', !ok);
+            jQuery('.bs-callout-warning').toggleClass('hidden', ok);
+        });
+    });
+
+
+    var addReplyClick = 0;
+
+    function submitForm(strAction) {
+        window.document.body.style.cursor = 'wait';
+        if (window.document.activeElement) {
+            window.document.activeElement.style.cursor = 'wait';
+        }
+
+        document.frmForm.action.value = strAction;
+        document.frmForm.submit();
+    }
+
+    function proceed() {
+        var strMsg = "";
+        if (document.frmForm.txtWebsite.value.trim() == "")
+            strMsg += " - Website address cannot be blank.\n"
+        if (document.frmForm.txtTaxId.value.trim() == "")
+            strMsg += " - Tax ID cannot be blank.\n"
+        if (!document.frmForm.chkAcceptTerms.checked)
+            strMsg += " - You must read and accept Terms and Conditions before proceed.\n"
+        if (strMsg != "") {
+            alert(strMsg);
+            return false;
+        }
+        if (addReplyClick == 0) {
+            addReplyClick = 1;
+            submitForm('register');
+        }
+    }
+    String.prototype.trim = function() {
+        return this.replace(/^\s+|\s+$/g, "");
+    }
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/contact_us.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/registerAffiliate.css" type="text/css" media="screen" />
+<!--END: template_styles-->

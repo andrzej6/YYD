@@ -1,0 +1,25 @@
+.message {
+	padding: 10px 0px;
+	clear: both;
+}
+.no-padding{
+	padding: 0px;
+}
+@media (max-width: 991px) {
+	.titles-history{
+		display: none !important;
+	}   
+	.total-summary {
+		border-bottom: dotted 1px #666;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	}
+	.total-summary:last-child{
+		border: 0px;
+		padding: 0px
+		margin: 0px;
+	}
+	.total-summary .gcTotal-default{
+		display: block !important;
+	}
+}

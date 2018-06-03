@@ -1,0 +1,299 @@
+<script type="text/javascript" src="state_countryjs.asp"></script>
+
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="">Shipping Info</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+            Shipping Info
+        </h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="checkoutStep1Header">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+<section id="shipmentUpdateAddress" class="page-content">
+    <div class="container">
+        <div class="content-area clearfix">
+            <div class="form_data">
+                
+                <form action="edit_shipment.asp?action=updateaddress" method="post" name="checkoutform">
+                    <div class="row">
+						<input type="hidden" name="id" value="[id]" />
+                        <input type="hidden" name="update" value="1" />
+                        <div class="col-lg-6 col-md-6 col-sm-12 pull-right">
+                            <!--START: account_login-->
+                            <div class="account_login">
+                                <h4 class="loginmessage page_heading">
+                                    [checkout2_Header-shippinginfo-login]
+                                </h4>
+                                <div class="loginmessage2">[checkout2_Header-shippinginfo-loginmessage]</div>
+                                <div class="login1-button">
+                                    <input type="button" value="[checkout2_Header-shippinginfo-login]" onclick="javascript:location.href='edit_shipment.asp?shipmentid=[id]&action=log-in';" class="btn btn-default btn-inverse" />
+                                </div>
+                            </div>
+                            <!--END: account_login-->
+
+
+                            <div class="clearfix">
+                                <h4 class="page_heading">Ship To [oshipalias]</h4>
+                                <ul class="cart-items">
+                                    <li class="items-header">
+                                        <span class="item-name">Item</span>
+                                        <span class="item-price">Price</span>
+                                        <span class="item-total">[shoppingcart_subtotal]</span>
+                                    </li>
+                                    <!--START: SHOPPING_CART_ITEM-->
+                                    <li class="cart-item">
+                                        <span class="item-name clearfix">
+											<span class="item-thumb">
+												<!--START: itemthumbnail-->
+												<a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=0" class="img-responsive" alt="" /></a>
+												<!--END: itemthumbnail-->
+												<!--START: thumbnailnolink-->
+												<img src="thumbnail.asp?file=[THUMBNAIL]" class="img-responsive" alt="" />
+												<!--END: thumbnailnolink-->
+											</span>
+
+											<span class="item-name-right">
+												<!--START: itemnamelink-->
+												<span class="item-fullname">
+													<a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a>
+												</span>
+												<!--END: itemnamelink-->
+
+												<!--START: itemnamenolink-->
+												<span class="item-fullname">[ITEM_NAME]</span>
+												<!--END: itemnamenolink-->
+											</span>
+                                        </span>
+                                        <span class="item-price">
+											[ITEM_PRICE] <strong>&times;</strong> [ITEM_QUANTITY]
+                                        </span>
+                                        <span class="item-total">[ITEM_SUBTOTAL]</span>
+                                    </li>
+                                    <!--END: SHOPPING_CART_ITEM-->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 pull-left">
+                            <h4 class="page_heading">
+                                [checkout1_Header-shippinginformation]
+                            </h4>
+                            <div class="row">
+                                <div id="shipping_info">
+
+                                    <div class="crmField col-lg-12">
+                                        <div class="text-info">
+                                            <p>
+                                                <a href="myaccount.asp?action=addresses&reqPage=edit_shipment&shipmentid=[id]">Click here</a> to copy an address from your Address Book.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="crmField col-sm-12">
+                                        <label for="oshipalias" class="hide">[account_Address-Alias]</label>
+                                        <input name="oshipalias" type="text" id="oshipalias" value="[oshipalias]" size="15" tabindex="1" class="form-control" placeholder="[account_Address-Alias]" />
+                                    </div>
+
+                                    <div class="crmField col-sm-6">
+                                        <label for="oshipfirstname" class="validation-field">
+											<input name="oshipfirstname" type="text" id="oshipfirstname" value="[oshipfirstname]" size="15" tabindex="2" class="form-control" placeholder="[CustomerInfo_firstname]" />         
+											<!--START: req_oshipfirstname-->
+											<span class="required-indicator"></span>
+											<!--END: req_oshipfirstname-->
+                                        </label>
+                                    </div>
+
+                                    <div class="crmField col-sm-6">
+                                        <label for="oshiplastname" class="validation-field">
+											<input name="oshiplastname" type="text" id="oshiplastname" value="[oshiplastname]" size="15" tabindex="3" class="form-control" placeholder="[CustomerInfo_lastname]" />
+											<!--START: req_oshiplastname-->
+											<span class="required-indicator"></span>
+											<!--END: req_oshiplastname-->
+                                        </label>
+                                    </div>
+
+                                    <div class="crmField col-sm-12">
+                                        <label for="oshipcompany" class="validation-field">
+											<input name="oshipcompany" type="text" id="oshipcompany" value="[oshipcompany]" size="25" tabindex="4" class="form-control" placeholder="[CustomerInfo_company]" />
+                                        </label>
+                                    </div>
+
+                                    <div class="crmField col-sm-8">
+                                        <label for="oshipaddress" class="validation-field">
+											<input name="oshipaddress" type="text" id="oshipaddress" value="[oshipaddress]" size="25" tabindex="5" class="form-control" placeholder="[CustomerInfo_address]" />
+											<!--START: req_oshipaddress-->
+											<span class="required-indicator"></span>
+											<!--END: req_oshipaddress-->
+                                        </label>
+                                    </div>
+
+                                    <div class="crmField col-sm-4">
+                                        <label for="oshipaddress2" class="validation-field">
+											<input name="oshipaddress2" maxlength="50" type="text" id="oshipaddress2" value="[oshipaddress2]" size="25" tabindex="6" class="form-control" placeholder="[CustomerInfo_address2]" />
+                                        </label>
+                                    </div>
+
+                                    <div class="crmField col-sm-12">
+                                        <label for="oshipcity" class="validation-field">
+											<input name="oshipcity" type="text" id="oshipcity" value="[oshipcity]" size="25" tabindex="7" class="form-control" placeholder="[CustomerInfo_city]" />
+											<!--START: req_oshipcity-->
+											<span class="required-indicator"></span>
+											<!--END: req_oshipcity-->
+                                        </label>
+                                    </div>
+
+                                    <div class="crmField col-sm-5">
+                                        <label for="shipping_country" class="validation-field">
+											<select id='oshipcountry' name='oshipcountry' onChange="populateState('oshipstate', 'oshipcountry', '', undefined, '[CustomerInfo_state]')" tabindex="8" class="form-control txtBoxStyle" />
+											</select>
+											<!--START: req_oshipcountry-->
+											<span class="required-indicator"></span>
+											<!--END: req_oshipcountry-->
+										</label>
+                                    </div>
+
+                                    <div class="crmField col-sm-4 state-select">
+                                        <label for="oshipstate" class="validation-field">
+											<select id="oshipstate" name="oshipstate" tabindex="9"  class="form-control txtBoxStyle" /></select>
+											<!--START: req_oshipstate-->
+											<span class="required-indicator"></span>
+											<!--END: req_oshipstate-->
+                                        </label>
+                                    </div>
+
+                                    <div class="crmField col-sm-3">
+                                        <label for="oshipzip" class="validation-field">
+											<input name="oshipzip" type="text" id="oshipzip" value="[oshipzip]" size="10" tabindex="10" class="form-control txtBoxStyle" placeholder="[CustomerInfo_zip]" />
+											<!--START: req_shipping_zip-->
+											<span class="required-indicator"></span>
+											<!--END: req_shipping_zip-->
+										</label>
+                                    </div>
+
+                                    <!--START: addressType-->
+                                    <div class="crmField col-sm-12">
+                                        <label for="shipping_addresstype" class="validation-field">
+											<select name="shipping_addresstype" id="shipping_addresstype" onchange="check_address('addresstype');" tabindex="11"  class="form-control txtBoxStyle">
+											[addressTypeDropDown]
+											</select>
+										</label>
+                                    </div>
+                                    <!--END: addressType-->
+
+                                    <div class="crmField col-sm-12">
+                                        <label for="oshipphone" class="validation-field">
+											<input name="oshipphone" type="text" id="oshipphone" value="[oshipphone]" size="25" tabindex="12" class="form-control" placeholder="[CustomerInfo_phone]" />
+											<!--START: req_oshipphone-->
+											<span class="required-indicator"></span>
+											<!--END: req_oshipphone-->
+                                        </label>
+                                    </div>
+
+                                    <!--START: ADD_ADDRESSBOOK-->
+                                    <div class="crmField col-sm-12">
+                                        <div class="checkbox-format">
+                                              <input type="checkbox" id="addressbook" name="addressbook" value="0" />
+                                              <label for="addressbook">
+                                                Add to Address Book
+                                              </label>
+                                        </div>
+                                    </div>
+                                    <!--END: ADD_ADDRESSBOOK-->
+
+                                    <!--START: UPD_ADDRESSBOOK-->
+                                    <div class="crmField col-sm-12">
+                                        <div class="checkbox-format">
+                                               <input type="checkbox" id="addressbook" name="addressbook" value="[address_id]" />
+                                               <label for="addressbook">
+                                                 Update Address Book
+                                              </label>
+                                        </div>
+                                    </div>
+                                    <!--END: UPD_ADDRESSBOOK-->
+                                </div>
+
+                                <div id="divCheckoutButton" class="col-sm-12">
+                                    <input type="submit" name="Submit" value="[account_Update-Address]" class="btn btn-primary" onclick="javascript:doAddAddress(this.form);" />
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                </form>
+                
+            </div>
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-footer" id="checkoutStep1Footer">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+        </div>
+    </div>
+</section>
+
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/contact_us.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/shipment_update.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="assets/templates/common-html5/js/utilities.js"></script>
+
+<script type="text/javascript">
+	initCountry('[oshipcountry]', '[oshipstate]', 'oshipstate', 'oshipcountry', '[CustomerInfo_state]');
+</script>
+<script type="text/javascript">
+	function doAddAddress(objForm) {
+		//You should create the validator only after the definition of the HTML form
+		var frmvalidator  = new Validator("checkoutform");
+
+		frmvalidator.setAddnlValidationFunction("submitForm");
+
+
+		frmvalidator.addValidation("oshipfirstname","req","Please enter your First Name");
+		frmvalidator.addValidation("oshipfirstname","maxlen=20","Max length for First Name is 20");
+
+
+		frmvalidator.addValidation("oshiplastname","req","Please enter your Last Name");
+		frmvalidator.addValidation("oshiplastname","maxlen=20","Max length for Last Name is 20");
+
+		frmvalidator.addValidation("oshipaddress","maxlen=50");
+		frmvalidator.addValidation("oshipaddress","req","Please enter your address");
+
+		frmvalidator.addValidation("oshipcity","maxlen=50");
+		frmvalidator.addValidation("oshipcity","req","Please enter your City");
+
+
+
+		frmvalidator.addValidation("oshipcountry","maxlen=50");
+		frmvalidator.addValidation("oshipcountry","req",0);
+
+		frmvalidator.addValidation("oshipstate","maxlen=50");
+		frmvalidator.addValidation("oshipstate","req",0);
+
+
+
+		frmvalidator.addValidation("oshipzip","maxlen=20");
+		frmvalidator.addValidation("oshipzip","req","Please enter your zip code");
+                   
+		frmvalidator.addValidation("oshipphone", "maxlen=18", "Max length for Phone is 18");
+		//<!--START: val_shipphone-->
+		frmvalidator.addValidation("oshipphone", "phone", "Invalid phone number");
+		frmvalidator.addValidation("oshipphone", "req", "Please enter your phone");
+		//<!--END: val_shipphone-->
+	}
+</script>
+
+<!--END: template_scripts-->

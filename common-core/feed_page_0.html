@@ -1,0 +1,101 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[htmlpage]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[htmlpage]</h1>
+    </div>
+</section>
+
+<section id="feedPage0" class="feedPage0-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <!--START: SUB_PAGES-->
+                <div class="sub_pages">
+                    <ul class="sub_pages_format">
+                        <!--START: SUB_PAGES_FORMAT-->
+                        <li><i class="icon-angle-right"></i><a href="infopage.asp?page=[id]&extra=[extra]">[sub_pages_title]</a></li>
+                        <!--END: SUB_PAGES_FORMAT-->
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <!--END: SUB_PAGES-->
+
+                <!--START: feeds_index-->
+                <div class="feeds_index">
+                    <ul class="feeds_pages">
+                        <!--START: feeds_index_link-->
+                        <li><a href="#[id]">[feed_title]</a></li>
+                        <!--END: feeds_index_link-->
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <!--END: feeds_index-->
+           
+                <!--START: feedblock-->
+                <div class="feedInfo">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="page_header clearfix">
+                                <h4 class="page_heading">
+                                    <a id="[id]"></a>[feed_title]</h4>
+                                <div class="button pull-right"><span>[feed_created]<!--START: feed_author-->&nbsp;by&nbsp;[feed_author]<!--END: feed_author--></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="feedShortDescription col-lg-12">
+                            <div>[feed_shortdescription]</div>
+                            <!--START: feed_description-->
+                            <div class="button pull-right"><a href="[feedlink]"><i class="icon-plus"></i> [feeds_morelink]</a></div>
+                            <div class="clearfix"></div>
+                            <!--START: feed_description-->
+                        </div>
+                    </div>
+                </div>
+                <!--END: feedblock-->
+
+                <div class="paging">
+                    <!--START: PAGING-->
+                    [category_moreresults]
+                    <!--START: PREV-->
+                    <a href="infopage.asp?page=[id]&extra=[extra]&pagenum=[prev]">[category_previouspage]</a>
+                    <!--END: PREV-->
+                    <!--START: PAGES-->
+                    <!--START: FIRST_PAGE-->
+                    <a class="paging-links" href="infopage.asp?page=[id]&extra=[extra]&pagenum=PAGE">PAGE</a><span class="paging-dots">...</span>
+                    <!--END: FIRST_PAGE-->
+                    <!--START: PAGES_SELECTED-->
+                    <strong>PAGE</strong>
+                    <!--END: PAGES_SELECTED-->
+                    <!--START: PAGES_NOTSELECTED-->
+                    <a class="paging-links" href="infopage.asp?page=[id]&extra=[extra]&pagenum=PAGE">PAGE</a>
+                    <!--END: PAGES_NOTSELECTED-->
+                    <!--START: LAST_PAGE-->
+                    <span class="paging-dots">...</span><a class="paging-links" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a>
+                    <!--END: LAST_PAGE-->
+                    <!--END: PAGES-->
+                    <!--START: NEXT-->
+                    <a href="infopage.asp?page=[id]&extra=[extra]&pagenum=[next]">[category_nextpage]</a>
+                    <!--END: NEXT-->
+                    <!--END: PAGING-->
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/datafeed.css" type="text/css" media="screen" />
+<!--END: template_styles-->

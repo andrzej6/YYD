@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <title>Group Deal of the Day</title>
+    <link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+    <link rel="StyleSheet" href="assets/templates/common-core/css/dd_widget_external.css" type="text/css" />
+</head>
+
+<body>
+    <script type="text/javascript">
+		function SelectAll(id) {
+			document.getElementById(id).focus();
+			document.getElementById(id).select();
+		}
+	</script>
+
+    <!--START: groupdeal-->
+    <article id="gdWidget">
+        <div class="header">
+            <div class="deal-image">
+                <a href="product.asp?itemid=[catalogid]" target="_parent"><img src="thumbnail.asp?file=[image1]&amp;maxx=350&amp;maxy=350" alt="[name]" /></a>
+            </div>
+            <div class="flashSale">
+                <!--START: savings_percentage-->
+                <div class="savings-percentage">[savings_percentage]% OFF</div>
+                <!--END: savings_percentage-->
+            </div>
+
+            <div class="title">
+                group discount on now!
+            </div>
+            <div class="shareBox">
+                <div class="closeBtn"></div>
+                <div class="social-media">
+                    <div class="addthis_toolbox addthis_default_style "> <a class="addthis_button_twitter at300b"></a> <a class="addthis_button_facebook at300b"></a> <a class="addthis_button_mailto at300b"></a> <a class="addthis_button_print at300b"></a> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="headLine">[name]</div>
+            <div class="share">
+                <a class="shareBtn add-to-cart btn btn-default">Share It</a>
+            </div>
+            <div class="prices">
+                <div class="newPrice price">
+                    <!--START: SALEPRICE-->
+                    <span>Sale:</span> [price]
+                    <!--END: SALEPRICE-->
+                </div>
+                <div class="oldPrice price">
+                    <!--START: ITEMPRICE-->
+                    Price: [price]
+                    <!--END: ITEMPRICE-->
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <div class="buy-now-button">
+                    <a href="product.asp?itemid=[catalogid]" class="add-to-cart btn btn-default" target="_parent">Buy Now</a>
+                </div>
+            </div>
+            <div class="widgetCountdown">
+                <div class="countdown-text">Hurry! deal ends in:</div>
+                <div class="dd-timer" id="dd-timer">
+					<script type="text/javascript">
+						TargetDate_dd = "[gd_expires]";
+						targetsecs	= "[gd_secs]";
+						BackColor = "transparent";
+						ForeColor = "#FFFFFF";
+						CountActive = true;
+						CountStepper = -1;
+						LeadingZero = true;
+						DisplayFormat = "%%D%%d: %%H%%h: %%M%%m: %%S%%s";
+						FinishMessage = "The deal is over!";
+					</script> 
+                </div>
+            </div>
+        </div>
+        <div class="deal-title">DEAL OF THE DAY</div>
+    </article>
+    <!--END: groupdeal--> 
+	
+	<!--START: nodeal-->
+	<h1>GROUP DEAL</h1>
+	<div class="no-deal">No Deals Available<span>at this Moment</span></div>
+	<div class="widgetCountdown">
+		<div class="countdown-text"><span>Check back for Great Deals!</span></div>
+	</div>
+	<!--END: nodeal-->
+
+    <!--START: template_scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e1b0cf42ddc7e71"></script>
+    <script type="text/javascript" src="assets/templates/common-core/lib/countdown.js"></script>
+
+    <script type="text/javascript">
+        // for
+        $('.shareBtn').on('click', function() {
+            $('.header').addClass('is-active');
+        });
+
+        $('.shareBtn').on('touchstart', function() {
+            $('.header').addClass('is-active');
+        });
+
+        $('.closeBtn').on('click', function() {
+            $('.header').removeClass('is-active');
+        });
+
+        $('.closeBtn').on('touchstart', function() {
+            $('.header').removeClass('is-active');
+        });
+
+        // for pseudo-class:focus is not working on Iphone/Ipad issue.
+        $('article').on('touchstart', function() {
+            this.addClass('.active');
+        });
+
+        $('body').on('touchstart', function() {
+            this.removeClass('.active');
+        });
+    </script>
+    <!--END: template_scripts-->
+</body>
+</html>

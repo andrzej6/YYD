@@ -1,0 +1,93 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/myaccount.asp?action=addresses">[account_addressbook]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+           [account_addressbook]
+        </h1>
+        <!--START: myAccount-->
+        <div class="button">
+            <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+        </div>
+        <!--END: myAccount-->
+
+        <!--START: myGiftRegistry-->
+        <div class="button">
+            <a href="giftregistry_edit.asp?action=addresschoice"  class="icon-btn btn btn-link"> <i class="icon-left"></i> Return to [account_giftRegistry]</a>
+        </div>
+        <!--END: myGiftRegistry-->
+
+        <!--START: editShipment-->
+        <div class="button">
+            <a href="edit_shipment.asp?action=editaddresses&shipmentid=[shipmentid]"  class="icon-btn btn btn-link"> <i class="icon-left"></i> Return to [checkout2_Header-shippinginfo]</a>
+        </div>
+        <!--END: editShipment-->
+
+        <div class="account_addressbook">
+            <h4 class="page_heading">
+              [account_Add-New-Address]
+            </h4>
+            <div class="button">
+                <a href="myaccount.asp?action=addaddresses&reqPage=[reqPage]&shipmentid=[shipmentid]" class="icon-btn btn btn-primary"><i class="icon-plus"></i>[account_Add-New-Address]</a>
+            </div>
+        </div>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="addressesHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+<section id="addresses" class="page-content">
+    <div class="container">
+        <div class="content-area">
+            <!--START: address-->
+                <h3>[address_alias]</h3>
+                <p>[shipping_firstname] [shipping_lastname]</p>
+                <p>[shipping_address].
+                    <!--START: shipping_address2-->
+                    <span>[shipping_address2]</span>
+                    <!--END: shipping_address2-->
+                </p>
+                <p>[shipping_city], [shipping_state] [shipping_zip] [shipping_country]</p>
+                <p>[shipping_phone]</p>
+                <!--START: addressType-->
+                <p>[addressTypeText]</p>
+                <!--END: addressType-->
+                <div class="changeRemove">
+                    <button type="button" class="add-to-cart btn btn-default" onclick="window.location='myaccount.asp?action=editaddresses&id=[id]&reqPage=[reqPage]&shipmentid=[shipmentid]';">
+                        <i class="icon-pencil"></i> [account_Change-Address]
+                    </button>
+                    <button type="button" class="add-to-cart btn btn-default" onclick="window.location='myaccount.asp?action=deleteaddress&id=[id]&reqPage=[reqPage]&shipmentid=[shipmentid]&tknio=[tknio]';">
+                        <i class="icon-cancel"></i> [account_Remove-Address]
+                   </button>
+                </div>
+                <!--START: myGiftRegistry-->
+                <div class="myGiftRegistry">
+                    <button type="button" class="btn btn-primary" onclick="window.location='giftregistry_edit.asp?action=addresschoice&id=[id]';"><i class="icon-pencil"></i> [account_Choose-Address]</button>
+                </div>
+                <!--END: myGiftRegistry-->
+                <!--START: editShipment-->
+                <div class="editShipment">
+                    <button type="button" class="btn btn-default" onclick="window.location='edit_shipment.asp?action=editaddresses&shipmentid=[shipmentid]&addressid=[id]';"><i class="icon-pencil"></i> [account_Choose-Address]</button>
+                </div>
+                <!--END: editShipment-->
+            <!--END: address-->  
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-footer" id="addressesFooter">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+        </div>
+    </div>
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/addAddresses.css" type="text/css" media="screen" />
+<!--END: template_styles-->

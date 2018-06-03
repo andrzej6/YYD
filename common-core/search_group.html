@@ -1,0 +1,110 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a></li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">[Search_header]</span></li>
+		</ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[Search_header]</h1>
+
+		<!--START: MANUFACTURER_HEADER-->
+		<div class="category-header">
+			<!--START: logo-->
+			<div class="manf-logo"><img src="[logo]" alt="[Search_header]" /></div>
+			<!--END: logo-->
+			<!--START: header-->
+			<div class="manf-header">[header]</div>
+			<!--END: header-->
+		</div>
+        <!--END: MANUFACTURER_HEADER-->
+    </div>
+</section>
+
+<section id="searchGroup" class="page-content">
+    <div class="container">
+        <div class="content-area">
+            <!--START: ITEMS-->
+            <div id="itemsBlock">
+                <div class="search-actions clearfix">
+                    <div class="products-header">
+                        <h2 class="titles">[category_Header-products] [[productnumber]]</h2>
+                        <!--START: sortbylist-->
+                        <form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
+                            <div class="sort-by">
+                                <span>Sort by:</span>
+                                <select name="sortby" onchange="frmsortby.submit();">
+                                    <option value="0">Use Default Sorting</option>
+                                    [sortbylist]
+                                </select>
+                            </div>
+                        </form>
+                        <!--END: sortbylist-->
+                    </div>
+                    <div class="paging">
+                        <!--START: PAGING-->
+                        <span class="hidden-mobile">[category_moreresults]</span>
+                        <!--START: PREV-->
+                        <a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=[prev]">[category_previouspage]</a>
+                        <!--END: PREV-->
+                        <!--START: PAGES-->
+                        <!--START: FIRST_PAGE-->
+                        <a href="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]&page=PAGE"><strong>PAGE</strong></a>...
+                        <!--END: FIRST_PAGE-->
+                        <!--START: PAGES_SELECTED-->
+                        <strong>PAGE</strong>
+                        <!--END: PAGES_SELECTED-->
+                        <!--START: PAGES_NOTSELECTED-->
+                        <a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=PAGE">PAGE</a>
+                        <!--END: PAGES_NOTSELECTED-->
+                        <!--START: LAST_PAGE-->
+                        ...<a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=PAGE"><strong>PAGE</strong></a>
+                        <!--END: LAST_PAGE-->
+                        <!--END: PAGES-->
+                        <!--START: NEXT-->
+                        <a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=[next]">[category_nextpage]</a>
+                        <!--END: NEXT-->
+                        <!--END: PAGING-->
+                    </div>
+                    <div class="product-items product-items-[product-cols-number]">
+                        <!--START: CATEGORY_ITEMS-->
+                        <!--START: ITEM_TEMPLATE-->
+                        [product_items]
+                        <!--END: ITEM_TEMPLATE-->
+                        <!--END: CATEGORY_ITEMS-->
+                    </div>
+                    <div class="paging">
+                        <!--START: PAGING-->
+                        <span class="hidden-mobile">[category_moreresults]</span>
+                        <!--START: PREV-->
+                        <a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=[prev]">[category_previouspage]</a>
+                        <!--END: PREV-->
+                        <!--START: PAGES-->
+                        <!--START: FIRST_PAGE-->
+                        <a href="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]&page=PAGE"><strong>PAGE</strong></a>...
+                        <!--END: FIRST_PAGE-->
+                        <!--START: PAGES_SELECTED-->
+                        <strong>PAGE</strong>
+                        <!--END: PAGES_SELECTED-->
+                        <!--START: PAGES_NOTSELECTED-->
+                        <a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=PAGE">PAGE</a>
+                        <!--END: PAGES_NOTSELECTED-->
+                        <!--START: LAST_PAGE-->
+                        ...<a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=PAGE"><strong>PAGE</strong></a>
+                        <!--END: LAST_PAGE-->
+                        <!--END: PAGES-->
+                        <!--START: NEXT-->
+                        <a href="search_groups.asp?keyword=[keyword]&sortby=[sortby]&manf=[manf]&byprice=[byprice]&page=[next]">[category_nextpage]</a>
+                        <!--END: NEXT-->
+                        <!--END: PAGING-->
+                    </div>
+                </div>
+            </div>
+            <!--END: ITEMS-->
+        </div>
+    </div>
+</section>

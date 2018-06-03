@@ -1,0 +1,529 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+	    <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+	        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+	        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/affiliate.asp">[affiliate_details]</a></li>
+	    </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+	<div class="container">
+		<h1 class="page_heading">
+			 [affiliate_details]
+		</h1>
+		<!--START: myAccount-->
+		<div class="button">
+		    <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+		</div>
+		<!--END: myAccount-->
+		<!--START: CATEGORY_HEADER-->
+		<div class="category-header" id="affiliateHeader">[CONTENT]</div>
+		<!--END: CATEGORY_HEADER-->
+	</div>
+</section>
+
+<section id="affiliate" class="page-content">
+	<div class="container">
+      <div class="content-area">
+      	<!--START: affiliateStatistics-->
+		<div class="affiliateStatistics">
+			<div class="header">
+				<h4>[affiliate_details-summary]</h4>
+			</div>
+			<div class="summary-total hidden-xs">
+			    <div class="col-lg-2 col-sm2 no-padding">
+			        <label for="odate" class="membersince">
+			        	[affiliate_summary-header-membersince]
+			        </label>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			        <label for="onum" class="orders">
+			        	[affiliate_summary-header-orders]
+			        </label>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			        <label for="odate" class="amount">
+			        	[affiliate_summary-header-amount]
+			        </label>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			        <label for="onum" class="commission">
+			        	[affiliate_summary-header-commission]
+			        </label>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			        <label for="odate" class="paid">
+			        	[affiliate_summary-header-paid]
+			        </label>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			        <label for="onum" class="balance">
+			        	[affiliate_summary-header-balance]
+			        </label>
+			    </div>
+			</div>
+			<!--START: affiliateStatisticsNoOrders-->
+			<div class="row">
+		        <div class="col-lg-12 col-sm-12 no-history">
+		        	[affiliate_no-history-to-display]
+		        </div>
+		    </div>
+			<!--END: affiliateStatisticsNoOrders-->
+			<!--START: affiliateStatisticsDetail-->
+			<div class="total-summary">
+			    <div class="col-lg-2 col-sm2 no-padding">
+			    	<div class="row">
+			            <label class="visible-xs gcTotal-default col-xs-4" >
+			              [affiliate_summary-header-membersince]
+			            </label>
+			            <div class="col-xs-8 membersince">
+			             	[memberSince]
+					     </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			    	<div class="row">
+			            <label class="visible-xs gcTotal-default col-xs-4">
+				        	[affiliate_summary-header-orders]
+			            </label>
+			            <div class="col-xs-8 gc-code orders">
+			            	[orders]
+					     </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			    	<div class="row">
+			            <label class="visible-xs gcTotal-default col-xs-4">
+				        	[affiliate_summary-header-amount]
+			            </label>
+			            <div class="col-xs-8 gc-code amount">
+			            	[amount]
+					     </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			    	<div class="row">
+			            <label class="visible-xs gcTotal-default col-xs-4">
+				        	[affiliate_summary-header-commission]
+			            </label>
+			            <div class="col-xs-8 gc-code commission">
+			            	[totalCommission]
+					     </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			    	<div class="row">
+			            <label class="visible-xs gcTotal-default col-xs-4">
+				        	[affiliate_summary-header-paid]
+			            </label>
+			            <div class="col-xs-8 gc-code paid">
+			            	[paid]
+					     </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
+			    <div class="col-lg-2 col-sm2">
+			    	<div class="row">
+			            <label class="visible-xs gcTotal-default col-xs-4">
+				        	[affiliate_summary-header-balance]
+			            </label>
+			            <div class="col-xs-8 gc-code balance">
+			            	[balance]
+					     </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
+			</div>  
+			<!--END: affiliateStatisticsDetail-->
+		</div>
+		<!--END: affiliateStatistics--> 
+
+		<!--START: affiliatePayments-->
+		<div class="affiliatePayments">
+			<div class="header">
+				<h4>[affiliate_details-payments] <span>(last [lastDays] days)</span></h4>
+			</div>
+			<div class="content-summary">
+				<!--START: affiliateNoPayments-->
+				<div class="row">
+			        <div class="col-lg-12 col-sm-12 no-display" alt="affiliatePayments">
+			        	[affiliate_no-history-to-display]
+			        </div>
+			    </div>
+				<!--END: affiliateNoPayments-->
+
+				<!--START: affiliatePaymentsDetail_Header-->
+				<div class="hidden-xs">
+				    <div class="col-lg-4 col-sm4">
+				        <label for="odate" class="date">
+				        	[affiliate_payments-header-date]
+				        </label>
+				    </div>
+				    <div class="col-lg-4 col-sm4">
+				        <label for="onum" class="amount">
+				        	[affiliate_payments-header-amount]
+				        </label>
+				    </div>
+				    <div class="col-lg-4 col-sm4">
+				        <label for="odate" class="check">
+				        	[affiliate_payments-header-check]
+				        </label>
+				    </div>
+				</div>
+				<!--END: affiliatePaymentsDetail_Header-->
+
+				<!--START: affiliatePaymentsDetail-->
+				<div class="total-sumary">
+				    <div class="col-lg-4 col-sm4">
+				    	<div class="row">
+				            <label class="visible-xs gcTotal-default col-xs-4" >
+				              [affiliate_payments-header-date]
+				            </label>
+				            <div class="col-xs-8 date">
+				            	[date]
+						     </div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				    <div class="col-lg-4 col-sm4">
+				    	<div class="row">
+				            <label class="visible-xs gcTotal-default col-xs-4">
+					        	[affiliate_payments-header-amount]
+				            </label>
+				            <div class="col-xs-8 gc-code amount">
+				            	[amount]
+						     </div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				    <div class="col-lg-4 col-sm4">
+				    	<div class="row">
+				            <label class="visible-xs gcTotal-default check-amount col-xs-4">
+					        	[affiliate_payments-header-check]
+				            </label>
+				            <div class="col-xs-8 gc-code check">
+				            	[check]
+						     </div>
+				            <div class="clearfix"></div>
+				        </div>
+				    </div>
+				</div>  
+				<!--END: affiliatePaymentsDetail-->
+			</div>
+		</div>
+		<!--END: affiliatePayments--> 
+
+        <!--START: affiliateAppOrders-->
+        <div class="affiliateAppOrders">
+    	    <div class="header">
+                <h4>[affiliate_details-approvedorders] <span>(last [lastDays] days)</span></h4>
+            </div>
+            <div class="content-summary">
+	            <!--START: affiliateNoAppOrders-->
+	            <div class="row">
+	                <div class="col-lg-12 col-sm-12 no-display" alt="affiliateAppOrders">
+	                    [affiliate_no-history-to-display]
+	                </div>
+	            </div>
+	            <!--END: affiliateNoAppOrders-->
+
+				<!--START: affiliateAppOrdersDetail_Header-->
+				<div class="hidden-xs affiliateAppOrdersDetail">
+	                <div class="custom-cols custom-col-1">
+	                    <label for="odate" class="date">
+	                        [affiliate_orders-header-date]
+	                    </label>
+	                </div>
+	                <div class="custom-cols">
+	                    <label for="onum" class="ordernum">
+	                        [affiliate_orders-header-ordernum]
+	                    </label>
+	                </div>
+	                <div class="custom-cols custom-col-3">
+	                    <label for="onum" class="amount">
+	                        [affiliate_orders-header-amount]
+	                    </label>
+	                </div>
+	                <div class="custom-cols custom-col-4">
+	                    <label for="odate" class="commissionperc">
+	                        [affiliate_orders-header-commissionperc]
+	                    </label>
+	                </div>
+	                <div class="custom-cols custom-col-5">
+	                    <label for="odate" class="commissionamnt">
+	                        [affiliate_orders-header-commissionamnt]
+	                    </label>
+	                </div>
+	            </div>
+				<!--END: affiliateAppOrdersDetail_Header-->
+
+	            <!--START: affiliateAppOrdersDetail-->
+	            <div class="total-sumary">
+	                <div class="custom-cols custom-col-1">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4" >
+	                            [affiliate_orders-header-date]
+	                        </label>
+	                        <div class="col-xs-8 date">
+	                            [date]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	                <div class="custom-cols">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4">
+	                            [affiliate_orders-header-ordernum]
+	                        </label>
+	                        <div class="col-xs-8 gc-code ordernum">
+	                            [orderNumber]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	                <div class="custom-cols custom-col-3">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4">
+	                            [affiliate_orders-header-amount]
+	                        </label>
+	                        <div class="col-xs-8 gc-code amount">
+	                            [amount]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	                <div class="custom-cols custom-col-4">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4">
+	                            [affiliate_orders-header-commissionperc]
+	                        </label>
+	                        <div class="col-xs-8 gc-code commissionperc">
+	                            [percentCommission]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	                <div class="custom-cols custom-col-5">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4">
+	                            [affiliate_orders-header-commissionamnt]
+	                        </label>
+	                        <div class="col-xs-8 gc-code commissionamnt">
+	                            [amountCommission]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	            </div>  
+	            <!--END: affiliateAppOrdersDetail-->
+            </div>
+        </div>
+        <!--END: affiliateAppOrders--> 
+
+        <!--START: affiliateDenOrders-->
+        <div class="affiliateDenOrders">
+           <div class="header">
+               <h4>[affiliate_details-deniedorders] <span>(last [lastDays] days)</span></h4>
+           </div>
+           <div class="content-summary">
+	            <!--START: affiliateNoDenOrders-->
+	            <div class="row">
+	                <div class="col-lg-12 col-sm-12 no-display" alt="affiliateDenOrders">
+	                    [affiliate_no-history-to-display]
+	                </div>
+	            </div>
+	            <!--END: affiliateNoDenOrders-->
+
+				<!--START: affiliateDenOrdersDetail_Header-->
+				<div class="hidden-xs">
+	                <div class="col-lg-3 col-sm3">
+	                    <label for="odate" class="date">
+	                        [affiliate_orders-header-date]
+	                    </label>
+	                </div>
+	                <div class="col-lg-3 col-sm3">
+	                    <label for="onum" class="ordernum">
+	                        [affiliate_orders-header-ordernum]
+	                    </label>
+	                </div>
+	                <div class="col-lg-2 col-sm2">
+	                    <label for="onum" class="amount">
+	                        [affiliate_orders-header-amount]
+	                    </label>
+	                </div>
+	                <div class="col-lg-4 col-sm4">
+	                    <label for="odate" class="comments">
+	                        [affiliate_orders-header-comments]
+	                    </label>
+	                </div>
+	            </div>
+				<!--END: affiliateDenOrdersDetail_Header-->
+
+	            <!--START: affiliateDenOrdersDetail-->
+	            <div class="total-sumary">
+	                <div class="col-lg-3 col-sm3">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4" >
+	                            [affiliate_orders-header-date]
+	                        </label>
+	                        <div class="col-xs-8 date">
+	                            [date]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm3">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4">
+	                            [affiliate_orders-header-ordernum]
+	                        </label>
+	                        <div class="col-xs-8 gc-code ordernum">
+	                            [orderNumber]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	                <div class="col-lg-2 col-sm2">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4">
+	                            [affiliate_orders-header-amount]
+	                        </label>
+	                        <div class="col-xs-8 gc-code amount">
+	                            [amount]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	                <div class="col-lg-4 col-sm4">
+	                    <div class="row">
+	                        <label class="visible-xs gcTotal-default col-xs-4">
+	                            [affiliate_orders-header-comments]
+	                        </label>
+	                        <div class="col-xs-8 gc-code commissionperc">
+	                            [comments]
+	                         </div>
+	                        <div class="clearfix"></div>
+	                    </div>
+	                </div>
+	            </div>  
+	            <!--END: affiliateDenOrdersDetail-->
+            </div>
+        </div>
+        <!--END: affiliateDenOrders--> 
+
+        <!--START: affiliateLinks-->
+        <div class="affiliateLinks">
+            <form name="frmLinks" id="frmLinks" action="">
+            	<div class="row">
+	                <div class="affiliate-link col-lg-8 col-sm8">
+	                    <div class="header">
+			                <h4>[affiliate_details-links]</h4>
+			            </div>
+	                    <div class="affiliateBannersLink">
+	                        <div class="link">
+	                            <a href="[store_url]/?AffId=[affId]">General link - [affiliate_details-link-text]</a>
+	                        </div>
+	                        <div class="copy-section">
+		                        <div class="button">
+		                            <a href="javascript:HighlightAll('frmLinks.select0')" data-copytarget="#copyText" class="btn btn-primary">Copy Code</a>
+		                        </div>
+		                        <textarea name="select0" rows="5" cols="80" wrap="VIRTUAL" id="copyText" class="text-area">&lt;a href=&quot;[store_url]/?AffId=[affId]&quot;&gt;[affiliate_details-link-text]&lt;/a&gt;</textarea>
+	                        </div>
+	                    </div> 
+	                  <!--START: affiliateLinksDetails-->
+	                    <div class="affiliateBannersLink">
+	                        <div class="image">
+	                            <a href="[store_url]/?AffId=[affId]">
+	                                <img src="[affBannersFolder]affiliateBanner[intBannerCount].jpg" border="0" alt="" />
+	                            </a>
+	                        </div>
+	                        <div class="copy-section">
+		                        <div class="button">
+		                            <a href="javascript:HighlightAll('frmLinks.select[intBannerCount]')" data-copytarget="#copyText[intBannerCount]" class="btn btn-primary">Copy Code</a>
+		                        </div>
+		                        <textarea name="select[intBannerCount]" id="copyText[intBannerCount]" rows="5" cols="80" wrap="VIRTUAL" class="text-area">&lt;a href=&quot;[store_url]/?AffId=[affId]&quot;&gt;&lt;img border="0" src=&quot;[store_url][affBannersFolder]affiliateBanner[intBannerCount].jpg&quot;&gt;&lt;/a&gt;</textarea>
+	                        </div>
+	                    </div>
+	                  <!--END: affiliateLinksDetails-->
+	                </div>
+	                <div class="affiliate-details col-lg-4 col-sm4">
+	                  <div class="link-instructions">[affiliate_details-link-instructions]</div>
+	                    <div class="clear"></div>
+	                </div>
+                </div>
+            </form>
+        </div>
+        <!--END: affiliateLinks-->
+
+		<!--START: CATEGORY_FOOTER-->
+		<div class="category-footer" id="affiliateFooter">[CONTENT]</div>
+		<!--END: CATEGORY_FOOTER--> 
+      </div>
+	</div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript">
+function HighlightAll(theField) {
+	var tempval=eval("document."+theField);
+	tempval.focus();
+	tempval.select();
+	if (document.all)
+	{
+		therange=tempval.createTextRange();
+		therange.execCommand("Copy");
+		window.status="Contents highlighted and copied to clipboard!";
+		setTimeout("window.status=''",1800);
+	}
+}
+
+jQuery(window).on("load , resize", function(e) {
+    if(jQuery(window).width() <= 1199 ) {
+		jQuery('.affiliate-details').insertBefore('.affiliate-link');
+	} else {
+		jQuery('.affiliate-link').insertBefore('.affiliate-details');
+    }
+});
+
+
+(function() {
+  'use strict';
+  // click events
+  document.body.addEventListener('click', copy, true);
+  // event handler
+  function copy(e) {
+  // find target element
+		var 
+		t = e.target,
+		c = t.dataset.copytarget,
+		inp = (c ? document.querySelector(c) : null);
+		// is element selectable?
+		if (inp && inp.select) {
+		// select text
+		inp.select();
+		try {
+		  // copy text
+		  document.execCommand('copy');
+		  inp.blur();
+		  // copied animation
+		  t.classList.add('copied');
+		  setTimeout(function() { t.classList.remove('copied'); }, 1500);
+		}
+			catch (err) {
+			  alert('please press Ctrl/Cmd+C to copy');
+			}
+		}
+	}
+})();
+</script>
+<!--END: template_scripts-->
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/affiliate.css" type="text/css" media="screen" />
+<!--END: template_styles-->

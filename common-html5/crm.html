@@ -1,0 +1,425 @@
+<style type="text/css">
+@media only screen and (max-width: 480px) {
+	.crmTicketStatus td:nth-of-type(1):before { content: "[crm_user-date]"; }
+	.crmTicketStatus td:nth-of-type(2):before { content: "[crm_message]"; }
+}
+</style>
+<style type="text/css">
+.fileinput-button {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+}
+.fileinput-button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	opacity: 0;
+	-ms-filter: 'alpha(opacity=0)';
+	font-size: 200px;
+	direction: ltr;
+	cursor: pointer;
+}
+/* Fixes for IE < 8 */
+@media screen\9 {
+	.fileinput-button input {
+		filter: alpha(opacity=0);
+		font-size: 100%;
+		height: 100%;
+	}
+}
+</style>
+<script type="text/javascript">
+	var addReplyClick = 0;
+	
+	function submitForm(strAction)
+	{	    	
+		document.frmForm.action.value = strAction;
+		document.frmForm.submit();
+	}
+	function ValidateForm()
+	{
+		var strMsg = "";
+		if (document.frmForm.reply.value.trim() == "")
+			strMsg += " - [crm_response] cannot be blank.\n";
+		//<!--START: captchascript-->
+		if (document.frmForm.ramdomWord.value.trim() == "")
+			strMsg += " - Verification word cannot be blank.\n";
+		//<!--END: captchascript-->
+
+		if (ExistsCreditCard(jQuery('#reply').val()))
+			strMsg += "[ccNumerNotAllowedMessage]";
+		
+		if (strMsg != ""){
+			alert(strMsg);
+			return false;
+		}
+		if (addReplyClick == 0){
+			addReplyClick = 1;
+			return true;
+		}
+	}
+	String.prototype.trim = function() {
+		return this.replace(/^\s+|\s+$/g,"");
+	}
+	function isValidEmail(str) {
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		
+		if (str.indexOf(at)==-1)
+		   return false
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr)
+		   return false
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr)
+			return false
+	
+		 if (str.indexOf(at,(lat+1))!=-1)
+			return false
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot)
+			return false
+
+		 if (str.indexOf(dot,(lat+2))==-1)
+			return false
+		
+		 if (str.indexOf(" ")!=-1)
+			return false
+
+		 return true					
+	}
+	
+	function showSavedMessage()
+	{
+		window.setTimeout("alert('[crm_message-request-submitted]');",200);
+	}
+</script>
+
+<section id="crm">
+  <h1 class="page_headers">[crm_header_view_ticket]</h1>
+  <!--START: myAccount-->
+  <div class="button right"><a href="myaccount.asp" class="icon-btn icon-btn-prev">Back to My Account</a></div>
+  <!--END: myAccount-->
+  <div class="clear"></div>
+  <!--START: CATEGORY_HEADER-->
+<div class="category-header" id="crmHeader">[CONTENT]</div>
+  <!--END: CATEGORY_HEADER-->
+  <div class="crmTicketInfo">
+    <div class="header">
+      <h3>[subject]</h3>
+    </div>
+    <div class="label">[crm_status]:</div>
+    <div class="text">[status]</div>
+    <div class="clear"></div>
+    <div class="label">[crm_date-opened]:</div>
+    <div class="text">[datentime]</div>
+    <div class="clear"></div>
+    <div class="label">[crm_department]:</div>
+    <div class="text">[department]</div>
+    <div class="clear"></div>
+    <div class="label">[crm_opened-by]:</div>
+    <div class="text">[sender]</div>
+    <div class="clear"></div>
+    <div class="label">[crm_last-action-date]:</div>
+    <div class="text">[lastactiondatentime]</div>
+    <div class="clear"></div>
+  </div>
+  <div class="crmTicketStatus pad10 boxShadow">
+    <table>
+		<thead>
+		<tr class="titles2">
+			<th class="user-date">[crm_user-date]</th>
+			<th class="message">[crm_message]</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!--START: msgDetail-->
+		<tr class="row">
+			<td class="msg-date"><span>[msgSender]</span><span>[msgDate]</span></td>
+			<td class="msg-message">[msgMessage]</td>
+		</tr>
+				<tr>
+					<td colspan="2">
+						<!--START: crmAttachments-->
+						<div class="crmFiles">
+							<table>
+								<thead>
+									<tr class="titles2">
+										<th class="message">[crm_attachments]</th>
+										<th class="message">&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="row">
+
+										<td class="crmcomm" >
+											<ul style="list-style-type:none">
+												<!--START: crmfiles-->
+												<li><a href="filesaction.asp?action=download&folder=crm&file=[item-name]&hid=[filehash]"><i class="icon-angle-right"></i>[crmfile-name]</a> </li>
+												<!--END: crmfiles-->
+											</ul>
+										</td>
+										<td class="staffcomm" valign="top">
+											<ul style ="list-style-type:none">
+												<!--START: crmfilesStaff-->
+												<li><a href="filesaction.asp?action=download&folder=crm&file=[item-name-staff]&hid=[filehash]"><i class="icon-angle-right"></i>[crmfile-name-staff]</a></li>
+												<!--END: crmfilesStaff-->
+											</ul>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--END: crmAttachments-->
+					</td>
+				</tr>
+		<!--END: msgDetail-->
+		</tbody>
+	</table>
+  </div>
+  <div class="crmTicketForm">
+  <form method="post" action="crm.asp" id="frmForm" name="frmForm">
+    <input type="hidden" name="mk" value="[mk]" />
+    <input type="hidden" name="replyemail" value="[custemail]" />
+    <input type="hidden" name="id" value="[id]" />
+    <input type="hidden" name="action" value="" />
+    <div class="header">
+      <h3>[crm_update]</h3>
+    </div>
+    <div class="crmField">
+      <label for="subject">[crm_subject]:</label>
+      <div class="crm-subject">[subject]</div>
+      <div class="clear"></div>
+    </div>
+    <div class="crmField">
+      <label for="reply">[crm_response]:</label>
+      <textarea name="reply" id="reply"></textarea>
+      <div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" /></div>
+      <div class="clear"></div>
+    </div>
+			<div class="crmField">
+				<!--START: crmFileAttachments-->
+				<div class="file-attachments-button">
+					<span class="btn fileinput-button" onmouseover="this.className = 'btn_over fileinput-button'" onmouseout="	this.className = 'btn fileinput-button'">
+						<i class="icon-plus"></i>
+						<span>Select files...</span>
+						<!-- The file input field used as target for the file upload widget -->
+						<input id="fileupload" type="file" name="files[]" multiple="" data-url="/filesaction.asp?action=upload&folder=temp&hid=[filehash]">
+					</span>
+				</div>
+				<script type="text/javascript" src="js/vendor/jquery.ui.widget.js"></script>
+				<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+				<script type="text/javascript" src="js/jquery.fileupload.js"></script>
+				<script type="text/javascript">
+                    var bUploading = false;
+
+					var list = [];
+					jQuery(function () {
+
+						if (jQuery("#fileattachment").val() != '') {
+							if (jQuery("#fileattachment").val().split(",").length >= 4) {
+								alert("[crm_filelimit]");
+								return false;
+							}
+						}
+
+						jQuery('#fileupload').fileupload({
+							dataType: 'json',
+							add: function (e, data) {
+
+							    var extn = "", filename = "";
+							    var intFilesUploaded = 0;
+
+							    if (jQuery("#fileattachment").val() != "") {
+							        intFilesUploaded = jQuery("#fileattachment").val().split(",").length;
+							    }
+
+							    if (data.originalFiles.length > 4 || (data.originalFiles.length + intFilesUploaded) > 4) {
+							        alert("[crm_filelimit]");
+							        return false;
+							    }
+							    else {
+							        var filename = data.files[0].name;
+
+							        if (filename.lastIndexOf(".") > 0) {
+							            extn = filename.substring(filename.lastIndexOf(".") + 1, filename.length);
+							            if (extn.toLowerCase() == "gif" || extn.toLowerCase() == "jpg" || extn.toLowerCase() == "jpeg" || extn.toLowerCase() == "png" || extn.toLowerCase() == "bmp" || extn.toLowerCase() == "psd" || extn.toLowerCase() == "tif" || extn.toLowerCase() == "zip" || extn.toLowerCase() == "doc" || extn.toLowerCase() == "docx" || extn.toLowerCase() == "pdf" || extn.toLowerCase() == "rtf") {
+							                data.context = jQuery('<p/>').text('[crm_uploading]').appendTo(document.body);
+							                data.submit();
+							            }
+							            else {
+							                alert("[crm_fileextensions]");
+							            }
+							        }
+							    }
+
+							},
+							done: function (e, data) {
+								jQuery("#allelements").empty();
+								jQuery("#fileattachment").empty();
+
+								jQuery.each(data.result.files, function (index, file) {
+
+									var filenamewithoutextension = file.uniqueFileName.substr(0, file.uniqueFileName.lastIndexOf('.')) || file.uniqueFileName;
+
+									var strlink = "<span onclick='deleteFile(\"" + file.uniqueFileName + "\");'><i class='icon-cancel'></i></span>";
+									var strFileDownloadLink = "filesaction.asp?action=download&hid=[filehash]&folder=temp&file=" + file.uniqueFileName + "";
+									jQuery("#files").append('<p id="' + file.uniqueFileName + '"  class="' + filenamewithoutextension + '"  ><a id=' + filenamewithoutextension + ' href= ' + strFileDownloadLink + '>' + file.name + '</a><span class="item-remove" >' + strlink + '</span></p>');
+
+									list.push(file.uniqueFileName);
+
+								});
+
+								jQuery("#fileattachment").val(list);
+
+
+							},
+							progressall: function (e, data) {
+								bUploading = true;
+								var progress = parseInt(data.loaded / data.total * 100, 10);
+								if (progress >= 100)
+									bUploading = false;
+
+								jQuery('#progress .bar').css(
+									'width',
+									progress + '%'
+								);
+							},
+						});
+					});
+
+					function deleteFile(fileName) {
+						var delyesno = (confirm("[crm_confirm-delete]"));
+						if (delyesno) {
+							jQuery.get('filesaction.asp',
+							{
+								action: "delete",
+								file: fileName,
+								hid: '[filehash]',
+								folder: "temp",
+								confirm: true,
+								crmid: 0
+							},
+							function (result) {
+								try {
+									var msg = result.errorMsg;
+									if (msg != '' && msg != undefined) {
+										alert(msg);
+										return false;
+									}
+								}
+								catch (e) { }
+							});
+
+							jQuery('#progress .bar').css(
+								'width',
+								0 + '%'
+							);
+
+							var filenamewithoutextension = fileName.substr(0, fileName.lastIndexOf('.')) || fileName;
+							var filenamewithoutextension = filenamewithoutextension.replace('(', '\\(');
+							var filenamewithoutextension = filenamewithoutextension.replace(')', '\\)');
+
+							jQuery('.' + filenamewithoutextension).remove();
+
+							list.splice(list.indexOf(fileName), 1);
+							jQuery("#fileattachment").val(list);
+
+						}
+						return false;
+					}
+				</script>
+				<p></p>
+				<div id="progress">
+					<div class="bar" style="width: 0%;"></div>
+				</div>
+				<!-- The container for the uploaded files -->
+				<div id="files" class="files"></div>
+				<input id="fileattachment" name="fileattachment" type="hidden" />
+				<p id="allelements"></p>
+				<!--END: crmFileAttachments-->
+			</div>
+    <!--START: captcha-->
+    <div class="crmField">
+      <label for="Verification">Verification:</label>
+				<div class="captcha">
+					<img src="admin/image_pw.asp" width="148" alt="" />
+        <div class="captcha-text">Type the word above...</div>
+        <input type="text" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="7" class="txtBoxStyle" />
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--END: captcha-->
+    <!--START: recaptcha-->
+    <div class="crmField">
+    <label for="recaptcha_challenge_field">Verification:</label>
+    <div class="recaptcha">
+        <script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+        <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+        <noscript>
+        <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+        <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+        </noscript>
+    </div>
+    <div class="clear"></div>
+    </div>
+    <!--END: recaptcha-->
+    <!--START: recaptcharobot-->
+    <script type="text/javascript">
+		var onSubmit = function (token) {
+			if ('[recaptcha_robot_size]' == 'invisible')
+				if (ValidateForm()) {
+					submitForm('addreply');
+				}
+				else
+					grecaptcha.reset();
+		}
+		var onloadCallback = function () {
+            grecaptcha.render('[recaptcha_control]', {
+                'sitekey': '[recaptcha_key]',
+                'theme': '[recaptcha_robot_theme]',
+                'size': '[recaptcha_robot_size]',
+                'type': '[recaptcha_robot_type]',
+                'callback': onSubmit
+            });
+		}       
+    </script>
+    <script src="//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <div id="divRobocop"></div>
+    <div class="crmField">
+        <!--START: verificationlabel--><label for="recaptcha_challenge_field">Verification:</label><!--END: verificationlabel-->&nbsp;
+    </div>
+    <!--END: recaptcharobot-->
+    <div class="update-request-button">
+		<script>
+			function submitted_onclick() {
+				if ('[recaptcha_robot_size]' == 'invisible')
+					return true;
+				else {
+					if (ValidateForm())
+						submitForm('addreply');
+					return false;
+				}
+			}
+		</script>
+      <input type="submit" id='submitted' name="submitted" value="Update" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" class="btn" onclick="return submitted_onclick();" />
+    </div>
+    <div class="clear"></div>
+  </form>
+  </div>
+  <div class="clear"></div>
+  <!--START: CATEGORY_FOOTER-->
+  <div class="category-footer" id="crmFooter">[CONTENT]</div>
+  <!--END: CATEGORY_FOOTER--> 
+</section>
+<script>
+    window.onload = function () { addReplyClick = 0; };
+    window.onunload = function () { };
+</script>

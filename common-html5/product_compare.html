@@ -1,0 +1,42 @@
+<div id="view-fixed" class="view-fixed-compare">
+    <section class="compare">
+        <!--START: item_block-->
+        <div class="compare__item">
+            <div class="compare__effect">
+                <div class="img">
+                   <a href="product.asp?itemid=[catalogid]"> 
+                     <img class="product__image" src="[THUMBNAIL]" alt="[name]" /> 
+                   </a>
+                </div>
+                <div class="name"> 
+                    <h3>
+                        <a class="product__title name"  href="product.asp?itemid=[catalogid]">[name]</a>
+                    </h3>
+                </div>
+                <div class="content--compare">
+	                 <!-- .top-info -->
+	                <ul class="titles--compare content--product">
+	                    <!--START: left_column-->
+					        <!--START: label_row-->
+					        <li class="left_column_field_label" title="[field_label]">[field_label]</li>
+					        <!--END: label_row-->
+						<!--END: left_column-->
+	                </ul>
+	                <ul class="value content--product">
+	                    <!--START: value_row-->
+	                    <li class="extra highlight" title="[field_value]">[field_value]</li>
+	                    <!--END: value_row-->
+	                </ul>
+                </div>
+               <li class="action-button">
+	              <input type="button" value="[category_buyitlink]" onclick="window.location = 'add_cart.asp?quick=1&amp;item_id=[catalogid]'" class="btn" />
+	            </li>
+            </div>
+        </div>
+        <!--END: item_block-->
+        <button id="close-compare" class="action action--close" onclick="javascript:showCompareBasket(0)"> 
+            <i class="fa fa-remove"></i> 
+            <span class="action__text action__text--invisible"> </span> 
+        </button> 
+    </section>
+</div>

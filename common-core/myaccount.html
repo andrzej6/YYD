@@ -1,0 +1,1223 @@
+<script type="text/javascript" src="assets/templates/common/js/jquery.min.js"></script>
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[account_header-myaccount]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[account_header-myaccount]</h1>
+    </div>
+</section>
+
+
+<section id="myaccount" class="manageMyCc-page-content page-content">
+    <section class="content-area">
+	    <div class="container">
+            <!--START: logout_button-->
+            <div class="logout-btn pull-right">
+	            <button type="button" name="logout" onclick="window.location='logout.asp';" class="btn-link"><i class="icon-cancel-circled"></i> [frame_logout-link-text]</button>
+            </div>
+            <!--END: logout_button-->
+            <div class="username">[account_welcome] <!--START: username-->[username]. [account_not-this-user-message]<!--END: username--></div>
+            <div class="clearfix"></div>
+            <!--START: CATEGORY_HEADER-->
+            <div class="category-header" id="myaccountHeader">[CONTENT]</div>
+            <!--END: CATEGORY_HEADER-->
+
+            <div class="row">
+                <div class="accountInfo col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                        	<div class="billing-info">
+                                <div class="button pull-right"><a href="myaccount.asp?action=updacc"><i class="icon-pencil"></i>[frame_edit-item-text]</a></div>
+                                <div class="header">
+                                    <h5>[account_billing-info]</h5>
+                                </div>
+                                <div class="billing-address">
+                                	<div>[billing_firstname] [billing_lastname]</div>
+                                    <div>[billing_address]</div>
+                                    <div>[billing_address2]</div>
+                                    <div>[billing_city], [billing_state] [billing_zip] [billing_country]</div>
+                                    <div>[billing_phone]</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="shipping-info">
+                                <div class="button pull-right"><a href="myaccount.asp?action=updacc"><i class="icon-pencil"></i>[frame_edit-item-text]</a></div>
+                                <div class="header">
+                                    <h5>[account_shipping-info]</h5>
+                                </div>
+                                <div class="shipping-address">
+                                    <div>[shipping_firstname] [shipping_lastname]</div>
+                                    <div>[shipping_address]</div>
+                                    <div>[shipping_address2]</div>
+                                    <div>[shipping_city], [shipping_state] [shipping_zip] [shipping_country]</div>
+                                    <div>[shipping_phone] <!--START: addressType-->([addressTypeText])<!--END: addressType--></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+			<!--START: ordertrack_block-->
+            <div class="row">
+                <div class="trackOrders col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_recent-orders]</h4>
+                        <div class="button pull-right"><a href="ordertracking.asp" class="icon-btn icon-btn-pages"><i class="icon-doc-text-inv"></i>[account_recent-order-viewall]</a></div>
+                    </div>
+                    <div class="row trackOrders_titles titles2 hidden-xs">
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="odate">[orderhistory_date]</label>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="onum">[orderhistory_ordernum]</label>
+                        </div>
+                        <div class="col-lg-2 col-sm-2">
+                            <label for="oamount">[orderhistory_amount]</label>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 text-center">
+                            <label for="ostatus">[orderhistory_status]</label>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 text-right">
+                            <label for="odetails">[account_actions-heading-label]</label>
+                        </div>
+                    </div>
+                    <!--START: ordertemplate-->
+                    <div class="row trackOrders_details details_row">
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="odate">[orderhistory_date]</label>
+                                <div class="col-sm-12 col-xs-8">[odate]</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="onum">[orderhistory_ordernum]</label>
+                                <div class="col-sm-12 col-xs-8">[invoicenum_prefix][invoicenum]&nbsp;(<a href="ordertracking.asp?action=view&amp;id=[orderid]">[account_view-details]</a>)</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="oamount">[orderhistory_amount]</label>
+                                <div class="col-sm-12 col-xs-8">[orderamount]</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 text-center">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="ostatus">[orderhistory_status]</label>
+                                <div class="col-sm-12 col-xs-8">[orderstatus]</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 text-right">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="odetails">[account_actions-heading-label]</label>
+                                <!--START: reorder-->
+                                <div class="col-sm-12 col-xs-8"><a href="ordertracking.asp?action=repeat&id=[orderid]" class="icon-btn icon-btn-refresh"><i class="icon-cw"></i>[account_recent-order-reorder]</a></div>
+                                <!--END: reorder-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: ordertemplate-->
+                </div>
+            </div>
+			<!--END: ordertrack_block-->
+
+	        <!--START: orderstacking_items-->
+            <div class="row">
+                <div class="previouslyPurchased col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_orderstacking-alias]</h4>
+                        <div class="button pull-right"><a href="orderstacking_list.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+
+					<div class="account-chk">
+						<input type="checkbox" name="orderstacking_cust_enable" id="orderstacking_cust_enable" value="1" [orderstacking_cust_enable] onclick="setOrderStacking()" />&nbsp;[account_enable]&nbsp;[account_orderstacking-alias]&nbsp;<div style="padding-right: 35px; width: 150px; float:right">[affiliate_summary-header-orders]:&nbsp;[orderstacking_number]</div>
+					</div>
+
+                </div>
+            </div>
+            <!--END: orderstacking_items-->
+
+
+			<!--START: preordered_items-->
+			<div class="row">
+                <div class="previouslyPurchased col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_preordered-items]</h4>
+                        <div class="button pull-right"><a href="preordered_items.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+                </div>
+            </div>
+			<!--END: preordered_items-->
+
+			<!--START: previouslyPurchased-->
+            <div class="row">
+                <div class="previouslyPurchased col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_previously-purchased]</h4>
+                        <div class="button pull-right"><a href="previously_purchased.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--END: previouslyPurchased-->
+
+            <!--START: vetmypets-->
+            <div class="row">
+                <div class="vetmypets col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_vet-mypets]</h4>
+                        <div class="button pull-right"><a href="vet_mypets.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--END: vetmypets-->
+
+            <!--START: savedorders-->
+            <div class="row">
+                <div class="savedOrders col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[orderhistory_savedcarts-header]</h4>
+                        <!--START savecart-->
+                        <div class="button pull-right"><a href="myaccount.asp?action=save_cart" class="icon-btn icon-btn-incart"><i class="icon-floppy"></i>[orderhistory_savedcarts-current]</a></div>
+                        <!--END: savecart-->
+                    </div>
+                    <div class="row savedOrders_titles titles2 hidden-xs">
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="odate">[orderhistory_date]</label>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="oamount">[orderhistory_amount]</label>
+                        </div>
+                        <div class="col-lg-6 col-xs-6">
+                            <label for="oactions">[account_actions-heading-label]</label>
+                        </div>
+                    </div>
+                    <!--START: savedordertemplate-->
+                    <div class="row savedOrders_details details_row">
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="odate">[orderhistory_date]</label>
+                                <div class="col-xs-8">[odate]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="oamount">[orderhistory_amount]</label>
+                                <div class="col-xs-8">[orderamount]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 saved-cart_actions">
+							
+							<div class="row">
+								<label class="visible-xs col-xs-4" for="odetails">[account_actions-heading-label]</label>
+
+								<div class="col-md-12 col-xs-8">
+									<div class="row">
+										<div class="button pull-right col-xs-12 col-sm-6 col-md-3"><a href="continue_order.asp?orderkey=[orderkey][orderid]" class="btn btn-primary">[orderhistory_savedcarts-continue]</a></div>
+										<div class="button pull-right col-xs-12 col-sm-6 col-md-3"><button type="button" class="btn btn-link" onclick="toggleEmailCart('[orderkey]');" >[orderhistory_savedcarts-emailcart]</button></div>
+										<div class="button pull-right col-xs-12 col-sm-6 col-md-3"><a href="ordertracking.asp?action=viewcart&amp;id=[orderid]" class="btn btn-link">[account_view-details]</a></div>
+										<div class="button pull-right saved-order-delete col-xs-12 col-sm-6 col-md-3"><a href="ordertracking.asp?action=removecart&amp;id=[orderid]" class="btn btn-link">[orderhistory_savedcarts-delete]</a></div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+							
+							
+
+                        	
+                        </div>
+                    </div>
+                    <!--END: savedordertemplate-->
+                </div>
+            </div>
+			<input type="hidden" id="hdnOrderKeyToEmail" value="" />
+			<div id="divEmailCart" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">[orderhistory_savedcarts-emailaddress]</h4>
+						</div>
+						<div class="modal-body">
+							<input type="text" id="txtEmailCartTo" maxlength="500" placeholder="example@sample.com,example1@sample2.com" style="width:350px;"/>
+							<input type="button" onclick="emailCart();" value="[orderhistory_savedcarts-ok]" class="btn btn-default"  />
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<script type="text/javascript">
+				function emailCart() {
+					var emailTo = jQuery("#txtEmailCartTo").val().trim();
+					var strOrderKey = jQuery("#hdnOrderKeyToEmail").val().trim();
+					if (emailTo.length == 0) {
+						alert("[orderhistory_savedcarts-emailcart-emailrequired]");
+						return;
+					}
+					if (strOrderKey.length == 0) {
+						alert("[orderhistory_savedcarts-emailcart-error]");
+						return;
+					}
+					jQuery.ajax({
+						url: 'continue_order.asp',
+						dataType: 'json',
+						type: 'POST',
+						data: 'action=emailcart&orderkey=' + strOrderKey + '&emailto=' + emailTo,
+						async: false,
+						cache: false,
+						success: function (objJsonResult) {
+							var strEmailError = "";
+							jQuery.each(objJsonResult, function (i, objJson) {
+								if (objJson.sent == 0)
+									strEmailError = strEmailError + (strEmailError.length == 0 ? "" : ", ") + objJson.email;
+							});
+							if (strEmailError == ""){
+								alert("[orderhistory_savedcarts-emailcart-success]");
+								jQuery("#divEmailCart").modal("hide");
+							}
+							else{
+								alert("[orderhistory_savedcarts-emailcart-error-email] " + strEmailError);
+							}
+							console.log(objJsonResult);
+						},
+						error: function (jqXHR, textStatus, errorThrown) {
+							alert("[orderhistory_savedcarts-emailcart-error]");
+							console.log("Error processing the exact match search.");
+							console.log("TextStatus: " + textStatus);
+							console.log("ErrorThrown: " + errorThrown);
+						}
+					});
+				}
+				function toggleEmailCart(strOrderKey) {
+					jQuery("#hdnOrderKeyToEmail").val(strOrderKey);
+					jQuery("#divEmailCart").modal({ show: true });
+				}
+			</script>
+            <!--END: savedorders-->
+
+            <!--START: recurringOrders-->
+            <div class="row">
+                <div class="recurringOrders col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[recurringorders_recurringorders-header]</h4>
+                    </div>
+                    <div class="row recurringOrders_titles titles2 hidden-xs">
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="odate">[orderhistory_date]</label>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="onum">[orderhistory_ordernum]</label>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="oamount">[orderhistory_amount]</label>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="ostatus">[orderhistory_status]</label>
+                        </div>
+                    </div>
+                    <!--START: recurringordertemplate-->
+                    <div class="row recurringOrders_details details_row">
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="odate">[orderhistory_date]</label>
+                                <div class="col-xs-8">[odate]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="oamount">[orderhistory_ordernum]</label>
+                                <div class="col-xs-8">[invoicenum_prefix][invoicenum]&nbsp;(<a href="ordertracking.asp?action=view&amp;id=[orderid]">[account_view-details]</a>)</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="oamount">[orderhistory_amount]</label>
+                                <div class="col-xs-8">[orderamount]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="odetails">[orderhistory_status]</label>
+                                <div class="col-xs-8">[orderstatus]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: recurringordertemplate-->
+                </div>
+            </div>
+            <!--END: recurringOrders--> 
+
+            <!--START: authNetCIM-->
+            <div class="row">
+                <div class="savedCC col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_my-saved-creditcards]</h4>
+                        <!--START: addauthnetcard-->
+                        <div class="button pull-right"><a href="managemycc.asp?hdnaction=addnew" class="icon-btn icon-btn-add"><i class="icon-plus"></i>Add New Card</a></div>
+                        <!--END: addauthnetcard-->	                        
+                    </div>
+
+					<!--START: cardlist-->
+                    <div class="row savedCC_titles titles2 hidden-xs">
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="ccdigits">[checkout3_creditcard-last-digits]</label>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <label for="ccexpire">[CustomerInfo_creditexpiration]</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="ccactions">[account_actions-heading-label]</label>
+                        </div>
+                    </div>
+                    <!--START: ccItem-->
+                    <div class="row savedCC_details details_row">
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="ccdigits">[checkout3_creditcard-last-digits]</label>
+                                <div class="col-xs-8">[ccLastDigits]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="ccexpire">[CustomerInfo_creditexpiration]</label>
+                                <div class="col-xs-8">[ccExpiration]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="ccactions">[account_actions-heading-label]</label>
+                                <div class="col-xs-8"><a href="managemycc.asp?pp=[strCustomerPaymentProfileId]&cp_orderid=[cp_orderid]" class="icon-btn icon-btn-search">[account_view-details]</a></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                	<!--END: ccItem-->
+					<!--END: cardlist-->
+                </div>
+            </div>
+            <!--END: authNetCIM-->
+
+			
+            <div class="row">
+                <div class="addressBook col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_addressbook]</h4>
+                        <div class="button pull-right"><a href="myaccount.asp?action=addresses" class="icon-btn icon-btn-add"><i class="icon-plus"></i>[account_Add-New-Address]</a></div>
+                    </div>
+
+					<!--START: address_book_block-->
+                    <div class="row addressBook_titles titles2 hidden-xs">
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="address-alias">[account_addressbook-header-alias]</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="address-details">[account_addressbook-header-details]</label>
+                        </div>
+                    </div>
+					<!--END: address_book_block-->
+
+                    <!--START: address_book-->
+                    <div class="row addressBook_details details_row">
+                        <div class="col-lg-6 col-sm-6">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="address-alias">[account_addressbook-header-alias]</label>
+                                <div class="col-xs-8">[address_alias]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="address-details">[account_addressbook-header-details]</label>
+                                <div class="col-xs-8">[shipping_address] [shipping_city], [shipping_state]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                	<!--END: address_book-->
+                </div>
+            </div>
+
+			<!--START: CRM-->
+            <div class="row">
+                <div class="crmRequests col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_crm-requests]</h4>
+                        <div class="button pull-right"><a href="crm.asp?action=add" class="icon-btn icon-btn-add"><i class="icon-plus"></i>[account_crm-add-request]</a></div>
+                    </div>
+
+                    <!--START: crmMessagesDetailNoReq-->
+                    <div class="row crmRequests_details details_row">
+                    	<div class="col-lg-12">
+                        	<div class="crm-norequest">[account_crm-requests-norequest]</div>
+                        </div>
+                    </div>
+                    <!--END: crmMessagesDetailNoReq-->
+
+					<!--START: crmRequests_titles-->
+                    <div class="row crmRequests_titles titles2 hidden-xs">
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="crm-id">[account_crm-requests-header-id]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="crm-dept">[account_crm-requests-header-dept]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="crm-date">[account_crm-requests-header-date]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="crm-subject">[account_crm-requests-header-subject]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="crm-lastact">[account_crm-requests-header-lastact]</label>
+                        </div>
+                    </div>
+					<!--END: crmRequests_titles-->
+
+                    <!--START: crmMessagesDetail-->
+                    <div class="row crmRequests_details details_row" onclick="window.location.href='crm.asp?mk=[mkey]';" onmouseover="this.className='row highlight';" onmouseout="this.className='row';">
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="crm-id">[account_crm-requests-header-id]</label>
+                                <div class="col-xs-8"><a href="crm.asp?mk=[mkey]">[crmId]</a></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="crm-dept">[account_crm-requests-header-dept]</label>
+                                <div class="col-xs-8">[dpt]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="crm-date">[account_crm-requests-header-date]</label>
+                                <div class="col-xs-8">[date]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="crm-subject">[account_crm-requests-header-subject]</label>
+                                <div class="col-xs-8">[subject]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="crm-lastact">[account_crm-requests-header-lastact]</label>
+                                <div class="col-xs-8">[lastaction]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                	<!--END: crmMessagesDetail-->
+                </div>
+            </div>
+			<!--END: CRM-->
+
+			<!--START: RMA-->
+            <div class="row">
+                <div class="rmaItems col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_rma-header]</h4>
+                    </div>
+                    <div class="row rmaItems_titles titles2 hidden-xs">
+                        <div class="col-lg-2_4">
+                            <label for="rma-id">[rma_header-rmanum]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="rma-date">[rma_header-rmadate]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="rma-order">[rma_header-rmaorder]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="rma-status">[rma_header-rmastatus]</label>
+                        </div>
+                    </div>
+                    <!--START: RmaItems-->
+                    <div class="row rmaItems_details details_row">
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="rma-id">[rma_header-rmanum]</label>
+                                <div class="col-xs-8"><a href="my_rma.asp?oid=[OrderId]&amp;r=[idRma]">[idRma]</a></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="rma-date">[rma_header-rmadate]</label>
+                                <div class="col-xs-8">[Date]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="rma-order">[rma_header-rmaorder]</label>
+                                <div class="col-xs-8">[OrderNum]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="rma-status">[rma_header-rmastatus]</label>
+                                <div class="col-xs-8">[RMAStatus]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                	<!--END: RmaItems-->
+                </div>
+            </div>
+            <!--END: RMA-->
+
+			<!--START: affiliateStatistics-->
+            <div class="row">
+                <div class="affiliateStatistics col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_affiliate-statistics]</h4>
+                        <div class="button pull-right"><a href="affiliate.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+                    <div class="row affiliateStatistics_titles titles2 hidden-xs">
+                        <div class="col-md-2_4 col-sm-2_4">
+                            <label for="affiliate-membersince">[affiliate_summary-header-membersince]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2_4">
+                            <label for="affiliate-orders">[affiliate_summary-header-orders]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2">
+                            <label for="affiliate-amount">[affiliate_summary-header-amount]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2">
+                            <label for="affiliate-commission">[affiliate_summary-header-commission]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-3">
+                        	<div class="row">
+                            	<div class="col-sm-6"><label for="affiliate-paid">[affiliate_summary-header-paid]</label></div>
+                            	<div class="col-sm-6 text-right"><label for="affiliate-balance">[affiliate_summary-header-balance]</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--START: affiliateStatisticsNoOrders-->
+                    <div class="row affiliateStatistics_details details_row">
+                    	<div class="col-lg-12">
+                        	<div class="affiliate-no-history">[affiliate_no-history-to-display]</div>
+                        </div>
+                    </div>
+                    <!--END: affiliateStatisticsNoOrders-->
+                    <!--START: affiliateStatisticsDetail-->
+                    <div class="row affiliateStatistics_details details_row">
+                        <div class="col-md-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="affiliate-membersince">[affiliate_summary-header-membersince]</label>
+                                <div class="col-sm-12 col-xs-8">[memberSince]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="affiliate-orders">[affiliate_summary-header-orders]</label>
+                                <div class="col-sm-12 col-xs-8">[orders]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="affiliate-amount">[affiliate_summary-header-amount]</label>
+                                <div class="col-sm-12 col-xs-8">[amount]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="affiliate-commission">[affiliate_summary-header-commission]</label>
+                                <div class="col-sm-12 col-xs-8">[totalCommission]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2_4 col-sm-3">
+                        	<div class="row">
+                            	<div class="col-sm-6">
+                                    <div class="row">
+                                        <label class="visible-xs col-xs-4" for="affiliate-paid">[affiliate_summary-header-paid]</label>
+                                        <div class="col-sm-12 col-xs-8">[paid]</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            	<div class="col-sm-6 text-right">
+                                    <div class="row">
+                                        <label class="visible-xs col-xs-4" for="affiliate-balance">[affiliate_summary-header-balance]</label>
+                                        <div class="col-sm-12 col-xs-8">[balance]</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                	<!--END: affiliateStatisticsDetail-->
+                </div>
+            </div>
+            <!--END: affiliateStatistics-->
+
+            <!--START: giftRegistry-->
+            <div class="row">
+                <div class="giftRegistry col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_giftRegistry]</h4>
+                    </div>
+                    <div class="row giftRegistry_titles titles2 hidden-xs">
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="giftRegistry-name">[giftregistry_header-name]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="giftRegistry-eventdate">[giftregistry_header-eventdate]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="giftRegistry-expiration">[giftregistry_header-expiration]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="giftRegistry-productsdesired">[giftregistry_header-productsdesired]</label>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                            <label for="giftRegistry-productspurchased">[giftregistry_header-productspurchased]</label>
+                        </div>
+                    </div>
+                    <div class="row giftRegistry_details details_row">
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="giftRegistry-name">[giftregistry_header-name]</label>
+                                <div class="col-xs-8">[regName] <a href="giftregistry_edit.asp?action=view">[account_view-details]</a></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="giftRegistry-eventdate">[giftregistry_header-eventdate]</label>
+                                <div class="col-xs-8">[regEvent]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="giftRegistry-expiration">[giftregistry_header-expiration]</label>
+                                <div class="col-xs-8">[regExpiration]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="giftRegistry-productsdesired">[giftregistry_header-productsdesired]</label>
+                                <div class="col-xs-8">[regProductsDesired]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2_4 col-sm-2_4">
+                        	<div class="row">
+                                <label class="visible-xs col-xs-4" for="giftRegistry-productspurchased">[giftregistry_header-productspurchased]</label>
+                                <div class="col-xs-8">[regProductsPurchased]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END: giftRegistry-->
+
+            <div class="row">
+                <!--START: points-->
+                <div class="rewardPoints col-sm-4">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_rewards]</h4>
+                    </div>
+                    <div class="row rewardPoints_details details_row">
+                    	<div class="col-lg-12">
+                        	<div class="points">[account_rewards-header-points]: [points_balance]</div>
+                            <div class="button"><a href="reward_detail.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a> - <a href="redeem.asp" class="icon-btn icon-btn-tag">[account_rewards-redeem-text]</a></div>
+                        </div>
+                    </div>
+                </div>
+	            <!--END: points-->
+
+                <!--START: wishList-->
+                <div class="wishList col-sm-4">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_wishlist]</h4>
+                    </div>
+                    <div class="row wishList_details details_row">
+                        <div class="col-lg-12">
+                            <div class="products">[account_wishlist-header-products]: [wishListTotalItems]</div>
+                            <!--START: wishList_TotalLists-->
+                            <div class="total-lists">[account_wishlist-header-lists]: [wishListTotalLists]</div>
+                            <!--END: wishList_TotalLists-->
+                            <div class="lastmod">[account_wishlist-header-lastmod]: [wishListLasMod]</div>
+                            <div class="button"><a href="view_wishlist.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!--END: wishList--> 
+    
+                <!--START: reminders-->
+                <div class="viewReminders col-sm-4">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_reminders]</h4>
+                    </div>
+                    <div class="row viewReminders_details details_row">
+                        <div class="col-lg-12">
+                            <div class="reminders">[account_reminders-header-reminders]: [total_reminders]</div>
+                            <div class="button"><a href="view_reminders.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!--END: reminders-->
+                
+                <!--START: productreview-->
+                <div class="clear"></div>
+                <div class="productreview">
+                    <div class="container">
+                        <div class="header">
+                            <h4 class="page_heading">[account_productreview-header]</h4>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="table">
+
+                            <div class="row header">
+                                <div class="cell">
+                                    Image
+                                </div>
+                                <div class="cell">
+                                    [account_productreview-catalogid_header]
+                                </div>
+                                <div class="cell">
+                                    [account_productreview-product_name_header]
+                                </div>
+                                <div class="cell">
+                                    [account_productreview-review_date_header]
+                                </div>
+                                <div class="cell">
+                                    [account_productreview-review_status_header]
+                                </div>
+                                <div class="cell">
+                                    [account_productreview-review_stars_header]
+                                </div>
+                                <div class="cell">
+                                    [account_productreview-review_title]
+                                </div>
+
+                                <div class="cell">
+                                    [account_productreview-actions_header]
+                                </div>
+                            </div>
+
+                            <!--START: productreviewitem-->
+                            <div class="row">
+                                <div class="cell">
+                                    <a href="[productreview-image]" class="MagicZoomPlus" target="_blank"><img src="thumbnail.asp?file=[productreview-image]&maxx=50&maxy=50" border="0" width="50" height="50"></a>
+                                </div>
+                                <div class="cell">
+                                    [productreview-product_sku]
+                                </div>
+                                <div class="cell">
+                                    [productreview-product_name]
+                                </div>
+                                <div class="cell">
+                                    [productreview-review_date]
+                                </div>
+                                <div class="cell">
+                                    [productreview-review_status]
+                                </div>
+                                <div class="cell">
+                                    <span class="reviews-stars rating-[review_average]"></span>
+                                </div>
+                                <div class="cell">
+                                    [productreview-review_short_description]
+                                </div>
+                                <div class="cell">
+                                    <div class="button left saved-order-delete">
+                                        <a onclick="javascript: deleteReview([productreview-catalogid], [productreview-review_id]);" class="icon-btn icon-cancel">[account_productreview-delete]</a>
+                                    </div>
+                                    <!--START: productreview_view-->
+                                    <div class="button left">
+                                        <a onclick="javascript: showReview([productreview-catalogid], [productreview-review_id], [productreview-review_rating], [productreview-review_approved], '[productreview-review_short_description]', '[productreview-review_long_description]', '[productreview-product_name]', '[productreview-review_location]', '[productreview-review_email]', '[productreview-review_name]', '[productreview-review_images]', [productreview-can_edit]);" class="icon-btn icon-btn-search">[account_productreview-details]</a>
+                                    </div>
+                                    <!--END: productreview_view-->
+                                    <!--START: productreview_edit-->
+                                    <div class="button left">
+                                        <a onclick="javascript: showReview([productreview-catalogid], [productreview-review_id], [productreview-review_rating], [productreview-review_approved], '[productreview-review_short_description]', '[productreview-review_long_description]', '[productreview-product_name]', '[productreview-review_location]', '[productreview-review_email]', '[productreview-review_name]', '[productreview-review_images]', [productreview-can_edit]);" class="icon-btn icon-pencil">[account_productreview-edit]</a>
+                                    </div>
+                                    <!--END: productreview_edit-->
+                                </div>
+                            </div>
+                            <!--END: productreviewitem-->
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                [review_modal]
+                <!--END: productreview--> 
+
+            </div>
+
+            <!--START: BlockStoreCredits-->
+            <div class="row">
+                <div class="StoreCredit col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_storecredits]</h4>
+                        <div class="button pull-right"><a href="store_credits_detail.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+                    <div class="row StoreCredit_details details_row">
+                    	<div class="col-lg-12">
+                        	<div class="points">[account_storecredits-header-points]: [credits_balance]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END: BlockStoreCredits--> 
+
+            <!--START: giftcertificates-->
+            <div class="row">
+                <div class="giftCertificates col-lg-12" id="giftCertificates">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_gift-certificate]</h4>
+                        <div class="button pull-right"><a href="gc_view.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+
+                    <form action="gc_balance.asp" method="post" name="frmGC" id="frmGC">
+                        <div class="row giftCertificates_details details_row">
+                            <div class="total_gift-certs col-md-6 col-sm-12">
+                            	<div class="row">
+                                	<div class="col-md-6 col-sm-6">
+                                    	<div class="row">
+                                            <label class="col-lg-12 col-xs-12" for="[account_gift-certificate-total-purchased]">[account_gift-certificate-total-purchased]</label>
+                                            <div class="col-lg-12 col-xs-12">[total_gc]</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                    	<div class="row">
+                                            <label class="col-lg-12 col-xs-12" for="[account_gift-certificate-total-amount]">[account_gift-certificate-total-amount]</label>
+                                            <div class="col-lg-12 col-xs-12">[total_gcamount]</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+							<div class="check-gc-balance-outer col-md-4 col-sm-6 pull-right">
+								<div class="check-gc-balance">
+									<div id="gc-code" class="gc-code">
+                            			<input type="hidden" name="redirect_hash" value="gc-code" />
+										<div class="form-group">
+											<label class="check-gc-balance-label">[account_gift-certificate-check-balance]</label>
+
+											<div class="gc-field">	
+												<input type="text" size="20" name="gc" value="" placeholder="[giftcertificate_Details-header-code]" maxlength="30" class="txtBoxStyle form-control" />
+											</div>
+
+											<!--START: gc_pin-->
+											<div class="gc_pin gc-field">	
+												<input id="gc_pin" placeholder="[giftcertificate_pin]" maxlength="10" size="5" value="" name="gc_pin" class="txtBoxStyle form-control" />
+											</div>
+											<!--END: gc_pin-->
+
+											<!--START: captcha-->
+	                                		<div class="gc-field">
+                                        		<div class="form-group">
+													<!--<label for="verification">[registration_verification]</label>-->
+													<div class="randomWordGC"><img src="admin/image_pw.asp?cache=[now]&sessionname=randomWordGC" border="0" width="148" /></div>
+												</div>
+											</div>
+
+											<div class="gc-field">
+                                        		<div class="form-group">
+													<div class="randomWord">
+														<input type="text" name="randomWord" id="randomWord" value="" size="20" maxlength="30" class="txtBoxStyle form-control" placeholder="[registration_verification_message]" />
+													</div>
+												</div>
+											</div>
+											<!--END: captcha-->
+
+
+
+											<!--START: recaptcha-->
+											<div class="gc-field clearfix">
+												<script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+												<script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+												<noscript>
+													<iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+													<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+													<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+												</noscript>
+											</div>
+											<!--END: recaptcha-->
+											<!--START: recaptcharobot-->
+											<div class="gc-field clearfix">
+												<div class="crmField pull-right">
+													<div id="divRobocop">
+														<div id="blog-g-recaptcha" class="g-recaptcha" 
+														data-sitekey="[recaptcha_key]"
+														data-size="[recaptcha_robot_size]"
+														data-type="[recaptcha_robot_type]"
+														data-theme="[recaptcha_robot_theme]"
+														data-callback="onSubmit"></div>
+													</div>
+												</div>
+											</div>
+											<script type="text/javascript">
+												
+												function onSubmit(token) {
+													if(jQuery('#blog-g-recaptcha').data('size') == "invisible") {
+														jQuery('#frmGC').submit();
+													}
+												}
+
+												var CaptchaCallback = function () {
+													grecaptcha.render('blog-g-recaptcha');
+												};
+
+												function checkCaptchaSubmit() {
+													
+													if(jQuery('#blog-g-recaptcha').data('size') == "invisible") {
+														grecaptcha.execute();
+													}
+													else {
+														jQuery('#frmGC').submit();
+													}
+												}
+
+											</script>
+                                            <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
+											<!--END: recaptcharobot-->
+
+											<div class="gc-field">
+												<button type="button" name="logout" onclick="checkCaptchaSubmit()" class="btn btn-default btn-inverse gc-field-submit">[account_gift-certificate-check-balance-go]</button>
+											</div>
+										</div>
+										<!--START: gcDetails-->
+										<div class="row">
+                                			<div class="col-lg-12">
+												<div class="form-group gc_form-details">
+													<label class="col-lg-12" for="check-balance">Active Certificate Details</label>
+													<div class="col-lg-12">
+														<div class="row">
+															<label class="col-sm-4 col-xs-6" for="Certificate Name">Name:</label>
+															<div class="col-sm-8 col-xs-6">[certificate_name]</div>
+														</div>
+													</div>
+													<div class="col-lg-12">
+														<div class="row">
+															<label class="col-sm-4 col-xs-6" for="Certificate Date">Date:</label>
+															<div class="col-sm-8 col-xs-6">[certificate_date]</div>
+														</div>
+													</div>
+													<div class="col-lg-12">
+														<div class="row">
+															<label class="col-sm-4 col-xs-6" for="Certificate Amount">Amount:</label>
+															<div class="col-sm-8 col-xs-6">[certificate_amount]</div>
+														</div>
+													</div>
+													<div class="col-lg-12">
+														<div class="row">
+															<label class="col-sm-4 col-xs-6" for="Certificate Balance">Balance:</label>
+															<div class="col-sm-8 col-xs-6">[certificate_balance]</div>
+														</div>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>
+										<!--END: gcDetails-->
+									</div>
+
+								</div>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--END: giftcertificates--> 
+            
+            <!--START: collect_shipping_accounts-->
+            <div class="row">
+                <div class="viewReminders col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_reminders]</h4>
+                        <div class="button pull-right"><a href="view_reminders.asp" class="icon-btn icon-btn-search"><i class="icon-doc-text-inv"></i>[account_view-details]</a></div>
+                    </div>
+                    <div class="row viewReminders_details details_row">
+                    	<div class="col-lg-12">
+                            <div class="reminders">[account_reminders-header-reminders]: [total_reminders]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collectShippingAccounts">
+            <div class="header clearfix">
+              <h3>Freight Collect Accounts</h3>
+              <a name="collect" />
+            </div>
+            <div class="titles2">
+              <div class="carrier">Carrier</div>
+              <div class="account">Account</div>
+              <div class="clearfix"></div>
+            </div>
+            <!--START: collect_shipping_accounts_detail-->
+            <div class="collectUpdate">
+              <form name="frmCollect" action="freightcollectupdate.asp" method="post">
+                <input type="hidden" name="doaction" value="" />
+                <input type="hidden" name="id" value="[id]" />
+                <div class="carrier">
+                  <input type="text" value="[carrier]" name="carrier" maxlength="50" class="txtBoxStyle" />
+                </div>
+                <div class="account">
+                  <input type="text" value="[account]" name="account" maxlength="50" class="txtBoxStyle" />
+                </div>
+                <div class="actions">
+                  <input type="button" class="btn" onclick="this.form.doaction.value='update';this.form.submit();" value="Update" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+                  <input type="button" class="btn" onclick="deleteCollectAccount(this.form);" value="Delete" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+                </div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+            <div class="collectAdd">
+              <form name="frmCollect" action="freightcollectupdate.asp" method="post">
+                <input type="hidden" name="doaction" value="add" />
+                <div class="carrier">
+                  <input type="text" value="" name="carrier" maxlength="50" class="txtBoxStyle" />
+                </div>
+                <div class="account">
+                  <input type="text" value="" name="account" maxlength="50" class="txtBoxStyle" />
+                </div>
+                <div class="actions">
+                  <input type="button" class="btn" onclick="this.form.doaction.value='add';this.form.submit();" value="Add" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+                </div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+            <!--END: collect_shipping_accounts_detail--> 
+            <script type="text/javascript">
+              function deleteCollectAccount(objForm) {
+                var resp = confirm("Are you sure you want to delete this record?");
+                if (resp) {
+                    objForm.doaction.value='delete';
+                    objForm.submit();
+                }
+              }
+            </script> 
+            </div>
+            <!--END: collect_shipping_accounts-->
+
+            <!--START: FEATURE_MENU-->
+            <div class="row">
+                <div class="accountRecommended col-lg-12">
+                    <div class="header clearfix">
+                        <h4 class="page_heading">[account_recommended]</h4>
+                    </div>
+                    <div class="row accountRecommended_details details_row">
+                    	<div class="col-lg-12">
+                            <!--START: CATEGORY_ITEMS-->
+                            <div class="product-items product-items-[product-cols-number]">
+                                <!--START: ITEM_TEMPLATE_0-->
+                                [product_items]
+                                <!--END: ITEM_TEMPLATE_0-->
+                            </div>
+                            <!--END: CATEGORY_ITEMS--> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END: FEATURE_MENU--> 
+
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-footer" id="myaccountFooter">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER--> 
+        </div>
+    </section>
+
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript">
+    if (window.location.href.indexOf("gc") > -1) {
+        $('html, body').animate({
+            scrollTop: $("#giftCertificates").offset().top
+        }, 2000);
+    }
+</script>
+
+<script type="text/javascript">
+    function deleteReview(catalogid, reviewid) {
+        var rep = confirm('[product_review_confirm_delete]?');
+        if (rep) {
+            window.open('myaccount.asp?action=deleteReview&catalogid=' + catalogid + '&reviewid=' + reviewid, '_self');
+        }
+        return false;
+    }
+</script>
+
+<script type="text/javascript">
+	function setOrderStacking()
+	{
+
+		var orderStackingCustEnable = document.getElementById("orderstacking_cust_enable").checked;
+		var intEnable = '0';
+		if (orderStackingCustEnable) intEnable = '1';
+
+		jQuery.ajax({
+			url: 'myaccount.asp?action=orderstackstatus',
+			type: 'POST',
+			datatype: 'json',
+			data: 'hdnSecurityToken=[securityToken]&orderstacking_cust_enable=' + intEnable,
+			success: function (data) {
+				if (intEnable == '1') {
+					if (data.status == 1) {
+					//ORDER STACKING REQUEST ENABLED
+						alert("[account_orderstacking-alias] [account_enable].");
+					}
+				}
+				else {
+					if (data.status == 0) {
+					//ORDER STACKING REQUEST TO TURN OFF DENIED BECAUSE THERE ARE STILL ORDERS IN THAT STATE THAT MUST BE CLEARED.
+						alert("[orderstacking_cannotdisable] [account_orderstacking-alias]");
+						document.getElementById("orderstacking_cust_enable").checked = true;
+					}
+				}
+			}
+		});
+	}
+
+</script>
+
+<!--START: reviewsScript-->
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/listing-reviews.js"></script>
+<!--END: reviewsScript-->
+
+<!--END: template_scripts-->
+
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/myaccount.css" type="text/css" media="screen" />
+<!--END: template_styles-->

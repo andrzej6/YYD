@@ -1,0 +1,115 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="">[account_previously-purchased]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+        [account_previously-purchased]
+        </h1>
+        <!--START: myAccount-->
+        <div class="button">
+            <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> Back to My Account</a>
+        </div>
+        <!--END: myAccount-->
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+<section id="previouslyPurchased" class="page-content">
+    <div class="container">
+      <div class="content-area">
+		<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add">
+			<!--START: previouspurchase_none-->
+				<em>[product_no_previous]</em>
+			<!--END: previouspurchase_none-->
+			<!--START: previouspurchase-->
+			<ul class="cart-items">
+				<div class="add-to">
+					<input type="submit" value="[product_addtocart]" class="add-to-cart btn btn-primary" id="Button7" name="Button7">
+				</div>
+				<li class="items-header">
+					<span class="item-name">[shoppingcart_items]</span>
+					<span class="item-price">[shoppingcart_price]</span>
+					<span class="item-qty">[shoppingcart_quantity]</span>
+				</li>
+				<!--START: previousPurchaseDetails-->
+				<!--START: SHOPPING_CART_ITEM-->
+				<li class="cart-item">
+					<span class="item-name clearfix">
+						<span class="item-thumb">
+                            <!--START: itemthumbnail-->
+                            <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=100" class="img-responsive" alt="" /></a>
+                            <!--END: itemthumbnail-->
+                        </span>
+
+						<span class="item-name-right">
+							<!--START: itemnamelink-->
+							<span class="item-fullname"><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></span>
+							<!--END: itemnamelink--> 
+							<div class="previously-purchase">
+								<em>[ITEMS_PURCHASED]&nbsp;[account_previously-purchased]</em>
+							</div>
+						</span>
+					</span>
+					<span class="item-price">[ITEM_PRICE]</span>
+					<span class="quantity item-qty">
+                		<span class="quant-input item-qty">
+                            <input type="text" id="qtyItem[ITEM_ID]" name="qty-[ITEM_COUNT]" value="0" placeholder="0" />
+							<input type="hidden" name="item_id" value="[ITEM_CATALOGID]" />
+                            <span class="qty-nav">
+                                <button type="button" class="qty-up" data-target="#qtyItem[ITEM_ID]">+</button>
+                                <button type="button" class="qty-down" data-target="#qtyItem[ITEM_ID]">-</button>
+                            </span>
+                        </span>
+
+					</span>
+				</li>
+				<!--END: SHOPPING_CART_ITEM-->
+				<!--END: previousPurchaseDetails-->
+				<div class="add-to">
+					<input type="submit" value="[product_addtocart]" class="add-to-cart btn btn-primary" id="Button7" name="Button7">
+				</div>
+			</ul>
+			<!--END: previouspurchase-->
+		</form>
+		<!--START: CATEGORY_FOOTER-->
+        <div class="category-footer">[CONTENT]</div>
+        <!--END: CATEGORY_FOOTER-->
+	   </div>
+    </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript">
+	//Quantity box
+	jQuery('.quant-input .qty-up').click(function () {
+		var qtyInput = jQuery(this).data('target');
+		    qtyInput = qtyInput.replace(/\s/g,"");
+	
+		var incrementedVal = parseInt(jQuery(qtyInput).val()) + 1;
+		jQuery(qtyInput).val(incrementedVal);
+	});
+	jQuery('.quant-input .qty-down').click(function () {
+		var qtyInput = jQuery(this).data('target');
+		    qtyInput = qtyInput.replace(/\s/g,"");
+		var incrementedVal = parseInt(jQuery(qtyInput).val()) - 1;
+
+		if (incrementedVal <= 0) incrementedVal = 0;
+		jQuery(qtyInput).val(incrementedVal);
+	});
+
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/view_cart.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/previouslyPurchased.css" type="text/css" media="screen" />
+<!--END: template_styles-->

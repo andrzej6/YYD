@@ -1,0 +1,535 @@
+<!doctype html>
+<html amp>
+<head>
+    <meta charset="utf-8">
+    <title>[TITLE]</title>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <!-- Canonical AMP Link -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style amp-custom>
+        html {
+            overflow-x: hidden
+        }
+        
+        body,
+        html {
+            height: auto
+        }
+        
+        body {
+            margin: 0;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%
+        }
+        
+        body {
+            font-family: 'Roboto', Arial;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+       
+        polygon {
+            fill: #EFCE4A;
+        }
+
+        /* Fixes */
+
+        .-amp-fill-content {
+            display: block;
+            min-width: inherit;
+            min-height: 100%;
+            margin: auto;
+            width: auto;
+        }
+        
+        .clearfix:before,
+        .clearfix:after,
+        {
+            content: " ";
+            display: table;
+        }
+        
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Head,Logo, BreadCrumbs*/
+ 
+        .amp-header {
+            border-bottom: 1px solid #e0e0e0;
+            height: auto;
+            vertical-align: middle;
+            margin: 20px 0;
+            padding-bottom: 20px;
+            font-style: italic;
+            line-height: 1;
+            padding: 30px 10px;
+            font-size: 42px;
+        }
+        
+        .amp-logo {
+            max-width: 100%;
+            max-height: 10%;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .breadcrumb {
+            list-style: none;
+            background: none;
+            font-size: 14px;
+            padding: 5px;
+        }
+        
+        .breadcrumb>li {
+            display: inline;
+        }
+        
+        .breadcrumb>li+li:before {
+            content: "/\00a0";
+            padding: 50 5px;
+            color: #ccc;
+        }
+        
+        /* Name, Reviews, Price, Info */
+
+
+        .title-item {
+            font-size: 14px;
+            padding: 5px 0px;
+        }
+
+        .percentage{
+            font-size: 12px;
+            position: relative;
+            top: -6px;
+            font-weight: bold;
+            color: #DA4F45;
+        }
+
+        .image {
+            padding: 10px;
+        }
+
+        .product-name {
+            line-height: 28px;
+        }
+
+        .content-left {
+            float: left;
+            width: 50%;
+        }
+
+        .content-right {
+            float: left;
+            width: 50%;
+        }
+
+        .manufacturer a{
+            color: #da4f49;
+        }
+
+        .manufacturer,
+        .amp-product-id,
+        .rewards,
+        .availability{
+            font-size: 14px;
+            font-weight: 400;
+            color: #7b7b7b;
+            padding-bottom: 8px;
+        }
+
+        .manufacturer strong,
+        .amp-product-id strong,
+        .rewards strong,
+        .availability strong {
+            font-weight: 600;
+            color: #000;
+            font-size: 16px;
+         }
+
+        .products-review {
+            padding-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.3em;
+            color: #000;
+            font-weight: 500;
+            letter-spacing: 0px;
+        }
+        
+        .price .priceBig {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 30px;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.1;
+            color: inherit;
+        }
+        
+        .price .price-old {
+            color: #e4003a;
+            text-decoration: line-through;
+            font-size: 19px;
+            font-weight: 400;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .price_new {
+            display: inline-block;
+        }
+
+        .button-cart {
+            padding-bottom: 30px;
+        }
+        
+        .btn {
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+            background-color: #da4f49;
+            border-color: #bd362f #bd362f #802420;
+            padding: 7.5px 12px;
+            font-size: 12px;
+            text-align: center;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            padding: 6px 12px;
+            font-size: 14px;
+            text-transform: uppercase;
+            -webkit-transition: .2s ease-out;
+            -moz-transition: .2s ease-out;
+            -o-transition: .2s ease-out;
+            -ms-transition: .2s ease-out;
+            transition: .2s ease-out;
+            line-height: 1.42857143;
+            border-radius: 4px;
+            color: #fff;
+            transition: all .2s;
+            border-radius: 4px;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+        }
+        
+        .amp-product_info {
+            display: block;
+            text-align: left;
+            float: left;
+            width: 100%;
+        }
+
+        .amp_wrapper {
+            margin: 0 10px;
+        }
+        
+
+        /* Related Items */
+
+
+        ul#related-products {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .product-item .onsale, .product-item .on-sale {
+            background: #000;
+            width: 40px;
+            height: 30px;
+            line-height: 30px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            z-index: 1;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            font-family: 'Roboto', Arial;
+            font-weight: 400;
+            opacity: 1;
+            padding: 0;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+        }
+
+        .product-item {
+            width: 50%;
+            float: left;
+            padding: 0px;
+            margin: 0px auto 0px auto;
+            text-align: center;
+            position: relative;
+            background: #fff;
+            min-height: inherit;
+        }
+
+        .caption {
+            padding-top: 20px;
+        }
+
+        .product-item .name {
+            font-size: 16px;
+            font-family: 'Roboto', Arial;
+            text-align: center;
+            line-height: 25px;
+            height: 50px;
+            overflow: hidden;
+            padding: 0px;
+            margin: 0px 0px 3px 0px;
+        }
+
+        .product-item .name a {
+            font-size: 16px;
+            font-family: 'Roboto', Arial;
+            font-weight: 400;
+            color: #000;
+            line-height: 25px;
+            text-transform: capitalize;
+        }
+        
+        .related-products h2 {
+            text-transform: uppercase;
+            text-align: center;
+        }
+                
+        .product-item .price {
+            color: #000;
+            font-size: 19px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 26px;
+            height: 26px;
+            padding: 5px 0px 15px;
+            margin: 0px 0px;
+            vertical-align: top;
+            overflow: hidden;
+        }
+
+        /* Footer */
+
+        .amp-page_footer {
+            text-align: center;
+            height: auto;
+            line-height: 30px;
+            padding: 20px;
+        }
+        
+        .amp-page_footer_link {
+            display: inline-block;
+            vertical-align: middle;
+            text-decoration: none;
+            font-size: 13px;
+            text-align: center;
+        }
+        .amp-header img {
+            width: 200px;
+            height: auto;
+            position: static;
+        }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+</head>
+<body>
+    <header>
+        <div class="amp-header">
+            <!--START: global_header-->
+            [storename]
+            <!--END: global_header-->
+        </div>
+    </header>
+    <div itemscope itemtype="http://schema.org/Product" class="amp_wrapper">
+        <!--START: image1-->
+        <amp-img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" width=500 height=500 layout="responsive">
+        </amp-img>
+        <!--END: image1-->
+
+        <!--START: CATEGORY_FULLINE-->
+        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="/">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13px" height="13px" viewBox="0 0 460.298 460.297" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M230.149,120.939L65.986,256.274c0,0.191-0.048,0.472-0.144,0.855c-0.094,0.38-0.144,0.656-0.144,0.852v137.041
+                            c0,4.948,1.809,9.236,5.426,12.847c3.616,3.613,7.898,5.431,12.847,5.431h109.63V303.664h73.097v109.64h109.629
+                            c4.948,0,9.236-1.814,12.847-5.435c3.617-3.607,5.432-7.898,5.432-12.847V257.981c0-0.76-0.104-1.334-0.288-1.707L230.149,120.939
+                            z"/>
+                            <path d="M457.122,225.438L394.6,173.476V56.989c0-2.663-0.856-4.853-2.574-6.567c-1.704-1.712-3.894-2.568-6.563-2.568h-54.816
+                            c-2.666,0-4.855,0.856-6.57,2.568c-1.711,1.714-2.566,3.905-2.566,6.567v55.673l-69.662-58.245
+                            c-6.084-4.949-13.318-7.423-21.694-7.423c-8.375,0-15.608,2.474-21.698,7.423L3.172,225.438c-1.903,1.52-2.946,3.566-3.14,6.136
+                            c-0.193,2.568,0.472,4.811,1.997,6.713l17.701,21.128c1.525,1.712,3.521,2.759,5.996,3.142c2.285,0.192,4.57-0.476,6.855-1.998
+                            L230.149,95.817l197.57,164.741c1.526,1.328,3.521,1.991,5.996,1.991h0.858c2.471-0.376,4.463-1.43,5.996-3.138l17.703-21.125
+                            c1.522-1.906,2.189-4.145,1.991-6.716C460.068,229.007,459.021,226.961,457.122,225.438z"/>
+                        </g>
+                    </g>
+                </svg>
+                    <!-- [CATEGORY_FULLLINE] -->
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <span itemprop="name">[name]</span>
+                <meta itemprop="position" content="2" />
+            </li>
+        </ol>
+        <!--END: CATEGORY_FULLINE-->
+
+        <section class="amp-product_info">
+            <h1 class="product-name" itemprop="name">[name]</h1>
+
+            <div class="content-left">
+                <!--START: product_review_average-->
+                <div class="products-review">    
+                    <amp-img itemprop="image" alt="Average Rating" src="assets/templates/common-html5/images/star[review_average].png" width="115" height="20">
+                    </amp-img>  
+                </div>
+                <!--END: product_review_average-->
+
+
+                <!--START: pricing-->
+                <div class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
+                    <meta itemprop="availability" content="http://schema.org/[availability_snippet]" />
+                    <div class="priceBig">
+                        <!--START: ITEMPRICE-->
+                        <div class="title-item">[product_yourprice]
+                        </div>
+                        <div id="price">[price]</div>
+                        <meta itemprop="price" content="[price_without_currency]" />
+                        <meta itemprop="priceCurrency" content="[priceCurrency]" />
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                        <div id="sale_price">[saleprice]</div>
+                        <meta itemprop="price" content="[price_without_currency]" />
+                        <meta itemprop="priceCurrency" content="[priceCurrency]" />
+                        <!--END: SALEPRICE-->
+                        <!--START: price2-->
+                        <div class="title-item">[product_retailprice]</div>
+                        <div class="price2">[price2]</div>
+                        <!--START: SAVINGS-->
+                        <div class="title-item">[product_savings]</div>
+                        <span>[savings]</span>
+                        <span class="percentage">([savings_percentage]%)</span>
+                        <!--END: SAVINGS-->
+                        <!--END: price2-->
+                    </div>
+                </div>
+                <!--END: pricing-->
+
+                <div class="button-cart clearfix">
+                    <a href="product.asp?itemid=[catalogid]" class="btn">[product_addtocart]</a>
+                </div>
+            </div>
+
+            <div class="content-right">
+                <!--START: manufacturer-->
+                <div class="manufacturer">
+                    <strong>Brand: 
+                    </strong>
+                    <a href="/[manufacturer_name]_bymfg_[manufacturer]-1-1.html">
+                        <span itemprop="manufacturer">
+                            [manufacturer_name]
+                        </span>
+                    </a>
+                </div>
+                <!--END: manufacturer-->
+                <!--START: id-->
+                <div class="amp-product-id">
+                    <strong>[product_id]:</strong> 
+                    [id]
+                </div>
+                <!--END: id-->
+                <!--START: rewardsPoints-->
+                <div class="rewards">
+                    <strong>[product_Header-rewards]:</strong> 
+                    [rewardsPoints]
+                </div>
+                <!--END: rewardsPoints-->
+                <!--START: product_availability-->
+                <div class="availability">
+                    <strong>Availability:</strong> 
+                    [availability]
+                </div>
+                <!--END: product_availability-->
+            </div>
+        </section>
+
+        <!--START: extended_description-->
+        <section class="description">
+            <h2>[product_Header-description]</h2>
+            <span itemprop="description">
+                [extended_description]
+            </span>
+        </section>
+        <!--END: extended_description-->
+    </div>
+    <!--START: related_0-->
+    <section class="related-products clearfix">
+        <h2>[product_Header-relateditems]</h2>
+        <ul id="related-products">
+            <!--START: related_items0-->
+            <!--START: productblockcontainer-->
+            <!--END: productblockcontainer-->
+            <!--START: productcontainer-->
+            <!--END: productcontainer-->
+            <li class="product-item">
+                <div class="image">
+                    <a href="product.asp?itemid=[catalogid]">
+                        <amp-img itemprop="image" src="thumbnail.asp?file=[image1]&amp;maxx=200&amp;maxy=300" width=500 height=500 layout="responsive"></amp-img>
+                    </a>
+                </div>
+                <div class="caption">
+                    <div class="name">
+                        <a href="product.asp?itemid=[catalogid]">[name]</a>
+                    </div>
+                    <div class="price">
+                        <!--START: ITEMPRICE-->
+                        [ITEMPRICE]
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                        <del class="price-old">[ITEMPRICE]&nbsp;</del>
+                        <div class="price_new">[ITEMSALEPRICE]</div>
+                        <div class="on-sale price-new">[product_sale]</div>
+                        <!--END: SALEPRICE-->
+                    </div>
+                </div>
+            </li>
+            <!--START: productcontainer_close-->
+            <!--END: productcontainer_close-->
+            <!--START: productblockcontainer_close-->
+            <!--END: productblockcontainer_close-->
+            <!--END: related_items0-->
+        </ul>
+    </section>
+    <!--END: related_0-->
+
+    <footer>
+        <div class="amp-page_footer clearfix">
+            <a href="/" class="amp-page_footer_link">
+               Copyright 2017 All Rights Reserved. eCommerce Software by 3dcart.
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

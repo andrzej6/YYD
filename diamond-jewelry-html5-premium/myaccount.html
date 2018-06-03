@@ -1,0 +1,657 @@
+<style type="text/css">
+@media only screen and (max-width: 767px) {
+	/* Track Orders */
+	.trackOrders td:nth-of-type(1):before { content: "[orderhistory_date]"; }
+	.trackOrders td:nth-of-type(2):before { content: "[orderhistory_ordernum]"; }
+	.trackOrders td:nth-of-type(3):before { content: "[orderhistory_amount]"; }
+	.trackOrders td:nth-of-type(4):before { content: "[orderhistory_status]"; }
+	.trackOrders td:nth-of-type(5):before { content: "Actions"; }
+	/* Saved Carts */
+	.savedOrders td:nth-of-type(1):before { content: "[orderhistory_date]"; }
+	.savedOrders td:nth-of-type(2):before { content: "[orderhistory_amount]"; }
+	.savedOrders td:nth-of-type(3):before { content: "Actions"; }
+	/* My Saved Credit Cards */
+	.savedCC td:nth-of-type(1):before { content: "[checkout3_creditcard-last-digits]"; }
+	.savedCC td:nth-of-type(2):before { content: "[CustomerInfo_creditexpiration]"; }
+	.savedCC td:nth-of-type(3):before { content: ""; }
+	/* Address Book */
+	.addressBook td:nth-of-type(1):before { content: "[account_addressbook-header-alias]"; }
+	.addressBook td:nth-of-type(2):before { content: "[account_addressbook-header-details]"; }
+	/* CRM */
+	.crmRequests td:nth-of-type(1):before { content: "[account_crm-requests-header-id]"; }
+	.crmRequests td:nth-of-type(2):before { content: "[account_crm-requests-header-dept]"; }
+	.crmRequests td:nth-of-type(3):before { content: "[account_crm-requests-header-date]"; }
+	.crmRequests td:nth-of-type(4):before { content: "[account_crm-requests-header-subject]"; }
+	.crmRequests td:nth-of-type(5):before { content: "[account_crm-requests-header-lastact]"; }
+	.crmRequests td.crm-norequest:nth-of-type(1):before { content: ""; }
+	/* RMA */
+	.rmaItems td:nth-of-type(1):before { content: "[rma_header-rmanum]"; }
+	.rmaItems td:nth-of-type(2):before { content: "[rma_header-rmadate]"; }
+	.rmaItems td:nth-of-type(3):before { content: "[rma_header-rmaorder]"; }
+	.rmaItems td:nth-of-type(4):before { content: "[rma_header-rmastatus]"; }
+	/* Reccurring Orders */
+	.recurringOrders td:nth-of-type(1):before { content: "[orderhistory_date]"; }
+	.recurringOrders td:nth-of-type(2):before { content: "[orderhistory_ordernum]"; }
+	.recurringOrders td:nth-of-type(3):before { content: "[orderhistory_amount]"; }
+	.recurringOrders td:nth-of-type(4):before { content: "[orderhistory_status]"; }
+	/* Gift Registry */
+	.giftRegistry td:nth-of-type(1):before { content: "[giftregistry_header-name]"; }
+	.giftRegistry td:nth-of-type(2):before { content: "[giftregistry_header-eventdate]"; }
+	.giftRegistry td:nth-of-type(3):before { content: "[giftregistry_header-expiration]"; }
+	.giftRegistry td:nth-of-type(4):before { content: "[giftregistry_header-productsdesired]"; }
+	.giftRegistry td:nth-of-type(5):before { content: "[giftregistry_header-productspurchased]"; }
+	/* Affiliate Statistics */
+	.affiliateStatistics td:nth-of-type(1):before { content: "[affiliate_summary-header-membersince]"; }
+	.affiliateStatistics td:nth-of-type(2):before { content: "[affiliate_summary-header-orders]"; }
+	.affiliateStatistics td:nth-of-type(3):before { content: "[affiliate_summary-header-amount]"; }
+	.affiliateStatistics td:nth-of-type(4):before { content: "[affiliate_summary-header-commission]"; }
+	.affiliateStatistics td:nth-of-type(5):before { content: "[affiliate_summary-header-paid]"; }
+	.affiliateStatistics td:nth-of-type(6):before { content: "[affiliate_summary-header-balance]"; }
+	.affiliateStatistics td.no-display:nth-of-type(1):before { content: ""; }
+}
+</style>
+<section id="myaccount">
+	<h1 class="page_headers">[account_header-myaccount]</h1>
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="username">
+				[account_welcome] <!--START: username-->[username]<br />
+				If you're not [username], <a href="logout.asp" class="yy-splink"><span class="item">click here</span></a><!--END: username-->
+			</div>
+			<div class="logout-btn">
+				<button type="button" name="logout" onclick="window.location='logout.asp';" class="btn btn-primary"><i class="icon-cancel-circled"></i> Logout</button>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!--START: CATEGORY_HEADER-->
+	<div class="category-header" id="myaccountHeader">[CONTENT]</div>
+	<!--END: CATEGORY_HEADER-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="accountInfo">
+				<div class="billing-info">
+					<div class="header">
+						<h3>[account_billing-info]</h3>
+						<div class="button right"><a href="myaccount.asp?action=updacc" class="btn-link yy-splink"><span class="btn-icon-left"><i class="fontawesome-map-marker"></i></span>Update Address</a></div>
+						<div class="clear"></div>
+					</div>
+					<div class="billing-address"><span>[billing_firstname] [billing_lastname]</span>,&nbsp;
+						[billing_address]&nbsp;[billing_address2],&nbsp;[billing_city], [billing_state] [billing_zip], [billing_country]
+						<div>(+44) [billing_phone]</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="shipping-info">
+					<div class="header">
+						<h3>[account_shipping-info]</h3>
+						<div class="button right"><a href="myaccount.asp?action=updacc" class="btn-link yy-splink"><span class="btn-icon-left"><i class="fontawesome-map-marker"></i></span>Update Address</a></div>
+						<div class="clear"></div>
+					</div>
+					<div class="shipping-address"><span>[shipping_firstname] [shipping_lastname]</span>,&nbsp;
+						[shipping_address]&nbsp;[shipping_address2],&nbsp;[shipping_city], [shipping_state] [shipping_zip], [shipping_country]
+						<div>(+44) [shipping_phone] <!--START: addressType-->([addressTypeText])<!--END: addressType--></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="trackOrders">
+				<div class="header">
+					<h3>[account_recent-orders]</h3>
+					<div class="button right"><a href="ordertracking.asp" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-clone"></i></span>View All</a></div>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="odate">[orderhistory_date]</th>
+							<th class="onum">[orderhistory_ordernum]</th>
+							<th class="oamount">[orderhistory_amount]</th>
+							<th class="ostatus">[orderhistory_status]</th>
+							<th class="odetails">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: ordertemplate-->
+						<tr>
+							<td class="odate">[odate] </td>
+							<td class="onum">[invoicenum_prefix][invoicenum]&nbsp;(<a href="ordertracking.asp?action=view&amp;id=[orderid]" class="yy-splink">[account_view-details]</a>)</td>
+							<td class="oamount">[orderamount]</td>
+							<td class="ostatus">[orderstatus]</td>
+							<!--START: reorder-->
+							<td class="oreorder"><div class="button left"><a href="ordertracking.asp?action=repeat&id=[orderid]" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-refresh"></i></span>reorder</a></div><div class="clear"></div></td>
+							<!--END: reorder-->
+						</tr>
+						<!--END: ordertemplate-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!--START: previouslyPurchased-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="previouslyPurchased">
+				<div class="header">
+					<h3>[account_previously-purchased]</h3>
+					<div class="button right"><a href="previously_purchased.asp" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-search"></i></span>[account_view-details]</a></div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!--END: previouslyPurchased-->
+
+	<!--START: vetmypets-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="vetmypets">
+				<div class="header">
+					<h3>[account_vet-mypets]</h3>
+					<div class="button right"><a href="previously_purchased.asp" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-search"></i></span>[account_view-details]</a></div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!--END: vetmypets-->
+
+	<!--START: savedorders-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="savedOrders">
+				<div class="header">
+					<h3>[orderhistory_savedcarts-header]</h3>
+					<!--START savecart-->
+					<div class="button right"><a href="myaccount.asp?action=save_cart" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-sign-in"></i></span>[orderhistory_savedcarts-current]</a></div>
+					<!--END: savecart-->
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="odate">[orderhistory_date]</th>
+							<th class="oamount">[orderhistory_amount]</th>
+							<th class="oactions">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: savedordertemplate-->
+						<tr>
+							<td class="odate">[odate]</td>
+							<td class="oamount">[orderamount]</td>
+							<td class="oactions">
+								<a href="ordertracking.asp?action=removecart&amp;id=[orderid]" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-remove"></i></span>[orderhistory_savedcarts-delete]</a>
+								<a href="ordertracking.asp?action=viewcart&amp;id=[orderid]" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-search"></i></span>[account_view-details]</a>
+								<a href="continue_order.asp?orderkey=[orderkey][orderid;]" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-shopping-cart"></i></span>[orderhistory_savedcarts-continue]</a>
+							</td>
+						</tr>
+						<!--END: savedordertemplate-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--END: savedorders-->
+
+	<!--START: recurringOrders-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="recurringOrders">
+				<div class="header">
+					<h3>[recurringorders_recurringorders-header]</h3>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="odate">[orderhistory_date]</th>
+							<th class="onum">[orderhistory_ordernum]</th>
+							<th class="oamount">[orderhistory_amount]</th>
+							<th class="ostatus">[orderhistory_status]</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: recurringordertemplate-->
+						<tr>
+							<td class="odate">[odate]</td>
+							<td class="crm-dept">[invoicenum_prefix][invoicenum]&nbsp;(<a href="ordertracking.asp?action=view&amp;id=[orderid]" class="yy-splink">[account_view-details]</a>)</td>
+							<td class="crm-date">[orderamount]</td>
+							<td class="crm-subject">[orderstatus]</td>
+						</tr>
+						<!--END: recurringordertemplate-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--END: recurringOrders-->
+
+	<!--START: authNetCIM-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="savedCC">
+				<div class="header">
+					<h3>[account_my-saved-creditcards]</h3>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="ccdigits">[checkout3_creditcard-last-digits]</th>
+							<th class="ccexpire">[CustomerInfo_creditexpiration]</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: ccItem-->
+						<tr>
+							<td class="ccdigits">[ccLastDigits]</td>
+							<td class="ccexpire">[ccExpiration]</td>
+							<td><a href="managemycc.asp?pp=[strCustomerPaymentProfileId]" class="btn btn-primary yy-splink">[account_view-details]</a></td>
+						</tr>
+						<!--END: ccItem-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--END: authNetCIM-->
+
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="addressBook">
+				<div class="header">
+					<h3>[account_addressbook]</h3>
+					<div class="button right"><a href="myaccount.asp?action=addresses" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-plus"></i></span>Add New Address</a></div>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="address-alias">[account_addressbook-header-alias]</th>
+							<th class="address-details">[account_addressbook-header-details]</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: address_book-->
+						<tr>
+							<td class="address-alias">[address_alias]</td>
+							<td class="address-details">[shipping_address] [shipping_city], [shipping_state]</td>
+						</tr>
+						<!--END: address_book-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!--START: CRM-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="crmRequests">
+				<div class="header">
+					<h3>[account_crm-requests]</h3>
+					<div class="button right"><a href="crm.asp?action=add" class="btn-link yy-splink"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-plus"></i></span>[account_crm-add-request]</a></div>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="crm-id">[account_crm-requests-header-id]</th>
+							<th class="crm-dept">[account_crm-requests-header-dept]</th>
+							<th class="crm-date">[account_crm-requests-header-date]</th>
+							<th class="crm-subject">[account_crm-requests-header-subject]</th>
+							<th class="crm-lastact">[account_crm-requests-header-lastact]</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: crmMessagesDetailNoReq-->
+						<tr>
+							<td colspan="5" class="crm-norequest">[account_crm-requests-norequest]</td>
+						</tr>
+						<!--END: crmMessagesDetailNoReq-->
+						<!--START: crmMessagesDetail-->
+						<tr onclick="window.location.href='crm.asp?mk=[mkey]';">
+							<td class="crm-id"><a href="crm.asp?mk=[mkey]">[crmId]</a></td>
+							<td class="crm-dept">[dpt]</td>
+							<td class="crm-date">[date]</td>
+							<td class="crm-subject">[subject]</td>
+							<td class="crm-lastact">[lastaction]</td>
+						</tr>
+						<!--END: crmMessagesDetail-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--END: CRM-->
+
+	<!--START: RMA-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="rmaItems">
+				<div class="header">
+					<h3>[account_rma-header]</h3>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="id">[rma_header-rmanum]</th>
+							<th class="date">[rma_header-rmadate]</th>
+							<th class="order">[rma_header-rmaorder]</th>
+							<th class="status">[rma_header-rmastatus]</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: RmaItems-->
+						<tr>
+							<td class="id"><a href="my_rma.asp?oid=[OrderId]&amp;r=[idRma]">[idRma]</a></td>
+							<td class="date">[Date]</td>
+							<td class="order">[OrderNum]</td>
+							<td class="status">[RMAStatus]</td>
+						</tr>
+						<!--END: RmaItems-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--END: RMA-->
+
+	<!--START: affiliateStatistics-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="affiliateStatistics">
+				<div class="header">
+					<h3>[account_affiliate-statistics]</h3>
+					<div class="button right"><a href="affiliate.asp" class="btn-link"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-search"></i></span>[account_view-details]</a></div>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="membersince">[affiliate_summary-header-membersince]</th>
+							<th class="orders">[affiliate_summary-header-orders]</th>
+							<th class="amount">[affiliate_summary-header-amount]</th>
+							<th class="commission">[affiliate_summary-header-commission]</th>
+							<th class="paid">[affiliate_summary-header-paid]</th>
+							<th class="balance">[affiliate_summary-header-balance]</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--START: affiliateStatisticsNoOrders-->
+						<tr>
+							<td colspan="6" class="no-history">[affiliate_no-history-to-display]</td>
+						</tr>
+						<!--END: affiliateStatisticsNoOrders-->
+						<!--START: affiliateStatisticsDetail-->
+						<tr>
+							<td class="membersince">[memberSince]</td>
+							<td class="orders">[orders]</td>
+							<td class="amount">[amount]</td>
+							<td class="commission">[totalCommission]</td>
+							<td class="paid">[paid]</td>
+							<td class="balance">[balance]</td>
+						</tr>
+						<!--END: affiliateStatisticsDetail-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--END: affiliateStatistics-->
+
+	<!--START: giftRegistry-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="giftRegistry">
+				<div class="header">
+					<h3>[account_giftRegistry]</h3>
+					<div class="clear"></div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th class="name">[giftregistry_header-name]</th>
+							<th class="eventdate">[giftregistry_header-eventdate]</th>
+							<th class="expiration">[giftregistry_header-expiration]</th>
+							<th class="productsdesired">[giftregistry_header-productsdesired]</th>
+							<th class="productspurchased">[giftregistry_header-productspurchased]</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="name">[regName] <a href="giftregistry_edit.asp?action=view">[account_view-details]</a></td>
+							<td class="eventdate">[regEvent]</td>
+							<td class="expiration">[regExpiration]</td>
+							<td class="productsdesired">[regProductsDesired]</td>
+							<td class="productspurchased">[regProductsPurchased]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--END: giftRegistry-->
+
+	<!--START: points-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="rewardPoints">
+				<div class="header">
+					<h3>[account_rewards]</h3>
+					<div class="button right"><a href="redeem.asp" class="btn-link"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-tag"></i></span>Redeem</a></div>
+					<div class="button right"><a href="reward_detail.asp" class="btn-link"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-search"></i></span>[account_view-details]</a></div>
+					<div class="clear"></div>
+				</div>
+				<div class="points">[account_rewards-header-points]: [points_balance]</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!--END: points-->
+
+	<!--START: wishList-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="wishList">
+				<div class="header">
+					<h3>[account_wishlist]</h3>
+					<div class="button right"><a href="view_wishlist.asp" class="btn-link"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-search"></i></span>[account_view-details]</a></div>
+					<div class="clear"></div>
+				</div>
+				<div class="wishListContent">
+					<div class="products">[account_wishlist-header-products]: [wishListTotalItems]</div>
+					<!--START: wishList_TotalLists-->
+					<div class="total-lists">[account_wishlist-header-lists]: [wishListTotalLists]</div>
+					<!--END: wishList_TotalLists-->
+					<div class="lastmod">[account_wishlist-header-lastmod]: [wishListLasMod]</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END: wishList-->
+
+	<!--START: reminders-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="viewReminders">
+				<div class="header">
+					<h3>[account_reminders]</h3>
+					<div class="button right"><a href="view_reminders.asp" class="btn-link"><span class="btn-icon-left btn-icon-md"><i class="fontawesome-search"></i></span>[account_view-details]</a></div>
+					<div class="clear"></div>
+				</div>
+				<div class="reminders">[account_reminders-header-reminders]: [total_reminders]</div>
+			</div>
+		</div>
+	</div>
+	<!--END: reminders-->
+
+	<!-- removed from here gift certificate -->
+
+	<!--START: collect_shipping_accounts-->
+	<div class="row row-margin-bottom">
+		<div class="col-xs-12">
+			<div class="collectShippingAccounts">
+				<div class="header">
+					<h3>Freight Collect Accounts</h3>
+					<a name="collect" />
+					<div class="clear"></div>
+				</div>
+				<div class="titles2">
+					<div class="carrier">Carrier</div>
+					<div class="account">Account</div>
+					<div class="clear"></div>
+				</div>
+				<!--START: collect_shipping_accounts_detail-->
+				<div class="collectUpdate">
+					<form name="frmCollect" action="freightcollectupdate.asp" method="post">
+						<input type="hidden" name="doaction" value="" />
+						<input type="hidden" name="id" value="[id]" />
+						<div class="carrier">
+							<input type="text" value="[carrier]" name="carrier" maxlength="50" class="form-control" />
+						</div>
+						<div class="account">
+							<input type="text" value="[account]" name="account" maxlength="50" class="form-control" />
+						</div>
+						<div class="actions">
+							<input type="button" class="btn btn-primary btn-sm" onclick="this.form.doaction.value='update';this.form.submit();" value="Update" />
+							<input type="button" class="btn btn-primary btn-sm" onclick="deleteCollectAccount(this.form);" value="Delete" />
+						</div>
+						<div class="clear"></div>
+					</form>
+				</div>
+				<div class="collectAdd">
+					<form name="frmCollect" action="freightcollectupdate.asp" method="post">
+						<input type="hidden" name="doaction" value="add" />
+						<div class="carrier">
+							<input type="text" value="" name="carrier" maxlength="50" class="form-control" />
+						</div>
+						<div class="account">
+							<input type="text" value="" name="account" maxlength="50" class="form-control" />
+						</div>
+						<div class="actions">
+							<input type="button" class="btn btn-primary btn-sm" onclick="this.form.doaction.value='add';this.form.submit();" value="Add" />
+						</div>
+						<div class="clear"></div>
+					</form>
+				</div>
+				<!--END: collect_shipping_accounts_detail-->
+				<script type="text/javascript">
+				function deleteCollectAccount(objForm) {
+					var resp = confirm("Are you sure you want to delete this record?");
+					if (resp) {
+						objForm.doaction.value='delete';
+						objForm.submit();
+					}
+				}
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--END: collect_shipping_accounts-->
+
+	<!--START: FEATURE_MENU-->
+	<div class="row row-fullwidth-background account-recommended-products">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-lg-12">
+					<div class="row-title-wrapper">
+						<h3 class="heading-1">[account_recommended]</h3>
+					</div>
+				</div>
+			</div>
+			<!--START: CATEGORY_ITEMS-->
+			<!--START: ITEM_TEMPLATE_0-->
+			<div class="product-wrapper product-carousel-wrapper item-template-0">
+
+				<div class="product-image">
+					<a href="product.asp?itemid=[catalogid]">
+						<img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+					</a>
+
+					<div class="product-background-overlay"></div>
+
+					<div class="btn-container">
+						<div class="btn-wrapper" style="display: none;">
+							<a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+								<i class="fontawesome-search"></i>
+								<span class="tooltip">Quickview</span>
+							</a>
+						</div>
+						<div class="btn-wrapper">
+							<a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+								<i class="fontawesome-link"></i>
+								<span class="tooltip">Details</span>
+							</a>
+						</div>
+						<div class="btn-wrapper">
+							<a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+								<i class="diamondicon-cart"></i>
+								<span class="tooltip">[product_addtocart]</span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-details">
+					<!--START: product_review-->
+					<!--START: product_review_average-->
+					<span class="product-review-icons-container" data-rating-value="[review_average]">
+						<span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+						<span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+						<span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+						<span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+						<span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+						<span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+						<span href="#" class="product-review-count">([review_count])</span>
+					</span>
+					<!--END: product_review_average-->
+					<!--END: product_review-->
+
+					<div class="product-title">
+						<a href="product.asp?itemid=[catalogid]">[name]</a>
+					</div>
+
+					<div class="product-price">
+						<!--START: ITEMPRICE-->
+						<span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+						<del class="price2">[ITEMPRICE]&nbsp;</del>
+						<span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+						<span class="badge badge-sale">
+							<span class="badge-text">Sale</span>
+						</span>
+						<!--END: SALEPRICE-->
+					</div>
+
+					<div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+					<div class="product-description">
+						[description]
+					</div>
+				</div>
+
+			</div>
+			<!--END: ITEM_TEMPLATE_0-->
+			<!--END: CATEGORY_ITEMS-->
+		</div>
+	</div>
+	<!--END: FEATURE_MENU-->
+	<div class="clear"></div>
+	<!--START: CATEGORY_FOOTER-->
+	<div class="category-footer" id="myaccountFooter">[CONTENT]</div>
+	<!--END: CATEGORY_FOOTER-->
+</section>

@@ -1,0 +1,138 @@
+  #orderHistoryView h4 {
+    font-weight:700;
+    text-transform:uppercase;
+  }
+
+  .border-bottom{
+    border-bottom: 1px dashed #ececec;
+    padding-bottom: 20px;
+  }
+
+  .billingBlock, 
+  .shippingInfoBlock {
+    border: 1px solid #ececec;
+    padding:15px;
+	margin:15px 0;
+  }
+  .billingBlock > div, 
+  .shippingInfoBlock > div{
+    margin-bottom:15px;
+  }
+   .billingBlock > div:last-child, 
+   .shippingInfoBlock > div:last-child{
+    margin:0;
+  }
+  .billingBlock .text, 
+  .shippingInfoBlock .text {
+    display: inline-block;
+  }
+
+  .viewRma .page_heading{
+    margin-bottom: 30px;
+  }
+
+  .addnew-rma-button,
+  .print-btn {
+    text-align: right;
+    padding-top: 20px;
+  }
+
+  .viewRma .header{
+    padding:20px 0px;
+  }
+
+  .viewRma {
+      margin-top: 35px;
+  }
+
+  .orderDetailsBlock .text,
+  .text {
+      text-align: right;
+  }
+
+  .center {
+      text-align: center;
+  }
+
+  .invoiceTable {
+      margin: 30px auto 0 auto;
+  }
+
+  .full-width{
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .invoiceTable_titles{
+      display: none !important;
+    }   
+
+    .invoiceTable_details .visible-xs,
+    .orderDetailsBlock .visible-xs{
+      display: block !important;
+    }
+
+    .orderDetailsBlock .text,
+    .text,
+    .center  {
+        text-align: inherit;
+    }
+
+    .full-width{
+      width: auto;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+    .billingBlock{
+      margin-bottom: 25px;
+    }
+  }
+
+.invoice_terms {
+	margin-bottom:20px;
+}
+.recurringOrderForm {
+    margin: 0 0 30px;
+}
+.titles2 {
+	font-weight:bold;
+	padding: 10px 0;
+}
+.items-row {
+    padding: 8px 0;
+}
+	.items-row:nth-child(even) {
+		background-color: #fafafa;
+	}
+
+@media print {
+	* {
+		font-family: Arial;
+		box-sizing: border-box;
+	}   
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+    .billingBlock, .shippingInfoBlock {
+        min-height: 10px !important;
+    }
+
+    #orderHistoryView h4 {
+        margin: 10px 0px;
+    }
+	.billinginfo-block,
+	.shippinginfo-block {
+		width: 50%;
+		float: left;
+	}
+	.billingBlock, .shippingInfoBlock {
+		border: none;
+	}
+}
+
+@page { size: auto;  margin: 0mm; }
+

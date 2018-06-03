@@ -1,0 +1,118 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/reward_detail.asp">[rewards_details-detail]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+        [rewards_details-detail]
+        </h1>
+        <!--START: myAccount-->
+        <div class="button">
+            <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> Back to My Account</a>
+        </div>
+        <!--END: myAccount-->
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="reward_detailHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+<section id="rewardDetail" class="page-content">
+    <div class="container">
+        <div class="content-area">
+            <!--START: rewards-->
+            <div class="rewardsDetail">
+                <!--START: rewardsNoDetail-->
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 no-history">
+                        [rewards_details-nohistory]
+                    </div>
+                </div>
+                <!--END: rewardsNoDetail-->
+                <div class="summary-total hidden-xs">
+                    <div class="col-sm-4">
+                        <label for="odate" class="date">
+                            [rewards_details-header-date]
+                        </label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="onum" class="points">
+                            [rewards_details-header-points]
+                        </label>
+                    </div>
+                    <div class="col-sm-4 no-padding">
+                        <label for="odate" class="reference">
+                            [rewards_details-header-reference]
+                        </label>
+                    </div>
+                </div>
+                <!--START: rewardsDetail-->
+                <div class="total-summary">
+                    <div class="row">
+                        <div class="col-sm-4 clearfix">
+                            <label class="visible-xs gcTotal-default col-xs-4" >
+                                [rewards_details-header-date]
+                            </label>
+                            <div class="col-xs-8 date">
+                                [rwdDate] <br />
+
+								<!--START: reward_expiration-->
+								<strong>[rewards-details-header-date-expiration]: </strong> [rwdExp]
+								<!--END: reward_expiration-->
+                             </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="col-sm-4 clearfix">
+                            <label class="visible-xs gcTotal-default col-xs-4">
+                                [rewards_details-header-points]
+                            </label>
+                            <div class="col-xs-8 points">
+                                [rwdPoints]
+                             </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-sm-4 no-padding clearfix">
+                            <label class="visible-xs gcTotal-default col-xs-4">
+                                [rewards_details-header-reference]
+                            </label>
+                            <div class="col-xs-8 gc-code reference">
+                                <!--START: orderLink-->
+                                <a href="ordertracking.asp?action=view&id=[orderid]">[rwdReference]</a>
+                                <!--END: orderLink-->
+                             </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>  
+                <!--END: rewardsDetail-->
+                <div class="clearfix"></div>
+            </div>
+            <!--START: rewardsTotal-->
+            <div class="col-lg-12 col-md-12 col-sm12 total-details">
+              <div class="pointsAvailable">[rewards_details-header-pointsAvailable]</div>
+              <div class="totalPoints">[rwdTotalPoints]</div>
+            </div>
+            <!--END: rewardsTotal-->
+            <div class="col-lg-12 col-md-12 col-sm12 redeem-btn">
+                <button type="button" class="btn btn-default" onclick="window.location='redeem.asp';" value="[account_rewards-header-redeem]"/>[account_rewards-header-redeem]</button>
+            </div>
+            <!--END: rewards-->
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-footer" id="reward_detailFooter">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+        </div>
+    </div>
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout_step4.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/rewardDetail.css" type="text/css" media="all" />
+<!--END: template_styles-->

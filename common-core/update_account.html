@@ -1,0 +1,287 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[account_header-update-account]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[account_header-update-account]</h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="updateAccountHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+        <!--START: upd_message-->
+        <div class="error pad10 boxShadow">[update_message]</div>
+        <!--END: upd_message-->
+        <!--START: myAccount-->
+        <div class="button"><a href="myaccount.asp" class="icon-btn btn btn-link"><i class="icon-left"></i> [account_backtomyaccount-text]</a></div>
+        <!--END: myAccount-->
+    </div>
+</section>
+
+<section id="updateAccount" class="updateAccount-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <form action="myaccount.asp?action=updacc" method="post" name="form1" id="form1" autocomplete="off" data-parsley-validate>
+                    <input type="hidden" name="tknio" value="[tknio]">
+                    <input type="hidden" name="contactid" value="[contactid]" />
+                    <input type="hidden" name="update" value="1" />
+
+                    <div class="row">
+                        <div class="loginInfo col-lg-6">
+                            <div class="header">
+                                <h3>[account_update-logininfo-heading]</h3>
+                            </div>
+                            <div class="row">
+                                <div class="loginField col-lg-12">
+                                    <label for="email">[CustomerInfo_email]:</label>
+                                    <input type="text" size="25" name="email" maxlength="100" value="[email]" tabindex="1" class="form-control txtBoxStyle" required="required" />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="loginField col-lg-12">
+                                    <label for="pass_old">[CustomerInfo_old-password]:</label>
+                                    <input type="password" size="12" name="pass_old" maxlength="16" tabindex="2" class="form-control txtBoxStyle" />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="loginField col-lg-12">
+                                    <label for="pass">[CustomerInfo_new-password]:</label>
+                                    <input type="password" size="12" name="pass" maxlength="16" tabindex="3" class="form-control txtBoxStyle" [CallFunctionVerifyStrongPass] />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--START: StrongPasswordBar-->
+                                <div class="loginField col-lg-12">
+                                    <div class="strong-pass-bar" style="background-image: linear-gradient(to left, #86e01e 0%, #f63a0f 100%);">
+                                        <div id="divStrong"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: StrongPasswordBar-->
+                                <!--START: PasswordMSG-->
+                                <div class="PasswordMSG  col-lg-12">
+                                    <p>[CustomerInfo_password_policy]</p>
+                                </div>
+                                <!--END: PasswordMSG-->
+                                <div class="loginField col-lg-12">
+                                    <label for="pass_new">[CustomerInfo_confirm-password]:</label>
+                                    <input type="password" size="12" name="pass_new" maxlength="16" tabindex="4" class="form-control txtBoxStyle" />
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row">
+                        <div id="billingInfo" class="billingInfo col-lg-12">
+                            <div class="header">
+                                <h3>[account_billing-info]</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_firstname">[CustomerInfo_firstname]</label>
+                                            <input name="billing_firstname" type="text" value="[billing_firstname]" size="40" tabindex="5" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_lastname">[CustomerInfo_lastname]</label>
+                                            <input name="billing_lastname" type="text" value="[billing_lastname]" size="40" tabindex="6" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_company">[CustomerInfo_company]</label>
+                                            <input name="billing_company" type="text" id="billing_company" value="[billing_company]" maxlength="255" size="25" tabindex="7" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_phone">[CustomerInfo_phone]</label>
+                                            <input name="billing_phone" type="text" value="[billing_phone]" size="40" tabindex="8" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_address">[CustomerInfo_address]</label>
+                                            <input name="billing_address" type="text" value="[billing_address]" size="40" tabindex="9" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_address2">[CustomerInfo_address2]</label>
+                                            <input name="billing_address2" type="text" value="[billing_address2]" size="40" tabindex="10" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_city">[CustomerInfo_city]</label>
+                                            <input name="billing_city" type="text" value="[billing_city]" size="40" tabindex="11" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_state">[CustomerInfo_state]</label>
+                                            <select id="billing_state" name="billing_state" maxlength="100" tabindex="12" class="form-control txtBoxStyle" required="required"></select>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_zip">[CustomerInfo_zip]</label>
+                                            <input name="billing_zip" type="text" value="[billing_zip]" size="40" tabindex="13" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="billing_country">[CustomerInfo_country]</label>
+                                            <select id='billing_country' name='billing_country' onchange="populateState('billing_state', 'billing_country', '', undefined, '')" tabindex="14" class="form-control txtBoxStyle"></select>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="shippingInfo" class="shippingInfo col-lg-12">
+                            <div class="header">
+                                <h3>[account_shipping-info]</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_firstname">[CustomerInfo_firstname]</label>
+                                            <input name="shipping_firstname" type="text" value="[shipping_firstname]" size="40" tabindex="15" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_lastname">[CustomerInfo_lastname]</label>
+                                            <input name="shipping_lastname" type="text" value="[shipping_lastname]" size="40" tabindex="16" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_company">[CustomerInfo_company]</label>
+                                            <input name="shipping_company" type="text" id="shipping_company" value="[shipping_company]" maxlength="255" size="25" tabindex="17" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_phone">[CustomerInfo_phone]</label>
+                                            <input name="shipping_phone" type="text" value="[shipping_phone]" size="40" tabindex="18" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_address">[CustomerInfo_address]</label>
+                                            <input name="shipping_address" type="text" value="[shipping_address]" size="40" tabindex="19" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_address2">[CustomerInfo_address2]</label>
+                                            <input name="shipping_address2" type="text" value="[shipping_address2]" size="40" tabindex="20" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_city">[CustomerInfo_city]</label>
+                                            <input name="shipping_city" type="text" value="[shipping_city]" size="40" tabindex="21" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_state">[CustomerInfo_state]</label>
+                                            <select id="shipping_state" name="shipping_state" maxlength="100" tabindex="22" class="form-control txtBoxStyle" required="required"></select>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_zip">[CustomerInfo_zip]</label>
+                                            <input name="shipping_zip" type="text" value="[shipping_zip]" size="40" tabindex="23" class="form-control txtBoxStyle" />
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_country">[CustomerInfo_country]</label>
+                                            <select id='shipping_country' name='shipping_country' onchange="populateState('shipping_state', 'shipping_country', '', undefined, '')" tabindex="24" class="form-control txtBoxStyle"></select>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <!--START: addressType-->
+                                        <div class="loginField col-lg-6">
+                                            <label for="shipping_addresstype">[CustomerInfo_address_type]</label>
+                                            <select name="shipping_addresstype" id="shipping_addresstype" tabindex="25" class="form-control txtBoxStyle">
+                                      [addressTypeDropDown]
+                                    </select>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <!--END: addressType-->
+
+										<!--START: update_address-->
+										<div class="loginField col-lg-6">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="update_open_orders" id="update_open_orders" class="txtBoxStyle" value="1" /> [CustomerInfo_update-orders]
+												</label>
+											</div>
+                                        </div>
+										<!--END: update_address-->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="otherInfo col-lg-12">
+                            <div class="header">
+                                <h3>Other Information</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="loginField col-lg-6">
+                                            <div class="mailist-subscribe"><input type="checkbox" name="maillist" value="1" tabindex="26" [maillist] /> I would like to receive updates and promotions by email</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="otherInfo col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="update-btn col-lg-6">
+                                            <button type="submit" class="btn btn-default">[account_updateinfo-button-text]</button>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="content-area col-lg-12">
+                <!--START: CATEGORY_FOOTER-->
+                <div class="row">
+                    <div class="category-footer col-lg-12" id="updateAccountFooter">[CONTENT]</div>
+                </div>
+                <!--END: CATEGORY_FOOTER-->
+            </div>
+    </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/Parsley/bower_components/bootstrap/js/affix.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/lib/highlight/highlight.min.js"></script>
+
+<script type="text/javascript" src="/assets/templates/common-core/lib/Parsley/dist/parsley.js"></script>
+<script type="text/javascript" src="state_countryjs.asp"></script>
+<script type="text/javascript">
+    var emailReq = 1;
+    initCountry('[billing_country_script]', '[billing_state_script]', 'billing_state', 'billing_country', '');
+    initCountry('[shipping_country_script]', '[shipping_state_script]', 'shipping_state', 'shipping_country', '');
+</script>
+<script type="text/javascript" src="/assets/templates/common-core/js/update_account.js"></script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/Parsley/src/parsley.css" />
+<link rel="stylesheet" href="/assets/templates/common-core/lib/highlight/github.min.css" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/registration.css" type="text/css" media="screen" />
+<!--END: template_styles-->

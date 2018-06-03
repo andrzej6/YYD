@@ -1,0 +1,278 @@
+article {
+    position: relative;
+    max-width: 280px;
+    margin: 0 auto 0;
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+}
+
+.savings-percentage {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+article .header {
+    position: relative;
+    border: 0px solid #cacaca;
+    border-bottom-width: 1px;
+}
+
+article .header.is-active .shareBox {
+    opacity: 1;
+    z-index: 1;
+    -webkit-animation: growingup 0.3s ease-in-out;
+    animation: growingup 0.3s ease-in-out;
+}
+
+@-webkit-keyframes growingup {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 20% 100%;
+        transform-origin: 20% 100%;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+    }
+}
+
+@keyframes growingup {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 20% 100%;
+        transform-origin: 20% 100%;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+    }
+}
+
+article .header img {
+    width: auto;
+    max-width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.deal-title {
+    background: #000;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.flashSale {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    padding: 0.7em 0.5em;
+    font-size: 0.7rem;
+    text-align: justify;
+    color: #fefefe;
+    background-color: #d04b64;
+    line-height: 1.2;
+}
+
+.sale {
+    letter-spacing: 2.5px;
+}
+
+.title {
+    position: absolute;
+    bottom: 0;
+    color: #fefefe;
+    text-shadow: 0px 0px 5px rgba(10, 10, 10, 0.5);
+    line-height: 1.2;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px;
+    width: 100%;
+    text-align: center;
+}
+
+.shareBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(10, 10, 10, 0.7);
+    opacity: 0;
+    z-index: -2;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0.2em 0.6em;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+.closeBtn:after {
+    content: 'X';
+    color: #fefefe;
+}
+
+.closeBtn:hover {
+    background-color: #fefefe;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.closeBtn:hover:after {
+    color: #0a0a0a;
+}
+
+.social-media {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    left: 0;
+    right: 0;
+    bottom: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.body {
+    padding: 10px;
+    border: 1px solid #cacaca;
+    border-top-width: 0;
+    margin-bottom: 0;
+    background-color: #fefefe;
+}
+
+.headLine {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px dotted #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.prices {
+  width: 45%;
+  display: inline-block;
+  position: absolute;
+}
+      
+.oldPrice {
+    font-size: 15px;
+    display: inline-block;
+    color: #888;
+}
+
+.oldPrice span {
+    text-decoration: line-through;
+}
+
+.newPrice {
+    font-size: 18px;
+    color: #d04b64;
+    font-weight: 600;
+    text-align: right;
+    padding-top: 10px;
+}
+
+.footer {
+    border-top: 1px dotted #e6e6e6;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 2.5px 0px;
+    margin: 5px 0px;
+}
+
+.footer:after {
+    content: ' ';
+    visibility: hidden;
+    display: block;
+    clear: both;
+    font-size: 0;
+    height: 0;
+}
+
+.footer div {
+    width: 100%;
+    display: inline-block;
+    padding: 5px 0px;
+}
+
+.footer div a {
+    width: 100%;
+    padding: 10px;
+    min-height: 40px;
+}
+
+.share {
+  padding: 10px 0px;
+  width: 50%;
+  display: inline-block;
+}
+
+.shareBtn {
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+article:hover,
+article:active,
+article:focus {
+    box-shadow: 0 3px 6px rgba(10, 10, 10, 0.16), 0 3px 6px rgba(10, 10, 10, 0.23);
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+
+.active {
+    box-shadow: 0 3px 6px rgba(10, 10, 10, 0.16), 0 3px 6px rgba(10, 10, 10, 0.23);
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+
+.widgetCountdown {
+    padding: 0px;
+}
+
+.timer {
+    border: 1px solid #d6d6d6;
+    display: inline-block;
+    padding: 10px 5px;
+    margin: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.countdown-text {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#dd-timer {
+    text-align: center;
+}

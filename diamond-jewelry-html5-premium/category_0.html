@@ -1,0 +1,649 @@
+<section id="category">
+    <form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
+        <!--START: BODY_HEADER-->
+        <div class="breadcrumbs">[CATEGORY_FULLLINE]</div>
+        <!--END: BODY_HEADER-->
+        <h1 class="page_headers">[categoryname]</h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="categoryHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+        <!--START: SUB_CATEGORIES-->
+        <div id="subcategoriesBlock">
+            <div class="titles">[category_Header-subcategories]</div>
+            <div class="sub-categories-format">
+                <!--START: SUB_CATEGORIES_FORMAT-->
+                <li class="category-wrapper category-carousel-wrapper">
+                    <div class="sub-categories">
+                        <!--START: SUB_CATEGORY_IMAGE-->
+                        <a href="view_category.asp?cat=[CATID]">
+                            <span class="img"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" /></span>
+                        </a>
+                        <!--END: SUB_CATEGORY_IMAGE-->
+                        <div class="category-details">
+                            <!--START: SUB_CATEGORY_NAME-->
+                            <a href="view_category.asp?cat=[CATID]">
+                                <span class="name">[SUB_CATEGORY_NAME]</span>
+                            </a>
+                            <!--END: SUB_CATEGORY_NAME-->
+                            <div class="desc">[SUB_CATEGORY_DESCRIPTION]</div>
+                        </div>
+                    </div>
+                </li>
+                <!--END: SUB_CATEGORIES_FORMAT-->
+            </div>
+        </div>
+        <!--END: SUB_CATEGORIES-->
+        <!--START: FEATURE_MENU-->
+        <div id="featureBlock">
+            <div class="titles">[category_Header-specials]</div>
+            <!--START: FEATURE_ITEMS-->
+            <!--START: FEATURE_ITEM_TEMPLATE_0-->
+            <div class="product-wrapper product-carousel-wrapper item-template-0">
+
+                <div class="product-image">
+                    <a href="product.asp?itemid=[catalogid]">
+                        <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                    </a>
+
+                    <!-- <div class="product-background-overlay"></div> -->
+
+                    <!--
+                    <div class="btn-container">
+                        <div class="btn-wrapper" style="display: none;">
+                            <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                                <i class="fontawesome-search"></i>
+                                <span class="tooltip">Quickview</span>
+                            </a>
+                        </div>
+
+
+                        <div class="btn-wrapper">
+                            <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                                <i class="fontawesome-link"></i>
+                                <span class="tooltip">Details</span>
+                            </a>
+                        </div>
+
+
+                        <div class="btn-wrapper">
+                            <a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+                                <i class="diamondicon-cart"></i>
+                                <span class="tooltip">[product_addtocart]</span>
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                </div>
+
+                <div class="product-details">
+                    <!--START: product_review-->
+                    <!--START: product_review_average-->
+                    <!--
+                    <span class="product-review-icons-container" data-rating-value="[review_average]">
+                        <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                        <span href="#" class="product-review-count">([review_count])</span>
+                    </span>
+                    -->
+                    <!--END: product_review_average-->
+                    <!--END: product_review-->
+
+                    <div class="product-title">
+                        <a href="product.asp?itemid=[catalogid]">[name]</a>
+                    </div>
+
+                    <div class="product-price">
+                        <!--START: ITEMPRICE-->
+                        <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                        <del class="price2">[ITEMPRICE]&nbsp;</del>
+                        <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                        <span class="badge badge-sale">
+                            <span class="badge-text">Sale</span>
+                        </span>
+                        <!--END: SALEPRICE-->
+                    </div>
+
+                    <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+                    <div class="product-description">
+                        [description]
+                    </div>
+                </div>
+
+            </div>
+            <!--END: FEATURE_ITEM_TEMPLATE_0-->
+            <!--START: FEATURE_ITEM_TEMPLATE_1-->
+            <div class="product-wrapper product-carousel-wrapper item-template-1 alternative">
+
+                <div class="product-details">
+                    <div class="id">[id]</div>
+
+                    <div class="product-title">
+                        <a href="product.asp?itemid=[catalogid]">[name]</a>
+                    </div>
+
+                    <div class="product-price">
+                        <!--START: ITEMPRICE-->
+                        <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                        <del class="price2">[ITEMPRICE]&nbsp;</del>
+                        <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                        <span class="badge badge-sale">
+                            <span class="badge-text">Sale</span>
+                        </span>
+                        <!--END: SALEPRICE-->
+                    </div>
+
+                    <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+                    <div class="product-description">
+                        [description]
+                    </div>
+
+                    <div class="action">
+                        <input type="button" value="[category_buyitlink]" onclick="window.location = 'add_cart.asp?quick=1&amp;item_id=[catalogid]'" class="btn btn-primary" />
+                    </div>
+                </div>
+
+            </div>
+            <!--END: FEATURE_ITEM_TEMPLATE_1-->
+            <!--START: FEATURE_ITEM_TEMPLATE_2-->
+            <div class="product-wrapper product-carousel-wrapper item-template-2">
+
+                <div class="product-image">
+                    <a href="product.asp?itemid=[catalogid]">
+                        <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                    </a>
+
+
+                    <!--
+                    <div class="product-background-overlay"></div>
+                    -->
+
+                    <!--
+                    <div class="btn-container">
+
+                        <div class="btn-wrapper" style="display: none;">
+                            <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                                <i class="fontawesome-search"></i>
+                                <span class="tooltip">Quickview</span>
+                            </a>
+                        </div>
+                        <div class="btn-wrapper">
+                            <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                                <i class="fontawesome-link"></i>
+                                <span class="tooltip">Details</span>
+                            </a>
+                        </div>
+
+
+                        <div class="btn-wrapper wrapper-right">
+                            <a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+                                <i class="diamondicon-cart"></i>
+                                <i class="fontawesome-shopping-cart xlargeicon"></i>
+                                <span class="tooltip">[product_addtocart]</span>
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                </div>
+
+                <div class="product-details">
+                    <!--START: product_review-->
+                    <!--START: product_review_average-->
+                    <!--
+                    <span class="product-review-icons-container" data-rating-value="[review_average]">
+                        <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                        <span href="#" class="product-review-count">([review_count])</span>
+                    </span>
+                    -->
+                    <!--END: product_review_average-->
+                    <!--END: product_review-->
+
+                    <div class="product-title">
+                        <a href="product.asp?itemid=[catalogid]">[name]</a>
+                    </div>
+
+                    <div class="product-price">
+                        <!--START: ITEMPRICE-->
+                        <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                        <del class="price2">[ITEMPRICE]&nbsp;</del>
+                        <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                        <span class="badge badge-sale">
+                            <span class="badge-text">Sale</span>
+                        </span>
+                        <!--END: SALEPRICE-->
+                    </div>
+
+                    <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+                    <div class="product-description">
+                        [description]
+                    </div>
+                </div>
+
+            </div>
+            <!--END: FEATURE_ITEM_TEMPLATE_2-->
+            <!--END: FEATURE_ITEMS-->
+        </div>
+        <div class="clear"></div>
+        <!--END: FEATURE_MENU-->
+        <!--START: catFilterMainBlock-->
+        <div id="filtersBlock">
+            <!--START: catFilter-->
+            <div class="selected-filters">
+                <h5>[category_Header-Filters]</h5>
+                <div class="container">
+                    <ul>
+                        <!--START: catFilterCrumb-->
+                        <!--START: catFilterCrumbItem-->
+                        <li><a href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a></li>
+                        <!--END: catFilterCrumbItem-->
+                        <!--END: catFilterCrumb-->
+                    </ul>
+                    <!--START: catFilterRemoveLink-->
+                    <div class="remove-filter"><a href="#" onclick="javascript:removeCatFilter();">[category_Header-RemoveFilters]</a></div>
+                    <!--END: catFilterRemoveLink-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!--END: catFilter-->
+            <!--START: catFilter_Filter-->
+            <div class="cat-filters">
+                <div>
+                    <h5>[catFilterName]</h5>
+                    <ul>
+                        <!--START: catFilter_Filter_Item-->
+                        <li><a href="#" onclick="setCatFilter('[catFilterId]-*-[catFilterNameEncoded]-*-[catFilterChildId]-*-[catFilterChildNameEncoded]-*-[catid]-*-', document.frmsortby, false);">[catFilterChildName] ([numItems])</a></li>
+                        <!--END: catFilter_Filter_Item-->
+                    </ul>
+                    <!--
+                    // Use this block if you want to show filters as a dropdown //
+                    <ul>
+                    <li><select name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);">
+                    <!-START: catFilter_Filter_Item->
+                    <option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option>
+                    <!-END: catFilter_Filter_Item->
+                </select></li>
+            </ul>
+        -->
+    </div>
+</div>
+<!--END: catFilter_Filter-->
+<input type="hidden" name="hdnCatFilter" id="hdnCatFilter" value="[catFilter]" />
+<script type="text/javascript">
+function setCatFilter(strFilter, objForm, removeSubsequent) {
+    strFilter = decodeURIComponent(strFilter);
+    if (removeSubsequent) {
+        //alert(strFilter);
+        objForm.hdnCatFilter.value = strFilter;
+    }
+    else {
+        objForm.hdnCatFilter.value = objForm.hdnCatFilter.value + '@' + strFilter;
+    }
+    //alert(objForm.hdnCatFilter.value);
+    objForm.submit();
+}
+function removeCatFilter() {
+    var objForm = document.frmsortby;
+    objForm.hdnCatFilter.value = "";
+    objForm.submit();
+}
+</script>
+<div class="clear"></div>
+</div>
+<!--END: catFilterMainBlock-->
+<!--START: ITEMS-->
+<div id="itemsBlock">
+    <div class="row row-margin-bottom products-header">
+        <div class="col-xs-12 col-lg-12">
+            <div class="product-layout-toggle">
+                <div class="product-layout-icon product-layout-grid active" data-view="grid"><i class="fontawesome-th-large"></i></div>
+                <div class="product-layout-icon product-layout-list" data-view="list"><i class="fontawesome-th-list"></i></div>
+                <div class="clearfix"></div>
+            </div>
+            <span class="total-items-number hidden-md-down">Total Items: [productnumber]</span>
+            <div class="sort-by">
+                <!--START: sortbylist-->
+                <span class="hidden-md-down">Sort by:</span>
+                <select name="sortby" onchange="frmsortby.submit();">
+                    <option value="0">Use Default Sorting</option>
+                    [sortbylist]
+                </select>
+                <!--END: sortbylist-->
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--START: catitemslist-->
+    <div class="catitemslist">
+        <span class="hidden-md-down">[category_Header-items-per-page-title]</span>
+        <select name="catitems" onchange="frmsortby.submit();">
+            [catitemslist]
+        </select>
+        <div class="clear"></div>
+    </div>
+    <!--END: catitemslist-->
+
+    <!--START: CATEGORY_ITEMS-->
+    <!--START: ITEM_TEMPLATE_0-->
+    <div class="product-wrapper item-template-0">
+
+        <div class="product-image">
+            <a href="product.asp?itemid=[catalogid]">
+                <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+            </a>
+
+            <!--
+            <div class="product-background-overlay"></div>
+            -->
+        </div>
+
+        <div class="product-details">
+
+            <!--
+           <div class="btn-container">
+
+               <div class="btn-wrapper" style="display: none;">
+                   <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                       <i class="fontawesome-search"></i>
+                       <span class="tooltip">Quickview</span>
+                   </a>
+               </div>
+               <div class="btn-wrapper">
+                   <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                       <i class="fontawesome-link"></i>
+                       <span class="tooltip">Details</span>
+                   </a>
+               </div>
+
+
+                <div class="btn-wrapper wrapper-right">
+                    <a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+                        <i class="fontawesome-shopping-cart xlargeicon"></i>
+                        <span class="tooltip">[product_addtocart]</span>
+                    </a>
+                </div>
+            </div>
+             -->
+
+
+
+            <!--START: product_review-->
+            <!--START: product_review_average-->
+            <!--
+            <span class="product-review-icons-container" data-rating-value="[review_average]">
+                <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                <span href="#" class="product-review-count">([review_count])</span>
+            </span>
+            -->
+            <!--END: product_review_average-->
+            <!--END: product_review-->
+
+            <div class="product-title">
+                <a href="product.asp?itemid=[catalogid]">[name]</a>
+            </div>
+
+            <div class="product-price">
+                <!--START: ITEMPRICE-->
+                <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                <!--END: ITEMPRICE-->
+                <!--START: SALEPRICE-->
+                <del class="price2">[ITEMPRICE]&nbsp;</del>
+                <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                <span class="badge badge-sale">
+                    <span class="badge-text">Sale</span>
+                </span>
+                <!--END: SALEPRICE-->
+            </div>
+
+            <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+            <div class="product-description">
+                [description]
+            </div>
+
+            <!--START: dropimage_widget-->
+            <div id="divDropImage[catalogid]" class="dropimage_widget_wrapper" data-id="[catalogid]" data-thumb="[THUMBNAIL]">
+                <ul class="dropimage_widget_inner slides"></ul>
+                <div class="dropimage_widget_noitems">[product_dropimage_widget-no-colors-available]</div>
+            </div>
+            <div class="clear"></div>
+            <!--END: dropimage_widget-->
+        </div>
+
+    </div>
+    <!--END: ITEM_TEMPLATE_0-->
+    <!--START: ITEM_TEMPLATE_1-->
+    <div class="product-wrapper product-carousel-wrapper item-template-1 alternative">
+
+        <div class="product-details">
+            <div class="id">[id]</div>
+
+            <div class="product-title">
+                <a href="product.asp?itemid=[catalogid]">[name]</a>
+            </div>
+
+            <div class="product-price">
+                <!--START: ITEMPRICE-->
+                <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                <!--END: ITEMPRICE-->
+                <!--START: SALEPRICE-->
+                <del class="price2">[ITEMPRICE]&nbsp;</del>
+                <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                <span class="badge badge-sale">
+                    <span class="badge-text">Sale</span>
+                </span>
+                <!--END: SALEPRICE-->
+            </div>
+
+            <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+            <div class="product-description">
+                [description]
+            </div>
+
+            <div class="action">
+                <input type="button" value="[category_buyitlink]" onclick="window.location = 'add_cart.asp?quick=1&amp;item_id=[catalogid]'" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+    <!--END: ITEM_TEMPLATE_1-->
+    <!--START: ITEM_TEMPLATE_2-->
+    <div class="product-wrapper product-carousel-wrapper item-template-2">
+
+        <div class="product-image">
+            <a href="product.asp?itemid=[catalogid]">
+                <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+            </a>
+
+            <div class="product-background-overlay"></div>
+
+            <!--
+            <div class="btn-container">
+                <div class="btn-wrapper" style="display: none;">
+                    <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                        <i class="fontawesome-search"></i>
+                        <span class="tooltip">Quickview</span>
+                    </a>
+                </div>
+                <div class="btn-wrapper">
+                    <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                        <i class="fontawesome-link"></i>
+                        <span class="tooltip">Details</span>
+                    </a>
+                </div>
+                <div class="btn-wrapper">
+                    <a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+                        <i class="diamondicon-cart"></i>
+                        <span class="tooltip">[product_addtocart]</span>
+                    </a>
+                </div>
+            </div>
+            -->
+        </div>
+
+        <div class="product-details">
+            <!--START: product_review-->
+            <!--START: product_review_average-->
+            <!--
+            <span class="product-review-icons-container" data-rating-value="[review_average]">
+                <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                <span href="#" class="product-review-count">([review_count])</span>
+            </span>
+            -->
+            <!--END: product_review_average-->
+            <!--END: product_review-->
+
+            <div class="product-title">
+                <a href="product.asp?itemid=[catalogid]">[name]</a>
+            </div>
+
+            <div class="product-price">
+                <!--START: ITEMPRICE-->
+                <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                <!--END: ITEMPRICE-->
+                <!--START: SALEPRICE-->
+                <del class="price2">[ITEMPRICE]&nbsp;</del>
+                <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                <span class="badge badge-sale">
+                    <span class="badge-text">Sale</span>
+                </span>
+                <!--END: SALEPRICE-->
+            </div>
+
+            <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+            <div class="product-description">
+                [description]
+            </div>
+        </div>
+
+    </div>
+    <!--END: ITEM_TEMPLATE_2-->
+    <!--END: CATEGORY_ITEMS-->
+    <ul class="paging">
+        <!--START: PAGING-->
+        <span class="hidden-md-down">[category_moreresults]</span>
+        <!--START: PREV-->
+        <li class="paginate-previous"><a class="btn btn-primary" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">[category_previouspage]</a></li>
+        <!--END: PREV-->
+        <!--START: PAGES-->
+        <!--START: FIRST_PAGE-->
+        <li class="paginate-page active"><a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a>...</li>
+        <!--END: FIRST_PAGE-->
+        <!--START: PAGES_SELECTED-->
+        <li class="paginate-page active"><span class="btn">PAGE</span></li>
+        <!--END: PAGES_SELECTED-->
+        <!--START: PAGES_NOTSELECTED-->
+        <li class="paginate-page"><a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a></li>
+        <!--END: PAGES_NOTSELECTED-->
+        <!--START: LAST_PAGE-->
+        <li class="paginate-page active">...<a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE"><strong>PAGE</strong></a></li>
+        <!--END: LAST_PAGE-->
+        <!--END: PAGES-->
+        <!--START: NEXT-->
+        <li class="paginate-next"><a class="btn btn-primary" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">[category_nextpage]</a></li>
+        <li class="paginate-view-all"><a class="btn btn-secondary" href="view_category.asp?viewall=1&cat=[catid]" class="category-viewall">View All</a></li>
+        <!--END: NEXT-->
+        <!--END: PAGING-->
+        <!--START: UNDOVIEWALL-->
+        <li class="paginate-exit-view-all"><a class="btn btn-secondary" href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a></li>
+        <!--END: UNDOVIEWALL-->
+    </ul>
+    <!--END: ITEMS-->
+    <div class="clear"></div>
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="categoryFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+</form>
+</section>
+
+<!--START: dropimage_widget_script-->
+<link rel="stylesheet" href="/assets/templates/common-html5/css/flexslider.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/assets/templates/common-html5/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+    fetchAllDropImages();
+});
+
+function fetchAllDropImages() {
+    var widgets = jQuery('.dropimage_widget_wrapper');
+
+    jQuery.each(widgets, function (i, item) {
+        fetchDropImageItems(jQuery(item).attr('data-id'), jQuery(item).attr('data-thumb'));
+    })
+}
+
+function fetchDropImageItems(catalogid, thumbnail) {
+    jQuery.ajax({
+        url: 'prod_dropimage_widget.asp',
+        dataType: 'json',
+        type: 'GET',
+        data: 'action=dropimage_widget&catalogid=' + catalogid,
+        cache: false,
+        success: function (arrItems) {
+            if (arrItems.length == 0){
+                jQuery('#divDropImage' + catalogid + ' ul.dropimage_widget_inner').remove();
+                return;
+            }
+            jQuery('#divDropImage' + catalogid + ' div.dropimage_widget_noitems').remove();
+            var list = jQuery('#divDropImage' + catalogid).find('ul.dropimage_widget_inner');
+            var li = '';
+            //Add the main image to the list
+            li += '<li class="dropimage_widget_item" onmouseover="javascript:switchImage(\'qv_' + catalogid + '\', \'' + thumbnail + '\');"><img src="' + thumbnail + '" id="ddi_widg_main_' + catalogid + '" /></li>';
+            //Add the additional images to the list
+            jQuery.each(arrItems, function (i, item) {
+                //Don't add the main thumbnail again on the list
+                if (item.img != thumbnail)
+                li += '<li class="dropimage_widget_item" onmouseover="javascript:switchImage(\'qv_' + catalogid + '\', \'' + item.img + '\');"><img src="' + item.img + '" alt="' + item.opt + '" title="' + item.opt + '" id="ddi_widg_' + item.opt + '" /></li>';
+            });
+            list.append(li);
+            jQuery('#divDropImage' + catalogid).flexslider({
+                animation: "slide",
+                animationLoop: true,
+                slideshow: false,
+                controlNav: false,
+                itemWidth: 25,
+                maxItems: 6,
+                itemMargin: 5,
+                prevText: "",
+                nextText: ""
+            });
+        },
+        error: errorDropImageItems
+    });
+}
+function errorDropImageItems(objResponse) {
+}
+function switchImage(imgTarget, imgSource) {
+    jQuery("#" + imgTarget).attr("src", imgSource);
+}
+</script>
+<!--END: dropimage_widget_script-->

@@ -1,0 +1,68 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/redeem.asp">[rewards_details-detail]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+        [rewards_details-detail]
+        </h1>
+        <!--START: myAccount-->
+        <div class="button">
+            <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+        </div>
+        <!--END: myAccount-->
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="rewardsHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+<section id="rewards" class="page-content">
+    <div class="container">
+        <div class="content-area">
+            <div class="titles">[rewards_redeem-productsList]</div>
+			<div class="product-items product-items-[product-cols-number]">
+			<!--START: CATEGORY_ITEMS-->
+                <!--START: ITEM_TEMPLATE-->
+                <div class="product-item" data-catalogid="[catalogid]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
+					<div class="img">
+						<a href="product.asp?itemid=[catalogid]">
+							<img src="[THUMBNAIL]" alt="[name]" class="img-responsive" />
+						</a>
+						<!--START: quickview-->
+						<button class="quickview" data-toggle="modal">[product_quick-view]</button>
+						<!--END: quickview-->
+					</div>
+					<div class="name">
+						<a href="product.asp?itemid=[catalogid]">[name]</a>
+					</div>
+
+					<div class="price">[reward_redeem] points</div>
+
+					<div class="action">
+						<a href="add_cart.asp?quick=1&amp;item_id=[catalogid]" class="add-to-cart btn btn-default">
+							<span class="buyitlink-text">Redeem</span>
+							<span class="ajaxcart-loader icon-spin2 animate-spin"></span>
+							<span class="ajaxcart-added icon-ok"></span>
+						</a>
+					</div>
+				</div>
+                <!--END: ITEM_TEMPLATE-->
+            <!--END: CATEGORY_ITEMS-->
+			</div>
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-footer" id="rewardsFooter">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+        </div>
+    </div>  
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/rewardDetail.css" type="text/css" media="all" />
+<!--END: template_styles-->

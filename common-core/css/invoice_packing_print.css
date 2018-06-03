@@ -1,0 +1,235 @@
+/*	invoice_print.html Template
+	---------------------------	*/
+#invoicePrint p {
+    margin: 0;
+	padding: 0;
+}
+#invoicePrint .label {
+	font-weight: bold;
+	float: left;
+}
+#invoicePrint .text {
+	float: left;
+}
+#invoicePrint .customerInfoBlock .left-col {
+	font-weight: bold;
+}
+#invoicePrint .shippingInfoBlock {
+	float: left;
+	width: 60%;
+}
+#invoicePrint .invoice-total {
+	text-align: right;
+}
+#invoicePrint .invoiceTable .titles2 {
+	font-weight: bold;
+	padding: 10px 0;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+#invoicePrint .orderDetailsBlock .left-col {
+    float: left;
+    margin-top: 15px;
+	width: 39%;
+}
+#invoicePrint .orderDetailsBlock .right-col {
+	float: right;
+    line-height: 1.8em;
+	margin-top: 15px;
+	text-align: right;
+	width: 48%;
+}
+#invoicePrint .discountsBlock,
+#invoicePrint .certificatesBlock,
+#invoicePrint .checkoutquestionsBlock {
+	margin-bottom: 15px;
+}
+
+/*	packing_print.html Template
+	---------------------------	*/
+#packingPrint p {
+    margin: 0;
+	padding: 0;
+}
+#packingPrint .label {
+	font-weight: bold;
+	float: left;
+	margin-right: 15px;
+}
+#packingPrint .text {
+	float: left;
+}
+#packingPrint .customerInfoBlock .left-col {
+	font-weight: bold;
+}
+#packingPrint .shippingInfoBlock {
+	float: left;
+	width: 60%;
+}
+#packingPrint .invoice-total {
+	text-align: right;
+}
+#packingPrint .invoiceTable .titles2 {
+	font-weight: bold;
+	padding: 10px 0;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+#packingPrint .invoice-id {
+	float: left;
+	width: 20%;
+}
+#packingPrint .invoice-items {
+	float: left;
+	width: 70%;
+}
+#packingPrint .invoice-qty {
+	float: left;
+	width: 10%;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.customerInfoBlock .left-col {
+	float: left;
+	width: 48%;
+	margin-bottom: 15px;
+}
+.customerInfoBlock .left-col p {
+    margin: 0;
+}
+.customerInfoBlock .right-col {
+	float: right;
+	width: 48%;
+	margin-bottom: 15px;
+}
+.billingBlock .left-col {
+	float: left;
+	width: 48%;
+	margin-bottom: 15px;
+}
+.billingBlock .right-col {
+	float: right;
+	width: 48%;
+	margin-bottom: 15px;
+}
+.billingBlock .left-col strong,
+.billingBlock .right-col strong {
+    display: block;
+	margin-bottom: 5px;
+}
+#orderHistoryView .label {
+	float: left;
+}
+#orderHistoryView .text {
+	float: left;
+}
+.oviewField {
+	margin: 0 0 15px 0;
+}
+.oviewField label {
+	float: left;
+	line-height: 2.4em;
+	width: 85px;
+}
+.oviewField input {
+	float: left;
+	width: 150px;
+	margin: 0;
+}
+.oviewField select {
+	float: left;
+	width: 160px;
+	margin: 0;
+}
+.recurringOrderForm .save-cancel-button {
+	margin: 0 0 15px;
+}
+.rewardsView {
+	margin: 15px auto;
+}
+.invoiceTable {
+	margin-top: 15px;
+}
+.invoiceTable .titles2 {
+	margin-bottom: 5px;
+    border: none;
+}
+.invoice-id {
+	float: left;
+	width: 19%;
+	word-wrap: break-word;
+}
+.invoice-items {
+	float: left;
+	width: 44%;
+}
+.invoice-price {
+	float: left;
+	width: 16%;
+}
+.invoice-qty {
+	float: left;
+	width: 10%;
+}
+.invoice-total {
+	float: left;
+	text-align: right;
+	width: 10%;
+}
+.row .invoice-total {
+    padding-right: 0px;
+}
+.shipmentTable {
+	padding: 5px 0;
+	border-bottom: 1px solid #d2d2d2;
+}
+.shipmentTable .ship-num {
+	float: left;
+	width: 20%;
+}
+.shipmentTable .ship-info {
+	float: left;
+	width: 50%;
+}
+.shipmentTable .ship-method {
+	float: left;
+	width: 30%;
+	text-align: right;
+}
+#orderHistoryView .addnew-rma-button {
+	float: right;
+	margin-top: 15px;
+}
+.orderDetailsBlock .left-col {
+	float: left;
+	width: 48%;
+	margin-top: 15px;
+}
+.orderDetailsBlock .right-col {
+	text-align: right;
+    line-height: 1.8em;
+	float: right;
+	width: 47%;
+	margin-top: 15px;
+}
+.orderDetailsBlock .right-col .label {
+	font-weight: bold;
+	float: right;
+	width: 38%;
+}
+.orderDetailsBlock .right-col .text {
+	float: right;
+    padding-right: 0px;
+    width: 60%;
+}

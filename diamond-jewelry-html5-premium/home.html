@@ -1,0 +1,269 @@
+<script>
+    jQuery(document).ready(function($) {
+
+        $('.slider4').bxSlider({
+            autoDelay:3000,
+            slideWidth: 360,
+            minSlides: 2,
+            maxSlides: 3,
+            moveSlides: 1,
+            slideMargin: 10
+        });
+
+
+        $('.slider2').bxSlider({
+            speed:2000,
+            slideWidth: 545,
+            minSlides: 2,
+            maxSlides: 2,
+            slideMargin: 10,
+            pause: 10000
+
+        }).startAuto();
+
+
+        $('.slider3').bxSlider({
+            autoDelay:3000,
+            slideWidth: 545,
+            minSlides: 2,
+            maxSlides: 2,
+            moveSlides: 1,
+            slideMargin: 10
+        });
+
+    });
+</script>
+
+<section id="home">
+    <!--START: home_carousel-->
+    <link rel="stylesheet" href="/assets/templates/common-html5/css/flexslider.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="/assets/templates/common-html5/js/jquery.flexslider-min.js"></script>
+
+    <div id="homeCarousel" class="flexslider">
+        <ul class="slides">
+            <!--START: carousel-->
+            <li><a href="[link]"><img src="[image]" alt="" /></a></li>
+            <!--END: carousel-->
+        </ul>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+    jQuery(document).ready(function () {
+        jQuery('#homeCarousel').flexslider({
+            animation: "[hc_effect]",
+            slideshowSpeed: [hc_delay],
+            controlNav: false,
+            keyboard: false
+        });
+    });
+    </script>
+    <!--END: home_carousel-->
+    <!--START: CATEGORY_HEADER-->
+    <div class="category-header" id="homeHeader">[CONTENT]</div>
+    <!--END: CATEGORY_HEADER-->
+
+    <!--START: FEATURE_MENU-->
+    <div class="row row-fullwidth-background module-product-grid-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="row-title-wrapper">
+                        <!--
+                        <h3 class="heading-1">[category_Header-specials]</h3>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <!--START: CATEGORY_ITEMS-->
+            <!--START: ITEM_TEMPLATE_0-->
+            <div class="product-wrapper item-template-0">
+
+
+                <div class="product-image">
+                    <a href="product.asp?itemid=[catalogid]">
+                        <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                    </a>
+
+                    <!-- <div class="product-background-overlay"></div> -->
+
+                </div>
+
+
+                <a href="product.asp?itemid=[catalogid]">
+                <div class="product-details">
+
+
+                    <div class="btn-container">
+                        <!--
+                        <div class="btn-wrapper wrapper-left" style="display: none;">
+                            <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                                <i class="fontawesome-search"></i>
+                                <span class="tooltip">Quickview</span>
+                            </a>
+                        </div>
+
+                        <div class="btn-wrapper">
+                            <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                                <i class="fontawesome-link"></i>
+                                <span class="tooltip">Details</span>
+                            </a>
+                        </div>
+
+                        <div class="btn-wrapper wrapper-right">
+                            <a class="btn btn-addtocart" href="product.asp?itemid=[catalogid]" data-addtocart-url="add_cart.asp?quick=1&amp;item_id=[catalogid]">
+                                <i class="fontawesome-shopping-cart xlargeicon"></i>
+                                <span class="tooltip">[product_addtocart]</span>
+                            </a>
+                        </div>
+
+                         -->
+                    </div>
+
+
+                    <!--START: product_review-->
+                    <!--START: product_review_average-->
+                    <!--
+                    <div class="product-review-icons-container reviews-margintop" data-rating-value="[review_average]">
+                        <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                        <span href="#" class="product-review-count">([review_count])</span>
+                    </div>
+                    -->
+                    <!--END: product_review_average-->
+                    <!--END: product_review-->
+
+                    <div class="product-title">
+                        <a href="product.asp?itemid=[catalogid]">[name]</a>
+                    </div>
+
+                    <div class="product-price">
+                        <!--START: ITEMPRICE-->
+                        <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                        <del class="price2">[ITEMPRICE]&nbsp;</del>
+                        <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                        <span class="badge badge-sale">
+                            <span class="badge-text">Sale</span>
+                        </span>
+                        <!--END: SALEPRICE-->
+                    </div>
+
+                    <div class="status"><!--START: product_availability-->[availability] <!--END: product_availability--><!--START: freeshippingblock-->[freeshipping]<!--END: freeshippingblock--></div>
+
+                    <div class="product-description">
+                        [description]
+                    </div>
+
+
+                </div>
+                </a>
+
+
+            </div>
+            <!--END: ITEM_TEMPLATE_0-->
+            <!--END: CATEGORY_ITEMS-->
+        </div>
+    </div>
+    <!--END: FEATURE_MENU-->
+
+    <div class="row row-fullwidth-background module-product-grid-1" style="padding-top: 0">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="row-title-wrapper">
+                        <h3 class="heading-1" style="margin-top:5px">FEATURED ON BBC TV</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider3">
+                <div class="slide"><a href="bbc-tv"><img src="assets/images/home/bbc/bbc1.png"></a></div>
+                <div class="slide"><a href="bbc-tv"><img src="assets/images/home/bbc/bbc2.png"></a></div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="row row-fullwidth-background module-product-grid-1" style="padding-top: 0">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="row-title-wrapper">
+                        <h3 class="heading-1" style="margin-top:5px">LEARN MORE</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider2">
+                <div class="slide"><a href="http://onyourfeetday.com/" target="_blank"><img src="assets/images/home/learn/1-sponsoring.png"></a></div>
+                <div class="slide"><a href="assets/files/pdf/yyclassic-guidelines.pdf" target="_blank"><img src="assets/images/home/learn/2-guide.png"></a></div>
+                <div class="slide"><img src="assets/images/home/learn/3-users.png"></div>
+                <div class="slide"><a href="http://getbritainstanding.org/" target="_blank"><img src="assets/images/home/learn/4-partner.png"></a></div>
+                <div class="slide"><a href="free-posters"><img src="assets/images/home/learn/5-posters.png"></a></div>
+                <div class="slide"><img src="assets/images/home/learn/6-blogs.png"></div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <div class="row row-fullwidth-background module-product-grid-1" style="padding-top: 0">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="row-title-wrapper">
+                        <h3 class="heading-1" style="color:#e23b43">SPECIAL OFFERS</h3>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="slider4">
+                <div class="slide"><a href="yoyo-desks"><img src="assets/images/home/specials/volume1.png"></a></div>
+
+                <div class="slide"><a href="contact-us"><img src="assets/images/home/specials/contact-us.png"></a></div>
+                <div class="slide"><a href="yoyo-desks"><img src="assets/images/home/specials/mat-desk.png"></a></div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="homeFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+</section>

@@ -1,0 +1,255 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[giftregistry_home]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="giftregistryHome page_header">
+    <div class="container">
+        <h1 class="page_heading">[giftregistry_home]</h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="giftregistryHomeHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER--> 
+    </div>
+</section>
+
+
+<section id="giftregistryHome" class="giftregistryHome-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <form action="giftregistry_home.asp" name="frmForm" id="frmForm" method="post">
+                    <input type="hidden" name="action" id="action" value="" />
+                    <input type="hidden" name="intCustId" id="intCustId" value="" />
+
+                    <!--START: giftRegistryMyRegistry-->
+                    <div class="row">
+                        <div class="registryInfo col-lg-12">
+                            <div class="header clearfix">
+                                <h4 class="page_heading">[regName]</h4>
+                            </div>
+                        </div>
+                        <div class="giftRegistryMyRegistry col-lg-12">
+                            <div class="row">
+                                <div class="giftregField col-md-3 col-sm-6">
+                                    <div class="Registry_Date">
+                                        <label for="Registry_Date"><i class="icon-calendar-check-o"></i>[giftregistry_header-eventdate]</label>
+                                        <div class="text">[regEvent]</div>
+                                    </div>
+                                </div>
+                                <div class="giftregField col-md-3 col-sm-6">
+                                    <div class="Registry_Date">
+                                        <label for="Registry_Exp_Date"><i class="icon-calendar-check-o"></i>[giftregistry_header-expiration]</label>
+                                        <div class="text">[regExpiration]</div>
+                                    </div>
+                                </div>
+                                <div class="giftregField col-md-3 col-sm-6">
+                                    <div class="Registry_Products">
+                                        <label for="Registry_Products_Desired">[giftregistry_header-productsdesired]</label>
+                                        <div class="text">[regProductsDesired]</div>
+                                    </div>
+                                </div>
+                                <div class="giftregField col-md-3 col-sm-6">
+                                    <div class="Registry_Products">
+                                        <label for="Registry_Products_Purchased">[giftregistry_header-productspurchased]</label>
+                                        <div class="text">[regProductsPurchased]</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <span class="giftreg-product-list"><a class="btn btn-link" href="view_giftregistry.asp?id=[custid]">[giftregistry_view-productlist]</a></span>
+                                    <span class="giftreg-edit-info"><a class="btn btn-link" href="giftregistry_edit.asp">[giftregistry_view-edit-account]</a></span>
+                                    <span class="giftreg-viewdetails"><a class="btn btn-link" href="giftregistry_edit.asp?action=view">[account_giftRegistry-header-view]</a></span>
+                                </div>
+                            </div>
+						</div>
+                    </div>
+                    <!--END: giftRegistryMyRegistry--> 
+
+                    <!--START: giftRegistryCreate-->
+                    <div class="row">
+                        <div class="registryInfo col-lg-12">
+                            <div class="header clearfix">
+                                <h4 class="page_heading">[account_giftRegistry]</h4>
+                            </div>
+                        </div>
+                        <div class="home-create-registry col-lg-12">[giftregistry_home-create-registry]</div>
+                        <div class="create-registry-button col-lg-12">
+	                        <button type="button" class="btn btn-primary" onclick="window.location='giftregistry_edit.asp';">[giftregistry_header-create-registry]</button>
+                        </div>
+                    </div>
+                    <!--END: giftRegistryCreate--> 
+
+                    <!--START: giftRegistrySearch-->
+                    <div class="row">
+                        <div class="registryInfo col-lg-12">
+                            <div class="header clearfix">
+                                <h4 class="page_heading">[giftregistry_home-header-search]</h4>
+                            </div>
+                        </div>
+                        <div class="giftRegistrySearch col-lg-12">
+                            <div class="row">
+                                <div class="giftregField col-sm-6">
+                                    <div class="Registry_Name">
+                                        <label for="txtRegName"><i class="icon-gift-1"></i> [giftregistry_header-name]</label>
+                                        <input type="text" id="txtRegName" name="txtRegName" value="[regname]" tabindex="1" class="form-control txtBoxStyle" />
+                                    </div>
+                                </div>
+                                <div class="giftregField col-sm-4 col-sm-offset-2">
+                                    <div class="Registry_Date">
+                                        <label for="drpRegDate"><i class="icon-calendar-check-o"></i> [giftregistry_header-eventdate]</label>
+                                        <div class="row smallrow">
+                                        	<div class="smallcol col-sm-4">
+                                                <select name="drpRegMonth" id="drpRegMonth" tabindex="2" class="txtBoxStyle form-control">
+                                                  <option value="">Month</option>
+                                                  <!--START: drpRegMonth-->
+                                                  <option value="[intMonth]" [selected]>[month]</option>
+                                                  <!--END: drpRegMonth-->
+                                                </select>
+                                            </div>
+                                        	<div class="smallcol col-sm-4">
+                                                <select name="drpRegDay" id="drpRegDay" tabindex="3" class="txtBoxStyle form-control">
+                                                  <option value="">Day</option>
+                                                  <!--START: drpRegDay-->
+                                                  <option value="[day]" [selected]>[day]</option>
+                                                  <!--END: drpRegDay-->
+                                                </select>
+                                            </div>
+                                        	<div class="smallcol col-sm-4">
+                                                <select name="drpRegYear" id="drpRegYear" tabindex="4" class="txtBoxStyle form-control">
+                                                  <option value="">Year</option>
+                                                  <!--START: drpRegYear-->
+                                                  <option value="[year]" [selected]>[year]</option>
+                                                  <!--END: drpRegYear-->
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="giftregField col-sm-3">
+                                    <div class="txtRegFirstName">
+                                        <label for="txtRegFirstName"><i class="icon-user"></i> [giftregistry_create-firstname]</label>
+                                        <input type="text" id="txtRegFirstName" name="txtRegFirstName" value="[firstname]" tabindex="5" class="txtBoxStyle form-control" />
+                                    </div>
+                                </div>
+                                <div class="giftregField col-sm-3">
+                                    <div class="txtRegLastName">
+                                        <label for="txtRegLastName"><i class="icon-user"></i> [giftregistry_create-lastname]</label>
+                                        <input type="text" id="txtRegLastName" name="txtRegLastName" value="[lastname]" tabindex="6" class="txtBoxStyle form-control" />
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="home-search-button col-sm-12">
+                            <button type="button" name="cmdViewList" onclick="javascript:searchRegistry();" class="btn btn-primary">[giftregistry_home-search]</button>
+                        </div>
+                    </div>
+                    <!--END: giftRegistrySearch--> 
+
+                    <!--START: giftRegistrySearchResult-->
+                    <div class="row">
+                        <div class="registryInfo col-lg-12">
+                            <div class="header clearfix">
+                                <h4 class="page_heading">[giftregistry_home-header-searchresult]</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row giftRegistrySearchResult_titles titles2 hidden-xs">
+                        <div class="col-md-2_4 col-sm-2_4">
+                            <label for="giftreg-name">[giftregistry_header-name]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2_4">
+                            <label for="giftreg-date">[giftregistry_header-eventdate]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2_4">
+                            <label for="giftreg-fname">[giftregistry_create-firstname]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2_4">
+                            <label for="giftreg-lname">[giftregistry_create-lastname]</label>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2_4">
+                            <label for="giftreg-action">Action</label>
+                        </div>
+                    </div>
+                    <!--START: giftRegistrySearchNoResult-->
+                    <div class="row wishlistView_details details_row">
+                        <div class="search-noresults col-md-12">[giftregistry_home-search-noresults]</div>
+                    </div>
+                    <!--END: giftRegistrySearchNoResult-->
+
+                    <!--START: giftRegistrySearchResultDetail-->
+                    <div class="row wishlistView_details details_row">
+                        <div class="col-md-2_4 col-sm-2_4 col-xs-12">
+                            <div class="row">
+                                <label class="visible-xs col-xs-4" for="giftreg-name">[giftregistry_header-name]</label>
+                                <div class="col-sm-12 col-xs-8">[regName]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2_4 col-sm-2_4 col-xs-12">
+                            <div class="row">
+                                <label class="visible-xs col-xs-4" for="giftreg-date">[giftregistry_header-eventdate]</label>
+                                <div class="col-sm-12 col-xs-8">[regEvent]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2_4 col-sm-2_4 col-xs-12">
+                            <div class="row">
+                                <label class="visible-xs col-xs-4" for="giftreg-fname">[giftregistry_create-firstname]</label>
+                                <div class="col-sm-12 col-xs-8">[regFirstName]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2_4 col-sm-2_4 col-xs-12">
+                            <div class="row">
+                                <label class="visible-xs col-xs-4" for="giftreg-lname">[giftregistry_create-lastname]</label>
+                                <div class="col-sm-12 col-xs-8">[regLastName]</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2_4 col-sm-2_4 col-xs-12">
+                            <div class="row">
+                            	<label class="visible-xs col-xs-4" for="giftreg-action">Action</label>
+                                <div class="select-registry-button col-sm-12 col-xs-8">
+                                	<button type="button" name="cmdViewList" onclick="javascript: location.href = 'giftregistry_home.asp?action=view&id=[custid]';" class="btn btn-primary">[giftregistry_home-select-registry]</button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--END: giftRegistrySearchResultDetail-->
+                    <!--END: giftRegistrySearchResult-->
+                </form>
+                <div class="clearfix"></div>
+
+                <!--START: CATEGORY_FOOTER-->
+                <div class="category-footer" id="giftregistryHomeFooter">[CONTENT]</div>
+                <!--END: CATEGORY_FOOTER--> 
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/js/giftregistry_home.js"></script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/giftregistry.css" type="text/css" media="screen" />
+<!--END: template_styles-->

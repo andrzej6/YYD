@@ -1,0 +1,321 @@
+<script type="text/javascript" src="state_countryjs.asp"></script>
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="">[account_Update-Address]</a></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">
+            [account_Update-Address]
+        </h1>
+        <!--START: myAccount-->
+        <div class="button">
+            <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> Back to My Account</a>
+        </div>
+        <!--END: myAccount-->
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="addAddressesHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+<section id="addAddresses" class="page-content">
+    <div class="container">
+      <div class="content-area">
+          <div class="form_data addUpdateAddress">
+              <div class="clearfix"></div>
+              <div class="row">
+                  <form action="myaccount.asp?action=updateaddress&reqPage=[reqPage]&shipmentid=[shipmentid]" method="post" name="checkoutform" id="checkoutform">
+                      <input type="hidden" name="tknio" value="[tknio]">
+                      <input type="hidden" name="id" value="[id]" />
+                      <input type="hidden" name="update" value="1" />
+
+                      <!--START: SAVE_ADDRESSES-->
+                      <div class="crmField col-sm-12">
+                          <label for="address_alias" class="validation-field">
+							<input name="address_alias" type="text" id="address_alias" value="[address_alias]" size="25" tabindex="1" maxlength="50" class="form-control" placeholder="[account_Address-Alias]"  />
+							<!--START: req_shipping_alias-->
+						  	<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+                          </label>
+                      </div>
+                      <!--END: SAVE_ADDRESSES-->
+
+                      <div class="crmField col-sm-6">
+                        <label for="shipping_firstname" class="validation-field">
+							<input name="shipping_firstname" type="text" id="shipping_firstname" value="[shipping_firstname]" size="15" tabindex="2" maxlength="100" class="form-control" placeholder="[CustomerInfo_firstname]" />  
+							<!--START: req_shipping_alias-->
+						  	<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+						</label>
+                      </div>
+
+                      <div class="crmField col-sm-6">
+                          <label for="shipping_lastname" class="validation-field">
+							<input name="shipping_lastname" type="text" id="shipping_lastname" value="[shipping_lastname]" size="15" tabindex="3" maxlength="100" class="form-control" placeholder="[CustomerInfo_lastname]" />
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+						</label>
+                      </div>
+
+                      <div class="crmField col-sm-12">
+						<label class="validation-field">
+							<input name="shipping_company" type="text" id="shipping_company" value="[shipping_company]" size="25" tabindex="4" maxlength="255" class="form-control" placeholder="[CustomerInfo_company]" />
+						</label>
+                      </div>
+
+					  <div class="crmField col-sm-8">
+                          <label for="shipping_address" class="validation-field">
+							<input name="shipping_address" type="text" id="shipping_address" value="[shipping_address]" size="25" tabindex="5" maxlength="255" class="form-control" placeholder="[CustomerInfo_address]" />
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+                          </label>
+                      </div>
+
+                      <div class="crmField col-sm-4">
+						<label class="validation-field">
+							<input name="shipping_address2" type="text" id="shipping_address2" value="[shipping_address2]" size="25" tabindex="6" maxlength="50" class="form-control" placeholder="[CustomerInfo_address2]" />
+						</label>
+                      </div>
+
+					  <div class="crmField col-sm-12">
+						<label for="shipping_city" class="validation-field">
+							<input name="shipping_city" type="text" id="shipping_city" value="[shipping_city]" size="25" tabindex="7" maxlength="100" class="form-control" placeholder="[CustomerInfo_city]" />
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+						</label>
+                      </div>
+
+                      <div class="crmField col-sm-5">
+                          <label for="shipping_country" class="validation-field">
+							<select id='shipping_country' name='shipping_country' tabindex="8"  class="form-control">
+							</select>
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+                          </label>
+                      </div>
+
+                      <div class="crmField col-sm-4">
+						<label for="shipping_state" class="validation-field">
+							<select id="shipping_state" name="shipping_state" tabindex="9" class="form-control"></select>
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+						</label>
+                      </div>
+
+					  <div class="crmField col-md-3">
+						<label for="shipping_zip" class="validation-field">
+							<input name="shipping_zip" type="text" id="shipping_zip" value="[shipping_zip]" size="10" tabindex="10" maxlength="20" class="form-control" placeholder="[CustomerInfo_zip]" />
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+						</label>
+                      </div>
+
+                      <div class="crmField col-md-12">
+						<label for="shipping_phone" class="validation-field">
+							<input name="shipping_phone" type="text" id="shipping_phone" value="[shipping_phone]" size="25" tabindex="12" maxlength="50" class="form-control" placeholder="[CustomerInfo_phone]"  />
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+						</label>
+                      </div>
+
+                      <!--START: addressType-->
+                      <div class="crmField col-md-6">
+                          <label for="shipping_addresstype" class="validation-field">
+							<select name="shipping_addresstype" id="shipping_addresstype" class="form-control">
+								[addressTypeDropDown]
+							</select>
+							<!--START: req_shipping_alias-->
+							<span class="required-indicator"></span>
+							<!--END: req_shipping_alias-->
+                          </label>
+                      </div>
+                      <!--END: addressType-->
+
+                      <div class="clearfix"></div>
+                     
+                      <div class="back-add-address-button col-lg-12">
+                          <input type="button" name="back" value="Back" class="btn btn-default" id="Submit1" />
+
+                          <input type="submit" id="doAddAddress" value="[account_Update-Address]" class="btn btn-primary" />
+                      </div>
+                  </form>
+                  <div class="clearfix"></div>
+              </div>
+          </div>  
+          <!--START: CATEGORY_FOOTER-->
+          <div class="category-footer" id="addAddressesFooter">[CONTENT]</div>
+          <!--END: CATEGORY_FOOTER-->
+        </div>
+    </div>
+
+    <input type="hidden" name="hdnAddrressValidatorResult" id="hdnAddrressValidatorResult" value="" />
+
+
+    <div id="divAddrressValidator" class="modal fade" tabindex="-1" role="dialog">
+      <!--START: AddressValidatorBlock-->
+      <div class="modal-dialog" role="document">
+        <div class="modal-content AddrressValidator">
+                  <div class="modal-body">
+
+					<!--START: AddressValidatorBlock_ValidationFailed-->
+                    [result_msg]
+                    <!--END: AddressValidatorBlock_ValidationFailed-->
+
+                    <!--START: AddressValidatorBlock_ValidationSuggestion-->
+                      [result_msg]
+                        <!--START: AddressValidatorBlock_ValidationSuggestion_SingleAddressBlock-->
+                        <strong>[checkout1_AddressValidator_SuggestedAddress]</strong> 
+                          <a style="text-decoration:underline;" id="selectAddress" href="javascript:void(0);">[AddrressValidator_address], [AddrressValidator_city], [AddrressValidator_state], [AddrressValidator_zip]
+                          </a>
+                        <!--END: AddressValidatorBlock_ValidationSuggestion_SingleAddressBlock-->
+                    <!--END: AddressValidatorBlock_ValidationSuggestion-->
+
+                  </div>
+
+                  <div class="modal-footer text-right">
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="javascript:closeAddressValidatorModal();">[checkout1_AddressValidator_Close]</button>
+					<!--START: AddressValidatorBlock_ValidationSuggestion_ContinueWithEnteredAddress--> 
+					<button type="button" class="btn btn-primary" onclick="javascript:addressValidatorContinue('[AddrressValidator_addresstype]');">[checkout1_AddressValidator_Continue]</button>
+					<!--END: AddressValidatorBlock_ValidationSuggestion_ContinueWithEnteredAddress-->
+                  </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+      <!--END: AddressValidatorBlock-->
+    </div>
+</section> 
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script>
+<script type="text/javascript" src="assets/templates/common-core/js/address_validator.js"></script>
+<script type="text/javascript">
+useAddressValidator = "[useAddressValidator]";
+// Values for Country and States
+initCountry('[shipping_country]', '[shipping_state]', 'shipping_state', 'shipping_country', '[CustomerInfo_state]');
+
+// Submit Checkout Form Pos
+function submitCheckoutFormPos() {
+  objForm = document.checkoutform;
+  if (jQuery("#hdnAddrressValidatorResult").val() == "1") {
+      objForm.submit();
+      return;
+  } else {
+      jQuery('#divAddrressValidator').modal('show');
+      document.body.style.cursor = '';
+  }
+}
+
+// populateState
+jQuery('#shipping_country').on('change', function() {
+	populateState('shipping_state', 'shipping_country', '', undefined, '[CustomerInfo_state]');
+});
+
+// Back Button
+jQuery('#Submit1').click(function(e) {
+  e.preventDefault();
+  history.back(1);
+});
+
+// Submit form and doAddAddress
+jQuery('#doAddAddress').click(function() {
+  doAddAddress(document.checkoutform);
+});
+
+//selectAddress
+jQuery('#selectAddress').click(function() {
+  selectAddress('[AddrressValidator_address1]', '[AddrressValidator_address2]', '[AddrressValidator_city]', '[AddrressValidator_state]', '[AddrressValidator_zip]', 'shipping_address', 'shipping_address2', 'shipping_city', 'shipping_state', 'shipping_zip');
+  doAddAddress(document.checkoutform);
+});
+
+//addressValidatorContinue
+jQuery('#addressValidatorContinue').click(function(e) {
+  // addressValidatorContinue();
+  addressValidatorContinue('[AddrressValidator_addresstype]');
+});
+
+//closeAddressValidatorModal
+jQuery('#closeAddressValidatorModal').click(function() {
+  closeAddressValidatorModal();
+});
+
+</script>
+
+<script>
+
+	function doAddAddress(objForm) {
+
+	    //You should create the validator only after the definition of the HTML form
+	    var frmvalidator = new Validator("checkoutform");
+	
+	    frmvalidator.setAddnlValidationFunction("submitForm");
+	
+	    frmvalidator.addValidation("address_alias","req","Please enter a address alias. Example: My address");
+	    frmvalidator.addValidation("address_alias","maxlen=50","Max length for Shipping Alias is 50");
+	
+	
+	    frmvalidator.addValidation("shipping_firstname","req","Please enter your First Name");
+	    frmvalidator.addValidation("shipping_firstname", "maxlen=100", "Max length for First Name is 100");
+	
+	
+	    frmvalidator.addValidation("shipping_lastname","req","Please enter your Last Name");
+	    frmvalidator.addValidation("shipping_lastname", "maxlen=100", "Max length for Last Name is 100");
+	
+	
+	    frmvalidator.addValidation("shipping_phone","maxlen=50","Max length for Phone is 50");
+	    frmvalidator.addValidation("shipping_phone","req","Please enter your phone");
+	
+	    frmvalidator.addValidation("shipping_address","maxlen=255","Max length for Address is 255");
+	    frmvalidator.addValidation("shipping_address","req","Please enter your address");
+		
+	    frmvalidator.addValidation("shipping_city", "maxlen=100", "Max length for City is 100");
+	    frmvalidator.addValidation("shipping_city","req","Please enter your City");
+	
+	    frmvalidator.addValidation("shipping_country", "maxlen=100");
+	    frmvalidator.addValidation("shipping_country","req",0);
+	
+	    frmvalidator.addValidation("shipping_state", "maxlen=100", "Max length for State is 100");
+	    frmvalidator.addValidation("shipping_state","req",0);
+	
+	    frmvalidator.addValidation("shipping_zip","maxlen=20","Max length for Zip is 20");
+	    frmvalidator.addValidation("shipping_zip", "req", "Please enter your zip code");
+
+		console.log(frmvalidator);
+
+	    var company = get_Element('shipping_company').value;
+	    var address1 = get_Element('shipping_address').value;
+	    var address2 = get_Element('shipping_address2').value;
+	    var city = get_Element('shipping_city').value;
+	    var state = get_Element('shipping_state').value;
+	    var country = get_Element('shipping_country').value;
+	    var zip = get_Element('shipping_zip').value;
+
+	    if (useAddressValidator == "1" && country == "US"){
+	        verify_address(address1, address2, city, state, country, zip, company, 'addressbook');
+	    }
+	    else {
+	        objForm.submit();
+	    }
+	}
+
+
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/contact_us.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/addAddresses.css" type="text/css" media="screen" />
+<!--END: template_styles-->

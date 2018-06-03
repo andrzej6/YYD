@@ -1,0 +1,27 @@
+/*  Register Affiliate Info
+    --------------------------- */
+
+#registerAffiliate #txtTerms {
+	width: 100%;
+	margin: 20px 0px;
+	padding: 20px;
+}
+
+#registerAffiliate .right-text{
+	float: right;
+}
+
+#registerAffiliate .registerAffiliate-data{
+	float: none;
+}
+
+#divSubmitButton {
+    text-align: right;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 767px) {
+    #registerAffiliate .registerAffiliate-data{
+      width: 100% !important;
+    }
+}

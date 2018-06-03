@@ -1,0 +1,156 @@
+/*  Rewards 
+    --------------------------- */
+#rewards .product-items .product-item{
+    margin-bottom: 35px;
+    width: 25%;
+}
+
+#rewards .product-items{
+     padding: 0px;   
+}
+
+@media (max-width: 991px) {
+    #rewards .product-items .product-item{
+        width: 33.3%;
+    }
+}
+
+@media (max-width: 767px) {
+    #rewards .product-items .product-item{
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    #rewards .product-items .product-item{
+        width: 100%;
+    }
+}
+
+/*  Rewards Detail
+--------------------------- */
+#rewardDetail {
+    padding-bottom:30px;
+}
+
+.redeem-btn {
+    padding: 5px 0px 0px;
+    clear: both;
+    float: right;
+    text-align: right;
+}
+
+.total-summary {
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+}
+
+.summary-total.hidden-xs{
+    display: none;
+}
+
+.summary-total.hidden-xs:first-child{
+    display: block;
+}
+
+#rewardDetail .no-padding{
+    padding-left:0px;
+}
+
+#rewardDetail .total-details {
+    padding: 0px;
+    margin: 20px 0px;
+    float: right;
+    text-align: right;
+}
+
+#rewardDetail .pointsAvailable {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px;
+    float: right;
+}
+
+#rewardDetail .totalPoints {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0px 0px;
+    float: right;
+    clear: both;
+}
+
+@media (max-width: 991px) {
+    .summary-total.hidden-xs,
+    .summary-total.hidden-xs:first-child {
+        display: none;
+    }
+
+    #rewardDetail .gcTotal-default {
+        padding: 0px !important;
+        display: block !important;
+    }
+
+    #rewardDetail .no-padding {
+        padding-left: 15px;
+    }
+}
+
+.center{
+    text-align: center;
+}
+#rewardDetail .no-padding {
+    padding: 0px;
+    float: right;
+    text-align: right;
+}
+
+#rewardDetail .total-summary .col-xs-8{
+    width: 100%;
+}
+
+ @media (max-width: 991px) {
+
+    #rewardDetail .total-summary .col-xs-8{
+        width: auto;
+    }
+
+    .total-summary {
+        border-bottom: dotted 1px #666;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .total-summary:last-child{
+        border: 0px;
+        padding: 0px
+        margin: 0px;
+    }
+
+    #rewardDetail .gcTotal-default {
+        padding: 0px !important;
+        display: block !important;
+        text-align: left;
+    }
+
+    #rewardDetail .no-padding {
+        padding: 0px;
+        padding-left: 15px;
+        float: none;
+        text-align: right;
+    }
+
+  }
+
+#viewReminders .total-summary .with_txt {
+    line-height: 36px;
+}
+
+@media (max-width: 767px) {
+    #viewReminders .total-summary label, #viewReminders .total-summary .with_txt {
+        line-height: 36px;
+    }
+    #viewReminders .total-summary .row .row {
+        margin-bottom:10px;
+    }
+}

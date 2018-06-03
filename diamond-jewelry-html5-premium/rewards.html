@@ -1,0 +1,84 @@
+<section id="rewards">
+    <h1 class="page_headers">[rewards_details-detail]</h1>
+    <!--START: myAccount-->
+    <div class="button right"><a href="myaccount.asp" class="icon-btn icon-btn-prev">Back to My Account</a></div>
+    <!--END: myAccount-->
+    <div class="clear"></div>
+    <!--START: CATEGORY_HEADER-->
+    <div class="category-header" id="rewardsHeader">[CONTENT]</div>
+    <!--END: CATEGORY_HEADER-->
+
+    <div class="row row-fullwidth-background rewards-products">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="row-title-wrapper">
+                        <h3 class="heading-1">[rewards_redeem-productsList]</h3>
+                    </div>
+                </div>
+            </div>
+            <!--START: CATEGORY_ITEMS-->
+            <!--START: ITEM_TEMPLATE-->
+            <div class="product-wrapper item-template-0">
+
+                <div class="product-image">
+                    <a href="product.asp?itemid=[catalogid]">
+                        <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                    </a>
+
+                    <div class="product-background-overlay"></div>
+
+                    <div class="btn-container">
+                        <div class="btn-wrapper" style="display: none;">
+                            <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                                <i class="fontawesome-search"></i>
+                                <span class="tooltip">Quickview</span>
+                            </a>
+                        </div>
+                        <div class="btn-wrapper">
+                            <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                                <i class="fontawesome-link"></i>
+                                <span class="tooltip">Details</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <!--START: product_review-->
+                    <!--START: product_review_average-->
+                    <span class="product-review-icons-container" data-rating-value="[review_average]">
+                        <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                        <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                        <span href="#" class="product-review-count">([review_count])</span>
+                    </span>
+                    <!--END: product_review_average-->
+                    <!--END: product_review-->
+
+                    <div class="product-title">
+                        <a href="product.asp?itemid=[catalogid]">[name]</a>
+                    </div>
+
+                    <div class="product-price">
+                        [reward_redeem] points
+                    </div>
+
+                    <div class="action">
+                        <input type="button" class="btn" onclick="window.location='redeem.asp?action=redeem&item_id=[catalogid]';" value="Redeem" onmouseOver="this.className='btn_over'" onmouseout="this.className='btn'" />
+                    </div>
+                </div>
+
+            </div>
+            <!--END: ITEM_TEMPLATE-->
+            <!--END: CATEGORY_ITEMS-->
+        </div>
+    </div>
+    <div class="clear"></div>
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="rewardsFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+</section>

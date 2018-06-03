@@ -1,0 +1,37 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a></li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">[productindex_title]</span></li>
+		</ol>
+	</div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[store_name] - [productindex_title]</h1>
+    </div>
+</section>
+
+<section id="productIndex" class="page-content">
+    <div class="container">
+		<div class="content-area">
+			<!--START: productindex_pages-->
+            <div class="paging">[productindex_pages] [paging]</div>
+			<!--END: productindex_pages-->
+
+            <ul class="pruduct-index">
+                <!--START: items-->
+                <li class="product-index-item"><a href="product.asp?itemid=[catalogid]">[name]</a></li>
+                <!--END: items-->
+            </ul>
+
+			<!--START: productindex_pages2-->
+            <div class="paging product-index-paging">[productindex_pages] [paging]</div>  
+			<!--END: productindex_pages2-->
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,386 @@
+<script src="assets/templates/common-html5/js/purl.js"></script>
+<script src="assets/templates/common-html5/js/search_adv.js"></script>
+<script type="text/javascript">
+    jQuery(function() {
+
+        jQuery('#search-button').attr('value', 'Search');
+
+        jQuery('#as-filter-expand').click(function() {
+            jQuery('#navbar-filters').slideToggle();
+        });
+
+    });
+</script>
+<style type="text/css">
+    #searchBox {
+        display: none;
+    }
+
+    #results,
+    #mainContent {
+        clear: both;
+    }
+
+    .col-md-3 {
+        float: left;
+        width: 23%;
+    }
+
+    .col-md-9 {
+        float: left;
+        width: 75%;
+    }
+
+    .as-leftBar {
+        margin-right: 2%;
+    }
+
+        .as-leftBar ul {
+            list-style: none;
+            padding: 10px 0 0;
+            margin: 0;
+        }
+
+            .as-leftBar ul > li {
+                margin: 0 0 10px;
+                line-height: 30px;
+            }
+
+                .as-leftBar ul > li > a {
+                    font-size: 12px;
+                    line-height: 30px;
+                    display: block;
+                    padding: 0 5px;
+                }
+
+                    .as-leftBar ul > li > a span.badge {
+                        display: inline-block;
+                        min-width: 26px;
+                        height: 26px;
+                        font-size: 12px;
+                        font-weight: normal;
+                        line-height: 26px;
+                        text-align: center;
+                        white-space: nowrap;
+                        vertical-align: middle;
+                        padding: 0 5px;
+                        border-radius: 100%;
+                        color: #000;
+                        background-color: #eee;
+                        margin: 2px 0 2px 5px;
+                    }
+
+                    .as-leftBar ul > li > a:hover span.badge {
+                        opacity: 0.6;
+                    }
+
+    .product-container {
+        float: left;
+        width: 33.33333333%;
+        margin: 0 0 15px;
+    }
+
+    .paging ul {
+        list-style: none;
+    }
+
+        .paging ul li {
+            display: inline-block;
+        }
+
+    .items-total {
+        width: 40%;
+    }
+
+    .pull-right {
+        float: right;
+    }
+
+    .pull-left {
+        float: left;
+    }
+
+    #itemsBlock .sort-by {
+        margin-left: 10px;
+    }
+
+    .pagination {
+        margin: 0;
+    }
+
+    .product-item .name,
+    .product-item .name a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: 0;
+        height: auto !important;
+        display: block;
+    }
+
+    #as-filter-expand,
+    #productsTemplate {
+        display: none;
+    }
+
+    #results #itemsBlock .productBlockContainer {
+        width: 100% !important;
+    }
+
+
+
+        #results #itemsBlock .productBlockContainer .product-container {
+            width: 25% !important;
+        }
+
+
+    .product-item .stars span,
+    .product-item .stars img {
+        float: none;
+        display: inline-block;
+    }
+
+
+    @media only screen and (max-width: 767px) {
+
+
+        #results #itemsBlock .productBlockContainer .product-container {
+            width: 100% !important;
+        }
+
+
+        .paging {
+            float: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        #itemsBlock .sort-by {
+            float: none;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+            #itemsBlock .sort-by select {
+                min-width: 160px;
+            }
+
+        .as-leftBar,
+        .as-resultsCol {
+            float: none;
+            width: 100%;
+            margin: 0 0 20px;
+        }
+
+        #as-filter-expand {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+            #as-filter-expand > span {
+                float: right;
+            }
+
+        #navbar-filters {
+            display: none;
+        }
+    }
+</style>
+
+<div class="container-fluid" id="results">
+    <div class="row">
+        <div class="col-md-3 as-leftBar">
+            <button id="as-filter-expand" class="btn">Advanced Search Filters <span class="icon-angle-down"></span></button>
+            <div class="collapse navbar-collapse" id="navbar-filters">
+                <div class="module mod_bg hidden">
+                    <span class="menu-headers">Applied Filters</span>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="Filters">
+                        <ul class="nav nav-pills cat nav-stacked"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden">
+                    <span class="menu-headers" id="PriceGroupName">Price</span>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="PriceRange">
+                        <ul class="nav nav-pills cat nav-stacked"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden">
+                    <span class="menu-headers" id="FreeShippingGroupName">Free Shipping</span>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="FreeShipping">
+                        <ul class="nav nav-pills cat nav-stacked"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden">
+                    <span class="menu-headers" id="OnSaleGroupName">On Sale</span>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="OnSale">
+                        <ul class="nav nav-pills cat nav-stacked"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden">
+                    <span class="menu-headers" id="ManufacturerGroupName">Manufacturer</span>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="Manufacturer">
+                        <ul class="nav nav-pills cat nav-stacked"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden">
+                    <span class="menu-headers" id="ReviewAverageGroupName">Reviews</span>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="ReviewAverage">
+                        <ul class="nav nav-pills cat nav-stacked"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden">
+                    <span class="menu-headers" id="CategoryGroupName">Category</span>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="Category">
+                        <ul class="nav nav-pills cat nav-stacked"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 as-resultsCol">
+
+            <!--START: CATEGORY_HEADER-->
+            <div class="category-header" id="searchHeader">[CONTENT]</div>
+            <!--END: CATEGORY_HEADER-->
+
+            <div id="loadimg" class="text-center"><img src="/assets/templates/common-html5/images/loading.gif" /></div>
+            <div id="itemsBlock">
+                <div class="products-header">
+
+                    <span class="pull-left items-total" id="pagesInfo"></span>
+
+                    <div class="sort-by hidden">
+                        <span class="hidden-mobile">[Search_Advanced-Sort-By]</span>
+                        <select id="sort-selected" onchange="executeSearch();">
+                            <option value="relevance" data-val="relevance" selected="selected">Relevance</option>
+                            <option value="lowPrice" data-val="lowPrice">Price: Low to High</option>
+                            <option value="highPrice" data-val="highPrice">Price: High to Low</option>
+                            <option value="lowName" data-val="lowName">Name</option>
+                            <option value="highDateCreated" data-val="highDateCreated">Newest</option>
+                            <option value="highReviewAverage" data-val="highReviewAverage">Avg Review</option>
+                            <option value="highFreeShipping" data-val="highFreeShipping">Free Shipping</option>
+                            <option value="highOnSale" data-val="highOnSale">On Sale</option>
+                        </select>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="sort-by hidden">
+                        <span class="hidden-mobile">[Search_Advanced-Results-Per-Page]</span>
+                        <select id="page-size-selected" onchange="executeSearch();">
+                            <option value="6" data-val="6">6</option>
+                            <option value="12" data-val="12">12</option>
+                            <option value="24" data-val="24" selected="selected">24</option>
+                            <option value="48" data-val="48">48</option>
+                            <option value="96" data-val="96">96</option>
+                            <option value="192" data-val="192">192</option>
+                        </select>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="paging">
+                    <ul id="paggingTop" class="pagination"></ul>
+                </div>
+
+                <div class="clear"></div>
+                <div class="productBlockContainer columns-3" id="products"></div>
+                <div class="clear"></div>
+                <div class="paging">
+                    <ul id="paggingBottom" class="pagination"></ul>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-header" id="searchFooter">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+
+        </div>
+    </div>
+</div>
+
+<div id="productsTemplate" class="hidden">
+    <div class="product-container">
+        <div class="product-item alternative">
+            <div class="img"><a href="product.asp?itemid=[id]"><img src="[THUMBNAIL]" alt="[name]" /></a></div>
+            <div class="name"><a href="product.asp?itemid=[id]" title="[name]">[name]</a></div>
+            <!--START: product_review-->
+            <!--START: product_review_average-->
+            <div class="stars" data-stars="[review_count]">
+                <img src="assets/templates/common-html5/images/star[review_average].png" alt="Average Rating" /><span>([review_count])</span>
+                <div class="clear"></div>
+            </div>
+            <!--END: product_review_average-->
+            <!--END: product_review-->
+            <div class="price">
+                <!--START: ITEMPRICE-->[ITEMPRICE]
+                <!--END: ITEMPRICE-->
+            </div>
+            <div class="status">
+                <!--START: freeshippingblock-->[freeshipping]
+                <!--END: freeshippingblock-->
+            </div>
+            <div class="action">
+                <input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&amp;item_id=[id]'" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div id="paggingTemplate" class="hidden">
+    <nav class="text-center">
+        <ul id="pagination" class="pagination">
+            <li id="previousPage" class="disabled">
+                <a href="#" aria-label="Previous" data-page="[previous]">
+                    <span aria-hidden="true">Previous Page</span>
+                </a>
+            </li>
+            <li id="eachPage"><a class="pagging" href="#" data-page="[page]">[page]</a></li>
+            <li id="nextPage" class="disabled">
+                <a href="#" aria-label="Next" data-page="[next]">
+                    <span aria-hidden="true">Next Page</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div id="facetsTemplate" class="hidden">
+    <ul class="nav nav-pills cat">
+        <li id="eachFacet" role="presentation"><a href="#" class="facetFilter cat" data-filter="[filter]">[name]<span class="badge pull-right">[hits]</span></a></li>
+    </ul>
+</div>
+<div id="noresultsfound" style="visibility: hidden">[Search_Advanced-No-Results]</div>
+<div id="priceRange" style="visibility: hidden">[Search_Advanced-Price_Range]</div>
+<div id="Search_Advanced-Matches-Found" style="visibility: hidden">[Search_Advanced-Matches-Found]</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        // Stars Condition Fix
+        setTimeout(function(){
+            jQuery('.stars').each(function() {
+                if (jQuery(this).data('stars') <= 0) {
+                    jQuery(this).css('opacity', '0');
+                }
+            });
+
+        }, 100);
+    });
+</script>

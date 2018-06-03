@@ -1,0 +1,421 @@
+<script type="text/javascript" src="assets/templates/common-html5/3dzoom/magiczoomplus.js"></script>
+<link href="assets/templates/common-html5/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">
+function closeWindow() {
+	try {
+		window.parent.hs.close();
+	}
+	catch(err) {
+		window.close();
+	}		
+}
+jQuery(function() {
+    jQuery('body').addClass('modal-bg');
+
+    jQuery('#close-button, .modalCloseImg').on( "click", function() {
+      parent.location.reload(true);
+    });
+
+	jQuery('body').bind('focusin focus', function(e){
+	  e.preventDefault();
+	});
+	jQuery('input, textarea').bind('focusin focus', function(e){
+	  e.preventDefault();
+	});
+
+});
+</script>
+<style type="text/css">
+html, body {
+	width: 100%;
+	max-height: 100% !important;
+}
+@media only screen and (max-width: 480px) {
+
+html, body {
+    width: auto !important;
+    max-width: 100% !important;
+    padding: 0px;
+    border: none;
+}
+
+}
+</style>
+
+<section id="productReviewNew">
+    <!--START: header_add-->
+    <h1 class="page_headers">[reviews_add]</h1>
+    <!--END: header_add-->
+    <!--START: header_details-->
+    <h1 class="page_headers">[reviews_details]</h1>
+    <!--END: header_details-->
+<form name="creview" method="post" action="review.asp?action=create&catalogid=[catalogid]" id="frmForm">
+<input type="hidden" value="[reviewid]" name="reviewid"/>
+<div class="header">
+    <h3>[name]</h3>
+</div>
+<div class="clear"></div>
+<!--START: newReviewForm-->
+<div class="newReviewForm boxShadow">
+<div class="reviewField left">
+    <label for="user_name">Name:</label>
+    <!--START: nameTxt-->
+    <input type="text" value="[custName]" name="user_name" maxlength="50" tabindex="1" class="txtBoxStyle" size="25" placeholder="Name" [review_readonly]/>
+    <div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt=""/>
+    </div>
+    <!--END: nameTxt-->
+    <!--START: nameHdn-->
+    <div class="text">[custName]</div>
+    <!--END: nameHdn-->
+    <div class="clear"></div>
+</div>
+<div class="reviewField left">
+    <label for="user_email">Email:</label>
+    <!--START: emailTxt-->
+    <input type="text" value="[custEmail]" name="user_email" maxlength="50" tabindex="2" class="txtBoxStyle" size="25" placeholder="Email" [review_readonly]/>
+    <div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt=""/>
+    </div>
+    <!--END: emailTxt-->
+    <!--START: emailHdn--><input type="hidden" value="[custEmail]" name="user_email"/>
+    <div class="text">[custEmail]</div>
+    <!--END: emailHdn-->
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="reviewField left">
+    <label for="user_city">Location:</label>
+    <input type="text" name="user_city" maxlength="50" id="user_city" tabindex="3" class="txtBoxStyle" size="25" value="[user_city]" placeholder="Location" [review_readonly]/>
+    <div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt=""/>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="reviewField left">
+    <label for="short_review">Title:</label>
+    <input type="text" name="short_review" maxlength="150" id="short_review" tabindex="4" class="txtBoxStyle" size="25" value="[short_review]" placeholder="Title" [review_readonly]/>
+    <div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt=""/>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="reviewField">
+    <label for="long_review">Review:</label>
+    <textarea cols="38" rows="10" name="long_review" tabindex="5" placeholder="Review" [review_readonly]>[long_review]</textarea>
+    <div class="clear"></div>
+</div>
+<!--START: productreviewimageupload-->
+
+<div class="clear"></div>
+<!--START: review_images_group-->
+<div class="reviewField review-images-field left" id="divAttached[messageid]">
+    <label class="label">Images:</label>
+    <ul class="review-image-cols clearfix">
+        <!--START: review_image-->
+        <li id="liFile[imageID]" class="review-image-col">
+            <a href="assets/product_review_files/[item-name]" class="MagicZoomPlus" target="_blank" class="product-review-image"><img src="thumbnail.asp?file=assets/product_review_files/[item-name]&maxx=100&maxy=0" border="0" width="100" height="100"></a>
+            <!--START: productreview_image_delete-->
+            <a href="javascript:void(0);" class="btn btn-xs btn-default btn-center-delete-review-image" onclick='deleteOneFile("[item-name]", "[reviewid]", "[imageID]", "[catalogid]");'>&times;</a>
+            <!--END: productreview_image_delete-->
+        </li>
+        <!--END: review_image-->
+    </ul>
+</div>
+<!--END: review_images_group-->
+
+<div class="clear"></div>
+<!--START: productreview_fileupload-->
+<div class="file-attachments-button">
+    <span class="fileinput-button" onmouseover="this.className = 'fileinput-button'" onmouseout="this.className = 'fileinput-button' ">
+              <i class="icon-plus"></i>
+              <span>Select files...</span>
+              <!-- The file input field used as target for the file upload widget -->
+              <input id="fileupload" type="file" name="files[]" multiple="" data-url="/filesaction.asp?action=upload&folder=temp&hid=[filehash]">
+          </span>
+</div>
+<script type="text/javascript" src="js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="js/jquery.fileupload.js"></script>
+<script type="text/javascript">
+    var bUploading = false;
+
+    var list = [];
+    jQuery(function() {
+        
+        list = jQuery("#fileattachment").val().split(",");
+        list = list.filter(function(v) { return v !== "" });
+
+        jQuery('#fileupload').fileupload({
+            dataType: 'json',
+            add: function(e, data) {
+
+                var extn = "", filename = "";
+                var intFilesUploaded = 0;
+
+                if (jQuery("#fileattachment").val() != "") {
+                    intFilesUploaded = jQuery("#fileattachment").val().split(",").length;
+                }
+
+                if (data.originalFiles.length > 4 || (data.originalFiles.length + intFilesUploaded) > 4) {
+                    alert("[product_review_images_limit]");
+                    return false;
+                } else {
+                    var filename = data.files[0].name;
+
+                    if (filename.lastIndexOf(".") > 0) {
+                        extn = filename.substring(filename.lastIndexOf(".") + 1, filename.length);
+                        if (extn.toLowerCase() == "gif" || extn.toLowerCase() == "jpg" || extn.toLowerCase() == "jpeg" || extn.toLowerCase() == "png") {
+                            //data.context = jQuery('<p/>').text('[product_review_images_uploading]').appendTo(document.body);
+                            data.submit();
+                        } else {
+                            alert("[product_review_images_extension]");
+                        }
+                    }
+                }
+
+            },
+            done: function(e, data) {
+                jQuery("#allelements").empty();
+                jQuery("#fileattachment").empty();
+
+                jQuery.each(data.result.files, function(index, file) {
+
+                    var filenamewithoutextension = file.uniqueFileName.substr(0, file.uniqueFileName.lastIndexOf('.')) || file.uniqueFileName;
+
+                    var strlink = "<span onclick='deleteFile(\"" + file.uniqueFileName + "\");'><i class='icon-cancel'></i></span>";
+                    var strFileDownloadLink = "filesaction.asp?action=download&hid=[filehash]&folder=temp&file=" + file.uniqueFileName + "";
+                    jQuery("#files").append('<p id="' + file.uniqueFileName + '"  class="' + filenamewithoutextension + '"  ><a id=' + filenamewithoutextension + ' href= ' + strFileDownloadLink + '>' + file.name + '</a><span class="item-remove" >' + strlink + '</span></p>');
+
+                    list.push(file.uniqueFileName);
+
+                });
+
+                jQuery("#fileattachment").val(list);
+
+
+            },
+            progressall: function(e, data) {
+                bUploading = true;
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                if (progress >= 100)
+                    bUploading = false;
+
+                jQuery('#progress .bar').css(
+                    'width',
+                    progress + '%'
+                );
+            },
+        });
+    });
+
+    function deleteFile(fileName) {
+        var delyesno = (confirm("[product_review_images_confirm_delete]"));
+        if (delyesno) {
+            jQuery.get('filesaction.asp',
+                {
+                    action: "delete",
+                    file: fileName,
+                    hid: '[filehash]',
+                    folder: "temp",
+                    confirm: true,
+                    crmid: 0
+                },
+                function(result) {
+                    try {
+                        var msg = result.errorMsg;
+                        if (msg != '' && msg != undefined) {
+                            alert(msg);
+                            return false;
+                        }
+                    } catch (e) {
+                    }
+                });
+
+            jQuery('#progress .bar').css(
+                'width',
+                0 + '%'
+            );
+
+            var filenamewithoutextension = fileName.substr(0, fileName.lastIndexOf('.')) || fileName;
+            var filenamewithoutextension = filenamewithoutextension.replace('(', '\\(');
+            var filenamewithoutextension = filenamewithoutextension.replace(')', '\\)');
+
+            jQuery('.' + filenamewithoutextension).remove();
+
+            list.splice(list.indexOf(fileName), 1);
+            jQuery("#fileattachment").val(list);
+
+        }
+        return false;
+    }
+
+    function deleteOneFile(fileName, review_id, image_id, catalogid) {
+        var delyesno = (confirm("[product_review_images_confirm_delete]"));
+        if (delyesno) {
+
+            jQuery.get('review.asp',
+                {
+                    action: "deleteImage",
+                    file: fileName,
+                    hid: '[filehash]',
+                    confirm: true,
+                    review_id: review_id,
+                    image_id: image_id,
+                    catalogid: catalogid,
+                    hdnSecurityToken: '[securityToken]'
+                },
+                function(result) {
+                    try {
+                        var msg = result.errorMsg;
+                        if (msg != '' && msg != undefined) {
+                            alert(msg);
+                            return false;
+                        }
+                    } catch (e) {
+                    }
+                });
+
+            jQuery("#liFile" + image_id).addClass('strikeout').slideUp();
+            
+            list.splice(list.indexOf(fileName), 1);
+            jQuery("#fileattachment").val(list);
+
+        }
+        return false;
+    }
+</script>
+<p></p>
+<div id="progress">
+    <div class="bar" style="width: 0%;"></div>
+</div>
+<!-- The container for the uploaded files -->
+<div id="files" class="files"></div>
+<input id="fileattachment" name="fileattachment" type="hidden" value="[fileattachment]"/>
+<p id="allelements"></p>
+<!--END: productreview_fileupload-->
+<!--END: productreviewimageupload-->
+<div class="reviewField">
+    <label for="rating">Rating:</label>
+    <div class="new-rating">
+        <input type="radio" name="rating" value="1" [rating1] [review_readonly]/>
+        <img src="assets/templates/common-html5/images/star1.png" alt="1 Star Rating"/>
+        <input type="radio" name="rating" value="2" [rating2] [review_readonly]/>
+        <img src="assets/templates/common-html5/images/star2.png" alt="2 Star Rating"/>
+        <input type="radio" name="rating" value="3" [rating3] [review_readonly]/>
+        <img src="assets/templates/common-html5/images/star3.png" alt="3 Star Rating"/>
+        <input type="radio" name="rating" value="4" [rating4] [review_readonly]/>
+        <img src="assets/templates/common-html5/images/star4.png" alt="4 Star Rating"/>
+        <input type="radio" name="rating" value="5" [rating5] [review_readonly]/>
+        <img src="assets/templates/common-html5/images/star5.png" alt="5 Star Rating"/>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--START: productreview_readonly-->
+<!--START: captcha-->
+<div class="reviewField">
+    <label for="ramdomWord">Verification:</label>
+    <div class="captcha"><img src="admin/image_pw.asp" width="148"/>
+        <div class="captcha-text">Type the word above...</div>
+        <input type="text" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="6" class="txtBoxStyle"/>
+        <div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt=""/>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--END: captcha-->
+<!--START: recaptcha-->
+<div class="reviewField">
+    <label for="recaptcha_challenge_field">Verification:</label>
+    <div class="recaptcha">
+        <script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+        <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+        <noscript>
+            <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+            <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+            <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+        </noscript>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--END: recaptcha-->
+    <!--START: recaptcharobot-->
+    <script type="text/javascript">
+		var onSubmit = function (token) {
+                if ('[recaptcha_robot_size]' == 'invisible')
+                    jQuery("#frmForm").submit();
+            }
+            var onloadCallback = function () {
+                grecaptcha.render('[recaptcha_control]', {
+                    'sitekey': '[recaptcha_key]',
+                    'theme': '[recaptcha_robot_theme]',
+                    'size': '[recaptcha_robot_size]',
+                    'type': '[recaptcha_robot_type]',
+                    'callback': onSubmit
+                });
+            }
+            function ResetCaptcha() {
+            	grecaptcha.reset();
+            }
+    </script>
+    <script src="//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <div id="divRobocop"></div>
+    <div class="blogField">
+        <!--START: verificationlabel--><label for="recaptcha_challenge_field">Verification:</label><!--END: verificationlabel-->&nbsp;
+    </div>
+    <!--END: recaptcharobot-->
+<div class="required error"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt=""/> = Required
+</div>
+<div class="review-submit-button">
+    <input type="submit" id='submitted' name="submitted" value="[reviews_submit]" class="btn" onmouseover="this.className = 'btn_over'" onmouseout="this.className = 'btn'"/>
+</div>
+<div class="clear"></div>
+</div>
+<!--END: productreview_readonly-->
+<script type="text/javascript">
+    //You should create the validator only after the definition of the HTML form
+    var frmvalidator = new Validator("creview");
+
+    bolCheckSubmitted_validation = false; //Global variable defined in utilities.js
+    frmvalidator.setAddnlValidationFunction("submitForm");
+
+    //<!--START: validateNameEmail-->
+    frmvalidator.addValidation("user_name", "req", "Please enter your First and Last Name.");
+    frmvalidator.addValidation("user_name", "maxlen=50", "Max length for Name is 50.");
+    frmvalidator.addValidation("user_email", "maxlen=100", "Max length for Email is 100.");
+    frmvalidator.addValidation("user_email", "email");
+    frmvalidator.addValidation("user_email", "req", "Please enter your E-mail.");
+    //<!--END: validateNameEmail-->
+    frmvalidator.addValidation("user_city", "req", "Please enter your City.");
+    frmvalidator.addValidation("user_city", "maxlen=50", "Max length for City is 50.");
+    frmvalidator.addValidation("long_review", "maxlen=2500", "Max length for Review is 2500.");
+    frmvalidator.addValidation("long_review", "req", "Please enter your review.");
+    frmvalidator.addValidation("short_review", "maxlen=100");
+    frmvalidator.addValidation("short_review", "req", "Please enter your review.");
+    //<!--START: captchascript-->
+        frmvalidator.addValidation("ramdomWord", "maxlen=20");
+    frmvalidator.addValidation("ramdomWord", "req", "Please enter the verification word.");
+	//<!--END: captchascript--> 
+
+    if ('[recaptcha_robot_size]' == 'invisible')
+    	frmvalidator.setOnErrorFunction("ResetCaptcha");
+
+</script>
+<!--END: newReviewForm-->
+<!--START: newReviewThankyou-->
+<div class="newReviewThankyou pad10 boxShadow">[reviews_thankyou]
+    <div class="review-close-button">
+        <input type="button" id="close-button" value='[reviews_close]' class="btn" onclick="javascript:parent.closeModal();" onmouseover="this.className = 'btn_over'" onmouseout="this.className = 'btn'">
+    </div>
+</div>
+<!--END: newReviewThankyou-->
+<!--START: errorMsg-->
+<div class="errorMsg pad10 boxShadow">[errorMsg]
+    <div class="review-close-button">
+        <!--START: review_back--><input type="button" value='[reviews_continue]' class="btn" onclick="history.back(1);" onmouseover="this.className = 'btn_over'" onmouseout="this.className = 'btn'"/><!--END: review_back-->
+        <!--START: review_close--><input type="button" value='[reviews_close]' class="btn" onclick="javascript:parent.closeModal();" onmouseover="this.className = 'btn_over'" onmouseout="this.className = 'btn'"/><!--END: review_close-->
+    </div>
+</div>
+<!--END: errorMsg-->
+</form>
+</section>
+</body>
+</html>

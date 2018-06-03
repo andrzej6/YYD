@@ -1,0 +1,40 @@
+  section#orderHistoryDownload {
+      padding-bottom: 30px;
+  }
+
+  .no-padding{
+    padding: 0px;
+  }
+
+  .serial{
+    font-weight: bold;
+  }
+
+  .download-item{
+      padding-top: 10px;
+  }
+
+  .productDownload {
+      margin-top: 10px;
+      float: left;
+      width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    #orderHistoryDownload .hidden-xs{
+      display: none;
+    }
+
+    .productDownload {
+      margin-top: 20px;
+    }
+
+    .productDownload .gcTotal-default{
+      display: block !important;
+    }
+
+    .no-padding {
+        margin-bottom: 10px;
+    }
+
+  }

@@ -1,0 +1,135 @@
+/* ---------------------- BENEFITS PAGES --------------------------------*/
+
+.topmargetext {
+    vertical-align:top;
+}
+
+ul.benefits-ul li div {
+    display:inline-block;
+}
+
+ul.benefits-ul li {
+    list-style-type: none;
+}
+
+.benefits-title {
+    font-size:19px;
+    font-weight:bold;
+    margin:20px 0px;
+    color:var(--main-yoyogrey-color);
+}
+
+ul.benefits-ul2, ul.benefits-ul {
+    padding-left:0;
+}
+
+ul.benefits-ul {
+    margin-right:20px;
+}
+
+ul.benefits-ul li{
+    height:40px;
+    background-image: url('/img/list/tick.png');
+    background-repeat:no-repeat;
+    #padding-left: 50px;
+    padding-top:10px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.benefits-column {
+    float:left;
+}
+
+ul.benefits-ul2 li{
+    min-height:40px;
+    #background-image: url('/img/list/minilog.png');
+    background-repeat:no-repeat;
+    padding:10px 0px 0px 0px;
+    margin-bottom:10px;
+    display:inline-block;
+    font-weight:bold;
+    text-align:justify;
+}
+
+
+ol.benefits-ol {
+    list-style:decimal;
+    margin-left:30px;
+}
+
+
+/* benefits-mat page */
+.benefits-red {
+    color:var(--main-yoyored-color);
+}
+
+.sst-red {
+    color:var(--main-yoyored-color);
+}
+
+ul.benefits-block li {
+    display:block;
+}
+
+a.benefits-bold-underlined {
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+/* benefits button red */
+.benefits-button {
+    border:1px solid var(--main-yoyored-color);
+    padding:4px;
+    -webkit-box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.85), inset 0 1px 1px 0 rgba(218,59,68,0.15), 0 1px 1px 0 rgba(0,0,0,0.35);
+    -moz-box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.85), inset 0 1px 1px 0 rgba(218,59,68,0.15), 0 1px 1px 0 rgba(0,0,0,0.35);
+    box-shadow: inset 0 0 1px 0 rgba(218,59,68,0.85), inset 0 1px 1px 0 rgba(218,59,68,0.15), 0 1px 1px 0 rgba(218,59,68,0.35);
+}
+
+.benefits-button-cont a {
+    letter-spacing:-0.25px;
+}
+
+.benefits-button img {
+    float:left;
+    margin-left:10px;
+}
+
+.benefits-box {
+    height:30px;
+    float:left;
+    margin-left:15px;
+    padding-top:3px;
+}
+
+.benefits-line {
+    color:var(--main-yoyored-color);
+    font-weight:bold;
+    font-size:1.1em;
+}
+
+.benefits-button-cont {width:220px;}
+
+.benefits-button-cont.wider .benefits-line {
+    letter-spacing:-0.3px;
+}
+
+.benefits-button-cont.wider .benefits-box {
+    margin-left:5px;
+}
+
+.benefits-button-cont {
+    display:inline-block
+}
+
+.benefits-button-cont.grey {
+    background:#E8E8E8 ;
+}
+
+.benefits-button-cont:hover {
+    background:var(--main-yoyored-color);
+}
+
+.benefits-button-cont:hover .benefits-line{
+    color:white;
+}

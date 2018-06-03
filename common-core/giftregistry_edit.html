@@ -1,0 +1,197 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[giftregistry_create]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[giftregistry_create]</h1>
+    </div>
+</section>
+
+<section id="giftregistryEdit" class="giftregistryEdit-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <!--START: CATEGORY_HEADER-->
+                <div class="category-header" id="giftregistryEditHeader">[CONTENT]</div>
+                <!--END: CATEGORY_HEADER--> 
+
+                <!--START: ERROR_MSG-->
+                <div class="row">
+                    <div class="col-lg-12 error">[strErrMsg]</div>
+                </div>
+                <!--END: ERROR_MSG-->
+
+                <div class="row">
+                    <div class="registryInfo col-lg-12">
+                        <div class="header clearfix">
+                            <h4 class="page_heading">[giftregistry_create-giftinfo]</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <form action="giftregistry_edit.asp" name="frmForm" id="frmForm" method="post">
+	                <input type="hidden" id="action" name="action" value="" />
+
+                    <div class="row">
+                        <div class="giftregistryGiftInfo col-lg-12">
+                            <div class="row">
+                                <div class="giftregField col-sm-6">
+                                    <div class="Registry_Name">
+                                        <label for="txtRegName"><i class="icon-gift-1"></i> [giftregistry_create-name] <span class="required">*</span></label>
+                                        <input type="text" id="txtRegName" name="txtRegName" value="[regname]" placeholder="" tabindex="1" class="form-control txtBoxStyle" />
+                                    </div>
+                                </div>
+                                <div class="giftregField col-sm-4 col-sm-offset-2">
+                                    <div class="Registry_Date">
+                                        <label for="drpRegDate"><i class="icon-calendar-check-o"></i> [giftregistry_create-eventdate] <span class="required">*</span></label>
+                                        <div class="row smallrow">
+                                        	<div class="smallcol col-sm-4">
+                                                <select name="drpRegMonth" id="drpRegMonth" tabindex="2" class="txtBoxStyle form-control">
+                                                  <option value="">Month</option>
+                                                  <!--START: drpRegMonth-->
+                                                  <option value="[intMonth]" [selected]>[month]</option>
+                                                  <!--END: drpRegMonth-->
+                                                </select>
+                                            </div>
+                                        	<div class="smallcol col-sm-4">
+                                                <select name="drpRegDay" id="drpRegDay" tabindex="3" class="txtBoxStyle form-control">
+                                                  <option value="">Day</option>
+                                                  <!--START: drpRegDay-->
+                                                  <option value="[day]" [selected]>[day]</option>
+                                                  <!--END: drpRegDay-->
+                                                </select>
+                                            </div>
+                                        	<div class="smallcol col-sm-4">
+                                                <select name="drpRegYear" id="drpRegYear" tabindex="4" class="txtBoxStyle form-control">
+                                                  <option value="">Year</option>
+                                                  <!--START: drpRegYear-->
+                                                  <option value="[year]" [selected]>[year]</option>
+                                                  <!--END: drpRegYear-->
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="giftregField col-sm-12">
+                                    <div class="Registry_Msg">
+                                        <label for="txtRegMessage"><i class="icon-doc-text"></i>[giftregistry_create-message]</label>
+                                        <p class="messageinstructions">[giftregistry_create-messageinstructions]</p>
+                                        <textarea id="txtRegMessage" name="txtRegMessage" tabindex="5" class="txtareaStyle form-control">[regmessage]</textarea>
+                                    </div>
+                                </div>
+                                <div class="giftregField col-sm-12">
+                                    <div class="Registry_PW">
+                                        <label for="txtRegPassword"><i class="icon-lock"></i>[giftregistry_create-password]<!--START: giftregistry_password--><span class="required">*</span>
+											<input type="hidden" id="gr_pw_required" value="1" />
+										<!--END: giftregistry_password--></label>
+                                        <p class="passwordinstructions">[giftregistry_create-passwordinstructions]</p>
+                                        <div class="row">
+                                        	<div class="col-sm-4"><input type="text" id="txtRegPassword" name="txtRegPassword" value="[regpassword]" tabindex="6" class="txtBoxStyle form-control" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="giftregistryOwnerInfo col-lg-12">
+                            <div class="row">
+                                <div class="Registry_Owner col-md-4 col-sm-6 col-xs-12">
+                                    <label for="">[giftregistry_create-yourinfo]</label>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label class="label">[giftregistry_create-firstname]</label>
+                                            <span class="text">[firstname]</span>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <label class="label">[giftregistry_create-lastname]</label>
+                                            <span class="text">[lastname]</span>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <label class="label">[giftregistry_create-email]</label>
+                                            <span class="text">[email]</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Registry_Shipping col-md-4 col-sm-6 col-xs-12">
+                                    <label for="">[giftregistry_create-shippingoptions]</label>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="giftreg-ship-address">
+                                                <input type="checkbox" class="checkbox-inline" id="regShipMyAddress" name="regShipMyAddress" onclick="javascript:controlAddressBtn(this);" value="1" [regShipMyAddressChecked] />
+                                                <strong>[giftregistry_create-shiptomyaddress]</strong>
+                                                <div class="no_shipping_address">[giftregistry_create-shiptomyaddressinstructions]</div>
+                                                <div id="divSelectedAddress" name="divSelectedAddress" style="display:[divSelectedAddressStyle];">
+                                                    <!--START: selectedAddress-->
+                                                    <div>[address_alias]</div>
+                                                    <div>[shipping_firstname] [shipping_lastname]</div>
+                                                    <!--START: shipping_address2-->
+                                                    <div>[shipping_address2]</div>
+                                                    <!--END: shipping_address2-->
+                                                    <div>[shipping_city], [shipping_state] [shipping_zip] [shipping_country]</div>
+                                                    <div>[shipping_phone]</div>
+                                                    <div class="clearfix"></div>
+                                                    <!--END: selectedAddress-->
+                                                </div>
+                                            </div>
+                                            <div id="divChooseAddress" name="divChooseAddress" class="button left" style="display:[divChooseAddressStyle];">
+                                                <hr />
+                                            	<a href="javascript:chooseAddress();"><i class="icon-building"></i>[giftregistry_create-click-choose-address]</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Registry_Notifications col-md-4 col-sm-12 col-xs-12">
+                                    <label for="">[giftregistry_create-newpurchasenotify_heading]</label>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="giftreg-ship-address">
+                                                <input type="checkbox" class="checkbox-inline" id="newPurchaseNotify" name="newPurchaseNotify" value="1" [regNewPurchaseNotifyChecked] />
+                                                <strong>[giftregistry_create-newpurchasenotify]</strong>
+                                                <div>[giftregistry_create-newpurchasenotifyinstructions]</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <hr class="divider" />
+                <div class="row">
+                    <div class="save-cancel-button text-right col-sm-12">
+                        <button type="button" id="cmdCancel" name="cmdCancel" onclick="javascript:location.href='giftregistry_edit.asp?action=view';" class="btn btn-default">[frame_action-cancel]</button>
+                        <button type="button" id="cmdSave" name="cmdSave" onclick="javascript:saveRegistry();" class="btn btn-primary">[giftregistry_create-save]</button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <!--START: CATEGORY_FOOTER-->
+                <div class="category-footer" id="giftregistryEditFooter">[CONTENT]</div>
+                <!--END: CATEGORY_FOOTER--> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<input type="hidden" id="variablesVals" value="" data-giftregistry_create-name="[giftregistry_create-name]" data-giftregistry_create-eventdate="[giftregistry_create-eventdate]" data-giftregistry_create-password="[giftregistry_create-password]" />
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/js/giftregistry_edit.js"></script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/giftregistry.css" type="text/css" media="screen" />
+<!--END: template_styles-->

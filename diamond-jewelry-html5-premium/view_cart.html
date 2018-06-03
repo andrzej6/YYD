@@ -1,0 +1,475 @@
+<script type="text/javascript">
+var parentid = '';
+if (typeof jQuery == 'undefined') {
+	document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
+}
+
+
+jQuery(document).ready(function () {
+	jQuery("#divGiftWrap").hide();
+});
+
+function cmdGWCancel_Click() {
+	jQuery.modal.close();
+}
+
+
+function buySAFEOnClick(wantsbond)
+{
+	document.location.href='view_cart.asp?wantsbond=' + wantsbond;
+}
+
+function showGiftWrap(itemid)
+{
+	//used to display the modal box
+	var url = '';
+	var params = '';
+
+	params = 'id=' + itemid + '&action=1';
+	//SAVE THE ID OF HE ITEM BEING GIFTWRAPPED
+	parentid = itemid;
+
+	url = 'giftwrap_ajax.asp?' + params + '&no-cache='+Math.random();
+
+	//window.location = url;
+
+	jQuery("#divGiftWrap").modal({ containerCss: { borderWidth: "0px" } });
+	jQuery("#divGiftWrap").fadeIn();
+
+	jQuery.ajax({
+		url: url,
+		dataType: 'html',
+		type: 'GET',
+		cache: false,
+		success: function (strResult) {
+			if (strResult == '') {
+				//alert('[productqa_helpful-notupdated]');
+			} else {
+
+				jQuery('#divGiftWrap').html(strResult);
+			}
+		},
+		error: reportGWError
+	});
+}
+
+function updateGiftWrapOption()
+{
+	//USED TO UPDATE THE MIDDLE div with the option selected from the giftwrap dropdown.
+	var url = '';
+	var params = '';
+
+	params = 'id=' + document.getElementById('giftwrap_id').value + '&action=2';
+
+	url = 'giftwrap_ajax.asp?' + params + '&no-cache=' + Math.random();
+
+	//window.location = url;
+
+	jQuery.ajax({
+		url: url,
+		dataType: 'html',
+		type: 'GET',
+		cache: false,
+		success: function (strResult) {
+			if (strResult == '') {
+				//alert('[productqa_helpful-notupdated]');
+			}
+			else {
+				jQuery('#divGiftwrapItem').html(strResult);
+			}
+		},
+		error: reportGWError
+	});
+
+}
+
+function cmdGWAdd_Click() {
+	var url = '';
+	var params = '';
+	var id = document.getElementById('giftwrap_id').value;
+
+	if (id == '')
+	{
+		alert('[giftwrap_pleaseselect]');
+		return (false);
+	}
+
+	params = 'parentid=' + parentid;
+	params += '&id=' + id;
+	params += '&action=3';
+	params += '&giftwrap_message=' + document.getElementById('giftwrap_message').value;
+
+	url = 'giftwrap_ajax.asp?' + params + '&no-cache=' + Math.random();
+
+	//window.location = url;
+
+	jQuery.ajax({
+		url: url,
+		dataType: 'html',
+		type: 'GET',
+		cache: false,
+		success: function (strResult) {
+			jQuery("#divGiftWrap").fadeOut();
+			window.location = 'view_cart.asp';
+		},
+		error: reportGWError
+	});
+}
+
+function countChar(val)
+{
+	var len = val.value.length;
+	if (len >= 400)
+	{
+		val.value = val.value.substring(0, 400);
+	}
+	else
+	{
+		jQuery('#spnChars').text(400 - len);
+	}
+}
+
+function reportGWError(jqXHR, textStatus) {
+	if (jqXHR.status > 0)
+	{
+		alert("Error processing request, please try again.");
+		//alert(jqXHR.responseText);
+		//alert(jqXHR.status + " - " + jqXHR);
+	}
+}
+
+jQuery(function () {
+	//submits the form in case the user presses enter
+	jQuery("#calculate_shipping_zip").keyup(function (event) {
+		if (event.keyCode == 13) {
+			jQuery("#calculate_button_go").click();
+		}
+	});
+});
+</script>
+<section id="viewCart">
+	<h1 class="page_headers">[checkout1_header-shoppingcart]</h1>
+	<!--START: CATEGORY_HEADER-->
+	<div class="category-header" id="viewCartHeader">[CONTENT]</div>
+	<!--END: CATEGORY_HEADER-->
+	<form action="shipquote.asp" method="post" name="shipquote" onSubmit="return submitForm();">
+		<input type="hidden" name="thispage" value="" />
+		<input type="hidden" name="shipping_zip" value="[shipping_zip]" />
+		<script type="text/javascript">document.shipquote.thispage.value = window.location.href;</script>
+	</form>
+	<form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
+		<!--START: SHOPPING_CART_SHIPMENT_INFO-->
+		<div class="cart-shipment-info"><span>Ship To [name] [address]</span>
+			<!--START: EDITADDRESS-->
+			<div class="button left"><a href='edit_shipment.asp?shipmentid=[shipmentid]&action=editaddresses' class="icon-btn icon-btn-edit">Edit Address</a></div>
+			<!--END: EDITADDRESS-->
+			<div class="clear"></div>
+		</div>
+		<!--END: SHOPPING_CART_SHIPMENT_INFO-->
+
+		<div class="row row-margin-bottom">
+			<div class="col-xs-12">
+
+				<div class="cartItemsWrapper" id="divshoppingCartItems">
+					<div class="cartItems">
+						<div class="cartHeader">
+							<div class="cartRow">
+								<div class="item-image">[shoppingcart_items]</div>
+								<div class="item-info">&nbsp;</div>
+								<div class="item-qty">[shoppingcart_quantity]</div>
+								<div class="item-price">[shoppingcart_price]</div>
+								<div class="item-total">[shoppingcart_total]</div>
+								<div class="item-remove">&nbsp;</div>
+							</div>
+						</div>
+						<div class="cartBody">
+							<!--START: SHOPPING_CART_ITEM-->
+							<div class="cartRow">
+								<div class="item-image">
+									<div class="product-image"><!--START: itemthumbnail--><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=0" width="100" /></a><!--END: itemthumbnail--><!--START: thumbnailnolink--><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=0" width="100" id="tnl" /><!--END: thumbnailnolink--></div>
+									<div class="clear"></div>
+								</div>
+								<div class="item-info">
+									<div class="product-name-options">
+										<!--START: itemnamelink--><a href="product.asp?itemid=[ITEM_CATALOGID]" class="h6">[ITEM_NAME]</a><!--END: itemnamelink-->
+										<!--START: itemnamenolink--><span id="spnItemName">[ITEM_NAME]</span><!--END: itemnamenolink-->
+										<!--START: itemoptions-->
+										<br />
+										<!--
+										<a href='#' onclick="toggle('opt[ITEM_ID]')">View/Hide options</a><br />
+										-->
+										<div id=opt[ITEM_ID] name=opt[ITEM_ID] style="/*display:none;*/">[OPTIONS]</div>
+										<!--END: itemoptions-->
+										<!--START: recurring_frequency-->
+										<div class="recurring_frequency">This item will Autoship every <strong>[recurring_frequency]</strong></div>
+										<!--END: recurring_frequency-->
+										<!--START: giftwraplink-->
+										<div class="giftwraplink"> <a onclick="showGiftWrap('[ITEM_ID]')"><i class="icon-gift"></i> [giftwrap_link]</a> </div>
+										<!--END: giftwraplink-->
+									</div>
+								</div>
+								<div class="item-qty">
+									<div class="qty-btn-wrapper">
+										<div class="qty-btn qty-decrease" data-action="dec">
+											<span class="sr-only">Decrease</span>
+											<span class="qty-icon qty-icon-minus" aria-hidden="true"></span>
+										</div>
+										<input type="text" name="qtyitemnum" value="[ITEM_QUANTITY]" size="3" maxlength="5" class="form-control" />
+										<div class="qty-btn qty-increase" data-action="inc">
+											<span class="sr-only">Increase</span>
+											<span class="qty-icon qty-icon-plus" aria-hidden="true"></span>
+										</div>
+									</div>
+									<input type="hidden" name="coliditemnum" value="[ITEM_ID]" size="3" maxlength="5" />
+									<a href="#" onclick="document.forms['recalculate'].submit();return false;" class="update-qty">[shoppingcart_updatecart]</a>
+								</div>
+								<div class="item-price">[ITEM_PRICE]</div>
+								<div class="item-total">[ITEM_SUBTOTAL]</div>
+								<div class="item-remove"><a href="#" onclick="document.recalculate.qtyitemnum.value=0;document.recalculate.submit();"><i class="fontawesome-trash-o"></i></a></div>
+							</div>
+							<!--END: SHOPPING_CART_ITEM-->
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!--START: apply_coupon-->
+		<div class="col-xs-12 col-lg-6" style="float:left">
+			<div class="applyCoupon">
+				<div class="applyCouponTitle">
+					<h3>[viewcart_coupon-header]</h3>
+				</div>
+				<div class="applyCouponContent">
+					<div class="coupon-msg">[viewcart_coupon-message]</div>
+					<div class="row form-group">
+						<div class="col-xs-12">
+							<input type="text" name="coupon_code" class="form-control" size="14" />
+						</div>
+						<div class="col-xs-12">
+							<input type="submit" value="Apply" class="btn btn-primary btn-sm" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--END: apply_coupon-->
+
+		<div class="row row-margin-bottom grid-gutter-vertical">
+			<!--START: ShipQuoteInternational-->
+			<div class="col-xs-12 col-lg-6">
+				<div class="shipQuoteInt">
+					<div class="shipQuoteIntTitle">
+						<h3>[viewcart_shipping-header]</h3>
+					</div>
+					<div class="shipQuoteIntContent">
+						<div class="shipquoteint-msg">[viewcart_shipping-message]</div>
+						<script type="text/javascript" src="state_countryjs.asp"></script>
+						<script type="text/javascript">
+						function get_Element(i) {
+							return document.getElementById(i) || document.getElementsByName(i).item(0);
+						}
+						function getInternationalQuote() {
+							var strAction = "shipquote.asp?shipping_country=" + get_Element("shipping_country").value;
+							strAction = strAction + "&shipping_state=" + get_Element("shipping_state").value;
+							document.shipquote.action = strAction;
+
+							document.shipquote.shipping_zip.value = document.recalculate.shipping_zip.value
+							document.shipquote.submit();
+						}
+						</script>
+						<div class="shipquoteint-location">
+							<select name="shipping_country" onchange="this.form.shipping_zip.value = ''; populateState('shipping_state', 'shipping_country', '', undefined, '');" class="form-control c-select" id="shipping_country">
+							</select>
+							<select id="shipping_state" onchange="this.form.shipping_zip.value='';" name="shipping_state" class="form-control c-select">
+							</select>
+						</div>
+						<div class="shipquoteint-action">
+							<div class="row form-group">
+								<div class="col-xs-12">
+									<input type="text" name="shipping_zip" size="14" value="[shipping_zip]" class="form-control" id="calculate_shipping_zip" />
+								</div>
+								<div class="col-xs-12">
+									<input type="button" value="Calculate" class="btn btn-primary btn-sm" onclick="getInternationalQuote();" id="calculate_button_go" />
+								</div>
+							</div>
+						</div>
+						<!--START: viewcart_ship-->
+						<div class="shipquoteint-result-location">[shipping_city] [shipping_state] [shipping_zip]</div>
+						<div class="shipquoteint-action">
+							<div class="row form-group">
+								<div class="col-xs-12">
+									<select class="form-control c-select">
+										<!--START: Shippers-->
+										<option><strong>[OPTION-SHIPPER]</strong> <em>[OPTION-DESCRIPTION]</em> [OPTION-PRICE]</option>
+										<!--END: Shippers-->
+									</select>
+								</div>
+								<div class="col-xs-12">
+									<input type="button" class="btn btn-primary btn-sm" value="Clear" onclick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" />
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<!--END: viewcart_ship-->
+					</div>
+				</div>
+			</div>
+			<!--END: ShipQuoteInternational-->
+		</div>
+
+		<div class="cartTotal">
+			<div class="item-total"><span class="item-total-title">[shoppingcart_subtotal]</span> <span class="item-total-price h6">[CARTSUBTOTAL]</span></div>
+			<!--START: DISCOUNTS-->
+			<div class="item-total"><span class="item-total-title">[checkout1_discounts]</span> <span class="item-total-price h6">[DISCOUNTS]</span></div>
+			<!--END: DISCOUNTS-->
+			<div class="item-total"><span class="item-total-title">[shoppingcart_total]</span> <span class="item-total-price h6">[CARTTOTAL]</span></div>
+		</div>
+
+
+		<div class="chk-buttons">
+			<!--START: savecart-->
+			<a href="myaccount.asp?action=save_cart" class="btn btn-secondary"><i class="icon-export"></i> [viewcart_save-cart]</a>
+			<!--END: savecart-->
+			<a href="[continue_url]" class="btn btn-secondary"><i class="icon-left-open"></i> [viewcart_continue-shopping]</a>
+			<!--<button type="submit" name="Add" class="btn"><i class="icon-cw"></i> [shoppingcart_updatecart]</button>-->
+			<button type="button" onclick="window.location='checkout.asp?step=1'" id="vc_ChkButton" class="btn btn-primary"><i class="icon-basket"></i> [viewcart_checkout-button]</button>
+		</div>
+
+
+		<div class="clear"></div>
+		<!--START: BUYSAFE_CONTROL-->
+		<fieldset class="buysafe-bond">
+			<legend>BuySafe</legend>
+			<div class="left">
+				<p>[buysafe_bondingsignal]</p>
+			</div>
+			<div class="right">
+				<!--START: BUYSAFE_BONDCOST-->
+				<div class="center"><strong>[buysafe_bondcostdisplaytext]</strong></div>
+				<!--END: BUYSAFE_BONDCOST-->
+				<!--START: BUYSAFE_LEARNMORE-->
+				<p><a href="[buysafe_cartdetailsurl]" target="_buySAFE">[buysafe_cartdetailsdisplaytext]</a></p>
+				<!--END: BUYSAFE_LEARNMORE-->
+			</div>
+			<div class="clear"></div>
+		</fieldset>
+		<!--END: BUYSAFE_CONTROL-->
+
+		<!-- REMOVED BLOCK FROM HERE 2017.09.20 -->
+
+		<div class="clear"></div>
+	</form>
+	<script type="text/javascript">
+	//You should create the validator only after the definition of the HTML form
+	var frmvalidator = new Validator("recalculate");
+
+	frmvalidator.setAddnlValidationFunction("submitForm");
+
+	//<!--START: apply_coupon_validation-->
+	frmvalidator.addValidation("coupon_code","maxlen=20","Maximun Coupon Length is 20");
+	//<!--END: apply_coupon_validation-->
+	</script>
+	<!--START: PROMOTIONS-->
+	<div class="displayPromotions pad10 boxShadow">
+		<div class="header">
+			<h3 class="checkout-headers">[viewcart_discounts-header]</h3>
+		</div>
+		<!--START: DISPLAY_PROMOS-->
+		<form method="post" action="recalculate.asp?apply_coupon=2" name="couponapply" class="couponapply">
+			<input type="hidden" name="coupon" value="[id]" />
+			<div class="promo-name">[promotion_name]</div>
+			<div class="promo-desc">[promotion_description]<strong>Valid from: [promotion_start] - [promotion_end]</strong></div>
+			<div class="promo-remove"><!--START: REMOVE_PROMO-->
+				<input type="submit" value="Remove" class="btn btn-primary" />
+				<!--END: REMOVE_PROMO--></div>
+				<div class="clear"></div>
+			</form>
+			<!--END: DISPLAY_PROMOS-->
+		</div>
+		<!--END: PROMOTIONS-->
+		<!--START: GIFTCERTIFICATES-->
+		<div class="displayGiftCertificates pad10 boxShadow">
+			<div class="header">
+				<h3 class="checkout-headers">[viewcart_giftcertificates-header]</h3>
+			</div>
+			<!--START: DISPLAY_GIFTCERTIFICATES-->
+			<form method="post" action="recalculate.asp?apply_coupon=2" name="couponapply" class="couponapply">
+				<input type="hidden" name="coupon" value="[id]" />
+				<div class="cert-name">[certificate_name]</div>
+				<div class="cert-amount"><strong>Amount:</strong> [discount_amount]</div>
+				<div class="cert-remove">
+					<input type="submit" value="Remove" class="btn btn-primary" />
+				</div>
+				<div class="clear"></div>
+			</form>
+			<!--END: DISPLAY_GIFTCERTIFICATES-->
+		</div>
+		<!--END: GIFTCERTIFICATES-->
+
+
+
+		<div class="clear"></div>
+		<!--START: CATEGORY_FOOTER-->
+		<div class="category-footer" id="viewCartFooter">[CONTENT]</div>
+		<!--END: CATEGORY_FOOTER-->
+	</section>
+
+	<script type="text/javascript">
+	//Show/Hide 3rd Party Payment Options section.
+	jQuery(function () {
+		if (jQuery('#thirdPartyPayment').has('div').length == 0) {
+			jQuery('.third-party-payment').hide();
+		}
+		else {
+			jQuery('.third-party-payment').show();
+		}
+	});
+	</script>
+
+	<!--START: GIFTWRAP_OPTIONS-->
+	<div id="divGiftWrap">
+		<form method="post" name="frmGiftWrap" id="frmGiftWrap">
+			<div class="header">
+				<h3>[giftwrap_title]</h3>
+				<div class="clear"></div>
+			</div>
+			<label for="giftwrap_id">[giftwrap_select-text]:</label>
+			<select id="giftwrap_id" name="giftwrap_id" class="txtBoxStyle" onchange="updateGiftWrapOption()">
+				<option value="">-- [giftwrap_select-text] --</option>
+				[giftwrap_options]
+			</select>
+			<div class="clear"></div>
+			<div id="divGiftwrapItem">
+				<!--START: giftwrapitem-->
+				<div class="gw-image"><img src="thumbnail.asp?file=[giftwrap_thumbnail]" height="55" width="55" /></div>
+				<div class="gw-id">[giftwrap_catalogid]</div>
+				<div class="gw-name">[giftwrap_name]</div>
+				<div class="clear"></div>
+				<div class="gw-desc">[giftwrap_description]</div>
+				<div class="clear"></div>
+				<!--END: giftwrapitem-->
+			</div>
+			<div id="divGiftwrapMsg">
+				<label for="giftwrap_message">[giftwrap_message-text]:</label>
+				<textarea name="giftwrap_message" id="giftwrap_message" onkeyup="countChar(this)" rows="6" cols="45">[giftwrap_message]</textarea>
+				<div class="chars-left"><span id="spnChars"><!--START: giftwrapcount-->400<!--END: giftwrapcount--></span>&nbsp;[giftwrap_charsleft]</div>
+				<div class="clear"></div>
+			</div>
+			<input type="button" name="cmdGWCancel" id="cmdGWCancel" value="[giftwrap_cancel]" onclick="cmdGWCancel_Click()" class="btn btn-primary" />
+			<input type="button" name="cmdGWAdd" id="cmdGWAdd" value="[giftwrap_add]" onclick="cmdGWAdd_Click()" class="btn btn-primary" />
+		</form>
+	</div>
+	<!--END: GIFTWRAP_OPTIONS-->
+
+	<!--START: ShipQuoteInternationalScript-->
+	<script type="text/javascript">
+	initCountry("[shipping_country]", "[shipping_state]", "shipping_state", "shipping_country", "[CustomerInfo_state]");
+	</script>
+	<!--END: ShipQuoteInternationalScript-->
+
+	<!--START: kount-->
+	<iframe width="1" height="1" frameborder="0" scrolling="no" src="/logo_k.htm?m=[kount_merchantid]&s=[kount_sessionid]"> <img width="1" height="1" src="/logo_k.gif?m=[kount_merchantid]&s=[kount_sessionid]" alt="" /> </iframe>
+	<!--END: kount-->

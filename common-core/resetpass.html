@@ -1,0 +1,176 @@
+<section id="resetpass" class="resetpass-page-content page-content">
+    <!--START: BODY_HEADER-->
+    <section class="breadcrumnb">
+        <div class="container">
+            <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            	<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a></li>
+            	<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">Reset Password</span></li>
+            </ol>
+        </div>
+    </section>
+    <!--END: BODY_HEADER-->
+
+    <section class="page_header">
+        <div class="container">
+            <h1 class="page_heading">[resetpassword_header]</h1>
+            <!--START: CATEGORY_HEADER-->
+            <div class="category-header" id="resetpassHeader">[CONTENT]</div>
+            <!--END: CATEGORY_HEADER-->
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-6">
+                <!--START: resetForm-->
+                <div class="resetPassword pad10 boxShadow">
+                <form action="resetpassword.asp?k=[k]&email=[email]&id=[id]" method="post" autocomplete="off" id="frmForm" data-parsley-validate>
+                  <input type="hidden" name="doaction" value="save" />
+                  <p>[resetpassword_instructions]</p>
+                  
+                  <div class="resetField">
+                    <label for="password">[resetpassword_newpassword]</label>
+                    <input type="password" size="12" name="password" value="" class="form-control txtBoxStyle" id="password" autocomplete="off" required="required" />
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="resetField">
+                    <label for="password2">[resetpassword_confirmnewpassword]</label>
+                    <input type="password" size="12" autocomplete="off" name="password2" class="form-control txtBoxStyle" id="password2" autocomplete="off" [CallFunctionVerifyStrongPass] />
+                    <div class="clearfix"></div>
+                  </div>
+                  <!--START: StrongPasswordBar-->
+                  <div class="resetField">
+                    <div class="strong-pass-bar" style="background-image: linear-gradient(to left, #86e01e 0%, #f63a0f 100%);">
+                        <div id="divStrong"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <!--END: StrongPasswordBar-->
+                  <!--START: PasswordMSG-->
+                  <div class="PasswordMSG">
+                    <p>[CustomerInfo_password_policy]</p>
+                  </div>
+                  <!--END: PasswordMSG-->
+                  <!--START: captcha-->
+                  <div class="resetField">
+                    <label for="randomWord">[registration_verification]:</label>
+                    <div class="captcha"><img src="admin/image_pw.asp?p=<%=now()%>" width="148" />
+                      <div class="captcha-text">[registration_verification_message]</div>
+                      <input type="text" name="randomWord" id="randomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="3" class="form-control txtBoxStyle" autocomplete="off" />
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <!--END: captcha-->
+                  <!--START: recaptcha-->
+                  <div class="resetField">
+                    <label for="recaptcha_challenge_field">Verification:</label>
+                    <div class="recaptcha">
+                        <script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+                        <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+                        <noscript>
+                        <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+                        <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                        </noscript>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <!--END: recaptcha-->
+                  <!--START: recaptcharobot-->
+                  <script type="text/javascript">
+				  	var onSubmit = function (token) {
+				  		if ('[recaptcha_robot_size]' == 'invisible')
+				  			if (ValidateForm(frmForm)) {
+				  				frmForm.submit();
+				  			}
+				  			else
+				  				grecaptcha.reset();
+				  	}
+				  	var onloadCallback = function () {
+                          grecaptcha.render('[recaptcha_control]', {
+                              'sitekey': '[recaptcha_key]',
+                              'theme': '[recaptcha_robot_theme]',
+                              'size': '[recaptcha_robot_size]',
+                              'type': '[recaptcha_robot_type]',
+                              'callback': onSubmit
+                          });
+				  	}
+                  </script>
+                  <script src="//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                  <div id="divRobocop"></div>
+                  <div class="blogField">
+                      <!--START: verificationlabel--><label for="recaptcha_challenge_field">Verification:</label><!--END: verificationlabel-->&nbsp;
+                  </div>
+                  <div class="clearfix"></div>
+                  <!--END: recaptcharobot-->
+
+                  <div class="resetField submit-button">
+					  <script>
+					  	function submitted_onclick() {
+					  		if ('[recaptcha_robot_size]' == 'invisible')
+					  			return true;
+					  		else {
+					  			if (ValidateForm(frmForm))
+					  				frmForm.submit();
+					  			return false;
+					  		}
+					  	}
+					</script>
+                    <input type="submit" id="submitted" name="submitted" value="[resetpassword_savepassword]" class="btn btn-success" onclick="return submitted_onclick();" />
+                  </div>
+                </form>
+                </div>
+                <!--END: resetForm-->
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <!--START: CATEGORY_FOOTER-->
+        <div class="row">
+	        <div class="category-footer col-lg-12" id="resetpassFooter">[CONTENT]</div>
+        </div>
+        <!--END: CATEGORY_FOOTER--> 
+    </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/Parsley/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/Parsley/bower_components/bootstrap/js/affix.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/lib/highlight/highlight.min.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/Parsley/dist/parsley.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/myaccount_login.js"></script>
+<script>
+	function ValidateForm(objForm) {
+        var strMsg = "";
+        if (objForm.password.value.trim() == "")
+            strMsg += " - New password cannot be blank.\n"
+        if (objForm.password2.value.trim() != objForm.password.value.trim())
+            strMsg += " - Password confirmation doesn't match.\n"
+
+        if (!objForm.password.value.match(/(?=^.{8,16}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$/) && '[verifystrongpassword]' == '1')
+            strMsg += " - [CustomerInfo_password_policy*script] does not match the password policy.\n";
+
+        //<!--START: captchascript-->
+        if (objForm.randomWord.value.trim() == "")
+            strMsg += " - Verification word cannot be blank.\n"
+        //<!--END: captchascript-->
+
+        if (strMsg != "") {
+            alert(strMsg);
+            return false;
+        }
+
+        return true;
+    }
+    String.prototype.trim = function () {
+        return this.replace(/^\s+|\s+$/g, "");
+    }
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/Parsley/src/parsley.css" />
+<link rel="stylesheet" href="/assets/templates/common-core/lib/highlight/github.min.css" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/myaccount.css" type="text/css" media="screen" />
+<!--END: template_styles-->

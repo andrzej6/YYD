@@ -1,0 +1,117 @@
+<section id="checkoutUpsell">
+    <h1 class="page_headers">[checkout4_upsell-checkadditionalitems]</h1>
+    <!--START: CATEGORY_HEADER-->
+    <div class="category-header" id="checkoutUpsellHeader">[CONTENT]</div>
+    <!--END: CATEGORY_HEADER-->
+    <form action="checkout_upsell.asp?k=[k]" method="post" name="frmsortby" id="frmsortby">
+        <!--START: ITEMS-->
+        <ul>
+            <!--START: CATEGORY_ITEMS-->
+            <!--START: ITEM_TEMPLATE_1-->
+            <!--START: productblockcontainer-->
+            <!--END: productblockcontainer-->
+            <!--START: productcontainer-->
+            <!--END: productcontainer-->
+            <li>
+
+                <div class="product-wrapper item-template-0">
+
+                    <div class="product-image">
+                        <a href="product.asp?itemid=[catalogid]">
+                            <img id="qv_[catalogid]" class="product-image-main" src="[THUMBNAIL]" alt="[name]">
+                        </a>
+
+                        <div class="product-background-overlay"></div>
+
+                        <div class="btn-container">
+                            <div class="btn-wrapper" style="display: none;">
+                                <a class="btn btn-quickview" href="product.asp?itemid=[catalogid]" data-quickview-url="product.asp?lt_c=1&amp;itemid=[catalogid]&amp;qv=1&amp;">
+                                    <i class="fontawesome-search"></i>
+                                    <span class="tooltip">Quickview</span>
+                                </a>
+                            </div>
+                            <div class="btn-wrapper">
+                                <a class="btn btn-details" href="product.asp?itemid=[catalogid]">
+                                    <i class="fontawesome-link"></i>
+                                    <span class="tooltip">Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-details">
+                        <!--START: product_review-->
+                        <!--START: product_review_average-->
+                        <span class="product-review-icons-container" data-rating-value="[review_average]">
+                            <span class="product-review-icons product-review-icons-0"><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-1"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-2"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-3"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-4"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star-o"></i></span>
+                            <span class="product-review-icons product-review-icons-5"><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i><i class="product-review-icon fontawesome-star"></i></span>
+                            <span href="#" class="product-review-count">([review_count])</span>
+                        </span>
+                        <!--END: product_review_average-->
+                        <!--END: product_review-->
+
+                        <div class="product-title">
+                            <a href="product.asp?itemid=[catalogid]">[name]</a>
+                        </div>
+
+                        <div class="product-price">
+                            <!--START: ITEMPRICE-->
+                            <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                            <!--END: ITEMPRICE-->
+                            <!--START: SALEPRICE-->
+                            <del class="price2">[ITEMPRICE]&nbsp;</del>
+                            <span class="hidden">[product_onsale]&nbsp;</span>[ITEMSALEPRICE]
+                            <span class="badge badge-sale">
+                                <span class="badge-text">Sale</span>
+                            </span>
+                            <!--END: SALEPRICE-->
+                        </div>
+
+                        <!--START: addtocart-->
+                        <div class="add-chkupsell">
+                            <input type="checkbox" name="chkAddUpsell" id="chkAddUpsell" value="[encrypted_catalogid]" />
+                            <span>[checkout4_upsell-additem]</span>
+                        </div>
+                        <!--END: addtocart-->
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+
+            </li>
+            <!--START: productcontainer_close-->
+            <!--END: productcontainer_close-->
+            <!--START: productblockcontainer_close-->
+            <!--END: productblockcontainer_close-->
+            <!--END: ITEM_TEMPLATE_1-->
+        </ul>
+        <!--END: CATEGORY_ITEMS-->
+        <div class="clear"></div>
+        <div class="chkupsell-actions center">
+            <input type="button" onclick="addToOrder(this.form);" name="Add" value="[checkout4_upsell-addtoorder]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+            <input type="button" onclick="location.href='checkout_thankyou.asp?k=[k]';" name="Add" value="[checkout4_upsell-nothanks]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+        </div>
+        <!--END: ITEMS-->
+    </form>
+    <div class="clear"></div>
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="checkoutUpsellFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+</section>
+<script type="text/javascript">
+function addToOrder(objForm) {
+    if (document.getElementsByName("chkAddUpsell")) {
+        for (var i = 0; i < document.getElementsByName("chkAddUpsell").length; i++) {
+            if (document.getElementsByName("chkAddUpsell").item(i).checked) {
+                objForm.submit();
+                return;
+            }
+        }
+    }
+    alert("Please, select at least one product.");
+}
+</script>
